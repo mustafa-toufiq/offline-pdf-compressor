@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Offline PDF Compressor – Private & Free</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Compress PDF files offline in your browser. No upload. 100% private PDF compression tool." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<div class="max-w-2xl mx-auto p-8">
+  <h1 class="text-3xl font-bold mb-2">Offline PDF Compressor</h1>
+  <p class="text-gray-600 mb-6">
+    Compress PDFs directly in your browser. Files never leave your device.
+  </p>
+
+  <div class="bg-white shadow rounded-xl p-6 space-y-4">
+
+    <input type="file" id="pdfInput" accept="application/pdf"
+      class="block w-full border rounded p-2" />
+
+    <select id="level" class="w-full border rounded p-2">
+      <option value="low">Low Compression (Best Quality)</option>
+      <option value="medium">Medium Compression</option>
+      <option value="high">High Compression (Smaller Size)</option>
+    </select>
+
+    <button onclick="compressPDF()"
+      class="w-full bg-black text-white p-3 rounded-lg hover:opacity-90">
+      Compress PDF
+    </button>
+
+    <p id="status" class="text-sm text-gray-600"></p>
+
+  </div>
+</div>
+
+<script>
+async function compressPDF() {
+  const fileInput = document.getElementById('pdfInput');
+  const level = document.getElementById('level').value;
+  const status = document.getElementById('status');
+
+  if (!fileInput.files.length) {
+    status.textContent = "Please select a PDF file.";
+    return;
+  }
+
+  const file = fileInput.files[0];
+  status.textContent = "Compressing locally...";
+
+  const originalSize = (file.size / 1024 / 1024).toFixed(2);
+
+  const arrayBuffer = await file.arrayBuffer();
+  const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+
+  const qualityMap = {
+    low: 0.9,
+    medium: 0.7,
+    high: 0.5
+  };
+
+  const compressedPdfBytes = await pdfDoc.save({
+    useObjectStreams: true,
+    compress: true,
+    imageQuality: qualityMap[level]
+  });
+
+  const compressedSize = (compressedPdfBytes.byteLength / 1024 / 1024).toFixed(2);
+
+  const blob = new Blob([compressedPdfBytes], { type: 'application/pdf' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = "compressed.pdf";
+  a.click();
+
+  status.innerHTML = `
+    Original: ${originalSize} MB <br>
+    Compressed: ${compressedSize} MB
+  `;
+}
+</script>
+
+</body>
+</html>
