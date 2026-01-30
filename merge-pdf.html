@@ -38,14 +38,15 @@ Merge PDFs
 </div>
 
 <script>
+let selectedFiles = [];
+
 async function mergePDFs() {
 
 const { PDFDocument } = PDFLib;
-const input = document.getElementById("pdfInput");
 const status = document.getElementById("status");
 
-if (!input.files.length) {
-status.textContent = "Please select PDF files.";
+if (!selectedFiles.length) {
+status.textContent = "Please add PDF files.";
 return;
 }
 
@@ -53,7 +54,7 @@ status.textContent = "Merging PDFs...";
 
 const mergedPdf = await PDFDocument.create();
 
-for (let file of input.files) {
+for (let file of selectedFiles) {
 
 const bytes = await file.arrayBuffer();
 const pdf = await PDFDocument.load(bytes);
@@ -75,7 +76,17 @@ a.click();
 
 status.textContent = "Merged PDF downloaded.";
 }
+
+document.getElementById("pdfInput").addEventListener("change", function(e) {
+
+selectedFiles.push(...e.target.files);
+
+document.getElementById("status").textContent =
+selectedFiles.length + " file(s) ready to merge";
+
+});
 </script>
+
 
 <!-- SEO CONTENT -->
 <section class="max-w-4xl mx-auto p-8">
