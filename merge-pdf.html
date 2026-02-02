@@ -1,3 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Merge PDF Files Online Free | PDFECTA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Merge multiple PDF files into one PDF online for free. Secure, private, and runs completely in your browser." />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<div class="max-w-2xl mx-auto p-8">
+
+<h1 class="text-3xl font-bold mb-2">Merge PDF Files</h1>
+<p class="text-gray-600 mb-6">
+Combine multiple PDF files into a single PDF document instantly. 
+No upload required — fully private and secure.
+</p>
+
+<div class="bg-white shadow rounded-xl p-6 space-y-4">
+
+<input type="file" id="pdfInput" accept="application/pdf" multiple
+class="block w-full border rounded p-2" />
+
+<button onclick="mergePDFs()"
+class="w-full bg-black text-white p-3 rounded-lg hover:opacity-90">
+Merge PDFs
+</button>
+
+<p id="status" class="text-sm text-gray-600"></p>
+
+</div>
+
+</div>
+
 <script>
 let selectedFiles = [];
 
@@ -56,3 +95,55 @@ document.getElementById("pdfInput").addEventListener("change", function(e) {
   status.textContent = selectedFiles.length + " file(s) ready to merge";
 });
 </script>
+
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto p-8">
+
+<h2 class="text-2xl font-bold mb-4">Merge PDF Files Online Free and Secure</h2>
+
+<p class="text-gray-700 mb-4">
+PDFECTA allows you to merge multiple PDF files into a single document directly in your browser. 
+Unlike traditional online PDF tools, your files never leave your device, ensuring complete privacy and security.
+</p>
+
+<p class="text-gray-700 mb-4">
+Our merge PDF tool is designed for students, professionals, and businesses who need to combine multiple PDF documents quickly. 
+Simply upload your PDF files, click merge, and download the combined file instantly.
+</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-2">Why Use Our Merge PDF Tool?</h3>
+
+<ul class="list-disc pl-6 text-gray-700 mb-4">
+<li>100% browser-based processing</li>
+<li>No file upload required</li>
+<li>Fast and secure merging</li>
+<li>Free and unlimited usage</li>
+<li>Works on all modern devices</li>
+</ul>
+
+<h3 class="text-xl font-semibold mt-6 mb-2">Common Use Cases</h3>
+
+<ul class="list-disc pl-6 text-gray-700 mb-4">
+<li>Combine multiple reports into one document</li>
+<li>Merge invoices or financial statements</li>
+<li>Join scanned documents into one PDF</li>
+<li>Prepare documents for submission or sharing</li>
+</ul>
+
+<h3 class="text-xl font-semibold mt-6 mb-2">Frequently Asked Questions</h3>
+
+<p class="font-semibold">Is merging PDFs safe?</p>
+<p class="text-gray-700 mb-3">
+Yes. All merging happens locally in your browser. Your files are never uploaded.
+</p>
+
+<p class="font-semibold">Is there a file limit?</p>
+<p class="text-gray-700 mb-3">
+You can merge multiple PDFs depending on your device memory and browser limits.
+</p>
+
+</section>
+
+</body>
+</html>
