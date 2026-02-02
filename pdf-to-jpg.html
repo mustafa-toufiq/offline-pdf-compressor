@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>PDF to JPG Converter Online Free | PDFECTA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Convert PDF pages to JPG images online for free. Secure, private, and fully browser-based." />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js";
+</script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<div class="max-w-2xl mx-auto p-8">
+  <h1 class="text-3xl font-bold mb-2">PDF to JPG</h1>
+  <p class="text-gray-600 mb-6">
+    Convert PDF pages to JPG images instantly. Files never leave your browser.
+  </p>
+
+  <div class="bg-white shadow rounded-xl p-6 space-y-4">
+    <input type="file" id="pdfInput" accept="application/pdf"
+      class="block w-full border rounded p-2" />
+
+    <button onclick="convertPDF()"
+      class="w-full bg-black text-white p-3 rounded-lg hover:opacity-90">
+      Convert to JPG
+    </button>
+
+    <p id="status" class="text-sm text-gray-600"></p>
+  </div>
+</div>
+
+<script>
+async function convertPDF() {
+  const input = document.getElementById("pdfInput");
+  const status = document.getElementById("status");
+
+  if (!input.files.length) {
+    status.textContent = "Please select a PDF file.";
+    return;
+  }
+
+  status.textContent = "Converting pages to JPG...";
+
+  const file = input.files[0];
+  const arrayBuffer = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+  for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+    const page = await pdf.getPage(pageNum);
+    const viewport = page.getViewport({ scale: 2 });
+
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+
+    await page.render({ canvasContext: context, viewport }).promise;
+
+    canvas.toBlob((blob) => {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `page-${pageNum}.jpg`;
+      a.click();
+    }, "image/jpeg", 0.95);
+  }
+
+  status.textContent = "JPG images downloaded.";
+}
+</script>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto p-8">
+
+<h2 class="text-2xl font-bold mb-4">Convert PDF to JPG Images Online</h2>
+
+<p class="text-gray-700 mb-4">
+PDFECTA’s PDF to JPG converter lets you extract high-quality images from PDF files directly in your browser.
+No uploads, no tracking, and no file limits.
+</p>
+
+<p class="text-gray-700 mb-4">
+This tool is ideal for converting scanned documents, presentations, or reports into shareable image files.
+Each PDF page is converted into a separate JPG image instantly.
+</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-2">Why Use Our PDF to JPG Converter?</h3>
+<ul class="list-disc pl-6 text-gray-700 mb-4">
+  <li>100% browser-based processing</li>
+  <li>No file uploads or server storage</li>
+  <li>High-quality JPG output</li>
+  <li>Free and unlimited usage</li>
+  <li>Works on all modern devices</li>
+</ul>
+
+<h3 class="text-xl font-semibold mt-6 mb-2">Frequently Asked Questions</h3>
+
+<p class="font-semibold">Is converting PDF to JPG safe?</p>
+<p class="text-gray-700 mb-3">
+Yes. All conversion happens locally in your browser. Your files never leave your device.
+</p>
+
+<p class="font-semibold">Can I convert multi-page PDFs?</p>
+<p class="text-gray-700 mb-3">
+Yes. Each page is converted into a separate JPG image.
+</p>
+
+</section>
+
+</body>
+</html>
