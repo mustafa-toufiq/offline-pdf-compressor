@@ -40,25 +40,22 @@ async function convertPDF() {
   const input = document.getElementById("pdfInput");
   const status = document.getElementById("status");
 
+  // ✅ VALIDATION
   if (!input.files.length) {
     status.textContent = "Please select a PDF file.";
     return;
   }
 
-  
   const file = input.files[0];
 
   if (file.type !== "application/pdf") {
     status.textContent = "Invalid file type. Please upload a PDF file.";
     return;
   }
-  
-  
-  
-  
+
   status.textContent = "Converting pages to JPG...";
 
-  const file = input.files[0];
+  // ✅ PROCESSING (use SAME file variable)
   const arrayBuffer = await file.arrayBuffer();
   const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
 
@@ -83,6 +80,7 @@ async function convertPDF() {
 
   status.textContent = "JPG images downloaded.";
 }
+
 </script>
 
 <!-- SEO CONTENT -->
