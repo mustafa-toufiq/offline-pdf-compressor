@@ -56,38 +56,35 @@ async function convertToPDF() {
 
   status.textContent = "Converting images to PDF...";
 
-  // ✅ PROCESSING (example using pdf-lib)
-  const pdfDoc = await PDFLib.PDFDocument.create();
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF();
+
+  let firstPage = true;
 
   for (let file of input.files) {
-    const bytes = await file.arrayBuffer();
-    let image;
+    const imgData = await readFile(file);
 
-    if (file.type === "image/png") {
-      image = await pdfDoc.embedPng(bytes);
-    } else {
-      image = await pdfDoc.embedJpg(bytes);
-    }
+    const img = new Image();
+    img.src = imgData;
 
-    const page = pdfDoc.addPage([image.width, image.height]);
-    page.drawImage(image, {
-      x: 0,
-      y: 0,
-      width: image.width,
-      height: image.height,
-    });
+    await new Promise(resolve => (img.onload = resolve));
+
+    const imgWidth = img.width;
+    const imgHeight = img.height;
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = (imgHeight * pageWidth) / imgWidth;
+
+    if (!firstPage) pdf.addPage();
+    firstPage = false;
+
+    pdf.addImage(img, "JPEG", 0, 0, pageWidth, pageHeight);
   }
 
-  const pdfBytes = await pdfDoc.save();
-  const blob = new Blob([pdfBytes], { type: "application/pdf" });
-
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "images.pdf";
-  a.click();
-
+  pdf.save("images.pdf");
   status.textContent = "PDF downloaded.";
 }
+
 
 function readFile(file) {
 return new Promise((resolve) => {
