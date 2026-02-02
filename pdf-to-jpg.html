@@ -45,6 +45,17 @@ async function convertPDF() {
     return;
   }
 
+  
+  const file = input.files[0];
+
+  if (file.type !== "application/pdf") {
+    status.textContent = "Invalid file type. Please upload a PDF file.";
+    return;
+  }
+  
+  
+  
+  
   status.textContent = "Converting pages to JPG...";
 
   const file = input.files[0];
