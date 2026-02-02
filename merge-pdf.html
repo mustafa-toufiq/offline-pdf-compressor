@@ -40,46 +40,63 @@ Merge PDFs
 <script>
 let selectedFiles = [];
 
+
 async function mergePDFs() {
+  const { PDFDocument } = PDFLib;
+  const status = document.getElementById("status");
 
-const { PDFDocument } = PDFLib;
-const status = document.getElementById("status");
+  // ✅ VALIDATION
+  if (!selectedFiles.length) {
+    status.textContent = "Please add PDF files.";
+    return;
+  }
 
-if (!selectedFiles.length) {
-status.textContent = "Please add PDF files.";
-return;
+  for (let file of selectedFiles) {
+    if (file.type !== "application/pdf") {
+      status.textContent = "Only PDF files are allowed.";
+      return;
+    }
+  }
+
+  status.textContent = "Merging PDFs...";
+
+  // ✅ PROCESSING
+  const mergedPdf = await PDFDocument.create();
+
+  for (let file of selectedFiles) {
+    const bytes = await file.arrayBuffer();
+    const pdf = await PDFDocument.load(bytes);
+    const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+    pages.forEach(page => mergedPdf.addPage(page));
+  }
+
+  const mergedBytes = await mergedPdf.save();
+  const blob = new Blob([mergedBytes], { type: "application/pdf" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "merged.pdf";
+  a.click();
+
+  status.textContent = "Merged PDF downloaded.";
 }
 
-status.textContent = "Merging PDFs...";
-
-const mergedPdf = await PDFDocument.create();
-
-for (let file of selectedFiles) {
-
-const bytes = await file.arrayBuffer();
-const pdf = await PDFDocument.load(bytes);
-const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-
-pages.forEach(page => mergedPdf.addPage(page));
-
-}
-
-const mergedBytes = await mergedPdf.save();
-
-const blob = new Blob([mergedBytes], { type: "application/pdf" });
-const url = URL.createObjectURL(blob);
-
-const a = document.createElement("a");
-a.href = url;
-a.download = "merged.pdf";
-a.click();
-
-status.textContent = "Merged PDF downloaded.";
-}
 
 document.getElementById("pdfInput").addEventListener("change", function(e) {
+  const status = document.getElementById("status");
 
-selectedFiles.push(...e.target.files);
+  for (let file of e.target.files) {
+    if (file.type !== "application/pdf") {
+      status.textContent = "Only PDF files are allowed.";
+      return;
+    }
+  }
+
+  selectedFiles.push(...e.target.files);
+  status.textContent = selectedFiles.length + " file(s) ready to merge";
+});
+
 
 document.getElementById("status").textContent =
 selectedFiles.length + " file(s) ready to merge";
