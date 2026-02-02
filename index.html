@@ -42,50 +42,69 @@
 
 <script>
 async function compressPDF() {
-  const fileInput = document.getElementById('pdfInput');
-  const level = document.getElementById('level').value;
-  const status = document.getElementById('status');
+  const fileInput = document.getElementById("pdfInput");
+  const level = document.getElementById("level").value;
+  const status = document.getElementById("status");
 
+  // ✅ VALIDATION: file selected
   if (!fileInput.files.length) {
     status.textContent = "Please select a PDF file.";
     return;
   }
 
   const file = fileInput.files[0];
+
+  // ✅ VALIDATION: correct file type
+  if (file.type !== "application/pdf") {
+    status.textContent = "Invalid file type. Please upload a PDF file.";
+    return;
+  }
+
   status.textContent = "Compressing locally...";
 
-  const originalSize = (file.size / 1024 / 1024).toFixed(2);
+  try {
+    const originalSize = (file.size / 1024 / 1024).toFixed(2);
 
-  const arrayBuffer = await file.arrayBuffer();
-  const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+    const arrayBuffer = await file.arrayBuffer();
+    const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
 
-  const qualityMap = {
-    low: 0.9,
-    medium: 0.7,
-    high: 0.5
-  };
+    const qualityMap = {
+      low: 0.9,
+      medium: 0.7,
+      high: 0.5,
+    };
 
-  const compressedPdfBytes = await pdfDoc.save({
-    useObjectStreams: true,
-    compress: true,
-    imageQuality: qualityMap[level]
-  });
+    const compressedPdfBytes = await pdfDoc.save({
+      useObjectStreams: true,
+      compress: true,
+      imageQuality: qualityMap[level],
+    });
 
-  const compressedSize = (compressedPdfBytes.byteLength / 1024 / 1024).toFixed(2);
+    const compressedSize = (
+      compressedPdfBytes.byteLength / 1024 / 1024
+    ).toFixed(2);
 
-  const blob = new Blob([compressedPdfBytes], { type: 'application/pdf' });
-  const url = URL.createObjectURL(blob);
+    const blob = new Blob([compressedPdfBytes], {
+      type: "application/pdf",
+    });
+    const url = URL.createObjectURL(blob);
 
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = "compressed.pdf";
-  a.click();
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "compressed.pdf";
+    a.click();
 
-  status.innerHTML = `
-    Original: ${originalSize} MB <br>
-    Compressed: ${compressedSize} MB
-  `;
+    status.innerHTML = `
+      Original: ${originalSize} MB <br>
+      Compressed: ${compressedSize} MB
+    `;
+  } catch (err) {
+    console.error(err);
+    status.textContent =
+      "Failed to compress PDF. Please try another file.";
+  }
 }
+
 </script>
 
 
