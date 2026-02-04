@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unlock PDF - Remove Password & Restrictions Online | PDFECTA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Remove passwords and security restrictions from PDF files directly in your browser. 100% private, no file uploads, and completely free." />
+  <link rel="canonical" href="https://pdfecta.com/unlock-pdf.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@monomadic/qpdf-wasm@1.1.0/dist/qpdf-wasm.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Unlock PDF", "item": "https://pdfecta.com/unlock-pdf.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I unlock a password-protected PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upload your file to PDFECTA. If the file is only restricted (owner password), it will unlock instantly. If it is encrypted (user password), enter the password once to remove it permanently."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to unlock PDFs on PDFECTA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The unlocking process happens entirely in your browser. Your files and passwords are never sent to any server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I unlock a PDF if I forgot the password?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This tool can remove 'Owner Restrictions' (printing/editing) without a password, but you must know the 'User Password' if the file is encrypted to open."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<div class="max-w-2xl mx-auto p-8">
+  <a href="/" class="text-sm text-blue-600 hover:underline">← Back to Home</a>
+  <h1 class="text-3xl font-bold mt-4 mb-2">Unlock PDF</h1>
+  <p class="text-gray-600 mb-6">
+    Remove passwords and restrictions from your PDF instantly. 100% private.
+  </p>
+
+  <div class="bg-white shadow rounded-xl p-6 space-y-4">
+    <div>
+      <label class="block text-sm font-medium mb-1">Upload Protected PDF</label>
+      <input type="file" id="pdfInput" accept="application/pdf"
+      class="block w-full border rounded p-2 text-sm" />
+    </div>
+
+    <div id="passwordSection" class="hidden">
+      <label class="block text-sm font-medium mb-1 text-red-600">Password Required</label>
+      <input type="password" id="passwordInput" placeholder="Enter PDF password"
+      class="block w-full border border-red-300 rounded p-2" />
+      <p class="text-xs text-gray-500 mt-1">This file is encrypted. We need the password once to remove it.</p>
+    </div>
+
+    <button id="unlockBtn"
+    class="w-full bg-black text-white p-3 rounded-lg font-bold hover:opacity-90 transition-opacity">
+      Unlock PDF
+    </button>
+
+    <p id="status" class="text-center text-sm font-medium"></p>
+  </div>
+</div>
+
+<section class="max-w-4xl mx-auto p-8">
+  <h2 class="text-2xl font-bold mb-4">How to Remove Password Protection from PDF</h2>
+  <p class="text-gray-700 mb-4">
+    PDFECTA provides a secure way to unlock PDF files directly in your browser. Many PDF documents come with 
+    restrictions that prevent you from printing, copying text, or editing. Our tool removes these 
+    owner-level restrictions instantly.
+  </p>
+
+  <p class="text-gray-700 mb-4">
+    If your PDF is encrypted with a "Document Open" password, simply enter the password when prompted. 
+    PDFECTA will process the file locally and generate a new version that is completely decrypted, 
+    saving you from having to type the password every time you open the file.
+  </p>
+
+  <h3 class="text-xl font-semibold mt-6 mb-2">Why Use Our PDF Unlocker?</h3>
+  <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-1">
+    <li><strong>Browser-Based:</strong> Your sensitive files never leave your computer.</li>
+    <li><strong>Remove Restrictions:</strong> Instantly enable printing, copying, and editing.</li>
+    <li><strong>Permanent Decryption:</strong> Save a version that no longer requires a password.</li>
+    <li><strong>Free & Unlimited:</strong> No daily limits or file size restrictions.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold mt-8 mb-4">Frequently Asked Questions</h3>
+  <div class="space-y-4">
+    <div>
+      <p class="font-bold">Will I lose data after unlocking?</p>
+      <p class="text-gray-700 text-sm">No. The content of your PDF remains exactly the same; only the security layer is removed.</p>
+    </div>
+    <div>
+      <p class="font-bold">Can I unlock a PDF without a password?</p>
+      <p class="text-gray-700 text-sm">If the PDF only has "Permissions" locking (owner password), yes. If it requires a password just to view the pages, you must provide it once.</p>
+    </div>
+    <div>
+      <p class="font-bold">Is my password stored?</p>
+      <p class="text-gray-700 text-sm">Never. Everything happens in your browser's memory and is cleared as soon as you close the tab.</p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
+  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2 text-gray-700">
+    <li><a href="/protect-pdf.html" class="text-blue-600 underline">Protect PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
+    <li><a href="/compress-pdf.html" class="text-blue-600 underline">Compress PDF</a></li>
+  </ul>
+</section>
+
+<script>
+  const pdfInput = document.getElementById("pdfInput");
+  const passwordInput = document.getElementById("passwordInput");
+  const passwordSection = document.getElementById("passwordSection");
+  const status = document.getElementById("status");
+  const btn = document.getElementById("unlockBtn");
+
+  btn.addEventListener("click", async () => {
+    const file = pdfInput.files[0];
+    const password = passwordInput.value.trim();
+
+    if (!file) {
+      status.className = "text-center text-sm text-red-600";
+      status.textContent = "Please select a PDF file.";
+      return;
+    }
+
+    status.className = "text-center text-sm text-blue-600";
+    status.textContent = "Decrypting...";
+
+    try {
+      // Initialize QPDF
+      const qpdf = await window.qpdfWasm.createQPDF();
+      const arrayBuffer = await file.arrayBuffer();
+      const inputData = new Uint8Array(arrayBuffer);
+
+      // Try to decrypt
+      const args = ["--decrypt"];
+      if (password) {
+        args.push(`--password=${password}`);
+      }
+      args.push("--", "input.pdf", "output.pdf");
+
+      const result = await qpdf.run(inputData, args);
+
+      if (result.success) {
+        // Success! Download file
+        const blob = new Blob([result.output], { type: "application/pdf" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `unlocked_${file.name}`;
+        a.click();
+
+        status.className = "text-center text-sm text-green-600";
+        status.textContent = "✅ PDF unlocked and downloaded!";
+        passwordSection.classList.add("hidden");
+      } else {
+        // If it fails because of password
+        if (result.error.includes("password")) {
+          passwordSection.classList.remove("hidden");
+          status.className = "text-center text-sm text-red-600";
+          status.textContent = "Password incorrect or required.";
+        } else {
+          throw new Error(result.error);
+        }
+      }
+    } catch (e) {
+      console.error(e);
+      status.className = "text-center text-sm text-red-600";
+      status.textContent = "Error: Could not unlock PDF.";
+    }
+  });
+</script>
+
+</body>
+</html>
