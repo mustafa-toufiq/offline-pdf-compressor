@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Delete Odd or Even Pages from PDF | PDFECTA</title>
+
+  <meta name="description" content="Delete odd or even pages from a PDF online for free. Remove unwanted pages instantly in your browser. No upload, 100% private." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="canonical" href="https://pdfecta.com/delete-odd-even-pages.html" />
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are odd and even pages in a PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Odd pages are pages 1, 3, 5, etc. Even pages are pages 2, 4, 6, etc."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to delete pages using PDFECTA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All processing happens locally in your browser. Files are never uploaded."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I undo the deletion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Please keep a copy of your original PDF before deleting pages."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Delete Odd or Even Pages", "item": "https://pdfecta.com/delete-odd-even-pages.html" }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<header class="max-w-4xl mx-auto p-6">
+  <a href="/" class="text-sm text-blue-600 underline">← Back to Home</a>
+  <h1 class="text-3xl font-bold mt-4">Delete Odd or Even Pages from PDF</h1>
+  <p class="text-gray-600 mt-2">
+    Remove odd or even pages from your PDF instantly. 100% private and browser-based.
+  </p>
+</header>
+
+<main class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow">
+
+  <div class="mb-4">
+    <label class="block font-medium mb-1">Upload PDF</label>
+    <input id="pdfInput" type="file" accept="application/pdf" class="w-full" />
+  </div>
+
+  <div class="mb-4">
+    <label class="block font-medium mb-1">Pages to delete</label>
+    <select id="mode" class="w-full border rounded p-2">
+      <option value="">Select an option</option>
+      <option value="odd">Delete odd pages</option>
+      <option value="even">Delete even pages</option>
+    </select>
+  </div>
+
+  <button id="processBtn"
+    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    Process PDF
+  </button>
+
+  <p class="text-xs text-gray-500 mt-2">
+    Files are processed locally. Please keep a backup of your original PDF.
+  </p>
+
+  <p id="status" class="mt-4 text-sm"></p>
+
+</main>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto p-6 mt-12">
+
+  <h2 class="text-2xl font-bold mb-4">Delete Odd or Even Pages from PDF Online</h2>
+
+  <p class="mb-4">
+    Removing odd or even pages from a PDF is useful when cleaning scanned documents,
+    preparing files for double-sided printing, or removing blank separator pages.
+    PDFECTA lets you delete odd or even pages directly in your browser without
+    uploading your PDF to any server.
+  </p>
+
+  <p class="mb-6">
+    This tool works entirely client-side, ensuring full privacy and security.
+    Your document never leaves your device.
+  </p>
+
+  <h3 class="text-xl font-semibold mb-3">Why Use This Tool?</h3>
+
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li>100% private and secure</li>
+    <li>No uploads or tracking</li>
+    <li>Instant results</li>
+    <li>Free to use</li>
+    <li>Works on all modern devices</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold mb-4">Frequently Asked Questions</h3>
+
+  <div class="space-y-4">
+    <div>
+      <h4 class="font-semibold">What are odd and even pages?</h4>
+      <p class="text-gray-700">
+        Odd pages are 1, 3, 5, etc. Even pages are 2, 4, 6, etc.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-semibold">Is this tool safe?</h4>
+      <p class="text-gray-700">
+        Yes. All processing happens locally in your browser.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-semibold">Can I recover deleted pages?</h4>
+      <p class="text-gray-700">
+        No. Please keep a copy of your original PDF.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
+  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2 text-gray-700">
+    <li><a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-blue-600 underline">Split PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
+  </ul>
+</section>
+
+<script>
+  const pdfInput = document.getElementById("pdfInput");
+  const modeSelect = document.getElementById("mode");
+  const status = document.getElementById("status");
+  const btn = document.getElementById("processBtn");
+
+  btn.addEventListener("click", async () => {
+    const file = pdfInput.files[0];
+    const mode = modeSelect.value;
+
+    if (!file || file.type !== "application/pdf") {
+      status.textContent = "Please upload a valid PDF file.";
+      return;
+    }
+
+    if (!mode) {
+      status.textContent = "Please select odd or even pages.";
+      return;
+    }
+
+    status.textContent = "Processing PDF...";
+
+    const bytes = await file.arrayBuffer();
+    const pdfDoc = await PDFLib.PDFDocument.load(bytes);
+    const newPdf = await PDFLib.PDFDocument.create();
+
+    const pages = pdfDoc.getPageIndices();
+
+    for (let i of pages) {
+      const pageNumber = i + 1;
+      const isOdd = pageNumber % 2 === 1;
+
+      if ((mode === "odd" && !isOdd) || (mode === "even" && isOdd)) {
+        const [page] = await newPdf.copyPages(pdfDoc, [i]);
+        newPdf.addPage(page);
+      }
+    }
+
+    const newBytes = await newPdf.save();
+    const blob = new Blob([newBytes], { type: "application/pdf" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "processed.pdf";
+    a.click();
+
+    status.textContent = "PDF downloaded successfully.";
+  });
+</script>
+
+</body>
+</html>
