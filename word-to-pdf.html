@@ -160,6 +160,25 @@
     container.style.fontSize = "12pt";
     container.style.lineHeight = "1.6";
 
+
+// ✅ NORMALIZE WORD → PDF SPACING
+container.style.padding = "0";
+container.style.margin = "0";
+
+container.querySelectorAll("h1,h2,h3").forEach(h => {
+  h.style.marginTop = "24px";
+  h.style.marginBottom = "12px";
+});
+
+container.querySelectorAll("p").forEach(p => {
+  p.style.margin = "8px 0";
+});
+
+container.querySelectorAll("ol,ul").forEach(list => {
+  list.style.marginLeft = "24px";
+});
+
+// Add to DOM (required for jsPDF.html)
     document.body.appendChild(container);
 
     status.textContent = "Generating PDF...";
@@ -167,14 +186,16 @@
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF("p", "pt", "a4");
 
-    await pdf.html(container, {
-      x: 40,
-      y: 40,
-      autoPaging: "text",
-      margin: [40, 40, 40, 40],
-      windowWidth: 600,
-      html2canvas: { scale: 1 }
-    });
+  await pdf.html(container, {
+  x: 40,
+  y: 40,
+  margin: [40, 40, 40, 40],
+  windowWidth: 600,
+  autoPaging: "slice",
+  html2canvas: {
+    scale: 1.5
+  }
+});
 
     document.body.removeChild(container);
 
