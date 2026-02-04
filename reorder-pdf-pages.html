@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reorder PDF Pages Online Free | PDFECTA</title>
+
+  <meta name="description" content="Reorder PDF pages online for free. Change PDF page order securely in your browser with no uploads or tracking." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="canonical" href="https://pdfecta.com/reorder-pdf-pages.html" />
+
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it safe to reorder PDF pages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All PDF processing happens locally in your browser. Your file is never uploaded."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I change the order of PDF pages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upload a PDF and enter the new page order using page numbers such as 3,1,2."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this tool work on mobile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but large PDFs work best on desktop browsers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to create an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The tool is completely free and requires no registration."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Reorder PDF Pages", "item": "https://pdfecta.com/reorder-pdf-pages.html" }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<!-- HEADER -->
+<header class="max-w-4xl mx-auto p-6">
+  <a href="/" class="text-sm text-blue-600 underline">← Back to Home</a>
+  <h1 class="text-3xl font-bold mt-4">Reorder PDF Pages</h1>
+  <p class="text-gray-600 mt-2">
+    Change the order of pages in your PDF instantly. 100% private and browser-based.
+  </p>
+</header>
+
+<!-- TOOL -->
+<main class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow">
+
+  <div class="mb-4">
+    <label class="block font-medium mb-1">Upload PDF</label>
+    <input id="pdfFile" type="file" accept="application/pdf" class="block w-full" />
+  </div>
+
+  <div id="pageInfo" class="text-sm text-gray-600 mb-4 hidden"></div>
+
+  <div class="mb-4">
+    <label class="block font-medium mb-1">
+      New page order
+    </label>
+    <input
+      id="orderInput"
+      type="text"
+      placeholder="Example: 3,1,2"
+      class="w-full border rounded p-2"
+    />
+    <p class="text-xs text-gray-500 mt-1">
+      Enter all page numbers once, separated by commas.
+    </p>
+  </div>
+
+  <button
+    id="processBtn"
+    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+  >
+    Reorder Pages
+  </button>
+
+  <div id="status" class="mt-4 text-sm"></div>
+
+</main>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto p-6 mt-12">
+
+  <h2 class="text-2xl font-bold mb-4">Reorder PDF Pages Online</h2>
+
+  <p class="mb-4">
+    PDFECTA allows you to reorder PDF pages easily without uploading your file.
+    This tool is perfect for rearranging scanned documents, fixing page order,
+    or organizing reports before sharing.
+  </p>
+
+  <p class="mb-6">
+    Unlike traditional PDF editors, this tool works entirely in your browser.
+    Your documents remain private and secure at all times.
+  </p>
+
+  <h3 class="text-xl font-semibold mb-3">Why Use Our Reorder PDF Pages Tool?</h3>
+
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li>100% private, client-side processing</li>
+    <li>No file uploads or sign-up required</li>
+    <li>Fast and simple page reordering</li>
+    <li>No watermarks added</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold mb-3">How to Reorder Pages</h3>
+
+  <p class="mb-6">
+    Upload your PDF, note the total number of pages, and enter the new order
+    using page numbers such as <em>2,1,3</em>. Download the reordered PDF instantly.
+  </p>
+
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
+  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2 text-gray-700">
+    <li><a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-blue-600 underline">Split PDF</a></li>
+  </ul>
+</section>
+
+<!-- SCRIPT -->
+<script>
+  const fileInput = document.getElementById("pdfFile");
+  const orderInput = document.getElementById("orderInput");
+  const status = document.getElementById("status");
+  const pageInfo = document.getElementById("pageInfo");
+  const btn = document.getElementById("processBtn");
+
+  let pdfBytes = null;
+  let totalPages = 0;
+
+  fileInput.addEventListener("change", async () => {
+    status.textContent = "";
+    pageInfo.classList.add("hidden");
+
+    const file = fileInput.files[0];
+
+    if (
+      !file ||
+      file.type !== "application/pdf" ||
+      !file.name.toLowerCase().endsWith(".pdf")
+    ) {
+      status.textContent = "Please upload a PDF file only.";
+      fileInput.value = "";
+      return;
+    }
+
+    try {
+      pdfBytes = await file.arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
+      totalPages = pdfDoc.getPageCount();
+
+      pageInfo.textContent = `PDF loaded: ${totalPages} pages detected.`;
+      pageInfo.classList.remove("hidden");
+    } catch {
+      status.textContent = "Failed to read PDF file.";
+    }
+  });
+
+  btn.addEventListener("click", async () => {
+    status.textContent = "";
+
+    if (!pdfBytes) {
+      status.textContent = "Please upload a PDF first.";
+      return;
+    }
+
+    const input = orderInput.value.trim();
+    if (!input) {
+      status.textContent = "Please enter the new page order.";
+      return;
+    }
+
+    const order = input.split(",").map(n => parseInt(n, 10));
+
+    if (
+      order.length !== totalPages ||
+      new Set(order).size !== totalPages ||
+      order.some(p => isNaN(p) || p < 1 || p > totalPages)
+    ) {
+      status.textContent = "Invalid page order. Include each page number once.";
+      return;
+    }
+
+    status.textContent = "Reordering pages...";
+
+    const originalPdf = await PDFLib.PDFDocument.load(pdfBytes);
+    const newPdf = await PDFLib.PDFDocument.create();
+
+    const indices = order.map(p => p - 1);
+    const copiedPages = await newPdf.copyPages(originalPdf, indices);
+    copiedPages.forEach(p => newPdf.addPage(p));
+
+    const newBytes = await newPdf.save();
+    const blob = new Blob([newBytes], { type: "application/pdf" });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "reordered-pdf.pdf";
+    link.click();
+
+    status.textContent = "PDF reordered successfully.";
+  });
+</script>
+
+</body>
+</html>
