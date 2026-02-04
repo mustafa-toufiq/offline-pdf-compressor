@@ -249,73 +249,61 @@
 <script src="https://cdn.jsdelivr.net/npm/@monomadic/qpdf-wasm@1.1.0/dist/qpdf-wasm.min.js"></script>
 
 <script>
-  const pdfInput = document.getElementById("pdfInput");
-  const passwordInput = document.getElementById("passwordInput");
-  const status = document.getElementById("status");
-  const btn = document.getElementById("protectBtn");
+ const pdfInput = document.getElementById("pdfInput");
+const passwordInput = document.getElementById("passwordInput");
+const status = document.getElementById("status");
+const btn = document.getElementById("protectBtn");
 
-  // Helper to ensure the library is loaded
-  async function getQPDF() {
-    // Check if the library is available on the window object
-    if (window.qpdfWasm && typeof window.qpdfWasm.createQPDF === 'function') {
-      return await window.qpdfWasm.createQPDF();
-    }
-    // Fallback if it's nested differently in some browser environments
-    if (window.QPDFWasm && typeof window.QPDFWasm.createQPDF === 'function') {
-      return await window.QPDFWasm.createQPDF();
-    }
-    throw new Error("PDF Security engine not loaded yet. Please wait 2 seconds and try again.");
+btn.addEventListener("click", async () => {
+  const file = pdfInput.files[0];
+  const password = passwordInput.value.trim();
+
+  if (!file || file.type !== "application/pdf") {
+    status.textContent = "Please upload a valid PDF file.";
+    return;
   }
 
-  btn.addEventListener("click", async () => {
-    const file = pdfInput.files[0];
-    const password = passwordInput.value.trim();
+  if (!password) {
+    status.textContent = "Please enter a password.";
+    return;
+  }
 
-    if (!file || !password) {
-      status.className = "mt-4 text-sm text-red-600";
-      status.textContent = "Please select a PDF and enter a password.";
-      return;
-    }
+  status.textContent = "Encrypting PDF...";
 
-    status.className = "mt-4 text-sm text-blue-600";
-    status.textContent = "Loading security modules...";
+  try {
+    const bytes = await file.arrayBuffer();
+    const pdfDoc = await PDFLib.PDFDocument.load(bytes);
 
-    try {
-      const qpdf = await getQPDF();
-      
-      const arrayBuffer = await file.arrayBuffer();
-      const inputData = new Uint8Array(arrayBuffer);
+    // Set encryption options
+    pdfDoc.setEncryption({
+      userPassword: password,
+      ownerPassword: password,
+      permissions: {
+        printing: PDFLib.PrintingPermission.HighResolution,
+        modifying: false,
+        copying: false,
+        annotating: false,
+        formFilling: false,
+        accessibility: false,
+        assembling: false,
+      },
+    });
 
-      status.textContent = "Encrypting file locally...";
+    const encryptedBytes = await pdfDoc.save();
 
-      // The command arguments for QPDF to apply a password:
-      // --encrypt [user-password] [owner-password] [key-length] -- [input] [output]
-      const result = await qpdf.run(inputData, [
-        "--encrypt", password, password, "256", "--", "input.pdf", "output.pdf"
-      ]);
+    const blob = new Blob([encryptedBytes], { type: "application/pdf" });
+    const url = URL.createObjectURL(blob);
 
-      if (result.success && result.output) {
-        const blob = new Blob([result.output], { type: "application/pdf" });
-        const url = URL.createObjectURL(blob);
-        
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `protected_${file.name}`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "protected.pdf";
+    a.click();
 
-        status.className = "mt-4 text-sm text-green-600";
-        status.textContent = "✅ Success! Your protected PDF is downloaded.";
-      } else {
-        throw new Error(result.error || "Encryption failed.");
-      }
-    } catch (e) {
-      console.error(e);
-      status.className = "mt-4 text-sm text-red-600";
-      status.textContent = "Error: " + e.message;
-    }
-  });
+    status.textContent = "Password-protected PDF downloaded.";
+  } catch (e) {
+    status.textContent = "Failed to protect PDF. Please try again.";
+  }
+});
 </script>
 
 
