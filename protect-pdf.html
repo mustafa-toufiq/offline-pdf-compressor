@@ -242,12 +242,12 @@
       const pages = await encryptedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
       pages.forEach(p => encryptedPdf.addPage(p));
 
-      encryptedPdf.encrypt({
-        userPassword: password,
-        ownerPassword: password
-      });
 
-      const encryptedBytes = await encryptedPdf.save();
+  const encryptedBytes = await encryptedPdf.save({
+  userPassword: password,
+  ownerPassword: password
+});
+
       const blob = new Blob([encryptedBytes], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
 
