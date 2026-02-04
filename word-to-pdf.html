@@ -11,6 +11,7 @@
 
   <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mammoth/mammoth.browser.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -171,7 +172,8 @@
       y: 40,
       autoPaging: "text",
       margin: [40, 40, 40, 40],
-      windowWidth: 600
+      windowWidth: 600,
+      html2canvas: { scale: 1 }
     });
 
     document.body.removeChild(container);
