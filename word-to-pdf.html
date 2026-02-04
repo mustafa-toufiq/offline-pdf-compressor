@@ -146,19 +146,37 @@
     status.textContent = "Reading Word document...";
 
     const arrayBuffer = await file.arrayBuffer();
-    const result = await mammoth.extractRawText({ arrayBuffer });
-    const text = result.value;
+
+    // ✅ Convert DOCX → HTML (preserves structure)
+    const result = await mammoth.convertToHtml({ arrayBuffer });
+    const html = result.value;
+
+    // Create temp container
+    const container = document.createElement("div");
+    container.innerHTML = html;
+    container.style.width = "600px";
+    container.style.fontFamily = "Times New Roman, serif";
+    container.style.fontSize = "12pt";
+    container.style.lineHeight = "1.6";
+
+    document.body.appendChild(container);
 
     status.textContent = "Generating PDF...";
 
     const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF();
+    const pdf = new jsPDF("p", "pt", "a4");
 
-    const lines = pdf.splitTextToSize(text, 180);
-    pdf.text(lines, 10, 10);
+    await pdf.html(container, {
+      x: 40,
+      y: 40,
+      autoPaging: "text",
+      margin: [40, 40, 40, 40],
+      windowWidth: 600
+    });
+
+    document.body.removeChild(container);
 
     pdf.save("converted.pdf");
-
     status.textContent = "PDF downloaded successfully.";
   });
 </script>
