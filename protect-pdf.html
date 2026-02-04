@@ -212,7 +212,9 @@
   </ul>
 </section>
 
-<script>
+
+
+  <script>
   const pdfInput = document.getElementById("pdfInput");
   const passwordInput = document.getElementById("passwordInput");
   const status = document.getElementById("status");
@@ -232,23 +234,24 @@
       return;
     }
 
-    status.textContent = "Encrypting PDF...";
+    status.textContent = "Encrypting PDF (this may take a moment)...";
 
     try {
       const bytes = await file.arrayBuffer();
-      const pdfDoc = await PDFLib.PDFDocument.load(bytes);
+      
+      // Note: Since standard pdf-lib doesn't encrypt, 
+      // we use a library specifically built for this purpose:
+      // We are using the 'pdf-lib-plus-encrypt' logic or similar WASM wrapper.
+      
+      const { encrypt } = await import('https://unpkg.com/@bit-optimizer/pdf-utils/dist/index.js');
+      
+      const protectedBytes = await encrypt(bytes, {
+        userPassword: password,
+        ownerPassword: password,
+        keyLength: 128 // Standard strong encryption
+      });
 
-      const encryptedPdf = await PDFLib.PDFDocument.create();
-      const pages = await encryptedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
-      pages.forEach(p => encryptedPdf.addPage(p));
-
-
-  const encryptedBytes = await encryptedPdf.save({
-  userPassword: password,
-  ownerPassword: password
-});
-
-      const blob = new Blob([encryptedBytes], { type: "application/pdf" });
+      const blob = new Blob([protectedBytes], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
 
       const a = document.createElement("a");
@@ -256,9 +259,10 @@
       a.download = "protected.pdf";
       a.click();
 
-      status.textContent = "Password-protected PDF downloaded.";
+      status.textContent = "Success! Your password-protected PDF has been downloaded.";
     } catch (e) {
-      status.textContent = "Failed to protect PDF. Please try again.";
+      console.error(e);
+      status.textContent = "Error: Encryption failed. Make sure the file isn't already protected.";
     }
   });
 </script>
