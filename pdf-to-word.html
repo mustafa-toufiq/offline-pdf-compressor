@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PDF to Word Converter Online Free | PDFECTA</title>
+
+  <meta name="description" content="Convert PDF to Word online for free. Extract text from PDF into an editable Word document securely in your browser." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="canonical" href="https://pdfecta.com/pdf-to-word.html" />
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I convert PDF to Word online for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA lets you convert PDF text into an editable Word document directly in your browser for free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PDF to Word conversion private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Your PDF is processed locally in your browser and never uploaded to any server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this preserve formatting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This tool focuses on text extraction. Complex layouts, images, and tables may not be preserved."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work on scanned PDFs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Scanned PDFs require OCR, which is not supported in this version."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "PDF to Word", "item": "https://pdfecta.com/pdf-to-word.html" }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<header class="max-w-4xl mx-auto p-6">
+  <a href="/" class="text-sm text-blue-600 underline">← Back to Home</a>
+  <h1 class="text-3xl font-bold mt-4">PDF to Word Converter</h1>
+  <p class="text-gray-600 mt-2">
+    Convert PDF text into an editable Word document. 100% private, browser-based.
+  </p>
+</header>
+
+<main class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow">
+
+  <input id="pdfInput" type="file" accept="application/pdf" class="mb-4 w-full" />
+
+  <button id="convertBtn"
+    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    Convert to Word
+  </button>
+
+  <p id="status" class="mt-4 text-sm text-gray-700"></p>
+
+</main>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto p-6 mt-12">
+  <h2 class="text-2xl font-bold mb-4">Convert PDF to Word Online</h2>
+
+  <p class="mb-4">
+    PDFECTA allows you to convert PDF files into editable Word documents directly
+    in your browser. This tool extracts text from your PDF and creates a DOCX file
+    that you can edit in Microsoft Word or similar editors.
+  </p>
+
+  <p class="mb-6">
+    Unlike traditional online converters, your PDF never leaves your device.
+    This ensures maximum privacy and security for sensitive documents.
+  </p>
+
+  <h3 class="text-xl font-semibold mb-3">Important Notes</h3>
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li>Best for text-based PDFs</li>
+    <li>Scanned PDFs require OCR (not supported)</li>
+    <li>Complex layouts may not be preserved</li>
+  </ul>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
+  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2 text-gray-700">
+    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
+    <li><a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a></li>
+    <li><a href="/pdf-to-jpg.html" class="text-blue-600 underline">PDF to JPG</a></li>
+  </ul>
+</section>
+
+<script>
+  const pdfInput = document.getElementById("pdfInput");
+  const status = document.getElementById("status");
+  const convertBtn = document.getElementById("convertBtn");
+
+  convertBtn.addEventListener("click", async () => {
+    const file = pdfInput.files[0];
+    if (!file || file.type !== "application/pdf") {
+      status.textContent = "Please upload a valid PDF file.";
+      return;
+    }
+
+    status.textContent = "Extracting text from PDF...";
+
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+    let fullText = "";
+
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      content.items.forEach(item => {
+        fullText += item.str + " ";
+      });
+      fullText += "\n\n";
+    }
+
+    status.textContent = "Generating Word document...";
+
+    const { Document, Packer, Paragraph } = docx;
+
+    const doc = new Document({
+      sections: [{
+        properties: {},
+        children: fullText.split("\n").map(line =>
+          new Paragraph({ text: line })
+        )
+      }]
+    });
+
+    const blob = await Packer.toBlob(doc);
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "converted.docx";
+    link.click();
+
+    status.textContent = "Word file downloaded.";
+  });
+</script>
+
+</body>
+</html>
