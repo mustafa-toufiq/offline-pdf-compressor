@@ -161,22 +161,40 @@
     container.style.lineHeight = "1.6";
 
 
-// ✅ NORMALIZE WORD → PDF SPACING
-container.style.padding = "0";
-container.style.margin = "0";
-
-container.querySelectorAll("h1,h2,h3").forEach(h => {
-  h.style.marginTop = "24px";
-  h.style.marginBottom = "12px";
+// 🔒 RESET ALL DEFAULT STYLES
+container.querySelectorAll("*").forEach(el => {
+  el.style.fontFamily = "Times New Roman, serif";
+  el.style.fontSize = "12pt";
+  el.style.lineHeight = "1.6";
+  el.style.margin = "0";
+  el.style.padding = "0";
 });
 
+// 🔹 HEADINGS → FLATTEN (Word-style, not HTML-style)
+container.querySelectorAll("h1,h2,h3,h4").forEach(h => {
+  h.style.display = "block";
+  h.style.fontWeight = "bold";
+  h.style.fontSize = "14pt";
+  h.style.marginTop = "16px";
+  h.style.marginBottom = "8px";
+});
+
+// 🔹 PARAGRAPHS
 container.querySelectorAll("p").forEach(p => {
-  p.style.margin = "8px 0";
+  p.style.marginBottom = "8px";
 });
 
+// 🔹 LISTS (CRITICAL FIX)
 container.querySelectorAll("ol,ul").forEach(list => {
   list.style.marginLeft = "24px";
+  list.style.marginBottom = "8px";
+  list.style.listStylePosition = "outside";
 });
+
+container.querySelectorAll("li").forEach(li => {
+  li.style.marginBottom = "4px";
+});
+
 
 // Add to DOM (required for jsPDF.html)
     document.body.appendChild(container);
