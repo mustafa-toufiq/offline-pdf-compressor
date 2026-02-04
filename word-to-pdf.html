@@ -1,225 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Word to PDF Converter Online Free | PDFECTA</title>
+<meta charset="UTF-8" />
+<title>Word to PDF Converter Online Free | PDFECTA</title>
 
-  <meta name="description" content="Convert Word to PDF online for free. Turn DOCX files into PDF securely in your browser with no uploads or tracking." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Convert Word to PDF online for free. Turn DOCX files into PDF securely in your browser with no uploads or tracking." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="canonical" href="https://pdfecta.com/word-to-pdf.html" />
+<link rel="canonical" href="https://pdfecta.com/word-to-pdf.html" />
 
-  <!-- Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.min.js"></script>
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mammoth/mammoth.browser.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mammoth/mammoth.browser.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Can I convert Word to PDF for free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. PDFECTA allows you to convert Word documents to PDF directly in your browser for free."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Word to PDF conversion private?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Your Word file is processed locally in your browser and never uploaded to any server."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does this support DOCX files?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. This tool supports modern DOCX Word documents."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will formatting be preserved?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Basic text formatting is preserved, but complex layouts may not appear exactly the same."
-        }
-      }
-    ]
-  }
-  </script>
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "Can I convert Word to PDF for free?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Yes. PDFECTA allows you to convert Word documents to PDF directly in your browser for free."
+}
+},
+{
+"@type": "Question",
+"name": "Is Word to PDF conversion private?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Yes. Your Word file is processed locally in your browser and never uploaded to any server."
+}
+},
+{
+"@type": "Question",
+"name": "Does this support DOCX files?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Yes. This tool supports modern DOCX Word documents."
+}
+},
+{
+"@type": "Question",
+"name": "Will formatting be preserved?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Basic text formatting is preserved, but complex layouts may not appear exactly the same."
+}
+}
+]
+}
+</script>
 
-  <!-- Breadcrumb Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
-      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
-      { "@type": "ListItem", "position": 3, "name": "Word to PDF", "item": "https://pdfecta.com/word-to-pdf.html" }
-    ]
-  }
-  </script>
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
+{ "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
+{ "@type": "ListItem", "position": 3, "name": "Word to PDF", "item": "https://pdfecta.com/word-to-pdf.html" }
+]
+}
+</script>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
 
 <header class="max-w-4xl mx-auto p-6">
-  <a href="/" class="text-sm text-blue-600 underline">← Back to Home</a>
-  <h1 class="text-3xl font-bold mt-4">Word to PDF Converter</h1>
-  <p class="text-gray-600 mt-2">
-    Convert Word documents into PDF files instantly. 100% private and browser-based.
-  </p>
+<a href="/" class="text-sm text-blue-600 underline">← Back to Home</a>
+<h1 class="text-3xl font-bold mt-4">Word to PDF Converter</h1>
+<p class="text-gray-600 mt-2">
+Convert Word documents into PDF files instantly. 100% private and browser-based.
+</p>
 </header>
 
 <main class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow">
 
-  <input id="docInput" type="file" accept=".docx" class="mb-4 w-full" />
+<input id="docInput" type="file" accept=".docx" class="mb-4 w-full" />
 
-  <button id="convertBtn"
-    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-    Convert to PDF
-  </button>
+<button id="convertBtn"
+class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+Convert to PDF
+</button>
 
-  <p id="status" class="mt-4 text-sm text-gray-700"></p>
+<p id="status" class="mt-4 text-sm text-gray-700"></p>
 
 </main>
 
 <!-- SEO CONTENT -->
 <section class="max-w-4xl mx-auto p-6 mt-12">
 
-  <h2 class="text-2xl font-bold mb-4">Convert Word to PDF Online</h2>
+<h2 class="text-2xl font-bold mb-4">Convert Word to PDF Online</h2>
 
-  <p class="mb-4">
-    Converting Word documents to PDF ensures consistent formatting and easy sharing.
-    PDFECTA provides a free and secure way to convert DOCX files into PDF documents
-    directly in your browser without uploading your files.
-  </p>
+<p class="mb-4">
+Converting Word documents to PDF ensures consistent formatting and easy sharing.
+PDFECTA provides a free and secure way to convert DOCX files into PDF documents
+directly in your browser without uploading your files.
+</p>
 
-  <p class="mb-6">
-    This Word to PDF converter works entirely client-side, making it ideal for
-    sensitive documents such as contracts, reports, and internal documents.
-  </p>
+<p class="mb-6">
+This Word to PDF converter works entirely client-side, making it ideal for
+sensitive documents such as contracts, reports, and internal documents.
+</p>
 
-  <h3 class="text-xl font-semibold mb-3">Why Use Our Word to PDF Tool?</h3>
+<h3 class="text-xl font-semibold mb-3">Why Use Our Word to PDF Tool?</h3>
 
-  <ul class="list-disc pl-6 mb-6 space-y-2">
-    <li>100% private, no uploads</li>
-    <li>Fast and easy conversion</li>
-    <li>No watermarks added</li>
-    <li>Free to use</li>
-  </ul>
+<ul class="list-disc pl-6 mb-6 space-y-2">
+<li>100% private, no uploads</li>
+<li>Fast and easy conversion</li>
+<li>No watermarks added</li>
+<li>Free to use</li>
+</ul>
 
 </section>
 
 <!-- RELATED TOOLS -->
 <section class="max-w-4xl mx-auto p-6 mt-12 border-t">
-  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
-  <ul class="list-disc pl-6 space-y-2 text-gray-700">
-    <li><a href="/pdf-to-word.html" class="text-blue-600 underline">PDF to Word</a></li>
-    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
-    <li><a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a></li>
-  </ul>
+<h3 class="text-xl font-semibold mb-4">Related Tools</h3>
+<ul class="list-disc pl-6 space-y-2 text-gray-700">
+<li><a href="/pdf-to-word.html" class="text-blue-600 underline">PDF to Word</a></li>
+<li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
+<li><a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a></li>
+</ul>
 </section>
 
 <script>
-  const input = document.getElementById("docInput");
-  const status = document.getElementById("status");
-  const btn = document.getElementById("convertBtn");
+const input = document.getElementById("docInput");
+const status = document.getElementById("status");
+const btn = document.getElementById("convertBtn");
 
-  btn.addEventListener("click", async () => {
-    const file = input.files[0];
-    if (!file || !file.name.endsWith(".docx")) {
-      status.textContent = "Please upload a valid DOCX file.";
-      return;
-    }
+btn.addEventListener("click", async () => {
+const file = input.files[0];
+if (!file || !file.name.endsWith(".docx")) {
+status.textContent = "Please upload a valid DOCX file.";
+return;
+}
 
-    status.textContent = "Reading Word document...";
+status.textContent = "Reading Word document...";
 
-    const arrayBuffer = await file.arrayBuffer();
+const arrayBuffer = await file.arrayBuffer();
 
-    // ✅ Convert DOCX → HTML (preserves structure)
-    const result = await mammoth.convertToHtml({ arrayBuffer });
-    const html = result.value;
+// ✅ Convert DOCX → HTML (preserves structure)
+const result = await mammoth.convertToHtml({ arrayBuffer });
+const html = result.value;
 
-    // Create temp container
-    const container = document.createElement("div");
-    container.innerHTML = html;
-    container.style.width = "600px";
-    container.style.fontFamily = "Times New Roman, serif";
-    container.style.fontSize = "12pt";
-    container.style.lineHeight = "1.6";
+// Create temp container
+const container = document.createElement("div");
+container.innerHTML = html;
+container.style.width = "600px";
+container.style.fontFamily = "Times New Roman, serif";
+container.style.fontSize = "12pt";
+container.style.lineHeight = "1.6";
 
+document.body.appendChild(container);
 
-// 🔒 RESET ALL DEFAULT STYLES
-container.querySelectorAll("*").forEach(el => {
-  el.style.fontFamily = "Times New Roman, serif";
-  el.style.fontSize = "12pt";
-  el.style.lineHeight = "1.6";
-  el.style.margin = "0";
-  el.style.padding = "0";
+status.textContent = "Generating PDF...";
+
+const { jsPDF } = window.jspdf;
+const pdf = new jsPDF("p", "pt", "a4");
+
+await pdf.html(container, {
+x: 40,
+y: 40,
+autoPaging: "text",
+margin: [40, 40, 40, 40],
+      windowWidth: 600
+      windowWidth: 600,
+      html2canvas: { scale: 1 }
 });
 
-// 🔹 HEADINGS → FLATTEN (Word-style, not HTML-style)
-container.querySelectorAll("h1,h2,h3,h4").forEach(h => {
-  h.style.display = "block";
-  h.style.fontWeight = "bold";
-  h.style.fontSize = "14pt";
-  h.style.marginTop = "16px";
-  h.style.marginBottom = "8px";
+document.body.removeChild(container);
+
+pdf.save("converted.pdf");
+status.textContent = "PDF downloaded successfully.";
 });
-
-// 🔹 PARAGRAPHS
-container.querySelectorAll("p").forEach(p => {
-  p.style.marginBottom = "8px";
-});
-
-// 🔹 LISTS (CRITICAL FIX)
-container.querySelectorAll("ol,ul").forEach(list => {
-  list.style.marginLeft = "24px";
-  list.style.marginBottom = "8px";
-  list.style.listStylePosition = "outside";
-});
-
-container.querySelectorAll("li").forEach(li => {
-  li.style.marginBottom = "4px";
-});
-
-
-// Add to DOM (required for jsPDF.html)
-    document.body.appendChild(container);
-
-    status.textContent = "Generating PDF...";
-
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF("p", "pt", "a4");
-
-  await pdf.html(container, {
-  x: 40,
-  y: 40,
-  margin: [40, 40, 40, 40],
-  windowWidth: 600,
-  autoPaging: "slice",
-  html2canvas: {
-    scale: 1.5
-  }
-});
-
-    document.body.removeChild(container);
-
-    pdf.save("converted.pdf");
-    status.textContent = "PDF downloaded successfully.";
-  });
 </script>
 
 </body>
