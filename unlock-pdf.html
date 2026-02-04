@@ -136,6 +136,8 @@
   </ul>
 </section>
 
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
 <script>
   const pdfInput = document.getElementById("pdfInput");
   const passwordInput = document.getElementById("passwordInput");
@@ -154,52 +156,54 @@
     }
 
     status.className = "text-center text-sm text-blue-600";
-    status.textContent = "Decrypting...";
+    status.textContent = "Unlocking PDF...";
 
     try {
-      // Initialize QPDF
-      const qpdf = await window.qpdfWasm.createQPDF();
       const arrayBuffer = await file.arrayBuffer();
-      const inputData = new Uint8Array(arrayBuffer);
-
-      // Try to decrypt
-      const args = ["--decrypt"];
-      if (password) {
-        args.push(`--password=${password}`);
+      
+      let pdfDoc;
+      
+      try {
+        // Attempt 1: Load the PDF (passing the password if provided)
+        pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer, { 
+          password: password,
+          ignoreEncryption: false 
+        });
+      } catch (err) {
+        // If it fails, it's almost always because a password is required
+        passwordSection.classList.remove("hidden");
+        status.className = "text-center text-sm text-red-600";
+        status.textContent = "This file is encrypted. Please enter the password.";
+        return;
       }
-      args.push("--", "input.pdf", "output.pdf");
 
-      const result = await qpdf.run(inputData, args);
+      // If we reach here, the file is successfully decrypted in memory
+      // Now we just save it again. Saving it creates a NEW PDF with no encryption.
+      const pdfBytes = await pdfDoc.save();
 
-      if (result.success) {
-        // Success! Download file
-        const blob = new Blob([result.output], { type: "application/pdf" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `unlocked_${file.name}`;
-        a.click();
+      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `unlocked_${file.name}`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
 
-        status.className = "text-center text-sm text-green-600";
-        status.textContent = "✅ PDF unlocked and downloaded!";
-        passwordSection.classList.add("hidden");
-      } else {
-        // If it fails because of password
-        if (result.error.includes("password")) {
-          passwordSection.classList.remove("hidden");
-          status.className = "text-center text-sm text-red-600";
-          status.textContent = "Password incorrect or required.";
-        } else {
-          throw new Error(result.error);
-        }
-      }
+      status.className = "text-center text-sm text-green-600";
+      status.textContent = "✅ Success! PDF unlocked and downloaded.";
+      passwordSection.classList.add("hidden");
+      passwordInput.value = ""; // Clear password for security
+
     } catch (e) {
       console.error(e);
       status.className = "text-center text-sm text-red-600";
-      status.textContent = "Error: Could not unlock PDF.";
+      status.textContent = "Error: Incorrect password or corrupted file.";
     }
   });
 </script>
 
+
+  
 </body>
 </html>
