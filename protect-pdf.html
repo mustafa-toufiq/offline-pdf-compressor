@@ -246,55 +246,77 @@
     <p id="status" class="mt-4 text-center text-sm text-gray-600"></p>
   </main>
 
-  <script>
-    const btn = document.getElementById('protectBtn');
-    const status = document.getElementById('status');
+<script src="https://cdn.jsdelivr.net/npm/@monomadic/qpdf-wasm@1.1.0/dist/qpdf-wasm.min.js"></script>
 
-    btn.addEventListener('click', async () => {
-      const file = document.getElementById('pdfInput').files[0];
-      const password = document.getElementById('passwordInput').value.trim();
+<script>
+  const pdfInput = document.getElementById("pdfInput");
+  const passwordInput = document.getElementById("passwordInput");
+  const status = document.getElementById("status");
+  const btn = document.getElementById("protectBtn");
 
-      if (!file || !password) {
-        status.textContent = "Please select a file and enter a password.";
-        return;
-      }
+  // Helper to ensure the library is loaded
+  async function getQPDF() {
+    // Check if the library is available on the window object
+    if (window.qpdfWasm && typeof window.qpdfWasm.createQPDF === 'function') {
+      return await window.qpdfWasm.createQPDF();
+    }
+    // Fallback if it's nested differently in some browser environments
+    if (window.QPDFWasm && typeof window.QPDFWasm.createQPDF === 'function') {
+      return await window.QPDFWasm.createQPDF();
+    }
+    throw new Error("PDF Security engine not loaded yet. Please wait 2 seconds and try again.");
+  }
 
-      status.textContent = "Initializing security engine...";
+  btn.addEventListener("click", async () => {
+    const file = pdfInput.files[0];
+    const password = passwordInput.value.trim();
 
-      try {
-        // 1. Initialize the QPDF engine
-        const qpdf = await window.qpdfWasm.createQPDF();
+    if (!file || !password) {
+      status.className = "mt-4 text-sm text-red-600";
+      status.textContent = "Please select a PDF and enter a password.";
+      return;
+    }
+
+    status.className = "mt-4 text-sm text-blue-600";
+    status.textContent = "Loading security modules...";
+
+    try {
+      const qpdf = await getQPDF();
+      
+      const arrayBuffer = await file.arrayBuffer();
+      const inputData = new Uint8Array(arrayBuffer);
+
+      status.textContent = "Encrypting file locally...";
+
+      // The command arguments for QPDF to apply a password:
+      // --encrypt [user-password] [owner-password] [key-length] -- [input] [output]
+      const result = await qpdf.run(inputData, [
+        "--encrypt", password, password, "256", "--", "input.pdf", "output.pdf"
+      ]);
+
+      if (result.success && result.output) {
+        const blob = new Blob([result.output], { type: "application/pdf" });
+        const url = URL.createObjectURL(blob);
         
-        // 2. Read the file as a Uint8Array
-        const arrayBuffer = await file.arrayBuffer();
-        const inputData = new Uint8Array(arrayBuffer);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `protected_${file.name}`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
 
-        status.textContent = "Encrypting... (stay on this page)";
-
-        // 3. Run the encryption command
-        // This tells QPDF: "Take input.pdf, encrypt it with this password, and output result.pdf"
-        const result = await qpdf.run(inputData, [
-          "--encrypt", password, password, "256", "--", "input.pdf", "output.pdf"
-        ]);
-
-        if (result.success) {
-          // 4. Create the download link
-          const blob = new Blob([result.output], { type: "application/pdf" });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement("a");
-          a.href = url;
-          a.download = "protected_" + file.name;
-          a.click();
-          status.textContent = "✅ Success! File encrypted and downloaded.";
-        } else {
-          throw new Error(result.error || "Encryption failed.");
-        }
-      } catch (err) {
-        console.error(err);
-        status.textContent = "❌ Error: " + err.message;
+        status.className = "mt-4 text-sm text-green-600";
+        status.textContent = "✅ Success! Your protected PDF is downloaded.";
+      } else {
+        throw new Error(result.error || "Encryption failed.");
       }
-    });
-  </script>
+    } catch (e) {
+      console.error(e);
+      status.className = "mt-4 text-sm text-red-600";
+      status.textContent = "Error: " + e.message;
+    }
+  });
+</script>
 
 
 </body>
