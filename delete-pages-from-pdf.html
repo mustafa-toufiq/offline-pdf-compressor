@@ -231,6 +231,117 @@
 
 </section>
 
+<script>
+  const fileInput = document.getElementById("pdfFile");
+  const pagesInput = document.getElementById("pagesInput");
+  const status = document.getElementById("status");
+  const pageInfo = document.getElementById("pageInfo");
+  const btn = document.getElementById("processBtn");
+
+  let pdfBytes = null;
+  let totalPages = 0;
+
+  fileInput.addEventListener("change", async () => {
+    status.textContent = "";
+    pageInfo.classList.add("hidden");
+
+    const file = fileInput.files[0];
+
+    if (
+      !file ||
+      file.type !== "application/pdf" ||
+      !file.name.toLowerCase().endsWith(".pdf")
+    ) {
+      status.textContent = "Please upload a PDF file only.";
+      fileInput.value = "";
+      return;
+    }
+
+    try {
+      pdfBytes = await file.arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
+      totalPages = pdfDoc.getPageCount();
+
+      pageInfo.textContent = `PDF loaded: ${totalPages} pages detected.`;
+      pageInfo.classList.remove("hidden");
+    } catch {
+      status.textContent = "Failed to read PDF file.";
+    }
+  });
+
+  btn.addEventListener("click", async () => {
+    status.textContent = "";
+
+    if (!pdfBytes) {
+      status.textContent = "Please upload a PDF first.";
+      return;
+    }
+
+    const input = pagesInput.value.trim();
+    if (!input) {
+      status.textContent = "Please enter pages to delete.";
+      return;
+    }
+
+    const pagesToDelete = new Set();
+
+    try {
+      input.split(",").forEach(part => {
+        if (part.includes("-")) {
+          const [start, end] = part.split("-").map(n => parseInt(n, 10));
+          if (
+            isNaN(start) || isNaN(end) ||
+            start < 1 || end > totalPages || start > end
+          ) {
+            throw new Error();
+          }
+          for (let i = start; i <= end; i++) {
+            pagesToDelete.add(i - 1);
+          }
+        } else {
+          const page = parseInt(part, 10);
+          if (isNaN(page) || page < 1 || page > totalPages) {
+            throw new Error();
+          }
+          pagesToDelete.add(page - 1);
+        }
+      });
+    } catch {
+      status.textContent = "Invalid page numbers entered.";
+      return;
+    }
+
+    if (pagesToDelete.size >= totalPages) {
+      status.textContent = "You cannot delete all pages.";
+      return;
+    }
+
+    status.textContent = "Processing…";
+
+    const originalPdf = await PDFLib.PDFDocument.load(pdfBytes);
+    const newPdf = await PDFLib.PDFDocument.create();
+
+    const pagesToKeep = [];
+    for (let i = 0; i < totalPages; i++) {
+      if (!pagesToDelete.has(i)) {
+        pagesToKeep.push(i);
+      }
+    }
+
+    const copiedPages = await newPdf.copyPages(originalPdf, pagesToKeep);
+    copiedPages.forEach(page => newPdf.addPage(page));
+
+    const newBytes = await newPdf.save();
+    const blob = new Blob([newBytes], { type: "application/pdf" });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "pdf-with-pages-deleted.pdf";
+    link.click();
+
+    status.textContent = "Pages removed successfully.";
+  });
+</script>
 
 </body>
 </html>
