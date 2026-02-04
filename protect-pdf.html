@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Password Protect PDF Online Free | PDFECTA</title>
+
+  <meta name="description" content="Protect PDF files with a password online for free. Encrypt PDFs securely in your browser. No upload, no tracking, 100% private." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="canonical" href="https://pdfecta.com/protect-pdf.html" />
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it safe to protect PDF files using PDFECTA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Your PDF never leaves your device. All encryption happens locally in your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I remove the password later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can unlock the PDF using the correct password with any PDF reader."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this tool work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Once loaded, the tool can work offline."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Protect PDF", "item": "https://pdfecta.com/protect-pdf.html" }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<header class="max-w-4xl mx-auto p-6">
+  <a href="/" class="text-sm text-blue-600 underline">← Back to Home</a>
+  <h1 class="text-3xl font-bold mt-4">Password Protect PDF</h1>
+  <p class="text-gray-600 mt-2">
+    Add a password to your PDF file instantly. 100% private and browser-based.
+  </p>
+</header>
+
+<main class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow">
+
+  <div class="mb-4">
+    <label class="block font-medium mb-1">Upload PDF</label>
+    <input id="pdfInput" type="file" accept="application/pdf" class="w-full" />
+  </div>
+
+  <div class="mb-4">
+    <label class="block font-medium mb-1">Password</label>
+    <input id="passwordInput" type="password" placeholder="Enter password"
+      class="w-full border rounded p-2" />
+  </div>
+
+  <button id="protectBtn"
+    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    Protect PDF
+  </button>
+
+  <p class="text-xs text-gray-500 mt-2">
+    Files are processed locally. Strong passwords are recommended.
+  </p>
+
+  <p id="status" class="mt-4 text-sm"></p>
+
+</main>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto p-6 mt-12">
+
+  <h2 class="text-2xl font-bold mb-4">Protect PDF Files with a Password</h2>
+
+  <p class="mb-4">
+    PDFECTA allows you to encrypt PDF files directly in your browser.
+    Add a password to sensitive documents such as contracts, invoices,
+    reports, and personal files without uploading them to any server.
+  </p>
+
+  <p class="mb-6">
+    This PDF password protector uses modern encryption and works entirely
+    client-side, ensuring your data remains private and secure.
+  </p>
+
+  <h3 class="text-xl font-semibold mb-3">Why Use Our PDF Protector?</h3>
+
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li>100% private, no uploads</li>
+    <li>Strong PDF encryption</li>
+    <li>Instant download</li>
+    <li>Free and unlimited</li>
+  </ul>
+
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
+  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2 text-gray-700">
+    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
+    <li><a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a></li>
+    <li><a href="/rotate-pdf.html" class="text-blue-600 underline">Rotate PDF</a></li>
+  </ul>
+</section>
+
+<script>
+  const pdfInput = document.getElementById("pdfInput");
+  const passwordInput = document.getElementById("passwordInput");
+  const status = document.getElementById("status");
+  const btn = document.getElementById("protectBtn");
+
+  btn.addEventListener("click", async () => {
+    const file = pdfInput.files[0];
+    const password = passwordInput.value.trim();
+
+    if (!file || file.type !== "application/pdf") {
+      status.textContent = "Please upload a valid PDF file.";
+      return;
+    }
+
+    if (!password) {
+      status.textContent = "Please enter a password.";
+      return;
+    }
+
+    status.textContent = "Encrypting PDF...";
+
+    try {
+      const bytes = await file.arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(bytes);
+
+      const encryptedPdf = await PDFLib.PDFDocument.create();
+      const pages = await encryptedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
+      pages.forEach(p => encryptedPdf.addPage(p));
+
+      encryptedPdf.encrypt({
+        userPassword: password,
+        ownerPassword: password
+      });
+
+      const encryptedBytes = await encryptedPdf.save();
+      const blob = new Blob([encryptedBytes], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "protected.pdf";
+      a.click();
+
+      status.textContent = "Password-protected PDF downloaded.";
+    } catch (e) {
+      status.textContent = "Failed to protect PDF. Please try again.";
+    }
+  });
+</script>
+
+</body>
+</html>
