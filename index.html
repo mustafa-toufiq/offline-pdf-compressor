@@ -1,162 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="FinrX-x8tNnz_okkzIUCnG1asz4uVeV7AK-1aD3GPgc" />
   <meta charset="UTF-8" />
-
-  <title>PDFECTA – Free Offline PDF Tools (Private & Secure)</title>
-
-  <meta name="description"
-    content="PDFECTA is a privacy-first suite of free offline PDF tools. Compress, convert, edit, split, merge, and protect PDF files directly in your browser. No uploads." />
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDFECTA | Free Offline PDF Tools – 100% Private & Secure</title>
+  <meta name="description" content="Manage your PDFs offline. Compress, merge, split, and convert PDFs directly in your browser. No uploads, no servers, total privacy." />
+  
+  <link rel="icon" type="image/png" href="/favicon.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "PDFECTA",
-      "item": "https://pdfecta.com/"
-    }]
-  }
-  </script>
-
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is PDFECTA safe?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. All PDF processing happens locally in your browser. Files are never uploaded."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is PDFECTA free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. PDFECTA is completely free with no sign-ups or subscriptions."
-        }
-      }
-    ]
-  }
-  </script>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  
+  <style>
+    .gradient-bg { background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%); }
+    .tool-card:hover { transform: translateY(-4px); transition: all 0.3s ease; }
+    .drop-zone { border: 2px dashed #d1d5db; transition: all 0.3s ease; }
+    .drop-zone.active { border-color: #000; background-color: #f9fafb; }
+  </style>
 </head>
 
-<body class="bg-gradient-to-b from-indigo-50 via-white to-white text-gray-900">
-<a id="top"></a>
+<body class="bg-white text-gray-900 font-sans leading-normal tracking-normal">
 
-<!-- HEADER -->
-<header class="bg-white/80 backdrop-blur border-b sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="/" class="text-xl font-bold text-indigo-600">PDFECTA</a>
-    <nav class="space-x-6 text-sm font-medium">
-      <a href="#tools" class="hover:text-indigo-600">Tools</a>
-      <a href="#why" class="hover:text-indigo-600">Why</a>
-      <a href="#faq" class="hover:text-indigo-600">FAQ</a>
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center space-x-2">
+      <div class="w-8 h-8 bg-black text-white rounded-lg flex items-center justify-center font-bold text-xl">P</div>
+      <span class="text-xl font-bold tracking-tighter italic">PDFECTA</span>
+    </a>
+    <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+      <a href="#tools" class="hover:text-black transition">All Tools</a>
+      <a href="#why" class="hover:text-black transition">Privacy First</a>
+      <a href="#faq" class="hover:text-black transition">Help</a>
     </nav>
+    <div class="md:hidden text-gray-500 text-xs">Offline Suite v1.0</div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="max-w-6xl mx-auto px-6 py-20 text-center">
-  <h1 class="text-4xl md:text-6xl font-extrabold mb-6">
-    Private PDF Tools.<br>Zero Uploads.
-  </h1>
+<main class="gradient-bg">
+  <section class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <div class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest text-white uppercase bg-black rounded-full">
+      100% Client-Side • No Uploads
+    </div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+      Private PDF <span class="text-gray-400">Compression.</span>
+    </h1>
+    <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+      Shrink your documents locally in seconds. Your sensitive data never leaves your device.
+    </p>
 
-  <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">
-    PDFECTA is a privacy-first suite of offline PDF tools that run entirely in your browser.
-  </p>
+    <div class="bg-white shadow-2xl rounded-3xl p-2 md:p-4 max-w-xl mx-auto border border-gray-100">
+      <div id="dropZone" class="drop-zone rounded-2xl p-8 md:p-12 flex flex-col items-center justify-center space-y-4 cursor-pointer">
+        <div class="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+          </svg>
+        </div>
+        <div>
+          <p class="text-lg font-semibold">Click to upload or drag & drop</p>
+          <p class="text-sm text-gray-400">PDF documents up to 500MB</p>
+        </div>
+        <input type="file" id="pdfInput" accept="application/pdf" class="hidden" />
+      </div>
 
-  <div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <a href="#tools" class="px-8 py-4 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700">
-      Explore Tools
+      <div class="p-6 space-y-4">
+        <div class="flex items-center space-x-4">
+          <select id="level" class="flex-1 bg-gray-50 border border-gray-200 rounded-xl p-3 text-sm focus:ring-2 focus:ring-black outline-none transition">
+            <option value="low">Low Compression (Highest Quality)</option>
+            <option value="medium" selected>Medium Compression (Recommended)</option>
+            <option value="high">High Compression (Smallest Size)</option>
+          </select>
+          <button onclick="compressPDF()" class="bg-black text-white px-8 py-3 rounded-xl font-bold hover:bg-gray-800 transition shadow-lg shadow-black/10">
+            Compress
+          </button>
+        </div>
+        <p id="status" class="text-sm font-medium text-gray-500"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section id="tools" class="max-w-6xl mx-auto px-6 py-24">
+  <div class="flex items-end justify-between mb-12">
+    <div>
+      <h2 class="text-3xl font-bold tracking-tight">All PDFECTA Tools</h2>
+      <p class="text-gray-500">Everything you need, running locally in your browser.</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <a href="/merge-pdf.html" class="tool-card group p-6 bg-white border border-gray-100 rounded-3xl hover:border-black transition shadow-sm">
+      <div class="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-black group-hover:text-white transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+        </svg>
+      </div>
+      <h3 class="font-bold text-lg">Merge PDF</h3>
+      <p class="text-sm text-gray-500 mt-2">Combine multiple files into one seamless document.</p>
+    </a>
+    
+    <a href="/split-pdf.html" class="tool-card group p-6 bg-white border border-gray-100 rounded-3xl hover:border-black transition">
+      <h3 class="font-bold text-lg">Split PDF</h3>
+      <p class="text-sm text-gray-500 mt-2">Extract specific pages into a new file.</p>
     </a>
 
-    <!-- IMPORTANT: points back to homepage compressor -->
-    <a href="/" class="px-8 py-4 rounded-xl border border-indigo-200 text-indigo-600 hover:bg-indigo-50">
-      Compress PDF
+    <a href="/jpg-to-pdf.html" class="tool-card group p-6 bg-white border border-gray-100 rounded-3xl hover:border-black transition">
+      <h3 class="font-bold text-lg">JPG to PDF</h3>
+      <p class="text-sm text-gray-500 mt-2">Convert images to high-quality PDF docs.</p>
+    </a>
+
+    <a href="/protect-pdf.html" class="tool-card group p-6 bg-white border border-gray-100 rounded-3xl hover:border-black transition">
+      <h3 class="font-bold text-lg">Protect PDF</h3>
+      <p class="text-sm text-gray-500 mt-2">Add bank-level password encryption.</p>
     </a>
   </div>
 </section>
 
-<!-- TOOLS -->
-<section id="tools" class="max-w-6xl mx-auto px-6 py-16">
-  <h2 class="text-3xl font-bold mb-8">PDF Tools</h2>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <a href="/" class="bg-white border rounded-xl p-6 hover:shadow-lg">Compress PDF</a>
-    <a href="/merge-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg">Merge PDF</a>
-    <a href="/split-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg">Split PDF</a>
-    <a href="/pdf-to-jpg.html" class="bg-white border rounded-xl p-6 hover:shadow-lg">PDF to JPG</a>
-    <a href="/jpg-to-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg">JPG to PDF</a>
-    <a href="/protect-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg">Protect PDF</a>
-  </div>
-</section>
-
-<!-- WHY -->
-<section id="why" class="bg-gray-100">
-  <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-8 text-center">
-    <div>
-      <h3 class="font-semibold mb-2">100% Private</h3>
-      <p class="text-sm text-gray-600">Files never leave your device.</p>
+<section id="why" class="bg-black text-white py-16">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+    <div class="space-y-4">
+      <div class="text-3xl">🔒</div>
+      <h3 class="text-xl font-bold">Privacy Guaranteed</h3>
+      <p class="text-gray-400 text-sm">We don't have servers. We don't see your data. Your files stay on your hardware, period.</p>
     </div>
-    <div>
-      <h3 class="font-semibold mb-2">Client-Side Only</h3>
-      <p class="text-sm text-gray-600">No servers. No uploads.</p>
+    <div class="space-y-4">
+      <div class="text-3xl">🚀</div>
+      <h3 class="text-xl font-bold">Lightning Fast</h3>
+      <p class="text-gray-400 text-sm">No upload wait times. Processing is as fast as your computer's CPU allows.</p>
     </div>
-    <div>
-      <h3 class="font-semibold mb-2">Free Forever</h3>
-      <p class="text-sm text-gray-600">No accounts required.</p>
+    <div class="space-y-4">
+      <div class="text-3xl">💎</div>
+      <h3 class="text-xl font-bold">Always Free</h3>
+      <p class="text-gray-400 text-sm">No premium tiers, no limits, no watermarks. Professional tools for everyone.</p>
     </div>
   </div>
 </section>
 
-<!-- SEO CONTENT (FIXED SPACING) -->
-<section class="max-w-4xl mx-auto px-6 py-12">
-  <h2 class="text-2xl font-bold mb-4">Free Offline PDF Tools You Can Trust</h2>
-
-  <p class="mb-4">
-    PDFECTA is designed for users who value privacy and control. Unlike traditional
-    online PDF tools, your files are never uploaded to external servers.
-  </p>
-
-  <p class="mb-4">
-    Compress PDFs, merge documents, split pages, convert formats, and protect
-    sensitive files — all directly in your browser.
-  </p>
-
-  <p>
-    PDFECTA works across modern browsers and devices, making it ideal for students,
-    professionals, and everyday users.
-  </p>
-</section>
-
-<!-- FAQ (FIXED SPACING) -->
-<section id="faq" class="max-w-4xl mx-auto px-6 py-12">
-  <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-
-  <p class="font-semibold">Is PDFECTA safe?</p>
-  <p class="mb-4">Yes. Everything runs locally.</p>
-
-  <p class="font-semibold">Is it really free?</p>
-  <p>No subscriptions or sign-ups.</p>
-</section>
-
-<footer class="text-center text-sm text-gray-500 p-6 border-t">
-  © 2026 PDFECTA
+<footer class="max-w-6xl mx-auto px-6 py-12 border-t border-gray-100 text-center md:text-left">
+  <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+    <div class="flex items-center space-x-2">
+      <div class="w-6 h-6 bg-black text-white rounded flex items-center justify-center font-bold text-xs">P</div>
+      <span class="font-bold italic">PDFECTA</span>
+    </div>
+    <div class="flex space-x-6 text-sm text-gray-500 font-medium">
+      <a href="/privacy.html" class="hover:text-black">Privacy Policy</a>
+      <a href="/terms.html" class="hover:text-black">Terms</a>
+      <a href="mailto:support@pdfecta.com" class="hover:text-black">Contact</a>
+    </div>
+    <p class="text-xs text-gray-400">© 2026 PDFECTA Suite. All Rights Reserved.</p>
+  </div>
 </footer>
+
+<script>
+  // IMPROVED DRAG & DROP LOGIC
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('pdfInput');
+
+  dropZone.onclick = () => fileInput.click();
+
+  dropZone.ondragover = (e) => { e.preventDefault(); dropZone.classList.add('active'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('active');
+  dropZone.ondrop = (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('active');
+    fileInput.files = e.dataTransfer.files;
+    status.textContent = "File ready: " + fileInput.files[0].name;
+  };
+
+  async function compressPDF() {
+    const level = document.getElementById("level").value;
+    const status = document.getElementById("status");
+
+    if (!fileInput.files.length) {
+      status.textContent = "⚠️ Please select a file first.";
+      return;
+    }
+
+    const file = fileInput.files[0];
+    status.innerHTML = `<span class="animate-pulse">⏳ Processing locally...</span>`;
+
+    try {
+      const originalSize = (file.size / 1024 / 1024).toFixed(2);
+      const arrayBuffer = await file.arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+
+      const qualityMap = { low: 0.9, medium: 0.7, high: 0.5 };
+
+      const compressedPdfBytes = await pdfDoc.save({
+        useObjectStreams: true,
+        compress: true,
+        imageQuality: qualityMap[level],
+      });
+
+      const compressedSize = (compressedPdfBytes.byteLength / 1024 / 1024).toFixed(2);
+      const blob = new Blob([compressedPdfBytes], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `pdfecta-compressed-${file.name}`;
+      a.click();
+
+      status.innerHTML = `✅ <strong>Done!</strong> Saved ${(originalSize - compressedSize).toFixed(2)} MB (${Math.round((1 - compressedSize/originalSize)*100)}% smaller)`;
+    } catch (err) {
+      status.textContent = "❌ Error processing file. Make sure it's a valid PDF.";
+    }
+  }
+</script>
 
 </body>
 </html>
