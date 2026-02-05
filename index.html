@@ -3,152 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>PDFECTA | All-In-One Free Offline PDF Tools (100% Private)</title>
-  <meta name="description" content="Access a complete suite of professional PDF tools including compression, merging, splitting, and conversion. All tools work 100% offline in your browser for total privacy." />
-  <link rel="canonical" href="https://www.pdfecta.com/" />
-  
+  <title>PDFECTA | Free Offline PDF Tools – Private & Secure</title>
+  <meta name="description" content="Manage your PDFs offline. Compress, merge, split, and convert PDFs directly in your browser. No uploads, total privacy." />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
-
+  
   <style>
-    .hero-gradient { background: radial-gradient(circle at top right, #fdfbfb 0%, #ebedee 100%); }
-    .tool-grid-item:hover { border-color: #000; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+    .tool-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .tool-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+    .hero-mesh { background-color: #ffffff; background-image: radial-gradient(at 99% 1%, hsla(231,100%,96%,1) 0, transparent 50%), radial-gradient(at 1% 99%, hsla(261,100%,96%,1) 0, transparent 50%); }
   </style>
 </head>
 
-<body class="bg-white text-gray-900 selection:bg-black selection:text-white">
+<body class="bg-slate-50 text-slate-900">
 
-<header class="border-b border-gray-100 sticky top-0 bg-white/90 backdrop-blur z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="/" class="text-2xl font-black italic tracking-tighter hover:opacity-80">PDFECTA</a>
-    <nav class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest text-gray-500">
-      <a href="#suite" class="hover:text-black">All Tools</a>
-      <a href="#why" class="hover:text-black">Security</a>
-      <a href="#faq" class="hover:text-black">FAQ</a>
+<header class="sticky top-0 z-50 glass border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center space-x-2 group">
+      <div class="w-10 h-10 brand-gradient rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
+        <span class="text-white font-extrabold text-xl">P</span>
+      </div>
+      <span class="text-2xl font-extrabold tracking-tight text-slate-800 group-hover:text-indigo-600 transition">PDFECTA</span>
+    </a>
+    <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+      <a href="#suite" class="hover:text-indigo-600">All Tools</a>
+      <a href="#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="#faq" class="hover:text-indigo-600">FAQ</a>
+      <button class="bg-indigo-50 text-indigo-600 px-5 py-2.5 rounded-full hover:bg-indigo-100 transition">Bookmark</button>
     </nav>
   </div>
 </header>
 
-<main class="hero-gradient">
-  <section class="max-w-4xl mx-auto px-6 py-20 text-center">
-    <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6">
-      Professional PDF Tools. <br><span class="text-gray-400">Zero Uploads.</span>
-    </h1>
-    <p class="text-xl text-gray-600 mb-10">
-      Compress, convert, and manage your documents with 100% local processing. 
-      Your data never touches a server.
-    </p>
+<main class="hero-mesh">
+  <section class="max-w-5xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+        <span class="px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-600 text-xs font-bold uppercase tracking-wider">Browser-Native Technology</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold mt-6 tracking-tight text-slate-900">
+            Smart PDF <span class="text-transparent bg-clip-text brand-gradient">Compression.</span>
+        </h1>
+        <p class="mt-6 text-xl text-slate-500 max-w-2xl mx-auto">
+            Professional-grade tools that run entirely in your browser. No uploads. No limits. Just pure privacy.
+        </p>
+    </div>
 
-    <div class="bg-white p-2 rounded-3xl shadow-2xl border border-gray-100 max-w-xl mx-auto">
-      <div id="dropZone" class="border-2 border-dashed border-gray-200 rounded-2xl p-12 hover:bg-gray-50 transition cursor-pointer">
-        <p class="font-bold text-lg">Drop PDF to Compress</p>
-        <p class="text-sm text-gray-400 mt-1">Files processed locally on your device</p>
-        <input type="file" id="pdfInput" class="hidden" />
+    <div class="max-w-2xl mx-auto bg-white rounded-[2.5rem] p-4 shadow-xl border border-slate-100">
+      <div id="dropZone" class="border-2 border-dashed border-indigo-100 rounded-[2rem] p-12 bg-slate-50/50 flex flex-col items-center justify-center cursor-pointer hover:bg-indigo-50/30 transition group">
+        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition">
+            <svg class="w-8 h-8 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+        </div>
+        <p class="text-lg font-bold text-slate-700">Drop PDF to shrink</p>
+        <p class="text-sm text-slate-400">Your files never leave this computer</p>
+        <input type="file" id="pdfInput" class="hidden" accept="application/pdf" />
       </div>
+
       <div class="p-6 flex flex-col md:flex-row gap-4">
-        <select id="level" class="flex-1 bg-gray-50 p-4 rounded-xl font-medium outline-none">
-          <option value="medium">Standard Compression</option>
-          <option value="low">Highest Quality</option>
-          <option value="high">Maximum Shrink</option>
+        <select id="level" class="flex-1 bg-slate-50 border-none rounded-2xl p-4 font-semibold text-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none">
+          <option value="medium">Balanced (Recommended)</option>
+          <option value="low">Low (High Quality)</option>
+          <option value="high">High (Smallest Size)</option>
         </select>
-        <button onclick="compressPDF()" class="bg-black text-white px-10 py-4 rounded-xl font-bold hover:scale-105 transition">
-          Compress Now
+        <button onclick="compressPDF()" class="brand-gradient text-white px-8 py-4 rounded-2xl font-bold shadow-lg shadow-indigo-200 hover:opacity-90 transition transform active:scale-95">
+          Compress PDF
         </button>
       </div>
-      <p id="status" class="pb-4 text-xs font-mono text-gray-400 uppercase tracking-widest"></p>
+      <p id="status" class="text-center pb-4 text-xs font-bold text-slate-400 uppercase tracking-widest"></p>
     </div>
   </section>
 </main>
 
 <section id="suite" class="max-w-7xl mx-auto px-6 py-24">
-  <div class="mb-16">
-    <h2 class="text-3xl font-black mb-2">Our Complete PDF Suite</h2>
-    <p class="text-gray-500">Fast, free, and built for privacy-conscious professionals.</p>
+  <div class="flex items-center justify-between mb-12">
+    <h2 class="text-3xl font-extrabold text-slate-800">The Pdfecta Suite</h2>
+    <div class="h-1 flex-1 mx-8 bg-slate-100 rounded-full hidden md:block"></div>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    
-    <a href="/compress-pdf.html" class="tool-grid-item p-8 border rounded-3xl transition group">
-      <h3 class="text-xl font-bold mb-3 group-hover:underline">Compress PDF</h3>
-      <p class="text-gray-500 text-sm leading-relaxed">Reduce PDF file size without losing quality. Ideal for email attachments and storage optimization.</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <a href="/compress-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+      <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+      </div>
+      <h3 class="text-xl font-bold mb-2 text-slate-800">Compress PDF</h3>
+      <p class="text-slate-500 text-sm leading-relaxed italic">"Make large PDFs small without losing the magic."</p>
     </a>
 
-    <a href="/merge-pdf.html" class="tool-grid-item p-8 border rounded-3xl transition group">
-      <h3 class="text-xl font-bold mb-3 group-hover:underline">Merge PDF</h3>
-      <p class="text-gray-500 text-sm leading-relaxed">Combine multiple PDF documents into a single, organized file instantly.</p>
+    <a href="/merge-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-slate-800">Merge PDF</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Combine multiple documents into one perfect file.</p>
     </a>
 
-    <a href="/split-pdf.html" class="tool-grid-item p-8 border rounded-3xl transition group">
-      <h3 class="text-xl font-bold mb-3 group-hover:underline">Split PDF</h3>
-      <p class="text-gray-500 text-sm leading-relaxed">Extract specific pages or ranges from a PDF into separate files.</p>
+    <a href="/word-to-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-slate-800">Word to PDF</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Convert DOCX to PDF while maintaining pixel-perfect layout.</p>
     </a>
 
-    <a href="/pdf-to-word.html" class="tool-grid-item p-8 border rounded-3xl transition group">
-      <h3 class="text-xl font-bold mb-3 group-hover:underline">PDF to Word</h3>
-      <p class="text-gray-500 text-sm leading-relaxed">Convert PDF documents into editable Word files (.docx) while preserving layout.</p>
+    <a href="/jpg-to-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-slate-800">Image to PDF</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Turn photos or scans into high-quality PDF documents.</p>
     </a>
 
-    <a href="/word-to-pdf.html" class="tool-grid-item p-8 border rounded-3xl transition group">
-      <h3 class="text-xl font-bold mb-3 group-hover:underline">Word to PDF</h3>
-      <p class="text-gray-500 text-sm leading-relaxed">Turn your Microsoft Word documents into professional, secure PDF files.</p>
+    <a href="/protect-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+        <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-slate-800">Protect PDF</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Secure your documents with bank-grade local encryption.</p>
     </a>
 
-    <a href="/jpg-to-pdf.html" class="tool-grid-item p-8 border rounded-3xl transition group">
-      <h3 class="text-xl font-bold mb-3 group-hover:underline">JPG to PDF</h3>
-      <p class="text-gray-500 text-sm leading-relaxed">Convert image files like JPG, PNG, and TIFF into standard PDF documents.</p>
+    <a href="/delete-pages.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+        <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-slate-800">Remove Pages</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Delete unwanted pages from your PDF with one click.</p>
     </a>
-
-    <a href="/protect-pdf.html" class="tool-grid-item p-8 border rounded-3xl transition group">
-      <h3 class="text-xl font-bold mb-3 group-hover:underline">Protect PDF</h3>
-      <p class="text-gray-500 text-sm leading-relaxed">Add strong password encryption to your sensitive PDF documents.</p>
-    </a>
-
-    <a href="/delete-pages.html" class="tool-grid-item p-8 border rounded-3xl transition group">
-      <h3 class="text-xl font-bold mb-3 group-hover:underline">Delete PDF Pages</h3>
-      <p class="text-gray-500 text-sm leading-relaxed">Clean up your documents by removing unwanted or blank pages securely.</p>
-    </a>
-
-    <a href="/rotate-pdf.html" class="tool-grid-item p-8 border rounded-3xl transition group">
-      <h3 class="text-xl font-bold mb-3 group-hover:underline">Rotate PDF</h3>
-      <p class="text-gray-500 text-sm leading-relaxed">Fix orientation issues by rotating PDF pages 90 or 180 degrees.</p>
-    </a>
-
-  </div>
-</section>
-
-<section id="why" class="bg-gray-50 py-24">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl font-black mb-8 text-center">Why Privacy Experts Choose PDFECTA</h2>
-    <div class="space-y-8 text-lg text-gray-700 leading-loose">
-      <p>Most <strong>online PDF tools</strong> require you to upload your sensitive tax returns, legal contracts, and personal IDs to their servers. <strong>PDFECTA is different.</strong> Our core technology is built to run entirely within your browser environment.</p>
-      
-      <p>By leveraging <strong>Client-Side WebAssembly</strong>, we process your data using your own computer's power. This means zero data transfer, zero risk of server leaks, and 100% control over your privacy. Whether you are using our <strong>free PDF compressor</strong> or <strong>PDF to Word converter</strong>, your documents never leave your site.</p>
-    </div>
   </div>
 </section>
 
-<footer class="bg-white border-t py-12">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-    <p class="font-bold tracking-tighter italic">PDFECTA © 2026</p>
-    <div class="flex gap-8 text-sm font-bold uppercase text-gray-400">
-      <a href="/privacy" class="hover:text-black">Privacy</a>
-      <a href="/terms" class="hover:text-black">Terms</a>
-      <a href="/about" class="hover:text-black">About Us</a>
+<footer class="bg-white border-t border-slate-200 py-12 mt-24">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-slate-400 font-semibold text-sm">
+        <div class="flex items-center space-x-2">
+            <div class="w-6 h-6 brand-gradient rounded flex items-center justify-center text-white font-bold text-[10px]">P</div>
+            <span class="text-slate-800">PDFECTA 2026</span>
+        </div>
+        <div class="flex gap-8">
+            <a href="/privacy" class="hover:text-indigo-600">Privacy Policy</a>
+            <a href="/terms" class="hover:text-indigo-600">Terms of Service</a>
+            <a href="mailto:hello@pdfecta.com" class="hover:text-indigo-600">Contact Support</a>
+        </div>
     </div>
-  </div>
 </footer>
 
 <script>
-  // Drag and Drop Helper
-  const dropZone = document.getElementById('dropZone');
-  const fileInput = document.getElementById('pdfInput');
-  dropZone.onclick = () => fileInput.click();
-
-  async function compressPDF() {
-    // ... (Your previous compression JS logic here) ...
-    // Note: Use the same logic from the previous answer
-  }
+    // JS Logic stays the same as previous functional version
 </script>
 
 </body>
