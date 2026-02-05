@@ -3,126 +3,191 @@
 <head>
   <meta name="google-site-verification" content="FinrX-x8tNnz_okkzIUCnG1asz4uVeV7AK-1aD3GPgc" />
   <meta charset="UTF-8" />
-  <title>PDFECTA – Free Offline PDF Tools (Private & Secure)</title>
+
+  <title>PDFECTA – Free Offline PDF Tools (Private, Secure & No Uploads)</title>
 
   <meta name="description"
-    content="PDFECTA is a privacy-first suite of free offline PDF tools. Compress, convert, edit, and organize PDFs directly in your browser. No uploads. 100% private." />
+    content="PDFECTA is a free, privacy-first suite of offline PDF tools. Compress, convert, edit, split, merge, and protect PDF files directly in your browser. No uploads. No tracking." />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- BREADCRUMB + FAQ SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "PDFECTA",
+        "item": "https://pdfecta.com/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is PDFECTA safe to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA processes all files locally in your browser. Your documents are never uploaded to any server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are PDFECTA tools really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All PDFECTA tools are completely free with no sign-ups, subscriptions, or hidden limits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does PDFECTA work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most tools continue working offline after the page has loaded, depending on your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you store or track my files?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. PDFECTA does not upload, store, or track your files in any way."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gradient-to-b from-indigo-50 via-white to-white text-gray-900">
 <a id="top"></a>
 
 <!-- HEADER -->
-<header class="bg-white border-b sticky top-0 z-50">
+<header class="bg-white/80 backdrop-blur border-b sticky top-0 z-50">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="text-xl font-bold tracking-tight">PDFECTA</a>
+    <a href="/" class="text-xl font-bold tracking-tight text-indigo-600">PDFECTA</a>
     <nav class="space-x-6 text-sm font-medium text-gray-700">
-      <a href="#tools" class="hover:text-black">Tools</a>
-      <a href="#why" class="hover:text-black">Why PDFECTA</a>
-      <a href="#faq" class="hover:text-black">FAQ</a>
+      <a href="#tools" class="hover:text-indigo-600">Tools</a>
+      <a href="#why" class="hover:text-indigo-600">Why PDFECTA</a>
+      <a href="#faq" class="hover:text-indigo-600">FAQ</a>
     </nav>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="max-w-6xl mx-auto px-6 py-20 text-center">
-  <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-    Private PDF Tools.<br class="hidden sm:block">
-    Right in Your Browser.
+<section class="max-w-6xl mx-auto px-6 py-24 text-center">
+  <span class="inline-block mb-4 text-sm font-semibold text-indigo-600 bg-indigo-100 px-4 py-1 rounded-full">
+    100% Private • Offline PDF Tools
+  </span>
+
+  <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+    Powerful PDF Tools.<br class="hidden sm:block">
+    Zero Uploads. Total Privacy.
   </h1>
 
   <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10">
-    PDFECTA is a privacy-first suite of offline PDF tools.
-    Compress, convert, edit, and organize PDF files with zero uploads.
+    PDFECTA is a modern, privacy-first suite of free PDF tools that run entirely
+    in your browser. Compress, convert, edit, and organize PDFs without uploading
+    a single file.
   </p>
 
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="#tools"
-       class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-black text-white font-medium hover:opacity-90">
-      Explore All Tools
+       class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700 shadow-lg">
+      Explore All PDF Tools
     </a>
 
     <a href="/compress-pdf.html"
-       class="inline-flex items-center justify-center px-8 py-4 rounded-xl border bg-white text-gray-900 hover:bg-gray-50">
+       class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-indigo-200 bg-white text-indigo-600 hover:bg-indigo-50">
       Compress a PDF
     </a>
   </div>
 </section>
 
 <!-- TRUST STRIP -->
-<section class="bg-gray-100 border-y">
-  <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center text-sm font-medium">
-    <div>🔒 100% Client-Side Processing</div>
-    <div>📴 No Uploads • No Tracking</div>
-    <div>⚡ Works Offline After Load</div>
+<section class="bg-white border-y">
+  <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+    <div>
+      <div class="text-2xl mb-2">🔒</div>
+      <p class="font-semibold">Client-Side Processing</p>
+      <p class="text-sm text-gray-600">Files never leave your device.</p>
+    </div>
+    <div>
+      <div class="text-2xl mb-2">🚫</div>
+      <p class="font-semibold">No Uploads or Tracking</p>
+      <p class="text-sm text-gray-600">No servers. No analytics on files.</p>
+    </div>
+    <div>
+      <div class="text-2xl mb-2">⚡</div>
+      <p class="font-semibold">Fast & Offline Ready</p>
+      <p class="text-sm text-gray-600">Works even without internet.</p>
+    </div>
   </div>
 </section>
 
 <!-- TOOLS -->
-<section id="tools" class="max-w-6xl mx-auto px-6 py-20">
-  <h2 class="text-3xl font-bold mb-2">PDF Tools</h2>
-  <p class="text-gray-600 mb-10">
-    Everything you need to manage PDF files — fully offline.
+<section id="tools" class="max-w-6xl mx-auto px-6 py-24">
+  <h2 class="text-3xl font-bold mb-2">PDF Tools Suite</h2>
+  <p class="text-gray-600 mb-12">
+    A complete collection of free offline PDF tools for everyday document tasks.
   </p>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-    <a href="/compress-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
+    <a href="/compress-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-xl transition">
       <h3 class="font-semibold text-lg mb-1">Compress PDF</h3>
-      <p class="text-sm text-gray-600">Reduce PDF file size without uploads.</p>
+      <p class="text-sm text-gray-600">Reduce PDF file size locally.</p>
     </a>
 
-    <a href="/merge-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
+    <a href="/merge-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-xl transition">
       <h3 class="font-semibold text-lg mb-1">Merge PDF</h3>
       <p class="text-sm text-gray-600">Combine multiple PDFs into one.</p>
     </a>
 
-    <a href="/split-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
+    <a href="/split-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-xl transition">
       <h3 class="font-semibold text-lg mb-1">Split PDF</h3>
-      <p class="text-sm text-gray-600">Extract selected pages securely.</p>
+      <p class="text-sm text-gray-600">Extract selected pages.</p>
     </a>
 
-    <a href="/delete-pages-from-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
+    <a href="/delete-pages-from-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-xl transition">
       <h3 class="font-semibold text-lg mb-1">Delete PDF Pages</h3>
-      <p class="text-sm text-gray-600">Remove unwanted pages instantly.</p>
+      <p class="text-sm text-gray-600">Remove unwanted pages.</p>
     </a>
 
-    <a href="/reorder-pdf-pages.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
+    <a href="/reorder-pdf-pages.html" class="bg-white border rounded-xl p-6 hover:shadow-xl transition">
       <h3 class="font-semibold text-lg mb-1">Reorder Pages</h3>
       <p class="text-sm text-gray-600">Change page order easily.</p>
     </a>
 
-    <a href="/rotate-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
+    <a href="/rotate-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-xl transition">
       <h3 class="font-semibold text-lg mb-1">Rotate PDF</h3>
-      <p class="text-sm text-gray-600">Rotate pages in seconds.</p>
+      <p class="text-sm text-gray-600">Rotate PDF pages instantly.</p>
     </a>
 
-    <a href="/pdf-to-jpg.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
+    <a href="/pdf-to-jpg.html" class="bg-white border rounded-xl p-6 hover:shadow-xl transition">
       <h3 class="font-semibold text-lg mb-1">PDF to JPG</h3>
       <p class="text-sm text-gray-600">Convert PDF pages to images.</p>
     </a>
 
-    <a href="/jpg-to-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
+    <a href="/jpg-to-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-xl transition">
       <h3 class="font-semibold text-lg mb-1">JPG to PDF</h3>
-      <p class="text-sm text-gray-600">Turn images into PDFs.</p>
+      <p class="text-sm text-gray-600">Convert images into PDFs.</p>
     </a>
 
-    <a href="/pdf-to-word.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
-      <h3 class="font-semibold text-lg mb-1">PDF to Word</h3>
-      <p class="text-sm text-gray-600">Extract text into Word format.</p>
-    </a>
-
-    <a href="/word-to-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
-      <h3 class="font-semibold text-lg mb-1">Word to PDF</h3>
-      <p class="text-sm text-gray-600">Convert documents to PDF.</p>
-    </a>
-
-    <a href="/protect-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-lg transition">
+    <a href="/protect-pdf.html" class="bg-white border rounded-xl p-6 hover:shadow-xl transition">
       <h3 class="font-semibold text-lg mb-1">Protect PDF</h3>
       <p class="text-sm text-gray-600">Add password protection.</p>
     </a>
@@ -130,58 +195,45 @@
   </div>
 </section>
 
-<!-- WHY -->
-<section id="why" class="bg-gray-100">
-  <div class="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-    <div>
-      <h3 class="font-semibold text-lg mb-2">Privacy First</h3>
-      <p class="text-sm text-gray-600">Files never leave your device.</p>
-    </div>
-    <div>
-      <h3 class="font-semibold text-lg mb-2">Client-Side Only</h3>
-      <p class="text-sm text-gray-600">No servers, no data storage.</p>
-    </div>
-    <div>
-      <h3 class="font-semibold text-lg mb-2">Free Forever</h3>
-      <p class="text-sm text-gray-600">No accounts or subscriptions.</p>
-    </div>
-  </div>
-</section>
-
 <!-- SEO CONTENT -->
-<section class="max-w-4xl mx-auto px-6 py-20">
-  <h2 class="text-2xl font-bold mb-4">All-in-One Offline PDF Tools</h2>
+<section class="max-w-4xl mx-auto px-6 py-24">
+  <h2 class="text-2xl font-bold mb-4">Free Offline PDF Tools You Can Trust</h2>
+
   <p class="mb-4">
-    PDFECTA is a collection of free browser-based PDF tools designed for privacy,
-    speed, and simplicity. All tools run entirely in your browser.
+    PDFECTA is built for users who care about privacy, speed, and control.
+    Unlike traditional online PDF tools, PDFECTA does not upload your files
+    to external servers. Every operation happens directly inside your browser.
   </p>
+
+  <p class="mb-4">
+    Whether you need to compress a PDF, merge multiple documents, split pages,
+    convert formats, or protect sensitive files, PDFECTA provides a secure
+    and reliable solution without compromising your data.
+  </p>
+
   <p>
-    Compress PDFs, merge documents, split pages, rotate files, convert formats,
-    and manage documents without uploads, tracking, or accounts.
+    Our tools are designed to work across modern browsers and devices,
+    making PDFECTA an ideal choice for students, professionals, and anyone
+    who needs fast PDF editing without privacy risks.
   </p>
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="max-w-4xl mx-auto px-6 py-20">
+<section id="faq" class="max-w-4xl mx-auto px-6 py-24">
   <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
 
   <p class="font-semibold">Is PDFECTA safe?</p>
   <p class="mb-4">Yes. All processing happens locally in your browser.</p>
 
-  <p class="font-semibold">Is PDFECTA free?</p>
-  <p class="mb-4">Yes. No sign-ups or subscriptions.</p>
+  <p class="font-semibold">Is PDFECTA really free?</p>
+  <p class="mb-4">Yes. No sign-ups, no subscriptions.</p>
+
+  <p class="font-semibold">Does PDFECTA upload my files?</p>
+  <p class="mb-4">No. Your files never leave your device.</p>
 
   <p class="font-semibold">Does it work offline?</p>
-  <p class="mb-4">Most tools continue working after the page loads.</p>
-
-  <p class="font-semibold">Which devices are supported?</p>
-  <p>Modern desktop and mobile browsers.</p>
+  <p>Most tools continue working after the page loads.</p>
 </section>
-
-<!-- BACK TO TOP -->
-<div class="max-w-4xl mx-auto px-6 pb-12 text-right">
-  <a href="#top" class="text-sm text-gray-500 hover:text-black">↑ Back to top</a>
-</div>
 
 <!-- FOOTER -->
 <footer class="text-center text-sm text-gray-500 p-6 border-t">
