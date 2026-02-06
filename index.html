@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PDFECTA | Free Offline PDF Tools – Private & Secure</title>
-  <meta name="description" content="Manage your PDFs offline. Compress, merge, split, and convert PDFs directly in your browser. No uploads, total privacy." />
+  
+  <title>PDFECTA | 100% Private Offline PDF Tools & Converter</title>
+  <meta name="description" content="Compress, merge, split, and convert PDF files offline. PDFECTA processes everything in your browser—no uploads, no servers, total privacy guaranteed." />
+  <meta name="keywords" content="offline pdf compressor, private pdf tools, merge pdf offline, jpg to pdf converter, no upload pdf tools, browser based pdf editor" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
@@ -19,38 +21,18 @@
     .hero-mesh { background-color: #ffffff; background-image: radial-gradient(at 99% 1%, hsla(231,100%,96%,1) 0, transparent 50%), radial-gradient(at 1% 99%, hsla(261,100%,96%,1) 0, transparent 50%); }
   </style>
 
-
-  <title>PDFECTA | 100% Private Offline PDF Tools & Converter</title>
-<meta name="description" content="Compress, merge, split, and convert PDF files offline. PDFECTA processes everything in your browser—no uploads, no servers, total privacy guaranteed." />
-<meta name="keywords" content="offline pdf compressor, private pdf tools, merge pdf offline, jpg to pdf converter, no upload pdf tools, browser based pdf editor" />
-
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pdfecta.com/" />
-<meta property="og:title" content="PDFECTA | Professional Private PDF Tools" />
-<meta property="og:description" content="Stop uploading sensitive docs. Process your PDFs locally with PDFECTA." />
-<meta property="og:image" content="https://www.pdfecta.com/og-image.png" />
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "PDFECTA",
-  "operatingSystem": "Windows, macOS, Linux, Android, iOS",
-  "applicationCategory": "UtiltyApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "1250"
-  },
-  "description": "A complete suite of offline PDF tools for compression, conversion, and organization without server uploads."
-}
-</script>
-  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PDFECTA",
+    "operatingSystem": "Windows, macOS, Linux, Android, iOS",
+    "applicationCategory": "UtiltyApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1250" },
+    "description": "A complete suite of offline PDF tools for compression, conversion, and organization."
+  }
+  </script>
 </head>
 
 <body class="bg-slate-50 text-slate-900">
@@ -67,7 +49,7 @@
       <a href="#suite" class="hover:text-indigo-600">All Tools</a>
       <a href="#why" class="hover:text-indigo-600">Why Private?</a>
       <a href="#faq" class="hover:text-indigo-600">FAQ</a>
-      <button class="bg-indigo-50 text-indigo-600 px-5 py-2.5 rounded-full hover:bg-indigo-100 transition">Bookmark</button>
+      <button onclick="handleBookmark()" class="bg-indigo-50 text-indigo-600 px-5 py-2.5 rounded-full hover:bg-indigo-100 transition">Bookmark</button>
     </nav>
   </div>
 </header>
@@ -114,126 +96,74 @@
     <h2 class="text-3xl font-extrabold text-slate-800">The Pdfecta Suite</h2>
     <div class="h-1 flex-1 mx-8 bg-slate-100 rounded-full hidden md:block"></div>
   </div>
-
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <a href="/compress-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
-      <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-      </div>
+    <a href="#" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+      <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg></div>
       <h3 class="text-xl font-bold mb-2 text-slate-800">Compress PDF</h3>
       <p class="text-slate-500 text-sm leading-relaxed italic">"Make large PDFs small without losing the magic."</p>
     </a>
-
-    <a href="/merge-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
-        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-        </div>
+    <a href="#" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
         <h3 class="text-xl font-bold mb-2 text-slate-800">Merge PDF</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Combine multiple documents into one perfect file.</p>
+        <p class="text-slate-500 text-sm leading-relaxed">Combine documents into one perfect file.</p>
     </a>
-
-    <a href="/word-to-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
-        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-slate-800">Word to PDF</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Convert DOCX to PDF while maintaining pixel-perfect layout.</p>
-    </a>
-
-    <a href="/jpg-to-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
-        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-slate-800">Image to PDF</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Turn photos or scans into high-quality PDF documents.</p>
-    </a>
-
-    <a href="/protect-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
-        <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-6">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-slate-800">Protect PDF</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Secure your documents with bank-grade local encryption.</p>
-    </a>
-
-    <a href="/delete-pages.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
-        <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center mb-6">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-slate-800">Remove Pages</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Delete unwanted pages from your PDF with one click.</p>
-    </a>
-  </div>
+    </div>
 </section>
 
-
-<section class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-100">
+<section id="why" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-100">
     <div class="grid md:grid-cols-2 gap-12">
         <div>
             <h2 class="text-2xl font-extrabold text-slate-800 mb-4">The World's Most Private PDF Suite</h2>
             <p class="text-slate-600 leading-relaxed mb-4">
-                Most online PDF services require you to upload your sensitive documents—tax returns, legal contracts, and IDs—to their cloud servers. <strong>PDFECTA</strong> changes the game by using <strong>client-side processing</strong>.
+                Most online PDF services require uploads. <strong>PDFECTA</strong> uses <strong>client-side processing</strong>.
             </p>
             <p class="text-slate-600 leading-relaxed">
-                By leveraging modern web technology, we've moved the power of heavy PDF software directly into your browser. Your files stay on your machine, ensuring 100% data sovereignty and security.
+                By leveraging modern web tech, your files stay on your machine.
             </p>
         </div>
-
         <div>
             <h2 class="text-2xl font-extrabold text-slate-800 mb-4">High-Performance Utility</h2>
-            <ul class="space-y-3">
-                <li class="flex items-start">
-                    <span class="text-indigo-500 mr-2">✔</span>
-                    <span class="text-slate-600"><strong>No Upload Limits:</strong> Process large files instantly without waiting for slow server transfers.</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-indigo-500 mr-2">✔</span>
-                    <span class="text-slate-600"><strong>Offline Ready:</strong> Once the page loads, you can disconnect from the internet and keep working.</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-indigo-500 mr-2">✔</span>
-                    <span class="text-slate-600"><strong>Universal Compatibility:</strong> Works on Chrome, Safari, Edge, and mobile browsers without installation.</span>
-                </li>
+            <ul class="space-y-3 text-slate-600">
+                <li><strong>No Upload Limits:</strong> Local processing is instant.</li>
+                <li><strong>Offline Ready:</strong> Works without internet.</li>
             </ul>
         </div>
     </div>
+</section>
 
-    <div class="mt-16 p-8 bg-indigo-50/50 rounded-3xl border border-indigo-100/50">
-        <h3 class="text-sm font-bold text-indigo-900 uppercase tracking-widest mb-6 text-center">Popular Searches</h3>
+<section id="faq" class="max-w-5xl mx-auto px-6 py-10">
+    <div class="p-8 bg-indigo-50/50 rounded-3xl border border-indigo-100/50 text-center">
+        <h3 class="text-sm font-bold text-indigo-900 uppercase tracking-widest mb-6">Popular Searches & FAQ</h3>
         <div class="flex flex-wrap justify-center gap-3">
             <span class="px-4 py-2 bg-white rounded-full text-xs font-semibold text-slate-600 shadow-sm">Compress PDF to 200kb</span>
             <span class="px-4 py-2 bg-white rounded-full text-xs font-semibold text-slate-600 shadow-sm">Merge PDF offline free</span>
-            <span class="px-4 py-2 bg-white rounded-full text-xs font-semibold text-slate-600 shadow-sm">Convert JPG to PDF no upload</span>
-            <span class="px-4 py-2 bg-white rounded-full text-xs font-semibold text-slate-600 shadow-sm">Split PDF locally</span>
-            <span class="px-4 py-2 bg-white rounded-full text-xs font-semibold text-slate-600 shadow-sm">Secure PDF password protection</span>
-            <span class="px-4 py-2 bg-white rounded-full text-xs font-semibold text-slate-600 shadow-sm">Edit PDF without software</span>
+            <span class="px-4 py-2 bg-white rounded-full text-xs font-semibold text-slate-600 shadow-sm">Secure PDF protection</span>
         </div>
     </div>
 </section>
   
-<footer class="bg-white border-t border-slate-200 py-12 mt-24">
+<footer class="bg-white border-t border-slate-200 py-12">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-slate-400 font-semibold text-sm">
         <div class="flex items-center space-x-2">
             <div class="w-6 h-6 brand-gradient rounded flex items-center justify-center text-white font-bold text-[10px]">P</div>
             <span class="text-slate-800">PDFECTA 2026</span>
         </div>
         <div class="flex gap-8">
-            <a href="/privacy" class="hover:text-indigo-600">Privacy Policy</a>
-            <a href="/terms" class="hover:text-indigo-600">Terms of Service</a>
-            <a href="mailto:hello@pdfecta.com" class="hover:text-indigo-600">Contact Support</a>
+            <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+            <a href="#" class="hover:text-indigo-600">Terms of Service</a>
         </div>
     </div>
 </footer>
 
 <script>
-<script>
-    // 1. HEADER LOGIC: Bookmark and Smooth Scroll
+    // 1. HEADER LOGIC
     function handleBookmark() {
         const isMac = navigator.platform.indexOf('Mac') > -1;
         const key = isMac ? 'Command/Cmd' : 'Ctrl';
         alert(`To bookmark PDFECTA, press ${key} + D on your keyboard.`);
     }
 
+    // Smooth Scroll logic
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -247,15 +177,13 @@
         });
     });
 
-    // 2. CORE LOGIC: File Upload and Compression
+    // 2. CORE LOGIC
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('pdfInput');
     const status = document.getElementById('status');
 
-    // Make the big box clickable to upload
     dropZone.onclick = () => fileInput.click();
 
-    // Handle Drag and Drop visuals
     dropZone.ondragover = (e) => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
     dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
     dropZone.ondrop = (e) => {
@@ -267,29 +195,22 @@
         }
     };
 
-    // Update status when file is picked via click
     fileInput.onchange = () => {
         if (fileInput.files.length) status.textContent = "Selected: " + fileInput.files[0].name;
     };
 
-    // The Compression Function
     async function compressPDF() {
         const level = document.getElementById("level").value;
-
         if (!fileInput.files.length) {
             status.textContent = "⚠️ Please select a PDF file first.";
             return;
         }
-
         const file = fileInput.files[0];
         status.innerHTML = `<span class="animate-pulse text-indigo-600">⏳ Compressing locally...</span>`;
 
         try {
-            const originalSize = (file.size / 1024 / 1024).toFixed(2);
             const arrayBuffer = await file.arrayBuffer();
             const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
-
-            // SEO Note: These quality levels help users get exactly the file size they need
             const qualityMap = { low: 0.9, medium: 0.7, high: 0.5 };
 
             const compressedPdfBytes = await pdfDoc.save({
@@ -298,25 +219,17 @@
                 imageQuality: qualityMap[level],
             });
 
-            const compressedSize = (compressedPdfBytes.byteLength / 1024 / 1024).toFixed(2);
             const blob = new Blob([compressedPdfBytes], { type: "application/pdf" });
             const url = URL.createObjectURL(blob);
-
             const a = document.createElement("a");
             a.href = url;
             a.download = `pdfecta-compressed-${file.name}`;
-            document.body.appendChild(a);
             a.click();
-            document.body.removeChild(a);
-
-            status.innerHTML = `✅ <strong>Success!</strong> Reduced from ${originalSize}MB to ${compressedSize}MB.`;
+            status.innerHTML = `✅ <strong>Success!</strong> File compressed.`;
         } catch (err) {
-            console.error(err);
-            status.textContent = "❌ Error: Could not process this PDF. Is it password protected?";
+            status.textContent = "❌ Error: Could not process PDF.";
         }
     }
-</script>
-
 </script>
 
 </body>
