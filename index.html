@@ -96,34 +96,74 @@
     <h2 class="text-3xl font-extrabold text-slate-800">The Pdfecta Suite</h2>
     <div class="h-1 flex-1 mx-8 bg-slate-100 rounded-full hidden md:block"></div>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <a href="/compress-pdf.html"
-   class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
-  <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg>
-  </div>
-  <h3 class="text-xl font-bold mb-2 text-slate-800">Compress PDF</h3>
-  <p class="text-slate-500 text-sm leading-relaxed italic">
-    "Make large PDFs small without losing the magic."
-  </p>
-</a>
 
-<a href="/merge-pdf.html"
-   class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
-  <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M12 4v16m8-8H4"></path>
-    </svg>
-  </div>
-  <h3 class="text-xl font-bold mb-2 text-slate-800">Merge PDF</h3>
-  <p class="text-slate-500 text-sm leading-relaxed">
-    Combine documents into one perfect file.
-  </p>
-</a>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+  <!-- Compress PDF -->
+  <a href="/compress-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+    <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
+      ↓
+    </div>
+    <h3 class="text-xl font-bold mb-2 text-slate-800">Compress PDF</h3>
+    <p class="text-slate-500 text-sm italic">Make large PDFs small without losing the magic.</p>
+  </a>
+
+  <!-- Merge PDF -->
+  <a href="/merge-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">+</div>
+    <h3 class="text-xl font-bold mb-2 text-slate-800">Merge PDF</h3>
+    <p class="text-slate-500 text-sm">Combine documents into one perfect file.</p>
+  </a>
+
+  <!-- Split PDF -->
+  <a href="/split-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-6">✂</div>
+    <h3 class="text-xl font-bold mb-2 text-slate-800">Split PDF</h3>
+    <p class="text-slate-500 text-sm">Extract selected pages securely.</p>
+  </a>
+
+  <!-- Delete Pages -->
+  <a href="/delete-pages-from-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+    <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-6">🗑</div>
+    <h3 class="text-xl font-bold mb-2 text-slate-800">Delete PDF Pages</h3>
+    <p class="text-slate-500 text-sm">Remove unwanted pages instantly.</p>
+  </a>
+
+  <!-- Reorder Pages -->
+  <a href="/reorder-pdf-pages.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6">↕</div>
+    <h3 class="text-xl font-bold mb-2 text-slate-800">Reorder Pages</h3>
+    <p class="text-slate-500 text-sm">Change page order easily.</p>
+  </a>
+
+  <!-- Rotate PDF -->
+  <a href="/rotate-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+    <div class="w-12 h-12 rounded-xl bg-yellow-100 text-yellow-600 flex items-center justify-center mb-6">⟳</div>
+    <h3 class="text-xl font-bold mb-2 text-slate-800">Rotate PDF</h3>
+    <p class="text-slate-500 text-sm">Rotate PDF pages instantly.</p>
+  </a>
+
+  <!-- PDF to JPG -->
+  <a href="/pdf-to-jpg.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+    <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center mb-6">🖼</div>
+    <h3 class="text-xl font-bold mb-2 text-slate-800">PDF to JPG</h3>
+    <p class="text-slate-500 text-sm">Convert PDF pages into images.</p>
+  </a>
+
+  <!-- JPG to PDF -->
+  <a href="/jpg-to-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+    <div class="w-12 h-12 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center mb-6">📄</div>
+    <h3 class="text-xl font-bold mb-2 text-slate-800">JPG to PDF</h3>
+    <p class="text-slate-500 text-sm">Convert images into PDFs.</p>
+  </a>
+
+  <!-- Protect PDF -->
+  <a href="/protect-pdf.html" class="tool-card p-8 bg-white rounded-[2rem] border border-slate-100 flex flex-col items-start">
+    <div class="w-12 h-12 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center mb-6">🔒</div>
+    <h3 class="text-xl font-bold mb-2 text-slate-800">Protect PDF</h3>
+    <p class="text-slate-500 text-sm">Add password protection.</p>
+  </a>
 
     </div>
 </section>
