@@ -362,17 +362,52 @@
 
   
 <footer class="bg-white border-t border-slate-200 py-12">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-slate-400 font-semibold text-sm">
-        <div class="flex items-center space-x-2">
-            <div class="w-6 h-6 brand-gradient rounded flex items-center justify-center text-white font-bold text-[10px]">P</div>
-            <span class="text-slate-800">PDFECTA 2026</span>
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+
+    <!-- BRAND -->
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">
+          P
         </div>
-        <div class="flex gap-8">
-            <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
-            <a href="#" class="hover:text-indigo-600">Terms of Service</a>
-        </div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 leading-relaxed max-w-sm">
+        PDFECTA provides free, privacy-first PDF tools that run entirely in your browser.
+        No uploads. No tracking. Full control over your files.
+      </p>
     </div>
+
+    <!-- LINKS -->
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Company</h4>
+      <ul class="space-y-2 text-slate-500">
+        <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
+        <li><a href="/contact.html" class="hover:text-indigo-600">Contact</a></li>
+        <li><a href="/privacy.html" class="hover:text-indigo-600">Privacy Policy</a></li>
+        <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT / TRUST -->
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">
+        Questions or feedback?
+      </p>
+      <a href="mailto:hello@pdfecta.com"
+         class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">
+        hello@pdfecta.com
+      </a>
+
+      <p class="text-xs text-slate-400 mt-6">
+        © 2026 PDFECTA. All rights reserved.
+      </p>
+    </div>
+
+  </div>
 </footer>
+
 
 <script>
     // 1. HEADER LOGIC
