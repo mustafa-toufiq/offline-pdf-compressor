@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <title>Merge PDF Files Online Free | PDFECTA</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Merge multiple PDF files into one PDF online for free. Secure, private, and runs completely in your browser." />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
-    { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
-    { "@type": "ListItem", "position": 3, "name": "Merge PDF", "item": "https://pdfecta.com/merge-pdf.html" }
-  ]
-}
-</script>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "How do I merge PDF files?", "acceptedAnswer": { "@type": "Answer", "text": "Upload multiple PDFs and merge them into a single file instantly in your browser." }},
-    { "@type": "Question", "name": "Is PDF merging secure?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All files are processed locally and never uploaded." }},
-    { "@type": "Question", "name": "Can I reorder PDFs before merging?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can arrange files in your preferred order before merging." }},
-    { "@type": "Question", "name": "Does it add watermarks?", "acceptedAnswer": { "@type": "Answer", "text": "No watermarks are added to merged PDFs." }}
-  ]
-}
-</script>
-
-
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+  </style>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-slate-50 text-slate-900">
 
-<div class="max-w-2xl mx-auto p-8">
+<!-- HEADER (SAME AS INDEX) -->
+<header class="sticky top-0 z-50 bg-white border-b">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <div class="w-8 h-8 brand-gradient rounded-lg flex items-center justify-center text-white">P</div>
+      PDFECTA
+    </a>
+    <nav class="space-x-6 text-sm font-semibold text-slate-600">
+      <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
+      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
+    </nav>
+  </div>
+</header>
 
-<h1 class="text-3xl font-bold mb-2">Merge PDF Files</h1>
+<!-- TOOL CONTAINER -->
+<main class="max-w-4xl mx-auto px-6 py-20">
+
+  <!-- TOOL HEADER -->
+  <header class="text-center mb-12">
+    <h1 class="text-4xl font-extrabold mb-4">Merge PDF Files</h1>
+    <p class="text-slate-600 text-lg">
+      Combine multiple PDF files into one — fully offline and private.
+    </p>
+  </header>
+
+  <!-- TOOL UI CARD -->
+  <section class="bg-white border rounded-3xl p-8 shadow-sm mb-16">
+    <h1 class="text-3xl font-bold mb-2">Merge PDF Files</h1>
 <p class="text-gray-600 mb-6">
 Combine multiple PDF files into a single PDF document instantly. 
 No upload required — fully private and secure.
@@ -51,81 +54,21 @@ No upload required — fully private and secure.
 
 <div class="bg-white shadow rounded-xl p-6 space-y-4">
 
-<input type="file" id="pdfInput" accept="application/pdf" multiple
-class="block w-full border rounded p-2" />
+  <input type="file" id="pdfInput" accept="application/pdf" multiple
+  class="block w-full border rounded p-2" />
 
-<button onclick="mergePDFs()"
-class="w-full bg-black text-white p-3 rounded-lg hover:opacity-90">
-Merge PDFs
-</button>
+  <button onclick="mergePDFs()"
+  class="w-full bg-black text-white p-3 rounded-lg hover:opacity-90">
+  Merge PDFs
+  </button>
 
-<p id="status" class="text-sm text-gray-600"></p>
-
-</div>
+  <p id="status" class="text-sm text-gray-600"></p>
 
 </div>
 
-<script>
-let selectedFiles = [];
+  </section>
 
-async function mergePDFs() {
-  const { PDFDocument } = PDFLib;
-  const status = document.getElementById("status");
-
-  // ✅ VALIDATION
-  if (!selectedFiles.length) {
-    status.textContent = "Please add PDF files.";
-    return;
-  }
-
-  for (let file of selectedFiles) {
-    if (file.type !== "application/pdf") {
-      status.textContent = "Only PDF files are allowed.";
-      return;
-    }
-  }
-
-  status.textContent = "Merging PDFs...";
-
-  // ✅ PROCESSING
-  const mergedPdf = await PDFDocument.create();
-
-  for (let file of selectedFiles) {
-    const bytes = await file.arrayBuffer();
-    const pdf = await PDFDocument.load(bytes);
-    const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-    pages.forEach(page => mergedPdf.addPage(page));
-  }
-
-  const mergedBytes = await mergedPdf.save();
-  const blob = new Blob([mergedBytes], { type: "application/pdf" });
-  const url = URL.createObjectURL(blob);
-
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "merged.pdf";
-  a.click();
-
-  status.textContent = "Merged PDF downloaded.";
-}
-
-document.getElementById("pdfInput").addEventListener("change", function(e) {
-  const status = document.getElementById("status");
-
-  for (let file of e.target.files) {
-    if (file.type !== "application/pdf") {
-      status.textContent = "Only PDF files are allowed.";
-      return;
-    }
-  }
-
-  selectedFiles.push(...e.target.files);
-  status.textContent = selectedFiles.length + " file(s) ready to merge";
-});
-</script>
-
-
-<!-- SEO CONTENT -->
+  <!-- SEO CONTENT -->
 <section class="max-w-4xl mx-auto p-8">
 
 <h2 class="text-2xl font-bold mb-4">Merge PDF Files Online Free and Secure</h2>
@@ -190,7 +133,90 @@ You can merge multiple PDFs depending on your device memory and browser limits.
   </ul>
 </section>
 
+</main>
 
+<!-- FOOTER (SAME EVERYWHERE) -->
+<footer class="border-t bg-white py-10 mt-20">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <p class="font-bold">PDFECTA</p>
+      <p class="text-slate-500 mt-2">
+        Privacy-first offline PDF tools.
+      </p>
+    </div>
+    <div>
+      <a href="/about.html" class="block text-slate-500 hover:text-indigo-600">About</a>
+      <a href="/contact.html" class="block text-slate-500 hover:text-indigo-600">Contact</a>
+      <a href="/privacy.html" class="block text-slate-500 hover:text-indigo-600">Privacy</a>
+      <a href="/terms.html" class="block text-slate-500 hover:text-indigo-600">Terms</a>
+    </div>
+    <div>
+      <a href="mailto:support@pdfecta.com"
+         class="font-semibold text-indigo-600">
+        support@pdfecta.com
+      </a>
+      <p class="text-xs text-slate-400 mt-4">© 2026 PDFECTA</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  let selectedFiles = [];
+
+  async function mergePDFs() {
+    const { PDFDocument } = PDFLib;
+    const status = document.getElementById("status");
+
+    if (!selectedFiles.length) {
+      status.textContent = "Please add PDF files.";
+      return;
+    }
+
+    for (let file of selectedFiles) {
+      if (file.type !== "application/pdf") {
+        status.textContent = "Only PDF files are allowed.";
+        return;
+      }
+    }
+
+    status.textContent = "Merging PDFs...";
+
+    const mergedPdf = await PDFDocument.create();
+
+    for (let file of selectedFiles) {
+      const bytes = await file.arrayBuffer();
+      const pdf = await PDFDocument.load(bytes);
+      const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+      pages.forEach(page => mergedPdf.addPage(page));
+    }
+
+    const mergedBytes = await mergedPdf.save();
+    const blob = new Blob([mergedBytes], { type: "application/pdf" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "merged.pdf";
+    a.click();
+
+    status.textContent = "Merged PDF downloaded.";
+  }
+
+  document.getElementById("pdfInput").addEventListener("change", function(e) {
+    const status = document.getElementById("status");
+
+    for (let file of e.target.files) {
+      if (file.type !== "application/pdf") {
+        status.textContent = "Only PDF files are allowed.";
+        return;
+      }
+    }
+
+    selectedFiles.push(...e.target.files);
+    status.textContent = selectedFiles.length + " file(s) ready to merge";
+  });
+</script>
 
   
 </body>
