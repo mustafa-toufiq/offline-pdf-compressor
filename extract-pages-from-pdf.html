@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Extract Pages from PDF Online Free | PDFECTA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Extract specific pages from a PDF file directly in your browser. No uploads, no tracking. 100% private PDF extraction." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- PDFLib -->
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Extract Pages from PDF", "item": "https://pdfecta.com/extract-pages-from-pdf.html" }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white border-b">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
+        P
+      </div>
+      PDFECTA
+    </a>
+    <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+      <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
+      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="bg-slate-50 pb-24">
+
+  <!-- HERO -->
+  <section class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+      Extract Pages from PDF
+    </h1>
+    <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+      Extract specific pages or page ranges from a PDF instantly.
+      Works fully offline in your browser. No uploads. No tracking.
+    </p>
+  </section>
+
+  <!-- TOOL CARD -->
+  <section class="max-w-4xl mx-auto px-6">
+    <div class="bg-white rounded-2xl shadow p-8 space-y-6">
+
+      <div>
+        <label class="block font-medium mb-1">Upload PDF</label>
+        <input id="pdfInput" type="file" accept="application/pdf" class="w-full" />
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1">Pages to extract</label>
+        <input
+          id="pageRange"
+          type="text"
+          placeholder="Example: 5-10 or 1,3,7-9"
+          class="w-full border rounded-lg p-3"
+        />
+        <p class="text-xs text-slate-500 mt-1">
+          Page numbers start from 1
+        </p>
+      </div>
+
+      <button
+        onclick="extractPages()"
+        class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90"
+      >
+        Extract Pages
+      </button>
+
+      <p id="status" class="text-sm text-slate-600"></p>
+
+    </div>
+  </section>
+
+  <!-- SEO CONTENT -->
+  <section class="max-w-4xl mx-auto px-6 mt-16">
+    <h2 class="text-2xl font-bold mb-4">Extract PDF Pages Online Free and Secure</h2>
+
+    <p class="text-slate-700 mb-4">
+      PDFECTA allows you to extract specific pages from a PDF file directly in your browser.
+      Unlike traditional online PDF tools, your files never leave your device.
+    </p>
+
+    <p class="text-slate-700 mb-4">
+      You can extract a single page, multiple pages, or a page range such as pages 5 to 10.
+      The extracted pages are saved into a new PDF file instantly.
+    </p>
+
+    <h3 class="text-xl font-semibold mt-6 mb-2">Why Use PDFECTA?</h3>
+    <ul class="list-disc pl-6 text-slate-700 space-y-1">
+      <li>100% client-side PDF processing</li>
+      <li>No uploads or tracking</li>
+      <li>Fast and unlimited usage</li>
+      <li>Works on all modern browsers</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 mt-24">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
+          P
+        </div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 max-w-sm">
+        Free, privacy-first PDF tools that run entirely in your browser.
+        No uploads. No tracking.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Company</h4>
+      <ul class="space-y-2 text-slate-500">
+        <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
+        <li><a href="/contact.html" class="hover:text-indigo-600">Contact</a></li>
+        <li><a href="/privacy.html" class="hover:text-indigo-600">Privacy Policy</a></li>
+        <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
+      <a href="mailto:support@pdfecta.com" class="text-indigo-600 font-semibold hover:underline">
+        support@pdfecta.com
+      </a>
+      <p class="text-xs text-slate-400 mt-6">
+        © 2026 PDFECTA. All rights reserved.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+async function extractPages() {
+  const { PDFDocument } = PDFLib;
+  const fileInput = document.getElementById("pdfInput");
+  const rangeInput = document.getElementById("pageRange");
+  const status = document.getElementById("status");
+
+  if (!fileInput.files.length) {
+    status.textContent = "Please upload a PDF.";
+    return;
+  }
+
+  if (!rangeInput.value.trim()) {
+    status.textContent = "Please enter page numbers.";
+    return;
+  }
+
+  try {
+    const file = fileInput.files[0];
+    const bytes = await file.arrayBuffer();
+    const srcPdf = await PDFDocument.load(bytes);
+    const newPdf = await PDFDocument.create();
+
+    const pageCount = srcPdf.getPageCount();
+    const pages = new Set();
+
+    rangeInput.value.split(",").forEach(part => {
+      if (part.includes("-")) {
+        const [start, end] = part.split("-").map(n => parseInt(n, 10));
+        for (let i = start; i <= end; i++) pages.add(i - 1);
+      } else {
+        pages.add(parseInt(part, 10) - 1);
+      }
+    });
+
+    for (let index of pages) {
+      if (index >= 0 && index < pageCount) {
+        const [page] = await newPdf.copyPages(srcPdf, [index]);
+        newPdf.addPage(page);
+      }
+    }
+
+    if (newPdf.getPageCount() === 0) {
+      status.textContent = "No valid pages selected.";
+      return;
+    }
+
+    const outBytes = await newPdf.save();
+    const blob = new Blob([outBytes], { type: "application/pdf" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "extracted-pages.pdf";
+    a.click();
+
+    status.textContent = "Pages extracted successfully.";
+
+  } catch (e) {
+    console.error(e);
+    status.textContent = "Failed to extract pages.";
+  }
+}
+</script>
+
+</body>
+</html>
