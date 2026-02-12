@@ -337,24 +337,24 @@ async function signPDF() {
   
    <!-- FOOTER -->
 <footer class="bg-white border-t border-slate-200 py-12">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
 
     <!-- BRAND -->
-    <div>
+    <div class="text-left">
       <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">
+        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
           P
         </div>
         <span class="font-extrabold text-slate-800">PDFECTA</span>
       </div>
-      <p class="text-slate-500 leading-relaxed max-w-sm">
+      <p class="text-slate-500 leading-relaxed">
         PDFECTA provides free, privacy-first PDF tools that run entirely in your browser.
         No uploads. No tracking. Full control over your files.
       </p>
     </div>
 
     <!-- LINKS -->
-    <div>
+    <div class="text-left">
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
         <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
@@ -364,14 +364,14 @@ async function signPDF() {
       </ul>
     </div>
 
-    <!-- CONTACT / TRUST -->
-    <div>
+    <!-- CONTACT -->
+    <div class="text-left">
       <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
       <p class="text-slate-500 mb-2">
         Questions or feedback?
       </p>
       <a href="mailto:support@pdfecta.com"
-         class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">
+         class="inline-block mt-1 font-semibold text-indigo-600 hover:underline">
         support@pdfecta.com
       </a>
 
@@ -381,6 +381,8 @@ async function signPDF() {
     </div>
 
   </div>
+</footer>
+
 </footer>
   
 </body>
