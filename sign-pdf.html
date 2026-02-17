@@ -35,7 +35,7 @@ content="Sign PDF files online by drawing your signature directly in your browse
 </header>
 
 <!-- MAIN -->
-<main class="pt-24 pb-24 bg-slate-50">
+<main class="pb-8 bg-slate-50"> 
   <section class="max-w-4xl mx-auto px-6">
     <div class="bg-white rounded-2xl shadow p-8 space-y-8">
       
@@ -187,6 +187,17 @@ content="Sign PDF files online by drawing your signature directly in your browse
   </div>
 
 </section>
+
+<!-- RELATED TOOLS -->
+  <section class="max-w-4xl mx-auto px-6 mt-10 border-t pt-8">
+  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2 text-gray-700">
+    <li><a href="/reorder-pdf-pages.html" class="text-blue-600 underline">Reorder Pages inside PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-blue-600 underline">Split PDF</a></li>
+    <li><a href="/extract-pages-from-pdf.html" class="text-blue-600 underline">Extract Pages from PDF</a></li>
+  </ul>
+</section>
+
 </main>
 
 
@@ -212,7 +223,8 @@ content="Sign PDF files online by drawing your signature directly in your browse
 }
 </script>
 
-  
+
+
 
 <script>
 /* ===== SIGNATURE DRAWING ===== */
@@ -344,27 +356,24 @@ async function signPDF() {
 </script>
 
 
-  
-   <!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200 py-12">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
 
-    <!-- BRAND -->
-    <div class="text-left">
+    <div>
       <div class="flex items-center gap-2 mb-3">
         <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
           P
         </div>
         <span class="font-extrabold text-slate-800">PDFECTA</span>
       </div>
-      <p class="text-slate-500 leading-relaxed">
-        PDFECTA provides free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking. Full control over your files.
+      <p class="text-slate-500 max-w-sm">
+        Free, privacy-first PDF tools that run entirely in your browser.
+        No uploads. No tracking.
       </p>
     </div>
 
-    <!-- LINKS -->
-    <div class="text-left">
+    <div>
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
         <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
@@ -374,17 +383,11 @@ async function signPDF() {
       </ul>
     </div>
 
-    <!-- CONTACT -->
-    <div class="text-left">
-      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
-      <p class="text-slate-500 mb-2">
-        Questions or feedback?
-      </p>
-      <a href="mailto:support@pdfecta.com"
-         class="inline-block mt-1 font-semibold text-indigo-600 hover:underline">
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
+      <a href="mailto:support@pdfecta.com" class="text-indigo-600 font-semibold hover:underline">
         support@pdfecta.com
       </a>
-
       <p class="text-xs text-slate-400 mt-6">
         © 2026 PDFECTA. All rights reserved.
       </p>
@@ -393,7 +396,7 @@ async function signPDF() {
   </div>
 </footer>
 
-</footer>
+
   
 </body>
 </html>
