@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Add Watermark to PDF Online Free | PDFECTA</title>
+  <meta name="description"
+        content="Add text watermarks to PDF files directly in your browser. 100% private, offline, and client-side. No uploads or tracking." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white border-b">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">P</div>
+      PDFECTA
+    </a>
+    <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+      <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
+      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="max-w-4xl mx-auto px-6 py-20">
+
+  <!-- TITLE -->
+  <h1 class="text-4xl font-extrabold mb-4">Add Watermark to PDF</h1>
+  <p class="text-slate-600 mb-10">
+    Add a text watermark to your PDF instantly — fully offline, private, and secure.
+    No uploads. No tracking.
+  </p>
+
+  <!-- TOOL CARD -->
+  <div class="bg-white rounded-2xl shadow p-8 space-y-6">
+
+    <div>
+      <label class="block font-semibold mb-2">Upload PDF</label>
+      <input id="pdfInput" type="file" accept="application/pdf"
+             class="w-full border rounded p-2" />
+    </div>
+
+    <div>
+      <label class="block font-semibold mb-2">Watermark Text</label>
+      <input id="watermarkText" type="text"
+             placeholder="e.g. CONFIDENTIAL"
+             class="w-full border rounded p-3" />
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block font-semibold mb-2">Font Size</label>
+        <input id="fontSize" type="number" value="40"
+               class="w-full border rounded p-2" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-2">Opacity (0–1)</label>
+        <input id="opacity" type="number" step="0.1" value="0.2"
+               class="w-full border rounded p-2" />
+      </div>
+    </div>
+
+    <button onclick="addWatermark()"
+      class="bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700">
+      Add Watermark & Download PDF
+    </button>
+
+    <p id="status" class="text-sm text-slate-500"></p>
+  </div>
+
+</main>
+
+<!-- RELATED TOOLS -->
+<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
+  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2 text-gray-700">
+    <li><a href="/sign-pdf.html" class="text-blue-600 underline">Sign PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
+    <li><a href="/compress-pdf.html" class="text-blue-600 underline">Compress PDF</a></li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 mt-24">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
+          P
+        </div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 max-w-sm">
+        Free, privacy-first PDF tools that run entirely in your browser.
+        No uploads. No tracking.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Company</h4>
+      <ul class="space-y-2 text-slate-500">
+        <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
+        <li><a href="/contact.html" class="hover:text-indigo-600">Contact</a></li>
+        <li><a href="/privacy.html" class="hover:text-indigo-600">Privacy Policy</a></li>
+        <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
+      <a href="mailto:support@pdfecta.com"
+         class="font-semibold text-indigo-600 hover:underline">
+        support@pdfecta.com
+      </a>
+      <p class="text-xs text-slate-400 mt-6">
+        © 2026 PDFECTA. All rights reserved.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+async function addWatermark() {
+  const { PDFDocument, rgb } = PDFLib;
+  const fileInput = document.getElementById("pdfInput");
+  const text = document.getElementById("watermarkText").value.trim();
+  const fontSize = parseFloat(document.getElementById("fontSize").value);
+  const opacity = parseFloat(document.getElementById("opacity").value);
+  const status = document.getElementById("status");
+
+  if (!fileInput.files.length || !text) {
+    status.textContent = "Please upload a PDF and enter watermark text.";
+    return;
+  }
+
+  status.textContent = "Applying watermark locally...";
+
+  const pdfBytes = await fileInput.files[0].arrayBuffer();
+  const pdfDoc = await PDFDocument.load(pdfBytes);
+  const pages = pdfDoc.getPages();
+  const font = await pdfDoc.embedFont(PDFLib.StandardFonts.HelveticaBold);
+
+  pages.forEach(page => {
+    const { width, height } = page.getSize();
+    page.drawText(text, {
+      x: width / 4,
+      y: height / 2,
+      size: fontSize,
+      font,
+      color: rgb(0.6, 0.6, 0.6),
+      opacity,
+      rotate: PDFLib.degrees(30)
+    });
+  });
+
+  const out = await pdfDoc.save();
+  const blob = new Blob([out], { type: "application/pdf" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "watermarked.pdf";
+  a.click();
+
+  status.textContent = "Watermarked PDF downloaded.";
+}
+</script>
+
+</body>
+</html>
