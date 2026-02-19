@@ -177,68 +177,121 @@ async function generatePDF() {
     }
 
     const reader = new FileReader();
+    
+    // Use readAsText instead of readAsArrayBuffer for better text handling
+    reader.onload = function (e) {
+      let text = e.target.result;
+      
+      // Clean up the text to remove problematic characters
+      text = cleanText(text);
+      createPDF(text);
+    };
 
-  reader.onload = function (e) {
-  const buffer = e.target.result;
-  let decoder;
-  let text;
-
-  const bytes = new Uint8Array(buffer);
-
-  // Detect BOM
-  if (bytes[0] === 0xFF && bytes[1] === 0xFE) {
-    decoder = new TextDecoder("utf-16le");
-  } else if (bytes[0] === 0xFE && bytes[1] === 0xFF) {
-    decoder = new TextDecoder("utf-16be");
-  } else {
-    decoder = new TextDecoder("utf-8");
-  }
-
-  text = decoder.decode(buffer);
-  createPDF(text);
-};
-
-reader.readAsArrayBuffer(file);
-
+    // Read as text with UTF-8 encoding (simpler and more reliable)
+    reader.readAsText(file, 'UTF-8');
 
   } else if (textInput.value.trim()) {
-    createPDF(textInput.value);
+    const cleanedText = cleanText(textInput.value);
+    createPDF(cleanedText);
 
   } else {
     status.textContent = "Please upload a text file or paste text.";
   }
 
+  // ---------- TEXT CLEANING FUNCTION ----------
+  function cleanText(text) {
+    // Remove BOM if present
+    text = text.replace(/^\uFEFF/, '');
+    
+    // Replace problematic characters that jsPDF can't handle well
+    text = text.replace(/[^\x00-\x7F]/g, function(char) {
+      // Handle common special characters
+      const charCode = char.charCodeAt(0);
+      if (charCode === 8217) return "'"; // Right single quotation mark
+      if (charCode === 8216) return "'"; // Left single quotation mark
+      if (charCode === 8220) return '"'; // Left double quotation mark
+      if (charCode === 8221) return '"'; // Right double quotation mark
+      if (charCode === 8211) return '-'; // En dash
+      if (charCode === 8212) return '--'; // Em dash
+      if (charCode === 8230) return '...'; // Ellipsis
+      
+      // For other non-ASCII characters, try to keep them or replace with space
+      return char.match(/[\w\s\p{L}\p{N}\p{P}\p{S}]/u) ? char : ' ';
+    });
+    
+    // Normalize line endings
+    text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    
+    return text;
+  }
+
   // ---------- PDF GENERATION ----------
   function createPDF(content) {
-    const doc = new jsPDF({
-      unit: "mm",
-      format: "a4"
-    });
+    try {
+      const doc = new jsPDF({
+        unit: "mm",
+        format: "a4"
+      });
 
-    const pageHeight = doc.internal.pageSize.height;
-    const pageWidth = doc.internal.pageSize.width;
+      const pageHeight = doc.internal.pageSize.height;
+      const pageWidth = doc.internal.pageSize.width;
 
-    const marginX = 15;
-    let cursorY = 15;
+      const marginX = 15;
+      let cursorY = 20;
 
-    doc.setFont("courier", "normal"); // better for code/text
-    doc.setFontSize(10);              // FIXED font size
+      // Use a font that better supports various characters
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(10);
 
-    const lineHeight = 5;
-    const maxWidth = pageWidth - marginX * 2;
-    const lines = doc.splitTextToSize(content, maxWidth);
+      const lineHeight = 5;
+      const maxWidth = pageWidth - marginX * 2;
+      
+      // Split content into lines first
+      const contentLines = content.split('\n');
+      
+      contentLines.forEach(line => {
+        // Handle empty lines
+        if (line.trim() === '') {
+          if (cursorY + lineHeight > pageHeight - 15) {
+            doc.addPage();
+            cursorY = 20;
+          }
+          cursorY += lineHeight;
+          return;
+        }
+        
+        // Split long lines to fit page width
+        const wrappedLines = doc.splitTextToSize(line, maxWidth);
+        
+        wrappedLines.forEach(wrappedLine => {
+          if (cursorY + lineHeight > pageHeight - 15) {
+            doc.addPage();
+            cursorY = 20;
+          }
+          
+          try {
+            doc.text(wrappedLine, marginX, cursorY);
+          } catch (e) {
+            // If there's still an error with a specific line, log it and skip
+            console.warn('Skipped problematic line:', wrappedLine);
+          }
+          
+          cursorY += lineHeight;
+        });
+      });
 
-    lines.forEach(line => {
-      if (cursorY + lineHeight > pageHeight - 15) {
-        doc.addPage();
-        cursorY = 15;
-      }
-      doc.text(line, marginX, cursorY);
-      cursorY += lineHeight;
-    });
-
-    doc.save("text-to-pdf.pdf");
-    status.textContent = "PDF generated successfully.";
+      // Generate filename based on original file or default
+      const filename = fileInput.files.length 
+        ? `${fileInput.files[0].name.split('.')[0]}.pdf`
+        : "text-to-pdf.pdf";
+        
+      doc.save(filename);
+      status.innerHTML = `<span style="color: green;">✓ PDF generated successfully!</span>`;
+      
+    } catch (error) {
+      console.error('PDF generation error:', error);
+      status.innerHTML = `<span style="color: red;">✗ Error generating PDF. Please try again.</span>`;
+    }
   }
 }
 </script>
