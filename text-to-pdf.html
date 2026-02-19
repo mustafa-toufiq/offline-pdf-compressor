@@ -58,8 +58,8 @@
     <div>
       <label class="block font-semibold mb-2">Upload Text File</label>
       <input id="fileInput" type="file"
-        accept=".txt,.html,.md,.json,.csv,.log"
-        class="w-full border rounded p-2" />
+       accept=".txt,.md,.json,.csv,.log,.html"
+       class="w-full border rounded p-2" />
     </div>
 
     <div>
@@ -161,77 +161,67 @@ async function generatePDF() {
   const textInput = document.getElementById("textInput");
   const status = document.getElementById("status");
 
-  let text = textInput.value;
+  status.textContent = "";
 
+  // ---------- FILE VALIDATION ----------
   if (fileInput.files.length) {
     const file = fileInput.files[0];
+    const allowedExt = ["txt","md","json","csv","log","html"];
+    const ext = file.name.split(".").pop().toLowerCase();
+
+    if (!allowedExt.includes(ext)) {
+      status.textContent =
+        "Unsupported file type. Please upload a text-based file only.";
+      fileInput.value = "";
+      return;
+    }
+
     const reader = new FileReader();
-    reader.onload = function(e) {
-      createPDF(e.target.result);
+    reader.onload = () => createPDF(reader.result);
+    reader.onerror = () => {
+      status.textContent = "Failed to read file.";
     };
     reader.readAsText(file);
-  } else if (text.trim()) {
-    createPDF(text);
+
+  } else if (textInput.value.trim()) {
+    createPDF(textInput.value);
+
   } else {
-    status.textContent = "Please upload a file or paste text.";
+    status.textContent = "Please upload a text file or paste text.";
   }
 
+  // ---------- PDF GENERATION ----------
   function createPDF(content) {
-    const doc = new jsPDF();
-    const lines = doc.splitTextToSize(content, 180);
-    doc.text(lines, 10, 10);
+    const doc = new jsPDF({
+      unit: "mm",
+      format: "a4"
+    });
+
+    const pageHeight = doc.internal.pageSize.height;
+    const pageWidth = doc.internal.pageSize.width;
+
+    const marginX = 15;
+    let cursorY = 15;
+
+    doc.setFont("courier", "normal"); // better for code/text
+    doc.setFontSize(10);              // FIXED font size
+
+    const lineHeight = 5;
+    const maxWidth = pageWidth - marginX * 2;
+    const lines = doc.splitTextToSize(content, maxWidth);
+
+    lines.forEach(line => {
+      if (cursorY + lineHeight > pageHeight - 15) {
+        doc.addPage();
+        cursorY = 15;
+      }
+      doc.text(line, marginX, cursorY);
+      cursorY += lineHeight;
+    });
+
     doc.save("text-to-pdf.pdf");
     status.textContent = "PDF generated successfully.";
   }
-}
-</script>
-
-<!-- FAQ JSON -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [{
-  "@type": "Question",
-  "name": "Is this Text to PDF tool free?",
-  "acceptedAnswer": {
-   "@type": "Answer",
-   "text": "Yes. PDFECTA Text to PDF converter is completely free and runs locally in your browser."
-  }
- },{
-  "@type": "Question",
-  "name": "Are my files uploaded to a server?",
-  "acceptedAnswer": {
-   "@type": "Answer",
-   "text": "No. All processing happens locally in your browser. Files are never uploaded."
-  }
- },{
-  "@type": "Question",
-  "name": "Can I convert HTML or code into PDF?",
-  "acceptedAnswer": {
-   "@type": "Answer",
-   "text": "Yes. You can upload or paste HTML, markdown, JSON, or any text-based content and convert it into PDF."
-  }
- }]
-}
-</script>
-
-<!-- Breadcrumb JSON -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [{
-   "@type": "ListItem",
-   "position": 1,
-   "name": "Home",
-   "item": "https://pdfecta.com/"
- },{
-   "@type": "ListItem",
-   "position": 2,
-   "name": "Text to PDF Converter",
-   "item": "https://pdfecta.com/text-to-pdf.html"
- }]
 }
 </script>
 
