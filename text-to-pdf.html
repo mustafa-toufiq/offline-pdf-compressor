@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Text to PDF Converter – Free Online TXT, HTML & Code to PDF | PDFECTA</title>
+
+  <meta name="description" content="Convert text files, code, HTML, markdown, or pasted content into high-quality PDF files instantly. 100% private, offline, browser-based Text to PDF converter with no uploads or tracking." />
+
+  <meta name="keywords" content="text to pdf, txt to pdf, convert text file to pdf, html to pdf, markdown to pdf, code to pdf, json to pdf, csv to pdf, free text to pdf converter, browser text to pdf, offline pdf generator, secure pdf tool, no upload pdf converter, developer pdf tool, privacy pdf tool, create pdf from text, export text to pdf, text document to pdf, programming code to pdf, convert html file to pdf online free, local pdf generator" />
+
+  <link rel="canonical" href="https://pdfecta.com/text-to-pdf.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+    .brand-gradient {
+      background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white border-b">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">P</div>
+      PDFECTA
+    </a>
+    <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+      <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
+      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="max-w-4xl mx-auto px-6 py-16">
+
+  <h1 class="text-4xl font-extrabold mb-6">
+    <span class="text-transparent bg-clip-text brand-gradient">
+      Text to PDF Converter
+    </span>
+  </h1>
+
+  <p class="text-slate-600 mb-8 leading-relaxed">
+    Convert text files, source code, HTML documents, markdown files, JSON, CSV, or any plain text into a clean,
+    high-quality PDF file instantly in your browser. No uploads. No tracking. Fully private.
+  </p>
+
+  <div class="bg-white p-8 rounded-2xl shadow space-y-6">
+
+    <div>
+      <label class="block font-semibold mb-2">Upload Text File</label>
+      <input id="fileInput" type="file"
+        accept=".txt,.html,.md,.json,.csv,.log"
+        class="w-full border rounded p-2" />
+    </div>
+
+    <div>
+      <label class="block font-semibold mb-2">Or Paste Text</label>
+      <textarea id="textInput"
+        rows="10"
+        placeholder="Paste your text, code, or HTML here..."
+        class="w-full border rounded p-4"></textarea>
+    </div>
+
+    <button onclick="generatePDF()"
+      class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700">
+      Convert & Download PDF
+    </button>
+
+    <p id="status" class="text-sm text-slate-500"></p>
+
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="mt-16 space-y-6 text-slate-700 leading-relaxed">
+
+    <h2 class="text-2xl font-bold">Why Use PDFECTA Text to PDF Tool?</h2>
+
+    <p>
+      PDFECTA provides a fast, secure, and completely browser-based way to convert text content into PDF files.
+      Whether you're working with plain text, source code, HTML markup, markdown documentation, or structured
+      data files, this tool transforms your content into a downloadable PDF instantly.
+    </p>
+
+    <p>
+      Unlike traditional online converters, PDFECTA processes everything locally on your device.
+      Your files are never uploaded, scanned, or stored. This makes it ideal for developers,
+      students, writers, legal professionals, businesses, and anyone handling sensitive content.
+    </p>
+
+    <h3 class="text-xl font-semibold">Supported Input Formats</h3>
+
+    <ul class="list-disc pl-6 space-y-1">
+      <li>Plain text (.txt)</li>
+      <li>HTML files (.html)</li>
+      <li>Markdown (.md)</li>
+      <li>JSON (.json)</li>
+      <li>CSV data (.csv)</li>
+      <li>Log files (.log)</li>
+      <li>Manual pasted text or code</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold">Common Use Cases</h3>
+
+    <ul class="list-disc pl-6 space-y-1">
+      <li>Create PDF from source code for documentation</li>
+      <li>Export HTML content into printable PDF format</li>
+      <li>Convert markdown notes into PDF files</li>
+      <li>Generate PDF from structured data</li>
+      <li>Create printable reports from raw text</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold">Privacy & Security</h3>
+
+    <p>
+      All processing happens entirely in your browser using client-side JavaScript.
+      Files never leave your device. No tracking scripts. No analytics. No third-party uploads.
+      This ensures maximum privacy and complete control over your documents.
+    </p>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 mt-24">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+    <div>
+      <p class="text-slate-500">
+        Free, privacy-first PDF tools that run entirely in your browser.
+      </p>
+    </div>
+    <div>
+      <ul class="space-y-2 text-slate-500">
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="mailto:support@pdfecta.com"
+         class="text-indigo-600 font-semibold">
+        support@pdfecta.com
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+async function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  const fileInput = document.getElementById("fileInput");
+  const textInput = document.getElementById("textInput");
+  const status = document.getElementById("status");
+
+  let text = textInput.value;
+
+  if (fileInput.files.length) {
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      createPDF(e.target.result);
+    };
+    reader.readAsText(file);
+  } else if (text.trim()) {
+    createPDF(text);
+  } else {
+    status.textContent = "Please upload a file or paste text.";
+  }
+
+  function createPDF(content) {
+    const doc = new jsPDF();
+    const lines = doc.splitTextToSize(content, 180);
+    doc.text(lines, 10, 10);
+    doc.save("text-to-pdf.pdf");
+    status.textContent = "PDF generated successfully.";
+  }
+}
+</script>
+
+<!-- FAQ JSON -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [{
+  "@type": "Question",
+  "name": "Is this Text to PDF tool free?",
+  "acceptedAnswer": {
+   "@type": "Answer",
+   "text": "Yes. PDFECTA Text to PDF converter is completely free and runs locally in your browser."
+  }
+ },{
+  "@type": "Question",
+  "name": "Are my files uploaded to a server?",
+  "acceptedAnswer": {
+   "@type": "Answer",
+   "text": "No. All processing happens locally in your browser. Files are never uploaded."
+  }
+ },{
+  "@type": "Question",
+  "name": "Can I convert HTML or code into PDF?",
+  "acceptedAnswer": {
+   "@type": "Answer",
+   "text": "Yes. You can upload or paste HTML, markdown, JSON, or any text-based content and convert it into PDF."
+  }
+ }]
+}
+</script>
+
+<!-- Breadcrumb JSON -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [{
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://pdfecta.com/"
+ },{
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Text to PDF Converter",
+   "item": "https://pdfecta.com/text-to-pdf.html"
+ }]
+}
+</script>
+
+</body>
+</html>
