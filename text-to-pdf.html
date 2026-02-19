@@ -177,11 +177,29 @@ async function generatePDF() {
     }
 
     const reader = new FileReader();
-    reader.onload = () => createPDF(reader.result);
-    reader.onerror = () => {
-      status.textContent = "Failed to read file.";
-    };
-    reader.readAsText(file);
+
+  reader.onload = function (e) {
+  const buffer = e.target.result;
+  let decoder;
+  let text;
+
+  const bytes = new Uint8Array(buffer);
+
+  // Detect BOM
+  if (bytes[0] === 0xFF && bytes[1] === 0xFE) {
+    decoder = new TextDecoder("utf-16le");
+  } else if (bytes[0] === 0xFE && bytes[1] === 0xFF) {
+    decoder = new TextDecoder("utf-16be");
+  } else {
+    decoder = new TextDecoder("utf-8");
+  }
+
+  text = decoder.decode(buffer);
+  createPDF(text);
+};
+
+reader.readAsArrayBuffer(file);
+
 
   } else if (textInput.value.trim()) {
     createPDF(textInput.value);
