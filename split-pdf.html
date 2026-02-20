@@ -90,49 +90,7 @@ Split PDF
 </div>
 </div>
 
-<script>
-async function splitPDF() {
-  const input = document.getElementById("pdfInput");
-  const status = document.getElementById("status");
 
-  // ✅ VALIDATION
-  if (!input.files.length) {
-    status.textContent = "Please select a PDF file.";
-    return;
-  }
-
-  const file = input.files[0];
-
-  if (file.type !== "application/pdf") {
-    status.textContent = "Invalid file type. Please upload a PDF file.";
-    return;
-  }
-
-status.textContent = "Processing PDF... Please wait.";
-
-  // ✅ PROCESSING
-  const bytes = await file.arrayBuffer();
-  const pdf = await PDFLib.PDFDocument.load(bytes);
-  const totalPages = pdf.getPageCount();
-
-  for (let i = 0; i < totalPages; i++) {
-    const newPdf = await PDFLib.PDFDocument.create();
-    const [page] = await newPdf.copyPages(pdf, [i]);
-    newPdf.addPage(page);
-
-    const pdfBytes = await newPdf.save();
-    const blob = new Blob([pdfBytes], { type: "application/pdf" });
-
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = `page-${i + 1}.pdf`;
-    a.click();
-  }
-
-  status.textContent = "PDF split completed.";
-}
-
-</script>
 
 <!-- SEO CONTENT -->
 <section class="max-w-4xl mx-auto p-8">
@@ -202,8 +160,7 @@ Yes, depending on your device and browser memory limits.
   </ul>
 </section>
 
-
-
+</main>
 
 
 <!-- FOOTER -->
@@ -250,6 +207,53 @@ Yes, depending on your device and browser memory limits.
 
   </div>
 </footer>
+
+
+
+  
+<script>
+async function splitPDF() {
+  const input = document.getElementById("pdfInput");
+  const status = document.getElementById("status");
+
+  // ✅ VALIDATION
+  if (!input.files.length) {
+    status.textContent = "Please select a PDF file.";
+    return;
+  }
+
+  const file = input.files[0];
+
+  if (file.type !== "application/pdf") {
+    status.textContent = "Invalid file type. Please upload a PDF file.";
+    return;
+  }
+
+status.textContent = "Processing PDF... Please wait.";
+
+  // ✅ PROCESSING
+  const bytes = await file.arrayBuffer();
+  const pdf = await PDFLib.PDFDocument.load(bytes);
+  const totalPages = pdf.getPageCount();
+
+  for (let i = 0; i < totalPages; i++) {
+    const newPdf = await PDFLib.PDFDocument.create();
+    const [page] = await newPdf.copyPages(pdf, [i]);
+    newPdf.addPage(page);
+
+    const pdfBytes = await newPdf.save();
+    const blob = new Blob([pdfBytes], { type: "application/pdf" });
+
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `page-${i + 1}.pdf`;
+    a.click();
+  }
+
+  status.textContent = "PDF split completed.";
+}
+
+</script>
 
   
 </body>
