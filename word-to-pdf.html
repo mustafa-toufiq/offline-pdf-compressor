@@ -155,10 +155,12 @@
     // Create temp container
     const container = document.createElement("div");
     container.innerHTML = html;
-    container.style.width = "600px";
+    container.style.width = "515px";
     container.style.fontFamily = "Times New Roman, serif";
-    container.style.fontSize = "12pt";
-    container.style.lineHeight = "1.6";
+    container.style.fontSize = "11pt";
+    container.style.lineHeight = "1.5";
+    container.style.wordBreak = "break-word";
+    container.style.boxSizing = "border-box";
 
     document.body.appendChild(container);
 
@@ -173,7 +175,8 @@
   autoPaging: "text",
   margin: [40, 40, 40, 40],
   windowWidth: 600,
-  html2canvas: { scale: 1 }
+  html2canvas: { scale: 0.9 }
+
 });
 
     
