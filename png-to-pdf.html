@@ -2,39 +2,61 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>PNG to PDF Converter - Free & Private</title>
+<title>Convert PNG to PDF Online – Free, Secure & No Upload | PDFECTA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Convert PNG images to PDF directly in your browser. No upload required. 100% private." />
+<meta name="description" content="Convert PNG to PDF online for free. Combine multiple PNG images into one PDF securely in your browser. No upload, no watermark, 100% private." />
+<link rel="canonical" href="https://pdfecta.com/png-to-pdf.html" />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
+<!-- Breadcrumb -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
-    { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
-    { "@type": "ListItem", "position": 3, "name": "PNG to PDF", "item": "https://pdfecta.com/png-to-pdf.html" }
-  ]
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+   { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
+   { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
+   { "@type": "ListItem", "position": 3, "name": "PNG to PDF", "item": "https://pdfecta.com/png-to-pdf.html" }
+ ]
 }
 </script>
 
-
+<!-- FAQ Schema -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Is PNG to PDF conversion safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Images are converted to PDF directly in your browser. No files are uploaded to any server." }},
-    { "@type": "Question", "name": "Can I convert multiple PNG images into one PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can upload multiple PNG images and combine them into a single PDF file." }},
-    { "@type": "Question", "name": "Does this PNG to PDF tool add watermarks?", "acceptedAnswer": { "@type": "Answer", "text": "No. The generated PDF is clean and does not include any watermark." }},
-    { "@type": "Question", "name": "Do I need to sign up?", "acceptedAnswer": { "@type": "Answer", "text": "No sign-up or registration is required. The tool is completely free." }}
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+   {
+     "@type": "Question",
+     "name": "How do I convert PNG to PDF?",
+     "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Upload your PNG images, click convert, and download your PDF instantly. No uploads to any server."
+     }
+   },
+   {
+     "@type": "Question",
+     "name": "Is PNG to PDF conversion secure?",
+     "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. All conversion happens locally in your browser. Files are never uploaded."
+     }
+   },
+   {
+     "@type": "Question",
+     "name": "Can I combine multiple PNG images into one PDF?",
+     "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. You can upload multiple PNG files and merge them into a single PDF document."
+     }
+   }
+ ]
 }
 </script>
-  
+
 </head>
 
 <body class="bg-gray-50 text-gray-900">
@@ -42,8 +64,6 @@
 <!-- HEADER -->
 <header class="sticky top-0 z-50 bg-white border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    
-    <!-- LOGO -->
     <a href="/" class="flex items-center gap-2 font-extrabold text-xl text-slate-800">
       <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
         P
@@ -51,30 +71,34 @@
       PDFECTA
     </a>
 
-    <!-- NAV -->
     <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
       <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
       <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
       <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
     </nav>
-
   </div>
 </header>
-  
-<div class="max-w-2xl mx-auto p-8">
 
-<h1 class="text-3xl font-bold mb-2">PNG to PDF Converter</h1>
-<p class="text-gray-600 mb-6">
-Convert PNG images to PDF directly in your browser. No upload. 100% private.
-</p>
+<main class="max-w-4xl mx-auto px-6 pt-16 pb-12">
 
-<div class="bg-white shadow rounded-xl p-6 space-y-4">
+<!-- HERO -->
+<section class="text-center mb-10">
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Convert PNG to PDF Online — Free & Secure
+  </h1>
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+    Combine multiple PNG images into one PDF instantly. 100% private. No uploads. No watermark.
+  </p>
+</section>
 
-<input type="file" id="imageInput" accept="image/jpeg" multiple
-class="block w-full border rounded p-2" />
+<!-- TOOL CARD -->
+<div class="bg-white shadow rounded-2xl p-8 space-y-4">
+
+<input type="file" id="imageInput" accept="image/png,image/jpeg,image/jpg" multiple
+class="block w-full border rounded p-3" />
 
 <button onclick="convertToPDF()"
-class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
 Convert to PDF
 </button>
 
@@ -82,146 +106,85 @@ Convert to PDF
 
 </div>
 
-</div>
-
-<script>
-async function convertToPDF() {
-  const input = document.getElementById("imageInput");
-  const status = document.getElementById("status");
-
-  // ✅ VALIDATION
-  if (!input.files.length) {
-    status.textContent = "Please select image files.";
-    return;
-  }
-
-  for (let file of input.files) {
-    if (!file.type.startsWith("image/")) {
-      status.textContent = "Invalid file type. Please upload image files only.";
-      return;
-    }
-  }
-
-  status.textContent = "Converting images to PDF...";
-
-  const { jsPDF } = window.jspdf;
-  const pdf = new jsPDF();
-
-  let firstPage = true;
-
-  for (let file of input.files) {
-    const imgData = await readFile(file);
-
-    const img = new Image();
-    img.src = imgData;
-
-    await new Promise(resolve => (img.onload = resolve));
-
-    const imgWidth = img.width;
-    const imgHeight = img.height;
-
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = (imgHeight * pageWidth) / imgWidth;
-
-    if (!firstPage) pdf.addPage();
-    firstPage = false;
-
-    pdf.addImage(img, "JPEG", 0, 0, pageWidth, pageHeight);
-  }
-
-  pdf.save("images.pdf");
-  status.textContent = "PDF downloaded.";
-}
-
-
-function readFile(file) {
-return new Promise((resolve) => {
-const reader = new FileReader();
-reader.onload = () => resolve(reader.result);
-reader.readAsDataURL(file);
-});
-}
-</script>
-
-
-
-
-
 <!-- SEO CONTENT -->
-<section class="max-w-4xl mx-auto p-8">
+<section class="mt-16 space-y-6 text-slate-700 leading-relaxed">
 
-<h2 class="text-2xl font-bold mb-4">Convert PNG Images to PDF Online (Free & Secure)</h2>
+<h2 class="text-2xl font-bold text-slate-800">
+Convert PNG Images to PDF Online (Free & No Upload)
+</h2>
 
-<p class="text-gray-700 mb-4">
-Our PNG to PDF converter allows you to convert images into high-quality PDF documents directly in your browser. 
-Unlike many online converters, your files never leave your device, ensuring maximum privacy and security.
+<p>
+PDFECTA allows you to convert PNG to PDF online instantly without uploading your images to any server.
+Whether you need to combine PNG files into a single PDF, create printable documents from images,
+or organize screenshots into a shareable format, this tool provides a fast and secure solution.
 </p>
 
-<p class="text-gray-700 mb-4">
-This tool is perfect for students, professionals, and businesses who need to combine images into PDF format for sharing, printing, or archiving. 
-Simply upload your PNG files, click convert, and download your PDF instantly.
+<p>
+Unlike traditional online converters that require file uploads, PDFECTA processes everything locally
+in your browser. Your PNG images never leave your device, ensuring complete privacy and security.
+This makes it ideal for business documents, academic files, invoices, scanned pages, and personal records.
 </p>
 
-<h3 class="text-xl font-semibold mt-6 mb-2">Why Use Our PNG to PDF Tool?</h3>
+<h3 class="text-xl font-semibold mt-8">
+How to Convert PNG to PDF
+</h3>
 
-<ul class="list-disc pl-6 text-gray-700 mb-4">
-<li>No file upload required – fully offline processing</li>
-<li>Fast conversion directly in your browser</li>
-<li>Works on desktop and mobile devices</li>
-<li>Completely free to use</li>
-<li>No registration required</li>
+<ol class="list-decimal pl-6 space-y-2">
+<li>Select one or multiple PNG images.</li>
+<li>Click the “Convert to PDF” button.</li>
+<li>Your images are combined into a single PDF.</li>
+<li>Download the generated PDF instantly.</li>
+</ol>
+
+<h3 class="text-xl font-semibold mt-8">
+Why Use PDFECTA PNG to PDF Converter?
+</h3>
+
+<ul class="list-disc pl-6 space-y-2">
+<li><strong>100% Private:</strong> No uploads or cloud processing.</li>
+<li><strong>Combine Multiple Images:</strong> Merge PNG files into one PDF.</li>
+<li><strong>No Watermarks:</strong> Clean professional output.</li>
+<li><strong>Fast Conversion:</strong> Instant processing in your browser.</li>
+<li><strong>Free & Unlimited:</strong> No sign-up required.</li>
 </ul>
 
-<h3 class="text-xl font-semibold mt-6 mb-2">Common Use Cases</h3>
+<h3 class="text-xl font-semibold mt-8">
+Common Use Cases
+</h3>
 
-<ul class="list-disc pl-6 text-gray-700 mb-4">
-<li>Convert scanned documents into PDF format</li>
-<li>Create PDF reports from images</li>
-<li>Combine photos into shareable PDF files</li>
-<li>Prepare documents for printing</li>
-</ul>
-
-<h3 class="text-xl font-semibold mt-6 mb-2">Frequently Asked Questions</h3>
-
-<p class="font-semibold">Is this PNG to PDF converter safe?</p>
-<p class="text-gray-700 mb-3">
-Yes. All processing happens inside your browser. Your files are never uploaded to any server.
+<p>
+Convert scanned documents to PDF, create reports from screenshots, combine product images,
+prepare documents for printing, or submit image-based assignments in PDF format.
+If you need to reverse the process, try our
+<a href="/pdf-to-png.html" class="text-indigo-600 hover:underline">PDF to PNG converter</a>.
+You can also
+<a href="/merge-pdf.html" class="text-indigo-600 hover:underline">merge PDFs</a>,
+<a href="/compress-pdf.html" class="text-indigo-600 hover:underline">compress PDF files</a>,
+or
+<a href="/split-pdf.html" class="text-indigo-600 hover:underline">split PDF documents</a>.
 </p>
 
-<p class="font-semibold">Does this tool reduce image quality?</p>
-<p class="text-gray-700 mb-3">
-No. The converter keeps original image quality while placing images into PDF format.
-</p>
+<h3 class="text-xl font-semibold mt-8">
+Frequently Asked Questions
+</h3>
+
+<p class="font-semibold">Is PNG to PDF conversion safe?</p>
+<p>Yes. All processing happens locally in your browser. Files are never uploaded.</p>
+
+<p class="font-semibold">Does converting PNG to PDF reduce quality?</p>
+<p>No. The original image quality is preserved inside the PDF.</p>
 
 <p class="font-semibold">Can I convert multiple PNG files into one PDF?</p>
-<p class="text-gray-700 mb-3">
-Yes. You can upload multiple images and combine them into a single PDF file.
-</p>
+<p>Yes. You can combine several PNG images into a single PDF document.</p>
 
-
-<p class="text-gray-700 mb-4">
-  Need images extracted instead? Use our
-  <a href="/pdf-to-png.html" class="text-blue-600 underline">PDF to PNG converter</a>.
-</p>
-
-
-  
 </section>
 
-<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
-  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
-  <ul class="list-disc pl-6 space-y-2 text-gray-700">
-    <li><a href="/pdf-to-png.html" class="text-blue-600 underline">PDF to PNG</a></li>
-    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
-  </ul>
-</section>
+</main>
 
-  
 <!-- FOOTER -->
 <footer class="bg-white border-t border-slate-200 mt-24">
   <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
 
-    <!-- BRAND -->
     <div>
       <div class="flex items-center gap-2 mb-3">
         <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
@@ -235,7 +198,6 @@ Yes. You can upload multiple images and combine them into a single PDF file.
       </p>
     </div>
 
-    <!-- LINKS -->
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
@@ -246,14 +208,12 @@ Yes. You can upload multiple images and combine them into a single PDF file.
       </ul>
     </div>
 
-    <!-- CONTACT -->
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Support</h4>
       <a href="mailto:support@pdfecta.com"
          class="font-semibold text-indigo-600 hover:underline">
         support@pdfecta.com
       </a>
-
       <p class="text-xs text-slate-400 mt-6">
         © 2026 PDFECTA. All rights reserved.
       </p>
@@ -261,6 +221,55 @@ Yes. You can upload multiple images and combine them into a single PDF file.
 
   </div>
 </footer>
-  
+
+<script>
+async function convertToPDF() {
+  const input = document.getElementById("imageInput");
+  const status = document.getElementById("status");
+
+  if (!input.files.length) {
+    status.textContent = "Please select PNG images.";
+    return;
+  }
+
+  status.textContent = "Converting images to PDF...";
+
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF();
+  let firstPage = true;
+
+  for (let file of input.files) {
+    if (!file.type.startsWith("image/")) {
+      status.textContent = "Invalid file type detected.";
+      return;
+    }
+
+    const imgData = await readFile(file);
+    const img = new Image();
+    img.src = imgData;
+    await new Promise(resolve => (img.onload = resolve));
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = (img.height * pageWidth) / img.width;
+
+    if (!firstPage) pdf.addPage();
+    firstPage = false;
+
+    pdf.addImage(img, "JPEG", 0, 0, pageWidth, pageHeight);
+  }
+
+  pdf.save("converted.pdf");
+  status.textContent = "PDF downloaded successfully.";
+}
+
+function readFile(file) {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.readAsDataURL(file);
+  });
+}
+</script>
+
 </body>
 </html>
