@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Split PDF Online Free | PDFECTA</title>
+<title>Split PDF Online Free & Secure – Extract Pages | PDFECTA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Split PDF files online for free. Extract pages from a PDF securely. Files never leave your browser." />
 
@@ -62,9 +62,22 @@
   </div>
 </header>
 
-<div class="max-w-2xl mx-auto p-8">
+<main class="max-w-4xl mx-auto px-6 pt-10 pb-16">
 
-<h1 class="text-3xl font-bold mb-2">Split PDF</h1>
+  
+<!-- HERO -->
+  <section class="text-center mb-10">
+    <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-3">
+      Split PDF Online — Free & Secure
+    </h1>
+    <p class="text-slate-600 max-w-2xl mx-auto">
+      Extract pages from a PDF file instantly. 100% private, browser-based, and free. No uploads. No tracking.
+    </p>
+  </section>
+
+<h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-3">
+Split PDF Online — Free & Secure
+</h1>
 <p class="text-gray-600 mb-6">
 Extract pages from a PDF file instantly. Secure, private, and fully browser-based.
 </p>
@@ -75,7 +88,7 @@ Extract pages from a PDF file instantly. Secure, private, and fully browser-base
 class="block w-full border rounded p-2" />
 
 <button onclick="splitPDF()"
-class="w-full bg-black text-white p-3 rounded-lg hover:opacity-90">
+class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
 Split PDF
 </button>
 
@@ -102,7 +115,7 @@ async function splitPDF() {
     return;
   }
 
-  status.textContent = "Splitting PDF...";
+status.textContent = "Processing PDF... Please wait.";
 
   // ✅ PROCESSING
   const bytes = await file.arrayBuffer();
@@ -125,7 +138,6 @@ async function splitPDF() {
 
   status.textContent = "PDF split completed.";
 }
-
 
 </script>
 
