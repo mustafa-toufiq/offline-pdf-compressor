@@ -2,194 +2,154 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Extract Pages from PDF Online – Free & Secure | PDFECTA</title>
+  <title>Extract Specific Pages from PDF Online (Free & Secure) | PDFECTA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Extract pages from a PDF online for free. Select single pages or page ranges. 100% client-side, private, and secure. No uploads, no tracking." />
+  <meta name="description" content="Extract specific pages from a PDF online for free. Save selected pages or page ranges instantly. 100% offline, secure & private. No uploads required." />
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- PDFLib -->
   <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
-  <!-- Breadcrumb Schema -->
+  <!-- FAQ Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Extract Pages from PDF", "item": "https://pdfecta.com/extract-pages-from-pdf.html" }
-    ]
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Is it safe to extract PDF pages using PDFECTA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All processing happens locally in your browser. Your files are never uploaded to any server."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I extract multiple page ranges at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can enter multiple ranges separated by commas, such as 1–3, 5, 8–10."
+      }
+    },{
+      "@type": "Question",
+      "name": "Does PDFECTA modify my original file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A new PDF is created with the extracted pages. Your original file remains unchanged."
+      }
+    }]
   }
   </script>
+
 </head>
 
 <body class="bg-slate-50 text-slate-900">
 
-<!-- HEADER -->
 <header class="sticky top-0 z-50 bg-white border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
-        P
-      </div>
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">P</div>
       PDFECTA
     </a>
-    <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-      <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
-      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
-      <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
-    </nav>
   </div>
 </header>
 
-<main class="bg-slate-50 pb-8">
+<main class="pb-8">
 
-  <!-- HERO -->
-  <section class="max-w-4xl mx-auto px-6 py-12 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
-      Extract Pages from PDF
-    </h1>
-    <p class="text-slate-600 text-lg max-w-2xl mx-auto">
-      Extract specific pages or page ranges from a PDF instantly.
-      Works fully offline in your browser. No uploads. No tracking.
-    </p>
-  </section>
+<section class="max-w-4xl mx-auto px-6 py-12 text-center">
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Extract Specific Pages from PDF
+  </h1>
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+    Extract selected pages from your PDF instantly — 100% offline, secure, and free.
+    No uploads. No tracking. Your files stay on your device.
+  </p>
+</section>
 
-  <!-- TOOL CARD -->
-  <section class="max-w-4xl mx-auto px-6">
-    <div class="bg-white rounded-2xl shadow p-8 space-y-6">
+<section class="max-w-4xl mx-auto px-6">
+  <div class="bg-white rounded-2xl shadow p-8 space-y-6">
 
-      <div>
-        <label class="block font-medium mb-1">Upload PDF</label>
-        <input id="pdfInput" type="file" accept="application/pdf" class="w-full" />
-      </div>
-
-      <div>
-        <label class="block font-medium mb-1">Pages to extract</label>
-        <input
-          id="pageRange"
-          type="text"
-          placeholder="Example: 5-10 or 1,3,7-9"
-          class="w-full border rounded-lg p-3"
-        />
-        <p class="text-xs text-slate-500 mt-1">
-          Page numbers start from 1
-        </p>
-      </div>
-
-      <button
-        onclick="extractPages()"
-        class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90"
-      >
-        Extract Pages
-      </button>
-
-      <p id="status" class="text-sm text-slate-600"></p>
-
+    <div>
+      <label class="block font-medium mb-1">Upload PDF</label>
+      <input id="pdfInput" type="file" accept="application/pdf" class="w-full" />
     </div>
-  </section>
 
-  <!-- SEO CONTENT -->
-<section class="max-w-4xl mx-auto px-6 mt-16 space-y-6">
+    <div>
+      <label class="block font-medium mb-1">Pages to extract</label>
+      <input id="pageRange" type="text" placeholder="Example: 1-3, 7, 10-12" class="w-full border rounded-lg p-3" />
+      <p class="text-xs text-slate-500 mt-1">Page numbers start from 1</p>
+    </div>
 
-  <h2 class="text-2xl font-bold">
-    Extract Pages from PDF Online — Free, Secure & Private
-  </h2>
+    <button onclick="extractPages()" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90">
+      Extract Pages Now
+    </button>
 
-  <p class="text-slate-700">
-    PDFECTA lets you extract specific pages from a PDF file directly in your browser.
-    Unlike traditional online PDF tools that upload files to remote servers,
-    PDFECTA processes everything locally on your device.
-    Your documents never leave your computer.
-  </p>
-
-  <p class="text-slate-700">
-    You can extract a single page, multiple pages, or page ranges such as
-    <strong>5–10</strong> or <strong>1,3,7–9</strong>.
-    The selected pages are saved instantly into a new PDF file without affecting the original.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    How to Extract Pages from a PDF
-  </h3>
-
-  <ol class="list-decimal pl-6 text-slate-700 space-y-2">
-    <li>Upload your PDF file using the file selector.</li>
-    <li>Enter the page numbers or ranges you want to extract.</li>
-    <li>Click <strong>Extract Pages</strong>.</li>
-    <li>Download your new PDF instantly.</li>
-  </ol>
-
-  <h3 class="text-xl font-semibold">
-    Common Use Cases
-  </h3>
-
-  <ul class="list-disc pl-6 text-slate-700 space-y-1">
-    <li>Extract specific chapters from large documents</li>
-    <li>Share selected pages without sending the full PDF</li>
-    <li>Remove unnecessary pages before printing</li>
-    <li>Create smaller PDFs for email or upload limits</li>
-    <li>Prepare documents for legal, academic, or business use</li>
-  </ul>
-
-  <h3 class="text-xl font-semibold">
-    Why Use PDFECTA?
-  </h3>
-
-  <ul class="list-disc pl-6 text-slate-700 space-y-1">
-    <li>100% client-side PDF processing</li>
-    <li>No uploads, no tracking, no accounts</li>
-    <li>Works offline after page load</li>
-    <li>Fast and unlimited usage</li>
-    <li>Compatible with all modern browsers</li>
-  </ul>
-
-  <h3 class="text-xl font-semibold">
-    Frequently Asked Questions
-  </h3>
-
-  <div class="space-y-4 text-slate-700">
-    <p>
-      <strong>Is it safe to extract PDF pages using PDFECTA?</strong><br />
-      Yes. All processing happens locally in your browser. Your files are never uploaded to any server.
-    </p>
-
-    <p>
-      <strong>Can I extract multiple page ranges at once?</strong><br />
-      Yes. You can enter multiple ranges separated by commas, such as <em>1–3, 5, 8–10</em>.
-    </p>
-
-    <p>
-      <strong>Does PDFECTA modify my original file?</strong><br />
-      No. A new PDF is created with the extracted pages. Your original file remains unchanged.
-    </p>
-
-    <p>
-      <strong>Is this tool free to use?</strong><br />
-      Yes. PDFECTA tools are free and do not require sign-up or payment.
-    </p>
+    <p id="status" class="text-sm text-slate-600"></p>
   </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-6 mt-16 space-y-8">
+
+<h2 class="text-2xl font-bold">Extract Pages from PDF Online — Free, Secure & Private</h2>
+
+<p>
+PDFECTA allows you to extract specific pages from a PDF file directly in your browser.
+You can save selected pages, separate certain sections, or create a new PDF from chosen page ranges.
+Everything runs locally using client-side processing — your documents never leave your computer.
+</p>
+
+<h3 class="text-xl font-semibold">When Should You Extract Pages from a PDF?</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>Remove confidential or unnecessary sections</li>
+<li>Share only selected chapters of a document</li>
+<li>Create smaller files for email attachments</li>
+<li>Prepare documents for printing</li>
+<li>Submit only required pages for applications</li>
+</ul>
+
+<h3 class="text-xl font-semibold">How to Extract Specific Pages from a PDF</h3>
+<ol class="list-decimal pl-6 space-y-2">
+<li>Upload your PDF file.</li>
+<li>Enter the page numbers or ranges (e.g., 1–3, 7, 10–12).</li>
+<li>Click <strong>Extract Pages Now</strong>.</li>
+<li>Download your new PDF instantly.</li>
+</ol>
+
+<h3 class="text-xl font-semibold">Extract Pages vs Split PDF — What’s the Difference?</h3>
+<p>
+Extracting pages allows you to select specific pages and save them into a new PDF.
+Splitting a PDF typically divides the entire document into multiple separate files.
+If you only need certain pages, extracting is faster and more precise.
+</p>
+
+<h3 class="text-xl font-semibold">Why Choose PDFECTA?</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>100% offline PDF extraction</li>
+<li>No file size limits</li>
+<li>No watermarks</li>
+<li>No sign-up required</li>
+<li>Works on desktop and mobile browsers</li>
+</ul>
+
+<h3 class="text-xl font-semibold">Frequently Asked Questions</h3>
+
+<div class="space-y-4">
+<p><strong>Is it safe?</strong><br>Yes. Files are never uploaded.</p>
+<p><strong>Can I extract multiple ranges?</strong><br>Yes. Example: 1–3, 5, 8–10.</p>
+<p><strong>Will my original PDF change?</strong><br>No. A new file is created.</p>
+</div>
 
 </section>
 
-  <!-- RELATED TOOLS -->
-  <section class="max-w-4xl mx-auto px-6 mt-10 border-t pt-8">
-  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
-  <ul class="list-disc pl-6 space-y-2 text-gray-700">
-    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF Files</a></li>
-    <li><a href="/reorder-pdf-pages.html" class="text-blue-600 underline">Reorder Pages inside PDF</a></li>
-    <li><a href="/split-pdf.html" class="text-blue-600 underline">Split PDF</a></li>
-  </ul>
+<section class="max-w-4xl mx-auto px-6 mt-12 border-t pt-8">
+<h3 class="text-xl font-semibold mb-4">Related PDF Tools</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge multiple PDF files into one document</a></li>
+<li><a href="/reorder-pdf-pages.html" class="text-blue-600 underline">Rearrange pages inside your PDF</a></li>
+<li><a href="/split-pdf.html" class="text-blue-600 underline">Split a PDF into separate files</a></li>
+</ul>
 </section>
-  
+
 </main>
 
-
-
-
-<!-- SCRIPT -->
 <script>
 async function extractPages() {
   const { PDFDocument } = PDFLib;
@@ -212,16 +172,15 @@ async function extractPages() {
     const bytes = await file.arrayBuffer();
     const srcPdf = await PDFDocument.load(bytes);
     const newPdf = await PDFDocument.create();
-
     const pageCount = srcPdf.getPageCount();
     const pages = new Set();
 
     rangeInput.value.split(",").forEach(part => {
       if (part.includes("-")) {
-        const [start, end] = part.split("-").map(n => parseInt(n, 10));
+        const [start, end] = part.split("-").map(n => parseInt(n.trim(), 10));
         for (let i = start; i <= end; i++) pages.add(i - 1);
       } else {
-        pages.add(parseInt(part, 10) - 1);
+        pages.add(parseInt(part.trim(), 10) - 1);
       }
     });
 
@@ -247,52 +206,15 @@ async function extractPages() {
     a.click();
 
     status.textContent = "Pages extracted successfully.";
-
   } catch (e) {
-    console.error(e);
     status.textContent = "Failed to extract pages.";
   }
 }
 </script>
 
-
-<!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-
-    <div>
-      <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
-          P
-        </div>
-        <span class="font-extrabold text-slate-800">PDFECTA</span>
-      </div>
-      <p class="text-slate-500 max-w-sm">
-        Free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking.
-      </p>
-    </div>
-
-    <div>
-      <h4 class="font-bold text-slate-800 mb-3">Company</h4>
-      <ul class="space-y-2 text-slate-500">
-        <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
-        <li><a href="/contact.html" class="hover:text-indigo-600">Contact</a></li>
-        <li><a href="/privacy.html" class="hover:text-indigo-600">Privacy Policy</a></li>
-        <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
-      <a href="mailto:support@pdfecta.com" class="text-indigo-600 font-semibold hover:underline">
-        support@pdfecta.com
-      </a>
-      <p class="text-xs text-slate-400 mt-6">
-        © 2026 PDFECTA. All rights reserved.
-      </p>
-    </div>
-
+<footer class="bg-white border-t mt-16">
+  <div class="max-w-7xl mx-auto px-6 py-10 text-sm text-slate-500 text-center">
+    © 2026 PDFECTA — Privacy-first PDF tools.
   </div>
 </footer>
 
