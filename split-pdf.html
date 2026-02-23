@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Split PDF Online Free | PDFECTA</title>
+<title>Split PDF Online Free & Secure – Extract Pages | PDFECTA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Split PDF files online for free. Extract pages from a PDF securely. Files never leave your browser." />
 
@@ -62,20 +62,27 @@
   </div>
 </header>
 
-<div class="max-w-2xl mx-auto p-8">
+<main class="max-w-4xl mx-auto px-6 pt-16 pb-10">
+  
+<!-- HERO -->
+  <section class="text-center mb-10">
+    <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-3">
+      Split PDF Online — Free & Secure
+    </h1>
+    <p class="text-slate-600 max-w-2xl mx-auto">
+      Extract pages from a PDF file instantly. 100% private, browser-based, and free. No uploads. No tracking.
+    </p>
+  </section>
 
-<h1 class="text-3xl font-bold mb-2">Split PDF</h1>
-<p class="text-gray-600 mb-6">
-Extract pages from a PDF file instantly. Secure, private, and fully browser-based.
-</p>
 
+  <!-- TOOL CARD -->
 <div class="bg-white shadow rounded-xl p-6 space-y-4">
 
 <input type="file" id="pdfInput" accept="application/pdf"
 class="block w-full border rounded p-2" />
 
 <button onclick="splitPDF()"
-class="w-full bg-black text-white p-3 rounded-lg hover:opacity-90">
+class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
 Split PDF
 </button>
 
@@ -84,111 +91,133 @@ Split PDF
 </div>
 </div>
 
-<script>
-async function splitPDF() {
-  const input = document.getElementById("pdfInput");
-  const status = document.getElementById("status");
 
-  // ✅ VALIDATION
-  if (!input.files.length) {
-    status.textContent = "Please select a PDF file.";
-    return;
-  }
-
-  const file = input.files[0];
-
-  if (file.type !== "application/pdf") {
-    status.textContent = "Invalid file type. Please upload a PDF file.";
-    return;
-  }
-
-  status.textContent = "Splitting PDF...";
-
-  // ✅ PROCESSING
-  const bytes = await file.arrayBuffer();
-  const pdf = await PDFLib.PDFDocument.load(bytes);
-  const totalPages = pdf.getPageCount();
-
-  for (let i = 0; i < totalPages; i++) {
-    const newPdf = await PDFLib.PDFDocument.create();
-    const [page] = await newPdf.copyPages(pdf, [i]);
-    newPdf.addPage(page);
-
-    const pdfBytes = await newPdf.save();
-    const blob = new Blob([pdfBytes], { type: "application/pdf" });
-
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = `page-${i + 1}.pdf`;
-    a.click();
-  }
-
-  status.textContent = "PDF split completed.";
-}
-
-
-</script>
 
 <!-- SEO CONTENT -->
-<section class="max-w-4xl mx-auto p-8">
 
-<h2 class="text-2xl font-bold mb-4">Split PDF Files Online Free and Secure</h2>
+<section class="mt-16 pb-10 text-slate-700 leading-relaxed space-y-6">
 
-<p class="text-gray-700 mb-4">
-PDFECTA’s Split PDF tool lets you extract individual pages from a PDF file quickly and securely.
-All processing happens directly in your browser, so your documents never leave your device.
+<h2 class="text-2xl font-bold text-slate-800">
+Split PDF Files Online Free & Secure
+</h2>
+
+<p>
+PDFECTA lets you split PDF files online instantly without uploading your document to any server. 
+If you need to extract pages from a PDF, divide a large PDF into smaller files, or separate specific sections, 
+this tool provides a fast and secure solution directly in your browser.
 </p>
 
-
-<p class="text-gray-700 mb-4">
-  If you only need to remove specific pages, try our
-  <a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a>
-  tool instead. You can also
-  <a href="/merge-pdf.html" class="text-blue-600 underline">merge PDF files</a>
-  after splitting.
+<p>
+Unlike traditional PDF splitters that require file uploads, PDFECTA processes everything locally using modern browser technology. 
+Your PDF file never leaves your device, making this one of the safest ways to split a PDF online. 
+No registration, no cloud storage, and no tracking.
 </p>
 
+<h3 class="text-xl font-semibold text-slate-800 mt-8">
+How to Split a PDF Online
+</h3>
 
-<p class="text-gray-700 mb-4">
-Whether you need to separate scanned pages, extract specific sections, or organize documents,
-this tool provides a fast and privacy-friendly solution.
+<ol class="list-decimal pl-6 space-y-2">
+<li>Select your PDF file using the file chooser above.</li>
+<li>Click the “Split PDF” button.</li>
+<li>The tool automatically extracts each page as a separate PDF file.</li>
+<li>Download the split pages instantly to your device.</li>
+</ol>
+
+<p>
+This method works for scanned documents, reports, contracts, eBooks, academic papers, and any standard PDF file format.
 </p>
 
-<h3 class="text-xl font-semibold mt-6 mb-2">Why Use Our Split PDF Tool?</h3>
+<h3 class="text-xl font-semibold text-slate-800 mt-8">
+When Should You Split a PDF?
+</h3>
 
-<ul class="list-disc pl-6 text-gray-700 mb-4">
-<li>Extract pages instantly</li>
-<li>No file uploads or server processing</li>
-<li>Free and unlimited usage</li>
-<li>Works on all modern browsers</li>
-<li>Secure and private</li>
+<p>
+Splitting a PDF file is useful when you only need specific pages instead of the entire document. 
+For example, you may want to separate chapters from a large report, extract invoices from a scanned file, 
+or divide a multi-page contract into individual documents for sharing.
+</p>
+
+<p>
+If you only need to remove certain pages instead of splitting everything, you can also use our 
+<a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages from PDF</a> tool. 
+After splitting, you can recombine files using our 
+<a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> tool.
+</p>
+
+<h3 class="text-xl font-semibold text-slate-800 mt-8">
+Split PDF vs Extract Pages – What’s the Difference?
+</h3>
+
+<p>
+Splitting a PDF typically means dividing a multi-page document into separate individual PDF files. 
+Extracting pages, on the other hand, allows you to create a new PDF containing only selected pages. 
+PDFECTA focuses on simple and fast PDF splitting while maintaining full control over your original file.
+</p>
+
+<h3 class="text-xl font-semibold text-slate-800 mt-8">
+Why Use PDFECTA to Split PDF Files?
+</h3>
+
+<ul class="list-disc pl-6 space-y-2">
+<li><strong>100% Private:</strong> Files are processed locally in your browser.</li>
+<li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
+<li><strong>Free to Use:</strong> No subscriptions or hidden costs.</li>
+<li><strong>Fast Processing:</strong> Instant page separation using modern web technology.</li>
+<li><strong>Works on All Devices:</strong> Compatible with Windows, macOS, Linux, Android, and iOS browsers.</li>
 </ul>
 
-<h3 class="text-xl font-semibold mt-6 mb-2">Common Use Cases</h3>
+<h3 class="text-xl font-semibold text-slate-800 mt-8">
+Split Large PDF Files Safely
+</h3>
 
-<ul class="list-disc pl-6 text-gray-700 mb-4">
-<li>Extract pages from scanned documents</li>
-<li>Split reports into separate files</li>
-<li>Prepare individual PDF pages for sharing</li>
-<li>Organize large PDF documents</li>
-</ul>
-
-<h3 class="text-xl font-semibold mt-6 mb-2">Frequently Asked Questions</h3>
-
-<p class="font-semibold">Is splitting PDFs safe?</p>
-<p class="text-gray-700 mb-3">
-Yes. All splitting happens locally in your browser. Your files are never uploaded.
+<p>
+If you have a large PDF file, splitting it into smaller parts can make sharing easier and improve file organization. 
+Because PDFECTA runs entirely in your browser, performance depends on your device’s memory and processing power. 
+Most modern computers and smartphones handle standard PDF documents without any issues.
 </p>
 
-<p class="font-semibold">Can I split large PDF files?</p>
-<p class="text-gray-700 mb-3">
-Yes, depending on your device and browser memory limits.
+<p>
+For extremely large PDF files, we recommend closing unused browser tabs to ensure smooth performance.
+</p>
+
+<h3 class="text-xl font-semibold text-slate-800 mt-8">
+Is Splitting a PDF Secure?
+</h3>
+
+<p>
+Yes. PDFECTA is designed with privacy in mind. All PDF splitting happens locally in your browser using client-side processing. 
+No file uploads, no external servers, and no third-party access. 
+This makes it ideal for sensitive documents such as legal contracts, financial reports, academic papers, and confidential business files.
+</p>
+
+<h3 class="text-xl font-semibold text-slate-800 mt-8">
+Frequently Asked Questions
+</h3>
+
+<p class="font-semibold">Can I split a PDF without uploading it?</p>
+<p>
+Yes. PDFECTA splits PDF files directly in your browser without uploading them anywhere.
+</p>
+
+<p class="font-semibold">Is this split PDF tool free?</p>
+<p>
+Yes. You can split PDF files online free with no registration or payment required.
+</p>
+
+<p class="font-semibold">Does this tool work offline?</p>
+<p>
+After the page loads, it can function offline because processing happens locally in your browser.
 </p>
 
 </section>
 
 
-<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
+
+<!-- RELATED TOOLS -->
+  
+<section class="pt-8">
+<hr class="border-slate-200 mb-6">
   <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
   <ul class="list-disc pl-6 space-y-2 text-gray-700">
     <li><a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a></li>
@@ -197,12 +226,11 @@ Yes, depending on your device and browser memory limits.
   </ul>
 </section>
 
-
-
+</main>
 
 
 <!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200 mt-24">
+<footer class="bg-white border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
 
     <!-- BRAND -->
@@ -245,6 +273,53 @@ Yes, depending on your device and browser memory limits.
 
   </div>
 </footer>
+
+
+
+  
+<script>
+async function splitPDF() {
+  const input = document.getElementById("pdfInput");
+  const status = document.getElementById("status");
+
+  // ✅ VALIDATION
+  if (!input.files.length) {
+    status.textContent = "Please select a PDF file.";
+    return;
+  }
+
+  const file = input.files[0];
+
+  if (file.type !== "application/pdf") {
+    status.textContent = "Invalid file type. Please upload a PDF file.";
+    return;
+  }
+
+status.textContent = "Processing PDF... Please wait.";
+
+  // ✅ PROCESSING
+  const bytes = await file.arrayBuffer();
+  const pdf = await PDFLib.PDFDocument.load(bytes);
+  const totalPages = pdf.getPageCount();
+
+  for (let i = 0; i < totalPages; i++) {
+    const newPdf = await PDFLib.PDFDocument.create();
+    const [page] = await newPdf.copyPages(pdf, [i]);
+    newPdf.addPage(page);
+
+    const pdfBytes = await newPdf.save();
+    const blob = new Blob([pdfBytes], { type: "application/pdf" });
+
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `page-${i + 1}.pdf`;
+    a.click();
+  }
+
+  status.textContent = "PDF split completed.";
+}
+
+</script>
 
   
 </body>
