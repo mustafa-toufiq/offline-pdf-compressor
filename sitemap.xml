@@ -173,6 +173,20 @@
 </url>
 
 
+
+  
+  <url>
+  <loc>https://www.pdfecta.com/blog/png-to-pdf.html</loc>
+  <lastmod>2026-03-07</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+
+
+
+  <!-- BLOGS -->
+
   <url>
   <loc>https://www.pdfecta.com/blog/how-to-compress-pdf-without-losing-quality.html</loc>
   <lastmod>2026-03-06</lastmod>
@@ -192,13 +206,21 @@
 
 
   <url>
-  <loc>https://www.pdfecta.com/blog/png-to-pdf.html</loc>
-  <lastmod>2026-03-07</lastmod>
+  <loc>https://www.pdfecta.com/blog/how-to-split-a-pdf-file-online.html</loc>
+  <lastmod>2026-03-10</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
 
 
+
+    <url>
+  <loc>https://www.pdfecta.com/blog/how-to-delete-pages-from-pdf.html</loc>
+  <lastmod>2026-03-10</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+  
   
   
 </urlset>
