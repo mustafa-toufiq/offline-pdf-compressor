@@ -66,7 +66,7 @@
         "name": "Can I remove the password from a protected PDF later?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. If you need to remove the password from a PDF you have protected, you can open the file in Adobe Acrobat with the original password and re-save it without a password to remove the protection."
+          "text": "Yes. Open the protected PDF in Adobe Acrobat with the original password, then re-save it without a password to remove the protection."
         }
       }
     ]
@@ -159,7 +159,7 @@
 
   <h2 class="text-2xl font-bold text-slate-800">Add Password Protection to PDF Online Free & Secure</h2>
   <p>PDFECTA allows you to password protect PDF files instantly without uploading your document to any server. Whether you need to secure a contract, financial document, personal file, or confidential report, this free PDF protection tool provides fast and private encryption directly in your browser.</p>
-  <p>Unlike traditional online PDF tools that require file uploads, PDFECTA processes everything locally using modern browser technology. Your PDF file and your password never leave your device. No cloud storage, no third-party access, and no tracking.</p>
+  <p>Unlike traditional online PDF tools that require file uploads, PDFECTA processes everything locally using modern browser technology. Your PDF file and your password never leave your device.</p>
 
   <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Password Protect a PDF File</h3>
   <ol class="list-decimal pl-6 space-y-2">
@@ -183,7 +183,7 @@
     <li><strong>100% Private:</strong> Your file and password are processed locally — never sent to any server.</li>
     <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
     <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
-    <li><strong>Real Encryption:</strong> 128-bit RC4 encryption compatible with all PDF readers.</li>
+    <li><strong>128-bit RC4 Encryption:</strong> Industry standard encryption compatible with all PDF readers.</li>
     <li><strong>Works Offline:</strong> After loading, the tool works without an internet connection.</li>
     <li><strong>Compatible on All Devices:</strong> Windows, macOS, Linux, Android, and iOS.</li>
   </ul>
@@ -250,13 +250,8 @@
   </div>
 </footer>
 
-<!-- pdf-lib-plus-encrypt: real 128-bit RC4 encryption, works in browser -->
-<script type="module">
-  import { PDFDocument, encryptPDFDocument } from 'https://esm.sh/pdf-lib-plus-encrypt';
-  window._PDFDocument = PDFDocument;
-  window._encryptPDFDocument = encryptPDFDocument;
-  window._libReady = true;
-</script>
+<!-- Load pdf-lib-plus-encrypt UMD build — real 128-bit RC4 encryption -->
+<script src="https://unpkg.com/pdf-lib-plus-encrypt/dist/pdf-lib.min.js"></script>
 
 <script>
   const dropZone = document.getElementById('dropZone');
@@ -319,17 +314,12 @@
     status.innerHTML = '<span class="text-indigo-500">🔒 Encrypting your PDF locally...</span>';
 
     try {
-      let attempts = 0;
-      while (!window._libReady && attempts < 80) {
-        await new Promise(r => setTimeout(r, 100));
-        attempts++;
-      }
-      if (!window._PDFDocument || !window._encryptPDFDocument) throw new Error('Library not ready');
+      const { PDFDocument } = PDFLib;
 
       const buffer = await fileInput.files[0].arrayBuffer();
-      const pdfDoc = await window._PDFDocument.load(buffer);
+      const pdfDoc = await PDFDocument.load(buffer);
 
-      await window._encryptPDFDocument(pdfDoc, {
+      const pdfBytes = await pdfDoc.save({
         userPassword: password,
         ownerPassword: password + '_owner_pdfecta',
         permissions: {
@@ -341,9 +331,9 @@
           contentAccessibility: true,
           documentAssembly: false,
         },
+        encryptionAlgorithm: 'AES_128'
       });
 
-      const pdfBytes = await pdfDoc.save();
       const blob = new Blob([pdfBytes], { type: 'application/pdf' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
@@ -360,9 +350,6 @@
       status.textContent = '❌ Failed to protect PDF. Please try another file.';
     }
   }
-
-  window.protectPDF = protectPDF;
-  window.togglePasswordVisibility = togglePasswordVisibility;
 </script>
 
 </body>
