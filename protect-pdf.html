@@ -6,6 +6,7 @@
   <title>Protect PDF Online — Add Password to PDF Free & Secure | PDFECTA</title>
   <meta name="description" content="Password protect a PDF file online for free. Add encryption to your PDF instantly in your browser — no uploads, no registration, 100% private." />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dynamsoft-document-viewer@2.1.0/dist/ddv.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -42,7 +43,7 @@
         "name": "What type of encryption does PDFECTA use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "PDFECTA uses 128-bit RC4 encryption to password protect your PDF files, which is compatible with all modern PDF readers including Adobe Acrobat, Chrome, and mobile PDF apps."
+          "text": "PDFECTA uses AES encryption to password protect your PDF files, which is compatible with all modern PDF readers including Adobe Acrobat, Chrome, and mobile PDF apps."
         }
       },
       {
@@ -182,7 +183,7 @@
     <li><strong>100% Private:</strong> Your file and password are processed locally — never sent to any server.</li>
     <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
     <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
-    <li><strong>128-bit RC4 Encryption:</strong> Industry standard encryption compatible with all PDF readers.</li>
+    <li><strong>Real AES Encryption:</strong> Industry standard encryption compatible with all PDF readers.</li>
     <li><strong>Works Offline:</strong> After loading, the tool works without an internet connection.</li>
     <li><strong>Compatible on All Devices:</strong> Windows, macOS, Linux, Android, and iOS.</li>
   </ul>
@@ -195,7 +196,7 @@
     </div>
     <div>
       <p class="font-semibold text-slate-800">What type of encryption does PDFECTA use?</p>
-      <p>PDFECTA uses 128-bit RC4 encryption, compatible with all modern PDF readers including Adobe Acrobat, Chrome, and mobile apps.</p>
+      <p>PDFECTA uses AES encryption, compatible with all modern PDF readers including Adobe Acrobat, Chrome, and mobile apps.</p>
     </div>
     <div>
       <p class="font-semibold text-slate-800">Can I open the protected PDF on any device?</p>
@@ -248,8 +249,7 @@
   </div>
 </footer>
 
-<!-- pdf-lib-with-encrypt: correct UMD build with real RC4 128-bit encryption -->
-<script src="https://unpkg.com/pdf-lib-with-encrypt/dist/pdf-lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dynamsoft-document-viewer@2.1.0/dist/ddv.js"></script>
 
 <script>
   const dropZone = document.getElementById('dropZone');
@@ -259,6 +259,21 @@
   const confirmInput = document.getElementById('confirmPassword');
   const strengthContainer = document.getElementById('strengthContainer');
   const strengthLabel = document.getElementById('strengthLabel');
+
+  let ddvInitialized = false;
+
+  async function initDDV() {
+    if (ddvInitialized) return;
+    try {
+      await Dynamsoft.DDV.Core.init({
+        license: "DLS2eyJoYW5kc2hha2VDb2RlIjoiMjAwMDAxLTE2NDk4Mjk3OTI2MzUiLCJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInNlc3Npb25QYXNzd29yZCI6IndTcGR6Vm05WDJrcEQ5YUoifQ==",
+        engineResourcePath: "https://cdn.jsdelivr.net/npm/dynamsoft-document-viewer@2.1.0/dist/engine",
+      });
+      ddvInitialized = true;
+    } catch(e) {
+      console.error('DDV init error:', e);
+    }
+  }
 
   dropZone.onclick = () => fileInput.click();
   dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
@@ -312,29 +327,22 @@
     status.innerHTML = '<span class="text-indigo-500">🔒 Encrypting your PDF locally...</span>';
 
     try {
-      const { PDFDocument } = PDFLib;
-      const buffer = await fileInput.files[0].arrayBuffer();
-      const pdfDoc = await PDFDocument.load(buffer);
+      await initDDV();
 
-      const pdfBytes = await pdfDoc.save({
-        userPassword: password,
-        ownerPassword: password + '_owner_pdfecta',
-        permissions: {
-          printing: 'highResolution',
-          modifying: false,
-          copying: false,
-          annotating: false,
-          fillingForms: true,
-          contentAccessibility: true,
-          documentAssembly: false,
-        },
-      });
+      const docManager = Dynamsoft.DDV.Core.createDocumentManager();
+      const doc = await docManager.createDocument();
 
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([await fileInput.files[0].arrayBuffer()], { type: 'application/pdf' });
+      await doc.loadSource(blob);
+
+      const protectedBlob = await doc.saveToPdf({ password: password });
+
       const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
+      a.href = URL.createObjectURL(protectedBlob);
       a.download = 'protected.pdf';
       a.click();
+
+      await docManager.deleteDocuments([doc.uid]);
 
       status.innerHTML = '✅ <strong>PDF protected successfully!</strong> Your download has started.';
       passwordInput.value = '';
