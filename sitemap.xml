@@ -173,14 +173,23 @@
 </url>
 
 
-
   
   <url>
-  <loc>https://www.pdfecta.com/blog/png-to-pdf.html</loc>
+  <loc>https://www.pdfecta.com/png-to-pdf.html</loc>
   <lastmod>2026-03-07</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
+
+
+
+  <url>
+  <loc>https://www.pdfecta.com/add-page-numbers.html</loc>
+  <lastmod>2026-03-07</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
 
 
 
