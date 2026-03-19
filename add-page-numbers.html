@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Add Page Numbers to PDF Online — Free & Private | PDFECTA</title>
+  <meta name="description" content="Add page numbers to PDF files online for free. Customize position, font size and starting number. No uploads, no registration, 100% private." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+  </style>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "PDFECTA", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Add Page Numbers to PDF", "item": "https://www.pdfecta.com/add-page-numbers.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I add page numbers to a PDF for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA allows you to add page numbers to any PDF file completely free. There is no registration, no subscription, and no usage limits. Everything runs locally in your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to add page numbers to a PDF online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA processes your PDF entirely in your browser. Your file is never uploaded to any server, so your document remains completely private on your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I choose where the page numbers appear?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA lets you choose the position of page numbers including bottom center, bottom left, bottom right, top center, top left, and top right."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I start page numbering from a number other than 1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA allows you to set a custom starting number for your page numbers. This is useful when your document is part of a larger series and needs to continue numbering from a specific page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will adding page numbers change the PDF content?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adding page numbers overlays the numbers on top of the existing content. The original content of each page remains unchanged. Page numbers are added as a new layer on top of the document."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <span class="w-9 h-9 rounded-xl brand-gradient text-white flex items-center justify-center">P</span>
+      PDFECTA
+    </a>
+    <nav class="text-sm font-semibold text-slate-600 space-x-6">
+      <a href="/" class="hover:text-indigo-600">Home</a>
+      <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
+      <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Add Page Numbers to PDF — Free & Private
+  </h1>
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+    Add page numbers to your PDF directly in your browser.
+    No uploads. No servers. 100% private.
+  </p>
+</section>
+
+<!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6 pb-20">
+  <div class="bg-white rounded-3xl shadow-xl border p-6">
+
+    <!-- Drop Zone -->
+    <div id="dropZone"
+      class="border-2 border-dashed border-indigo-200 rounded-2xl p-12 text-center cursor-pointer hover:bg-indigo-50 transition">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center">
+          <svg class="w-7 h-7 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <p class="font-bold text-lg text-slate-700">Drop your PDF here</p>
+        <p class="text-sm text-slate-400">Files never leave your device</p>
+      </div>
+      <input id="pdfInput" type="file" accept="application/pdf" class="hidden" />
+    </div>
+
+    <!-- Options -->
+    <div class="mt-6 space-y-4">
+
+      <!-- Position -->
+      <div>
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Position</label>
+        <select id="position"
+          class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500 transition">
+          <option value="bottom-center">Bottom Center (Recommended)</option>
+          <option value="bottom-right">Bottom Right</option>
+          <option value="bottom-left">Bottom Left</option>
+          <option value="top-center">Top Center</option>
+          <option value="top-right">Top Right</option>
+          <option value="top-left">Top Left</option>
+        </select>
+      </div>
+
+      <!-- Start number and font size -->
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-slate-600 mb-2">Start From</label>
+          <input id="startNumber" type="number" value="1" min="1"
+            class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-600 mb-2">Font Size</label>
+          <select id="fontSize"
+            class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500 transition">
+            <option value="10">Small (10pt)</option>
+            <option value="12" selected>Medium (12pt)</option>
+            <option value="14">Large (14pt)</option>
+            <option value="16">Extra Large (16pt)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Format -->
+      <div>
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Number Format</label>
+        <select id="format"
+          class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500 transition">
+          <option value="number">1, 2, 3 ...</option>
+          <option value="page-of-total">Page 1 of 10</option>
+          <option value="dash">- 1 -</option>
+        </select>
+      </div>
+
+      <button onclick="addPageNumbers()"
+        class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+        Add Page Numbers
+      </button>
+
+      <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto px-6 pt-8 pb-12 text-slate-700 leading-relaxed space-y-6">
+
+  <h2 class="text-2xl font-bold text-slate-800">Add Page Numbers to PDF Online Free & Secure</h2>
+
+  <p>PDFECTA allows you to add page numbers to any PDF file instantly without uploading your document to any server. Whether you need to number pages in a report, thesis, contract, legal document, or any multi-page file, this free tool provides a fast, customizable, and completely private solution directly in your browser.</p>
+
+  <p>Unlike traditional online PDF tools that require file uploads, PDFECTA processes everything locally using modern browser technology. Your PDF file never leaves your device. No cloud storage, no third-party access, and no tracking — making it ideal for sensitive documents such as financial reports, legal contracts, academic papers, and confidential business files.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Add Page Numbers to a PDF</h3>
+  <ol class="list-decimal pl-6 space-y-2">
+    <li>Upload or drag and drop your PDF file into the tool above.</li>
+    <li>Choose your preferred position for the page numbers — bottom center is recommended for most documents.</li>
+    <li>Set the starting number. The default is 1 but you can start from any number.</li>
+    <li>Choose your font size and number format.</li>
+    <li>Click "Add Page Numbers" and download your updated PDF instantly.</li>
+  </ol>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Do Documents Need Page Numbers?</h3>
+
+  <p>Page numbers are a fundamental element of any professional document. They make navigation easier, help readers reference specific sections, and are often required for academic submissions, legal filings, and business reports. Without page numbers, multi-page documents can be confusing and difficult to navigate, especially when printed.</p>
+
+  <p>Adding page numbers is particularly important when:</p>
+
+  <ul class="list-disc pl-6 space-y-2">
+    <li>Submitting academic papers, theses, or dissertations that require numbered pages</li>
+    <li>Preparing legal documents or contracts where specific page references are essential</li>
+    <li>Creating professional business reports, proposals, or presentations</li>
+    <li>Combining multiple documents into one PDF that needs consistent numbering</li>
+    <li>Preparing manuals, guides, or handbooks for easy navigation</li>
+    <li>Adding page references to a table of contents</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Page Number Position Options Explained</h3>
+
+  <p>Choosing the right position for your page numbers depends on the type of document you are creating. Here is a guide to the six available positions:</p>
+
+  <ul class="list-disc pl-6 space-y-3">
+    <li><strong>Bottom Center</strong> — the most widely used position for page numbers in professional documents, reports, and academic papers. It is clean, neutral, and expected by most readers.</li>
+    <li><strong>Bottom Right</strong> — commonly used in books and multi-chapter documents. In double-sided printing, right-hand pages typically have numbers on the right.</li>
+    <li><strong>Bottom Left</strong> — used for left-hand pages in double-sided printed documents such as books and journals.</li>
+    <li><strong>Top Center</strong> — used in headers of technical documents, manuals, and reference guides where the bottom of the page contains other information.</li>
+    <li><strong>Top Right / Top Left</strong> — used in running headers of academic papers, textbooks, and professional publications where page numbers appear alongside chapter or section titles.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Page Number Format Options</h3>
+
+  <p>PDFECTA offers three number formats to suit different document styles:</p>
+
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>1, 2, 3</strong> — clean and minimal, suitable for most professional and academic documents.</li>
+    <li><strong>Page 1 of 10</strong> — shows the total page count alongside the current page number, useful for documents where readers need context about the total length.</li>
+    <li><strong>- 1 -</strong> — a classic decorative format commonly used in formal documents, dissertations, and published books.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Setting a Custom Starting Number</h3>
+
+  <p>The custom starting number feature is particularly useful when your document is part of a larger series. For example, if you have already numbered pages 1 through 20 in a previous document and this file continues from page 21, you can set the starting number to 21 so that the numbering flows continuously across both documents.</p>
+
+  <p>This is also useful for documents with a cover page, table of contents, or introductory sections that you do not want included in the main page count. Simply start numbering from the correct page to match your document structure.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA to Add Page Numbers?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Files are processed locally in your browser — never uploaded to any server.</li>
+    <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions or hidden costs, no registration needed.</li>
+    <li><strong>Fully Customizable:</strong> Choose position, font size, starting number, and format.</li>
+    <li><strong>Works Offline:</strong> After loading, the tool works without an internet connection.</li>
+    <li><strong>Compatible on All Devices:</strong> Windows, macOS, Linux, Android, and iOS.</li>
+    <li><strong>No Watermarks:</strong> Download clean, professional PDFs with no branding added.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Things to Do Before Adding Page Numbers</h3>
+
+  <p>Before numbering your PDF pages, it is worth making sure the document is in the final state you want. Here are a few preparation steps that can save time:</p>
+
+  <ul class="list-disc pl-6 space-y-2">
+    <li>If your PDF has pages in the wrong order, use the <a href="/reorder-pdf-pages.html" class="text-indigo-600 hover:underline">Reorder Pages</a> tool first to arrange them correctly before adding numbers.</li>
+    <li>If you need to remove any blank or unnecessary pages, use the <a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages</a> tool before numbering.</li>
+    <li>If any pages are sideways or upside down, fix them with the <a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a> tool before adding numbers.</li>
+    <li>If you are combining multiple documents into one, use the <a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> tool first, then add page numbers to the combined file.</li>
+    <li>After adding page numbers, if the file is too large to send by email, use the <a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a> tool to reduce its size.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
+    <div>
+      <p class="font-semibold text-slate-800">Can I add page numbers to a PDF for free?</p>
+      <p>Yes. PDFECTA allows you to add page numbers to any PDF file completely free with no registration or subscription required. All processing happens locally in your browser.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to add page numbers to a PDF online?</p>
+      <p>Yes. PDFECTA processes your PDF entirely in your browser. Your file is never uploaded to any server, keeping your document completely private.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I choose where the page numbers appear?</p>
+      <p>Yes. You can choose from six positions including bottom center, bottom left, bottom right, top center, top left, and top right. Bottom center is recommended for most professional documents.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I start page numbering from a number other than 1?</p>
+      <p>Yes. You can set any custom starting number. This is useful when your document is part of a series or when you want to skip numbering a cover page or table of contents.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Will adding page numbers change the PDF content?</p>
+      <p>Page numbers are added as a new layer on top of the existing content. The original content of each page remains completely unchanged. No existing text or images are modified.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a></li>
+    <li><a href="/reorder-pdf-pages.html" class="text-indigo-600 hover:underline">Reorder PDF Pages</a></li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a></li>
+    <li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages from PDF</a></li>
+    <li><a href="/watermark.html" class="text-indigo-600 hover:underline">Add Watermark to PDF</a></li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a></li>
+  </ul>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
+    </div>
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Company</h4>
+      <ul class="space-y-2 text-slate-500">
+        <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
+        <li><a href="/contact.html" class="hover:text-indigo-600">Contact</a></li>
+        <li><a href="/privacy.html" class="hover:text-indigo-600">Privacy Policy</a></li>
+        <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('pdfInput');
+  const status = document.getElementById('status');
+
+  dropZone.onclick = () => fileInput.click();
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
+  dropZone.ondrop = e => {
+    e.preventDefault();
+    dropZone.classList.remove('bg-indigo-50');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+    }
+  };
+  fileInput.onchange = () => {
+    if (fileInput.files.length) status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+  };
+
+  async function addPageNumbers() {
+    if (!fileInput.files.length) { status.textContent = '⚠️ Please select a PDF file.'; return; }
+
+    status.innerHTML = '<span class="text-indigo-500">⏳ Adding page numbers locally...</span>';
+
+    try {
+      const { PDFDocument, rgb, StandardFonts } = PDFLib;
+
+      const buffer = await fileInput.files[0].arrayBuffer();
+      const pdfDoc = await PDFDocument.load(buffer);
+      const pages = pdfDoc.getPages();
+      const totalPages = pages.length;
+
+      const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+      const fontSize = parseInt(document.getElementById('fontSize').value);
+      const startNumber = parseInt(document.getElementById('startNumber').value) || 1;
+      const position = document.getElementById('position').value;
+      const format = document.getElementById('format').value;
+      const margin = 30;
+      const color = rgb(0.3, 0.3, 0.3);
+
+      pages.forEach((page, index) => {
+        const { width, height } = page.getSize();
+        const pageNum = startNumber + index;
+
+        let text = '';
+        if (format === 'number') text = String(pageNum);
+        else if (format === 'page-of-total') text = `Page ${pageNum} of ${totalPages + startNumber - 1}`;
+        else if (format === 'dash') text = `- ${pageNum} -`;
+
+        const textWidth = font.widthOfTextAtSize(text, fontSize);
+
+        let x, y;
+        switch (position) {
+          case 'bottom-center': x = (width - textWidth) / 2; y = margin; break;
+          case 'bottom-right':  x = width - textWidth - margin; y = margin; break;
+          case 'bottom-left':   x = margin; y = margin; break;
+          case 'top-center':    x = (width - textWidth) / 2; y = height - margin - fontSize; break;
+          case 'top-right':     x = width - textWidth - margin; y = height - margin - fontSize; break;
+          case 'top-left':      x = margin; y = height - margin - fontSize; break;
+          default:              x = (width - textWidth) / 2; y = margin;
+        }
+
+        page.drawText(text, { x, y, size: fontSize, font, color });
+      });
+
+      const pdfBytes = await pdfDoc.save();
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'numbered.pdf';
+      a.click();
+
+      status.innerHTML = '✅ <strong>Page numbers added!</strong> Your download has started.';
+
+    } catch (err) {
+      console.error(err);
+      status.textContent = '❌ Failed to process PDF. Please try another file.';
+    }
+  }
+</script>
+
+</body>
+</html>
