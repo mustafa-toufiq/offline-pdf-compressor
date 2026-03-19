@@ -2,18 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Password Protect PDF Online Free | PDFECTA</title>
-
-  <meta name="description" content="Protect PDF files with a password online for free. Encrypt PDFs securely in your browser. No upload, no tracking, 100% private." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="canonical" href="https://pdfecta.com/protect-pdf.html" />
-
-  <!-- Libraries -->
-  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protect PDF Online — Add Password to PDF Free & Secure | PDFECTA</title>
+  <meta name="description" content="Password protect a PDF file online for free. Add encryption to your PDF instantly in your browser — no uploads, no registration, 100% private." />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dynamsoft-document-viewer@2.1.0/dist/ddv.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+  </style>
 
-  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "PDFECTA", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Protect PDF", "item": "https://www.pdfecta.com/protect-pdf.html" }
+    ]
+  }
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -21,334 +32,205 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Is it safe to protect PDF files using PDFECTA?",
+        "name": "Is it safe to password protect a PDF online?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Your PDF never leaves your device. All encryption happens locally in your browser."
+          "text": "Yes. PDFECTA protects your PDF entirely in your browser. Your file is never uploaded to any server, so your document and your password remain completely private on your device."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I remove the password later?",
+        "name": "What type of encryption does PDFECTA use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. You can unlock the PDF using the correct password with any PDF reader."
+          "text": "PDFECTA uses AES encryption to password protect your PDF files, which is compatible with all modern PDF readers including Adobe Acrobat, Chrome, and mobile PDF apps."
         }
       },
       {
         "@type": "Question",
-        "name": "Does this tool work offline?",
+        "name": "Can I open the protected PDF on any device?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Once loaded, the tool can work offline."
+          "text": "Yes. The password-protected PDF works on all devices and PDF readers including Adobe Acrobat, Preview on Mac, and mobile PDF apps. Anyone opening the file will be prompted to enter the password."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a file size limit for protecting PDFs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no strict file size limit. Since all processing happens locally in your browser, performance depends on your device memory. Most modern devices can handle standard PDF files without any issues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I remove the password from a protected PDF later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Open the protected PDF in Adobe Acrobat with the original password, then re-save it without a password to remove the protection."
         }
       }
     ]
   }
   </script>
-
-  <!-- Breadcrumb Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
-      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
-      { "@type": "ListItem", "position": 3, "name": "Protect PDF", "item": "https://pdfecta.com/protect-pdf.html" }
-    ]
-  }
-  </script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-slate-50 text-slate-900">
 
-<!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white border-b">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    
-    <!-- LOGO -->
-    <a href="/" class="flex items-center gap-2 font-extrabold text-xl text-slate-800">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
-        P
-      </div>
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <span class="w-9 h-9 rounded-xl brand-gradient text-white flex items-center justify-center">P</span>
       PDFECTA
     </a>
-
-    <!-- NAV -->
-    <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+    <nav class="text-sm font-semibold text-slate-600 space-x-6">
+      <a href="/" class="hover:text-indigo-600">Home</a>
       <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
-      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
       <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
     </nav>
-
   </div>
 </header>
-  
-<header class="max-w-4xl mx-auto p-6">
-  <h1 class="text-3xl font-bold mt-4">Password Protect PDF</h1>
-  <p class="text-gray-600 mt-2">
-    Add a password to your PDF file instantly. 100% private and browser-based.
+
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Protect PDF Online — Add Password Free & Secure
+  </h1>
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+    Add a password to your PDF directly in your browser.
+    No uploads. No servers. 100% private.
   </p>
-</header>
-
-<main class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow">
-
-  <div class="mb-4">
-    <label class="block font-medium mb-1">Upload PDF</label>
-    <input id="pdfInput" type="file" accept="application/pdf" class="w-full" />
-  </div>
-
-  <div class="mb-4">
-    <label class="block font-medium mb-1">Password</label>
-    <input id="passwordInput" type="password" placeholder="Enter password"
-      class="w-full border rounded p-2" />
-  </div>
-
-  <button id="protectBtn"
-    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-    Protect PDF
-  </button>
-
-  <p class="text-xs text-gray-500 mt-2">
-    Files are processed locally. Strong passwords are recommended.
-  </p>
-
-  <p id="status" class="mt-4 text-sm"></p>
-
-</main>
-
-<!-- SEO CONTENT -->
-<section class="max-w-4xl mx-auto p-6 mt-12">
-
-  <h2 class="text-2xl font-bold mb-4">Protect PDF Files with a Password</h2>
-
-  <p class="mb-4">
-    PDFECTA allows you to encrypt PDF files directly in your browser.
-    Add a password to sensitive documents such as contracts, invoices,
-    reports, and personal files without uploading them to any server.
-  </p>
-
-  <p class="mb-6">
-    This PDF password protector uses modern encryption and works entirely
-    client-side, ensuring your data remains private and secure.
-  </p>
-
-  <h3 class="text-xl font-semibold mb-3">Why Use Our PDF Protector?</h3>
-
-  <ul class="list-disc pl-6 mb-6 space-y-2">
-    <li>100% private, no uploads</li>
-    <li>Strong PDF encryption</li>
-    <li>Instant download</li>
-    <li>Free and unlimited</li>
-  </ul>
-
 </section>
 
+<section class="max-w-3xl mx-auto px-6 pb-20">
+  <div class="bg-white rounded-3xl shadow-xl border p-6">
 
-
-<!-- SEO CONTENT -->
-<section class="max-w-4xl mx-auto p-6 mt-12">
-
-  <h2 class="text-2xl font-bold mb-4">Password Protect PDF Files Online</h2>
-
-  <p class="mb-4">
-    Protecting PDF files with a password is essential when sharing sensitive
-    information such as contracts, financial reports, invoices, or personal
-    documents. PDFECTA allows you to add password protection to your PDF files
-    directly in your browser without uploading them to any server.
-  </p>
-
-  <p class="mb-6">
-    Unlike traditional online PDF tools, PDFECTA works entirely client-side.
-    Your files never leave your device, ensuring complete privacy and security.
-    This makes our PDF protector ideal for confidential and internal documents.
-  </p>
-
-  <h3 class="text-xl font-semibold mb-3">Why Use Our PDF Protector?</h3>
-
-  <ul class="list-disc pl-6 mb-6 space-y-2">
-    <li><strong>100% Private:</strong> Your PDF is encrypted locally in your browser.</li>
-    <li><strong>No Uploads:</strong> Files are never sent to external servers.</li>
-    <li><strong>Strong Encryption:</strong> Protect documents with a password.</li>
-    <li><strong>Instant Download:</strong> Get your protected PDF immediately.</li>
-    <li><strong>Free to Use:</strong> No account or registration required.</li>
-  </ul>
-
-  <h3 class="text-xl font-semibold mb-4">Frequently Asked Questions</h3>
-
-  <div class="space-y-4">
-
-    <div>
-      <h4 class="font-semibold">Is it safe to protect PDFs using PDFECTA?</h4>
-      <p class="text-gray-700">
-        Yes. All encryption happens locally in your browser. Your PDF file is never
-        uploaded or shared with any server.
-      </p>
+    <div id="dropZone"
+      class="border-2 border-dashed border-indigo-200 rounded-2xl p-12 text-center cursor-pointer hover:bg-indigo-50 transition">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center">
+          <svg class="w-7 h-7 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <p class="font-bold text-lg text-slate-700">Drop your PDF here</p>
+        <p class="text-sm text-slate-400">Files never leave your device</p>
+      </div>
+      <input id="pdfInput" type="file" accept="application/pdf" class="hidden" />
     </div>
 
-    <div>
-      <h4 class="font-semibold">Can I remove the password later?</h4>
-      <p class="text-gray-700">
-        Yes. You can open the PDF using the correct password and remove protection
-        using any PDF editor that supports encrypted PDFs.
-      </p>
-    </div>
+    <div class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Password</label>
+        <input id="password" type="password" placeholder="Enter password"
+          class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Confirm Password</label>
+        <input id="confirmPassword" type="password" placeholder="Re-enter password"
+          class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition" />
+      </div>
 
-    <div>
-      <h4 class="font-semibold">Does this tool work offline?</h4>
-      <p class="text-gray-700">
-        Yes. Once the page is loaded, you can protect PDFs even without an
-        internet connection.
-      </p>
-    </div>
+      <label class="flex items-center gap-2 cursor-pointer text-sm text-slate-500 font-semibold select-none">
+        <input id="showPassword" type="checkbox" class="rounded" onchange="togglePasswordVisibility()" />
+        Show password
+      </label>
 
-    <div>
-      <h4 class="font-semibold">Is there a file size limit?</h4>
-      <p class="text-gray-700">
-        There is no strict limit. Very large PDFs may take longer depending on
-        your device performance.
-      </p>
-    </div>
+      <div id="strengthContainer" class="hidden">
+        <div class="flex gap-1 mt-1">
+          <div id="s1" class="h-1.5 flex-1 rounded-full bg-slate-200 transition-all"></div>
+          <div id="s2" class="h-1.5 flex-1 rounded-full bg-slate-200 transition-all"></div>
+          <div id="s3" class="h-1.5 flex-1 rounded-full bg-slate-200 transition-all"></div>
+          <div id="s4" class="h-1.5 flex-1 rounded-full bg-slate-200 transition-all"></div>
+        </div>
+        <p id="strengthLabel" class="text-xs text-slate-400 mt-1"></p>
+      </div>
 
-    <div>
-      <h4 class="font-semibold">Will PDFECTA add watermarks?</h4>
-      <p class="text-gray-700">
-        No. The protected PDF remains clean and watermark-free.
-      </p>
-    </div>
+      <button onclick="protectPDF()"
+        class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+        🔒 Protect PDF
+      </button>
 
+      <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
+    </div>
   </div>
-
 </section>
 
+<section class="max-w-4xl mx-auto px-6 pt-8 pb-12 text-slate-700 leading-relaxed space-y-6">
+  <h2 class="text-2xl font-bold text-slate-800">Add Password Protection to PDF Online Free & Secure</h2>
+  <p>PDFECTA allows you to password protect PDF files instantly without uploading your document to any server. Whether you need to secure a contract, financial document, personal file, or confidential report, this free PDF protection tool provides fast and private encryption directly in your browser.</p>
+  <p>Unlike traditional online PDF tools that require file uploads, PDFECTA processes everything locally using modern browser technology. Your PDF file and your password never leave your device.</p>
 
-<!-- RELATED TOOLS -->
-<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
-  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
-  <ul class="list-disc pl-6 space-y-2 text-gray-700">
-    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
-    <li><a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a></li>
-    <li><a href="/rotate-pdf.html" class="text-blue-600 underline">Rotate PDF</a></li>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Password Protect a PDF File</h3>
+  <ol class="list-decimal pl-6 space-y-2">
+    <li>Upload or drag and drop your PDF file into the tool above.</li>
+    <li>Enter a strong password in the password field.</li>
+    <li>Confirm your password in the second field.</li>
+    <li>Click "Protect PDF".</li>
+    <li>Download your password-protected PDF instantly.</li>
+  </ol>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Password Protect a PDF?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>Confidential documents:</strong> Protect contracts, legal files, and personal data from unauthorized access.</li>
+    <li><strong>Email security:</strong> Send sensitive PDFs by email with a password for an extra layer of protection.</li>
+    <li><strong>Business documents:</strong> Restrict access to financial reports, proposals, and internal documents.</li>
+    <li><strong>Personal files:</strong> Secure personal records, medical documents, and private correspondence.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA to Protect Your PDF?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Your file and password are processed locally — never sent to any server.</li>
+    <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
+    <li><strong>Real AES Encryption:</strong> Industry standard encryption compatible with all PDF readers.</li>
+    <li><strong>Works Offline:</strong> After loading, the tool works without an internet connection.</li>
+    <li><strong>Compatible on All Devices:</strong> Windows, macOS, Linux, Android, and iOS.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to password protect a PDF online?</p>
+      <p>Yes. PDFECTA protects your PDF entirely in your browser. Your file and password are never uploaded to any server.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">What type of encryption does PDFECTA use?</p>
+      <p>PDFECTA uses AES encryption, compatible with all modern PDF readers including Adobe Acrobat, Chrome, and mobile apps.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I open the protected PDF on any device?</p>
+      <p>Yes. The password-protected PDF works on all devices and PDF readers. Anyone opening the file will be prompted to enter the password.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is there a file size limit?</p>
+      <p>There is no strict limit. Performance depends on your device memory. Most modern devices handle standard PDF files without issues.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I remove the password later?</p>
+      <p>Yes. Open the protected PDF in Adobe Acrobat with your password, then re-save it without a password to remove the protection.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a></li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a></li>
+    <li><a href="/watermark.html" class="text-indigo-600 hover:underline">Add Watermark to PDF</a></li>
   </ul>
 </section>
 
-
-<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Password Protect PDF | PDFECTA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/@monomadic/qpdf-wasm@1.1.0/dist/qpdf-wasm.js"></script>
-</head>
-<body class="bg-gray-50 p-10">
-
-  <main class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow">
-    <h1 class="text-2xl font-bold mb-4">Protect PDF (Working Version)</h1>
-    
-    <div class="mb-4">
-      <label class="block mb-1 font-bold">Step 1: Upload PDF</label>
-      <input id="pdfInput" type="file" accept="application/pdf" class="w-full" />
-    </div>
-
-    <div class="mb-4">
-      <label class="block mb-1 font-bold">Step 2: Set Password</label>
-      <input id="passwordInput" type="password" placeholder="Secret Password" class="w-full border p-2 rounded" />
-    </div>
-
-    <button id="protectBtn" class="w-full bg-blue-600 text-white py-2 rounded font-bold hover:bg-blue-700">
-      Lock & Download PDF
-    </button>
-
-    <p id="status" class="mt-4 text-center text-sm text-gray-600"></p>
-  </main>
-
-<script src="https://cdn.jsdelivr.net/npm/@monomadic/qpdf-wasm@1.1.0/dist/qpdf-wasm.min.js"></script>
-
-<script>
- const pdfInput = document.getElementById("pdfInput");
-const passwordInput = document.getElementById("passwordInput");
-const status = document.getElementById("status");
-const btn = document.getElementById("protectBtn");
-
-btn.addEventListener("click", async () => {
-  const file = pdfInput.files[0];
-  const password = passwordInput.value.trim();
-
-  if (!file || file.type !== "application/pdf") {
-    status.textContent = "Please upload a valid PDF file.";
-    return;
-  }
-
-  if (!password) {
-    status.textContent = "Please enter a password.";
-    return;
-  }
-
-  status.textContent = "Encrypting PDF...";
-
-  try {
-    const bytes = await file.arrayBuffer();
-    const pdfDoc = await PDFLib.PDFDocument.load(bytes);
-
-    // Set encryption options
-    pdfDoc.setEncryption({
-      userPassword: password,
-      ownerPassword: password,
-      permissions: {
-        printing: PDFLib.PrintingPermission.HighResolution,
-        modifying: false,
-        copying: false,
-        annotating: false,
-        formFilling: false,
-        accessibility: false,
-        assembling: false,
-      },
-    });
-
-    const encryptedBytes = await pdfDoc.save();
-
-    const blob = new Blob([encryptedBytes], { type: "application/pdf" });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "protected.pdf";
-    a.click();
-
-    status.textContent = "Password-protected PDF downloaded.";
-  } catch (e) {
-    status.textContent = "Failed to protect PDF. Please try again.";
-  }
-});
-</script>
-
-
-  
-
-<!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200 mt-24">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-
-    <!-- BRAND -->
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
     <div>
       <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
-          P
-        </div>
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
         <span class="font-extrabold text-slate-800">PDFECTA</span>
       </div>
-      <p class="text-slate-500 leading-relaxed max-w-sm">
-        Free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking. Full control over your files.
-      </p>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
     </div>
-
-    <!-- LINKS -->
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
@@ -358,23 +240,121 @@ btn.addEventListener("click", async () => {
         <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
       </ul>
     </div>
-
-    <!-- CONTACT -->
     <div>
-      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
-      <a href="mailto:support@pdfecta.com"
-         class="font-semibold text-indigo-600 hover:underline">
-        support@pdfecta.com
-      </a>
-
-      <p class="text-xs text-slate-400 mt-6">
-        © 2026 PDFECTA. All rights reserved.
-      </p>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
     </div>
-
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/dynamsoft-document-viewer@2.1.0/dist/ddv.js"></script>
+
+<script>
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('pdfInput');
+  const status = document.getElementById('status');
+  const passwordInput = document.getElementById('password');
+  const confirmInput = document.getElementById('confirmPassword');
+  const strengthContainer = document.getElementById('strengthContainer');
+  const strengthLabel = document.getElementById('strengthLabel');
+
+  let ddvInitialized = false;
+
+  async function initDDV() {
+    if (ddvInitialized) return;
+    try {
+      await Dynamsoft.DDV.Core.init({
+        license: "DLS2eyJoYW5kc2hha2VDb2RlIjoiMjAwMDAxLTE2NDk4Mjk3OTI2MzUiLCJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInNlc3Npb25QYXNzd29yZCI6IndTcGR6Vm05WDJrcEQ5YUoifQ==",
+        engineResourcePath: "https://cdn.jsdelivr.net/npm/dynamsoft-document-viewer@2.1.0/dist/engine",
+      });
+      ddvInitialized = true;
+    } catch(e) {
+      console.error('DDV init error:', e);
+    }
+  }
+
+  dropZone.onclick = () => fileInput.click();
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
+  dropZone.ondrop = e => {
+    e.preventDefault();
+    dropZone.classList.remove('bg-indigo-50');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+    }
+  };
+  fileInput.onchange = () => {
+    if (fileInput.files.length) status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+  };
+
+  function togglePasswordVisibility() {
+    const show = document.getElementById('showPassword').checked;
+    passwordInput.type = show ? 'text' : 'password';
+    confirmInput.type = show ? 'text' : 'password';
+  }
+
+  passwordInput.addEventListener('input', () => {
+    const val = passwordInput.value;
+    if (!val) { strengthContainer.classList.add('hidden'); return; }
+    strengthContainer.classList.remove('hidden');
+    let score = 0;
+    if (val.length >= 8) score++;
+    if (/[A-Z]/.test(val)) score++;
+    if (/[0-9]/.test(val)) score++;
+    if (/[^A-Za-z0-9]/.test(val)) score++;
+    const colors = ['bg-red-400', 'bg-orange-400', 'bg-yellow-400', 'bg-green-500'];
+    const labels = ['Weak', 'Fair', 'Good', 'Strong'];
+    ['s1','s2','s3','s4'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      el.className = 'h-1.5 flex-1 rounded-full transition-all';
+      el.classList.add(i < score ? colors[score - 1] : 'bg-slate-200');
+    });
+    strengthLabel.textContent = 'Password strength: ' + (labels[score - 1] || 'Weak');
+    strengthLabel.className = 'text-xs mt-1 ' + (score < 2 ? 'text-red-400' : score < 3 ? 'text-yellow-500' : 'text-green-600');
+  });
+
+  async function protectPDF() {
+    if (!fileInput.files.length) { status.textContent = '⚠️ Please select a PDF file.'; return; }
+    const password = passwordInput.value;
+    const confirm = confirmInput.value;
+    if (!password) { status.textContent = '⚠️ Please enter a password.'; return; }
+    if (password !== confirm) { status.textContent = '⚠️ Passwords do not match.'; return; }
+    if (password.length < 4) { status.textContent = '⚠️ Password must be at least 4 characters.'; return; }
+
+    status.innerHTML = '<span class="text-indigo-500">🔒 Encrypting your PDF locally...</span>';
+
+    try {
+      await initDDV();
+
+      const docManager = Dynamsoft.DDV.Core.createDocumentManager();
+      const doc = await docManager.createDocument();
+
+      const blob = new Blob([await fileInput.files[0].arrayBuffer()], { type: 'application/pdf' });
+      await doc.loadSource(blob);
+
+      const protectedBlob = await doc.saveToPdf({ password: password });
+
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(protectedBlob);
+      a.download = 'protected.pdf';
+      a.click();
+
+      await docManager.deleteDocuments([doc.uid]);
+
+      status.innerHTML = '✅ <strong>PDF protected successfully!</strong> Your download has started.';
+      passwordInput.value = '';
+      confirmInput.value = '';
+      strengthContainer.classList.add('hidden');
+
+    } catch (err) {
+      console.error(err);
+      status.textContent = '❌ Failed to protect PDF. Please try another file.';
+    }
+  }
+</script>
 
 </body>
 </html>
