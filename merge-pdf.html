@@ -1,485 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Merge PDF Files Online Without Uploading – Free & Private | PDFECTA</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta
-    name="description"
-    content="Merge PDF files online for free without uploading anything. Combine PDFs directly in your browser with complete privacy using PDFECTA."
-  />
+<title>Merge PDF Files Online Free & Secure (No Upload Required) | PDFECTA</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta name="description"
+content="Merge PDF files online for free without uploading files. Combine multiple PDFs securely in your browser with PDFECTA’s private offline PDF merger." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://www.pdfecta.com/merge-pdf.html" />
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
-    }
+<meta property="og:title" content="Merge PDF Files Online Free & Secure | PDFECTA" />
+<meta property="og:description" content="Combine multiple PDF files into one securely in your browser. No uploads required." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pdfecta.com/merge-pdf.html" />
 
-    .prose p {
-      margin-bottom: 1.5rem;
-      line-height: 1.9;
-      color: #475569;
-      font-size: 1.05rem;
-    }
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
-    .prose h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-top: 4rem;
-      margin-bottom: 1.5rem;
-      color: #0f172a;
-      line-height: 1.2;
-    }
+<style>
+body{
+font-family: Inter, sans-serif;
+}
 
-    .prose h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      color: #0f172a;
-    }
+.prose-custom h2{
+@apply text-3xl font-bold mt-14 mb-5 text-slate-900;
+}
 
-    .prose ul {
-      margin: 2rem 0;
-      padding-left: 1.5rem;
-    }
+.prose-custom h3{
+@apply text-2xl font-semibold mt-10 mb-4 text-slate-800;
+}
 
-    .prose li {
-      margin-bottom: 1rem;
-      line-height: 1.8;
-      color: #475569;
-    }
+.prose-custom p{
+@apply text-slate-700 leading-8 mb-5;
+}
 
-    .prose a {
-      color: #4f46e5;
-      font-weight: 500;
-    }
+.prose-custom ul{
+@apply list-disc pl-6 mb-6 space-y-2 text-slate-700;
+}
+</style>
 
-    .prose strong {
-      color: #0f172a;
-    }
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"BreadcrumbList",
+"itemListElement":[
+{
+"@type":"ListItem",
+"position":1,
+"name":"Home",
+"item":"https://www.pdfecta.com/"
+},
+{
+"@type":"ListItem",
+"position":2,
+"name":"PDF Tools",
+"item":"https://www.pdfecta.com/"
+},
+{
+"@type":"ListItem",
+"position":3,
+"name":"Merge PDF",
+"item":"https://www.pdfecta.com/merge-pdf.html"
+}
+]
+}
+</script>
 
-    .glass-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 2rem;
-      box-shadow: 0 10px 40px rgba(15, 23, 42, 0.04);
-    }
-  </style>
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"How do I merge PDF files online?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Upload multiple PDF files, arrange them in order, and merge them directly inside your browser using PDFECTA."
+}
+},
+{
+"@type":"Question",
+"name":"Is merging PDFs secure?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes. PDFECTA processes files locally inside your browser. Your PDFs are never uploaded to external servers."
+}
+},
+{
+"@type":"Question",
+"name":"Can I merge PDFs on mobile?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes. PDFECTA works on Android, iPhone, tablets, Windows, macOS, and Linux browsers."
+}
+},
+{
+"@type":"Question",
+"name":"Does PDFECTA add watermarks?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"No. Merged PDFs are downloaded clean without watermarks."
+}
+},
+{
+"@type":"Question",
+"name":"Can I reorder PDFs before merging?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes. You can organize PDF files before combining them into a single document."
+}
+}
+]
+}
+</script>
+
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"SoftwareApplication",
+"name":"PDFECTA Merge PDF Tool",
+"applicationCategory":"BusinessApplication",
+"operatingSystem":"Web Browser",
+"offers":{
+"@type":"Offer",
+"price":"0"
+},
+"description":"Merge PDF files securely in your browser without uploads."
+}
+</script>
+
 </head>
 
-<body>
+<body class="bg-slate-50 text-slate-900">
 
-  <!-- HEADER -->
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
 
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-      <a href="/" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-violet-500 text-white flex items-center justify-center font-bold text-xl">
-          P
-        </div>
+<a href="/" class="flex items-center gap-3 font-black text-2xl text-slate-900">
 
-        <span class="text-2xl font-extrabold tracking-tight">
-          PDFECTA
-        </span>
-      </a>
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white flex items-center justify-center">
+P
+</div>
 
-      <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-slate-700">
-        <a href="/" class="hover:text-violet-600 transition">All Tools</a>
-        <a href="/blog/" class="hover:text-violet-600 transition">Guides</a>
-        <a href="/faq.html" class="hover:text-violet-600 transition">FAQ</a>
-      </nav>
+PDFECTA
 
-    </div>
-  </header>
+</a>
 
-  <!-- HERO -->
+<nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
 
-<section class="relative z-10 py-16 md:py-24">
-  
-  <div class="max-w-4xl mx-auto px-6">
+<a href="/#suite" class="hover:text-indigo-600 transition">
+All Tools
+</a>
 
-      <!-- Breadcrumb -->
+<a href="/blog/" class="hover:text-indigo-600 transition">
+Guides
+</a>
 
-      <div class="text-sm text-slate-400 mb-8">
-        <a href="/" class="hover:text-violet-600">Home</a>
-        <span class="mx-2">›</span>
-        <a href="/blog/" class="hover:text-violet-600">Blog</a>
-        <span class="mx-2">›</span>
-        Merge PDF Files
-      </div>
+<a href="/#faq" class="hover:text-indigo-600 transition">
+FAQ
+</a>
 
-      <!-- Badge -->
+</nav>
 
-      <div class="inline-flex items-center gap-2 bg-violet-100 text-violet-700 px-4 py-2 rounded-full text-sm font-semibold mb-8">
-        🔒 100% Browser-Based PDF Tool
-      </div>
+</div>
 
-      <!-- Title -->
+</header>
 
-      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-slate-900 mb-8">
-        Merge PDF Files Online <br />
-        Without Uploading
-      </h1>
+<!-- HERO -->
+<section class="max-w-5xl mx-auto px-6 py-16 text-center">
 
-      <!-- Intro -->
+<nav class="text-sm text-slate-400 mb-8">
 
-      <p class="text-xl leading-9 text-slate-600 max-w-3xl">
-        Combine multiple PDF files into a single document directly inside your browser.
-        No uploads, no waiting, no accounts — just a fast, private, offline PDF merger built for modern users.
-      </p>
+<a href="/" class="hover:text-indigo-600">Home</a>
 
-      <!-- CTA -->
+<span class="mx-2">›</span>
 
-      <div class="mt-10 flex flex-wrap gap-4">
+<span class="text-slate-600">Merge PDF</span>
 
-        <a
-          href="/merge-pdf.html"
-          class="bg-violet-600 hover:bg-violet-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg shadow-violet-200 transition"
-        >
-          Merge PDF Now →
-        </a>
+</nav>
 
-        <a
-          href="/blog/"
-          class="bg-white border border-slate-200 hover:border-violet-300 px-8 py-4 rounded-2xl font-semibold transition"
-        >
-          Browse Guides
-        </a>
+<h1 class="text-5xl md:text-6xl font-black leading-tight text-slate-900 mb-6">
+Merge PDF Files Online Free
+</h1>
 
-      </div>
+<p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+Combine multiple PDF files into one secure document directly in your browser.
+No uploads. No tracking. Fully private offline PDF merger.
+</p>
 
-    </div>
-  </section>
+<div class="flex flex-wrap justify-center gap-3 text-sm font-medium">
 
-  <!-- CONTENT -->
+<div class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full">
+✔ 100% Browser-Based
+</div>
 
-<main class="relative z-0 max-w-4xl mx-auto px-6 pb-24">
-  
-<article class="max-w-none">
-      <!-- CARD -->
+<div class="px-4 py-2 bg-green-100 text-green-700 rounded-full">
+✔ No Upload Required
+</div>
 
-      <div class="glass-card p-10 mb-16">
+<div class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full">
+✔ Secure & Private
+</div>
 
-        <h2 class="mt-0">
-          Why Use a Private PDF Merger?
-        </h2>
+<div class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full">
+✔ Free Unlimited Usage
+</div>
 
-        <p>
-          Most online PDF tools require uploading your files to external servers before processing.
-          That introduces privacy risks, slower upload speeds, and dependency on internet quality.
-        </p>
+</div>
 
-        <p>
-          PDFECTA works differently. Everything happens entirely inside your browser using modern client-side technologies.
-          Your files never leave your device.
-        </p>
+</section>
 
-        <ul>
-          <li>✔ No uploads required</li>
-          <li>✔ Works fully inside your browser</li>
-          <li>✔ Faster than cloud-based PDF tools</li>
-          <li>✔ Ideal for sensitive business documents</li>
-          <li>✔ No account or signup needed</li>
-        </ul>
+<!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6">
 
-      </div>
+<div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-8">
 
-      <!-- SECTION -->
+<label class="block text-sm font-semibold text-slate-700 mb-3">
+Select PDF Files
+</label>
 
-      <h2>
-        How to Merge PDF Files Online
-      </h2>
+<input
+type="file"
+id="pdfInput"
+accept="application/pdf"
+multiple
+class="block w-full border border-slate-300 rounded-xl p-3"
+/>
 
-      <p>
-        Merging PDFs with PDFECTA is extremely simple and takes only a few seconds.
-      </p>
+<button
+onclick="mergePDFs()"
+class="w-full mt-6 bg-black hover:opacity-90 transition text-white py-4 rounded-2xl font-bold text-lg">
+Merge PDFs
+</button>
+
+<p id="status" class="mt-5 text-sm text-slate-500"></p>
+
+</div>
+
+</section>
+
+<!-- CONTENT -->
+<section class="max-w-4xl mx-auto px-6 py-20 prose-custom">
+
+<p class="text-sm text-slate-400">
+Last updated: May 2026
+</p>
+
+<h2>Merge PDF Files Online Without Uploading</h2>
+
+<p>
+PDFECTA allows you to combine multiple PDF files into a single document entirely inside your browser.
+Unlike traditional online PDF tools, your files are never uploaded to external servers.
+</p>
+
+<p>
+This makes PDFECTA ideal for handling sensitive documents like contracts, invoices, bank statements, legal forms, reports, and scanned paperwork.
+</p>
+
+<h2>How to Merge PDF Files Online</h2>
+
+<p>
+Merging PDFs using PDFECTA is simple:
+</p>
+
+<ul>
+<li>Select multiple PDF files</li>
+<li>Arrange them in your preferred order</li>
+<li>Click Merge PDFs</li>
+<li>Download the combined PDF instantly</li>
+</ul>
+
+<p>
+Everything happens locally in your browser for maximum privacy and speed.
+</p>
+
+<h2>Why Use an Offline Browser-Based PDF Merger?</h2>
+
+<p>
+Many PDF websites upload your files to remote servers before processing.
+That creates privacy risks, slower upload times, and dependency on internet speed.
+</p>
+
+<p>
+PDFECTA works differently.
+</p>
+
+<ul>
+<li>No uploads required</li>
+<li>No accounts needed</li>
+<li>No waiting queues</li>
+<li>Faster local processing</li>
+<li>Complete document privacy</li>
+</ul>
+
+<h2>Merge PDFs for Work, School, and Business</h2>
+
+<p>
+PDF merging is useful in many everyday scenarios:
+</p>
+
+<ul>
+<li>Combine invoices into one report</li>
+<li>Merge scanned pages into one file</li>
+<li>Create a single assignment submission</li>
+<li>Join multiple contracts into one document</li>
+<li>Organize bank statements or receipts</li>
+</ul>
+
+<p>
+After merging, you may also want to
+<a href="/compress-pdf.html" class="text-indigo-600 underline">
+compress the merged PDF
+</a>
+for easier sharing via email.
+</p>
+
+<h2>Can I Merge PDFs on Mobile?</h2>
+
+<p>
+Yes.
+</p>
+
+<p>
+PDFECTA works on:
+</p>
+
+<ul>
+<li>Android devices</li>
+<li>iPhone and iPad</li>
+<li>Windows PCs</li>
+<li>macOS computers</li>
+<li>Linux browsers</li>
+</ul>
+
+<p>
+As long as your browser supports modern JavaScript, the tool will work correctly.
+</p>
+
+<h2>How PDFECTA Protects Your Privacy</h2>
+
+<p>
+Privacy is one of the biggest concerns when using online PDF tools.
+Many services temporarily store uploaded files on servers.
+</p>
+
+<p>
+PDFECTA uses local browser-based processing instead.
+Your files remain entirely on your device during merging.
+</p>
+
+<ul>
+<li>No server uploads</li>
+<li>No cloud storage</li>
+<li>No document tracking</li>
+<li>No watermarking</li>
+</ul>
+
+<h2>Related PDF Tools</h2>
+
+<p>
+Need additional PDF editing features?
+</p>
+
+<ul>
+<li>
+<a href="/split-pdf.html" class="text-indigo-600 underline">
+Split PDF
+</a>
+— separate large PDFs into smaller files
+</li>
+
+<li>
+<a href="/delete-pages-from-pdf.html" class="text-indigo-600 underline">
+Delete Pages from PDF
+</a>
+— remove unwanted pages before merging
+</li>
+
+<li>
+<a href="/rotate-pdf.html" class="text-indigo-600 underline">
+Rotate PDF
+</a>
+— fix sideways scanned pages
+</li>
+
+<li>
+<a href="/reorder-pdf-pages.html" class="text-indigo-600 underline">
+Reorder PDF Pages
+</a>
+— organize pages before combining
+</li>
+
+<li>
+<a href="/jpg-to-pdf.html" class="text-indigo-600 underline">
+JPG to PDF
+</a>
+— convert images into PDFs
+</li>
 
-      <div class="glass-card p-10 my-10">
+</ul>
 
-        <ol class="space-y-5 text-slate-700 list-decimal pl-6">
+<h2>Related PDF Guides</h2>
 
-          <li>Select multiple PDF files from your device.</li>
+<ul>
 
-          <li>Arrange them in your preferred order.</li>
+<li>
+<a href="/blog/how-to-merge-pdf-files-online.html" class="text-indigo-600 underline">
+How to Merge PDF Files Online
+</a>
+</li>
 
-          <li>Click the merge button.</li>
-
-          <li>Download the combined PDF instantly.</li>
+<li>
+<a href="/blog/how-to-compress-pdf-under-1mb.html" class="text-indigo-600 underline">
+How to Compress PDF Under 1MB
+</a>
+</li>
 
-        </ol>
-
-      </div>
-
-      <p>
-        Since everything runs locally in your browser, the process is fast even for larger documents.
-      </p>
-
-      <!-- SECTION -->
-
-      <h2>
-        Merge PDFs Without Uploading Files
-      </h2>
-
-      <p>
-        Privacy is becoming a major concern when working with documents online.
-        Contracts, invoices, financial records, legal forms, and personal paperwork often contain sensitive information.
-      </p>
-
-      <p>
-        With PDFECTA, your files are processed locally using offline browser-based technology.
-        Unlike traditional online PDF mergers, your files are never transferred to external servers.
-      </p>
-
-      <div class="bg-indigo-50 border border-indigo-100 rounded-3xl p-10 my-12">
-
-        <h3 class="mt-0">
-          Perfect for:
-        </h3>
-
-        <ul>
-          <li>Business contracts</li>
-          <li>Bank statements</li>
-          <li>School assignments</li>
-          <li>Scanned paperwork</li>
-          <li>Confidential reports</li>
-          <li>Legal documents</li>
-        </ul>
-
-      </div>
-
-      <!-- SECTION -->
-
-      <h2>
-        Common Uses for PDF Merging
-      </h2>
-
-      <p>
-        Combining PDFs is useful in many everyday workflows.
-      </p>
-
-      <ul>
-        <li>Combine invoices into a single report</li>
-        <li>Join scanned pages into one document</li>
-        <li>Create a single assignment submission</li>
-        <li>Merge multiple contracts together</li>
-        <li>Combine receipts or financial statements</li>
-        <li>Organize presentation exports</li>
-      </ul>
+<li>
+<a href="/blog/how-to-split-a-pdf-file-online.html" class="text-indigo-600 underline">
+How to Split a PDF File Online
+</a>
+</li>
 
-      <!-- INTERNAL LINKS -->
-
-      <h2>
-        Related PDF Tools
-      </h2>
-
-      <p>
-        After merging your documents, you may also need additional PDF tools:
-      </p>
-
-      <ul>
-        <li>
-          <a href="/compress-pdf.html">
-            Compress PDF
-          </a>
-          — reduce the merged PDF file size.
-        </li>
+</ul>
 
-        <li>
-          <a href="/split-pdf.html">
-            Split PDF
-          </a>
-          — separate pages into smaller files.
-        </li>
+<h2>Frequently Asked Questions</h2>
 
-        <li>
-          <a href="/reorder-pdf-pages.html">
-            Reorder Pages
-          </a>
-          — rearrange page order before merging.
-        </li>
+<h3>Can I merge PDFs without losing quality?</h3>
 
-        <li>
-          <a href="/rotate-pdf.html">
-            Rotate PDF
-          </a>
-          — fix sideways scanned pages.
-        </li>
+<p>
+Yes.
+PDFECTA preserves original page quality during merging because pages are copied directly into the new PDF document.
+</p>
 
-        <li>
-          <a href="/add-page-numbers.html">
-            Add Page Numbers
-          </a>
-          — number your merged document professionally.
-        </li>
-      </ul>
+<h3>Does PDFECTA add watermarks?</h3>
 
-      <!-- FAQ -->
+<p>
+No.
+Merged PDFs remain clean without branding or watermarks.
+</p>
 
-      <h2>
-        Frequently Asked Questions
-      </h2>
+<h3>Can I merge large PDF files?</h3>
 
-      <div class="space-y-6 my-10">
+<p>
+Yes.
+Performance depends mainly on your device memory and browser capabilities.
+</p>
 
-        <div class="glass-card p-8">
-          <h3 class="mt-0">
-            Is PDFECTA really private?
-          </h3>
+<h3>Is PDF merging secure?</h3>
 
-          <p class="mb-0">
-            Yes. Files never leave your device. All processing happens directly inside your browser.
-          </p>
-        </div>
+<p>
+Yes.
+All processing happens locally in your browser with no external uploads.
+</p>
 
-        <div class="glass-card p-8">
-          <h3 class="mt-0">
-            Does this work offline?
-          </h3>
+<h3>Can I reorder PDFs before merging?</h3>
 
-          <p class="mb-0">
-            Once the page loads, most PDF processing works entirely locally in your browser.
-          </p>
-        </div>
+<p>
+Yes.
+You can arrange documents before combining them into a single file.
+</p>
 
-        <div class="glass-card p-8">
-          <h3 class="mt-0">
-            Can I merge PDFs on mobile?
-          </h3>
+</section>
 
-          <p class="mb-0">
-            Yes. PDFECTA works on Android, iPhone, iPad, and desktop browsers.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-
-      <div class="bg-gradient-to-r from-violet-600 to-fuchsia-500 rounded-[2rem] p-12 text-white mt-20">
-
-        <h2 class="text-white mt-0 mb-4">
-          Ready to Merge PDFs Privately?
-        </h2>
-
-        <p class="text-violet-100 text-lg leading-8 mb-8">
-          Combine PDF files instantly without uploads, accounts, or tracking.
-        </p>
-
-        <a
-          href="/merge-pdf.html"
-          class="inline-flex items-center bg-white text-violet-700 px-8 py-4 rounded-2xl font-bold hover:bg-violet-50 transition"
-        >
-          Open Merge PDF Tool →
-        </a>
-
-      </div>
-
-    </article>
-
-  </main>
-
-  <!-- FOOTER -->
-
-  <footer class="bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 py-20">
-
-      <div class="grid md:grid-cols-3 gap-16">
-
-        <div>
-          <div class="flex items-center gap-3 mb-6">
-
-            <div class="w-10 h-10 rounded-xl bg-violet-500 text-white flex items-center justify-center font-bold text-xl">
-              P
-            </div>
-
-            <span class="text-2xl font-extrabold">
-              PDFECTA
-            </span>
-
-          </div>
-
-          <p class="text-slate-500 leading-8">
-            Free privacy-first PDF tools that run entirely in your browser.
-            No uploads. No tracking. Full control over your files.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="font-bold text-lg mb-5">
-            Company
-          </h3>
-
-          <ul class="space-y-3 text-slate-500">
-            <li><a href="/about.html" class="hover:text-violet-600">About</a></li>
-            <li><a href="/contact.html" class="hover:text-violet-600">Contact</a></li>
-            <li><a href="/privacy.html" class="hover:text-violet-600">Privacy Policy</a></li>
-            <li><a href="/terms.html" class="hover:text-violet-600">Terms of Service</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="font-bold text-lg mb-5">
-            Support
-          </h3>
-
-          <p class="text-slate-500">
-            support@pdfecta.com
-          </p>
-        </div>
-
-      </div>
-
-      <div class="border-t border-slate-200 mt-16 pt-8 text-sm text-slate-400">
-        © 2026 PDFECTA. All rights reserved.
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- FAQ JSON -->
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Is PDFECTA really private?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes. All PDF processing happens locally in your browser and files are never uploaded to external servers."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Can I merge PDFs on mobile?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes. PDFECTA works on Android, iPhone, iPad, and desktop browsers."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Does PDFECTA require uploads?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"No. PDFECTA processes PDF files directly inside your browser without uploading them."
-        }
-      }
-    ]
-  }
-  </script>
+<!-- CTA -->
+<section class="max-w-5xl mx-auto px-6 pb-20">
+
+<div class="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-3xl p-12 text-center">
+
+<h2 class="text-4xl font-black mb-4">
+Need More PDF Tools?
+</h2>
+
+<p class="text-slate-600 text-lg mb-8">
+Compress, split, rotate, reorder, watermark, and convert PDFs securely in your browser.
+</p>
+
+<a
+href="/"
+class="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-black text-white font-bold hover:opacity-90 transition">
+Browse All PDF Tools →
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200">
+
+<div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
+
+<div>
+
+<div class="flex items-center gap-3 mb-5">
+
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white flex items-center justify-center font-bold">
+P
+</div>
+
+<span class="text-2xl font-black">
+PDFECTA
+</span>
+
+</div>
+
+<p class="text-slate-500 leading-relaxed">
+Private browser-based PDF tools that run fully offline with no uploads.
+Fast, secure, and free.
+</p>
+
+</div>
+
+<div>
+
+<h3 class="font-bold mb-5">
+Company
+</h3>
+
+<div class="space-y-3 text-slate-500">
+
+<a href="/about.html" class="block hover:text-indigo-600">
+About
+</a>
+
+<a href="/contact.html" class="block hover:text-indigo-600">
+Contact
+</a>
+
+<a href="/privacy.html" class="block hover:text-indigo-600">
+Privacy Policy
+</a>
+
+<a href="/terms.html" class="block hover:text-indigo-600">
+Terms of Service
+</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h3 class="font-bold mb-5">
+Support
+</h3>
+
+<a href="mailto:support@pdfecta.com" class="text-indigo-600 hover:underline">
+support@pdfecta.com
+</a>
+
+<p class="text-slate-400 text-sm mt-8">
+© 2026 PDFECTA. All rights reserved.
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<script>
+
+let selectedFiles = [];
+
+document.getElementById("pdfInput").addEventListener("change", function(e){
+
+const status = document.getElementById("status");
+
+for(let file of e.target.files){
+
+if(file.type !== "application/pdf"){
+status.textContent = "Only PDF files are allowed.";
+return;
+}
+
+}
+
+selectedFiles = [...e.target.files];
+
+status.textContent = selectedFiles.length + " PDF file(s) ready to merge.";
+
+});
+
+async function mergePDFs(){
+
+const { PDFDocument } = PDFLib;
+
+const status = document.getElementById("status");
+
+if(!selectedFiles.length){
+status.textContent = "Please select PDF files first.";
+return;
+}
+
+status.textContent = "Merging PDFs...";
+
+try{
+
+const mergedPdf = await PDFDocument.create();
+
+for(let file of selectedFiles){
+
+const bytes = await file.arrayBuffer();
+
+const pdf = await PDFDocument.load(bytes);
+
+const copiedPages = await mergedPdf.copyPages(
+pdf,
+pdf.getPageIndices()
+);
+
+copiedPages.forEach((page)=>{
+mergedPdf.addPage(page);
+});
+
+}
+
+const mergedBytes = await mergedPdf.save();
+
+const blob = new Blob(
+[mergedBytes],
+{ type: "application/pdf" }
+);
+
+const url = URL.createObjectURL(blob);
+
+const a = document.createElement("a");
+
+a.href = url;
+a.download = "merged.pdf";
+
+document.body.appendChild(a);
+
+a.click();
+
+a.remove();
+
+URL.revokeObjectURL(url);
+
+status.textContent = "Merged PDF downloaded successfully.";
+
+}catch(error){
+
+console.error(error);
+
+status.textContent = "Something went wrong while merging PDFs.";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
