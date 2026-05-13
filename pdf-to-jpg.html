@@ -1,244 +1,650 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8" />
-<title>PDF to JPG Converter Online Free | PDFECTA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Convert PDF pages to JPG images online for free. Secure, private, and fully browser-based." />
+
+<title>Convert PDF to JPG Online Free & Secure (No Upload Required) | PDFECTA</title>
+
+<meta name="description"
+content="Convert PDF pages to JPG images online for free without uploading files. Extract high-quality JPG images securely in your browser with PDFECTA." />
+
+<link rel="canonical" href="https://www.pdfecta.com/pdf-to-jpg.html" />
+
+<meta property="og:title" content="Convert PDF to JPG Online Free & Secure | PDFECTA" />
+<meta property="og:description" content="Extract PDF pages as JPG images privately in your browser. No uploads required." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pdfecta.com/pdf-to-jpg.html" />
 
 <script src="https://cdn.tailwindcss.com"></script>
+
 <script src="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+
 <script>
-  pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js";
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js";
 </script>
 
+<!-- Breadcrumb Schema -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
-    { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
-    { "@type": "ListItem", "position": 3, "name": "PDF to JPG", "item": "https://pdfecta.com/pdf-to-jpg.html" }
-  ]
+"@context":"https://schema.org",
+"@type":"BreadcrumbList",
+"itemListElement":[
+{
+"@type":"ListItem",
+"position":1,
+"name":"Home",
+"item":"https://www.pdfecta.com/"
+},
+{
+"@type":"ListItem",
+"position":2,
+"name":"PDF Tools",
+"item":"https://www.pdfecta.com/"
+},
+{
+"@type":"ListItem",
+"position":3,
+"name":"PDF to JPG",
+"item":"https://www.pdfecta.com/pdf-to-jpg.html"
+}
+]
 }
 </script>
 
-
+<!-- FAQ Schema -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Is PDF to JPG conversion private?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All PDF pages are converted to JPG images locally in your browser." }},
-    { "@type": "Question", "name": "Can I extract all pages as images?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each page of the PDF is converted into a separate JPG image." }},
-    { "@type": "Question", "name": "Does this work on mobile?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, though large PDFs work best on desktop browsers." }},
-    { "@type": "Question", "name": "Is this tool free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The tool is completely free with no usage limits." }}
-  ]
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"How do I convert PDF to JPG?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Upload a PDF file and convert each page into high-quality JPG images directly in your browser using PDFECTA."
+}
+},
+{
+"@type":"Question",
+"name":"Is PDF to JPG conversion private?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes. PDFECTA processes files locally inside your browser without uploading them to servers."
+}
+},
+{
+"@type":"Question",
+"name":"Can I convert scanned PDFs into JPG images?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes. Scanned PDFs can be converted into separate JPG image files page by page."
+}
+},
+{
+"@type":"Question",
+"name":"Does PDFECTA work on mobile devices?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes. PDFECTA works on Android, iPhone, iPad, Windows, macOS, and Linux browsers."
+}
+},
+{
+"@type":"Question",
+"name":"Is PDFECTA free?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes. PDFECTA provides free browser-based PDF conversion tools with no upload limits or watermarks."
+}
+}
+]
 }
 </script>
 
+<!-- SoftwareApplication Schema -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"SoftwareApplication",
+"name":"PDFECTA PDF to JPG Converter",
+"applicationCategory":"BusinessApplication",
+"operatingSystem":"Web Browser",
+"offers":{
+"@type":"Offer",
+"price":"0"
+},
+"description":"Convert PDF pages into JPG images securely in your browser without uploads."
+}
+</script>
 
-  
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-slate-50 text-slate-900">
 
-  <!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white border-b">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    
-    <!-- LOGO -->
-    <a href="/" class="flex items-center gap-2 font-extrabold text-xl text-slate-800">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
-        P
-      </div>
-      PDFECTA
-    </a>
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
 
-    <!-- NAV -->
-    <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-      <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
-      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
-      <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
-    </nav>
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-  </div>
-</header>
+<a href="/" class="flex items-center gap-3 font-black text-2xl text-slate-900">
 
-
-<div class="max-w-2xl mx-auto p-8">
-  <h1 class="text-3xl font-bold mb-2">PDF to JPG</h1>
-  <p class="text-gray-600 mb-6">
-    Convert PDF pages to JPG images instantly. Files never leave your browser.
-  </p>
-
-  <div class="bg-white shadow rounded-xl p-6 space-y-4">
-    <input type="file" id="pdfInput" accept="application/pdf"
-      class="block w-full border rounded p-2" />
-
-    <button onclick="convertPDF()"
-      class="w-full bg-black text-white p-3 rounded-lg hover:opacity-90">
-      Convert to JPG
-    </button>
-
-    <p id="status" class="text-sm text-gray-600"></p>
-  </div>
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white flex items-center justify-center">
+P
 </div>
 
+PDFECTA
+
+</a>
+
+<nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+
+<a href="/#suite" class="hover:text-indigo-600 transition">
+All Tools
+</a>
+
+<a href="/blog/" class="hover:text-indigo-600 transition">
+Guides
+</a>
+
+<a href="/#faq" class="hover:text-indigo-600 transition">
+FAQ
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+<section class="max-w-5xl mx-auto px-6 py-16 text-center">
+
+<nav class="text-sm text-slate-400 mb-8">
+
+<a href="/" class="hover:text-indigo-600">Home</a>
+
+<span class="mx-2">›</span>
+
+<span class="text-slate-600">PDF to JPG</span>
+
+</nav>
+
+<h1 class="text-5xl md:text-6xl font-black leading-tight text-slate-900 mb-6">
+Convert PDF to JPG Online Free
+</h1>
+
+<p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+Convert PDF pages into high-quality JPG images directly in your browser.
+No uploads. No tracking. Fully private browser-based PDF conversion.
+</p>
+
+<div class="flex flex-wrap justify-center gap-3 text-sm font-medium">
+
+<div class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full">
+✔ 100% Browser-Based
+</div>
+
+<div class="px-4 py-2 bg-green-100 text-green-700 rounded-full">
+✔ No Upload Required
+</div>
+
+<div class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full">
+✔ High Quality JPG Output
+</div>
+
+<div class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full">
+✔ Free Unlimited Usage
+</div>
+
+</div>
+
+</section>
+
+<!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6">
+
+<div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-8">
+
+<label class="block text-sm font-semibold text-slate-700 mb-3">
+Select PDF File
+</label>
+
+<input
+type="file"
+id="pdfInput"
+accept="application/pdf"
+class="block w-full border border-slate-300 rounded-xl p-3"
+/>
+
+<button
+onclick="convertPDF()"
+class="w-full mt-6 bg-black hover:opacity-90 transition text-white py-4 rounded-2xl font-bold text-lg">
+Convert to JPG
+</button>
+
+<p id="status" class="mt-5 text-sm text-slate-500"></p>
+
+</div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto px-6 py-20">
+
+<p class="text-sm text-slate-400 mb-6">
+Last updated: May 2026
+</p>
+
+<h2 class="text-3xl font-black mb-5">
+Convert PDF Pages into JPG Images
+</h2>
+
+<p class="text-slate-700 leading-8 mb-5">
+PDFECTA allows you to convert PDF pages into JPG images entirely inside your browser.
+Unlike traditional online PDF converters, your files are never uploaded to external servers.
+</p>
+
+<p class="text-slate-700 leading-8 mb-5">
+This makes PDFECTA ideal for converting sensitive business documents, scanned pages, reports, invoices, contracts, and presentations securely.
+</p>
+
+<h2 class="text-3xl font-black mt-14 mb-5">
+How to Convert PDF to JPG Online
+</h2>
+
+<p class="text-slate-700 leading-8 mb-5">
+Converting PDFs into JPG images using PDFECTA is simple:
+</p>
+
+<ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+<li>Select your PDF document</li>
+<li>Click Convert to JPG</li>
+<li>Wait for page rendering</li>
+<li>Download each PDF page as JPG</li>
+</ul>
+
+<p class="text-slate-700 leading-8 mb-5">
+Each PDF page is converted into a separate high-quality JPG image.
+</p>
+
+<h2 class="text-3xl font-black mt-14 mb-5">
+Why Use an Offline PDF to JPG Converter?
+</h2>
+
+<p class="text-slate-700 leading-8 mb-5">
+Many PDF conversion websites upload your files to cloud servers before processing.
+That creates privacy concerns and slower conversion speeds.
+</p>
+
+<p class="text-slate-700 leading-8 mb-5">
+PDFECTA works differently using local browser-based processing.
+</p>
+
+<ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+<li>No file uploads</li>
+<li>No server processing</li>
+<li>No waiting queues</li>
+<li>Better privacy protection</li>
+<li>Faster conversion speed</li>
+</ul>
+
+<h2 class="text-3xl font-black mt-14 mb-5">
+Convert Scanned PDFs into Images
+</h2>
+
+<p class="text-slate-700 leading-8 mb-5">
+Scanned PDFs often contain image-based pages that need extraction.
+PDFECTA can convert scanned documents into separate JPG images for easier sharing, editing, or archiving.
+</p>
+
+<p class="text-slate-700 leading-8 mb-5">
+This is useful for:
+</p>
+
+<ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+<li>Extracting scanned paperwork</li>
+<li>Saving pages as images</li>
+<li>Sharing individual document pages</li>
+<li>Creating previews for presentations</li>
+<li>Converting reports into images</li>
+</ul>
+
+<h2 class="text-3xl font-black mt-14 mb-5">
+Can I Convert PDFs on Mobile?</h2>
+
+<p class="text-slate-700 leading-8 mb-5">
+Yes.
+</p>
+
+<p class="text-slate-700 leading-8 mb-5">
+PDFECTA works on:
+</p>
+
+<ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+<li>Android devices</li>
+<li>iPhone and iPad</li>
+<li>Windows computers</li>
+<li>macOS browsers</li>
+<li>Linux systems</li>
+</ul>
+
+<p class="text-slate-700 leading-8 mb-5">
+Modern mobile browsers fully support browser-based PDF conversion.
+</p>
+
+<h2 class="text-3xl font-black mt-14 mb-5">
+How PDFECTA Protects Your Privacy
+</h2>
+
+<p class="text-slate-700 leading-8 mb-5">
+Privacy matters when working with PDF files online.
+Many websites temporarily store uploaded documents on servers.
+</p>
+
+<p class="text-slate-700 leading-8 mb-5">
+PDFECTA processes files entirely inside your browser instead.
+</p>
+
+<ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+<li>No cloud storage</li>
+<li>No server uploads</li>
+<li>No document tracking</li>
+<li>No watermarking</li>
+</ul>
+
+<h2 class="text-3xl font-black mt-14 mb-5">
+Related PDF Tools
+</h2>
+
+<ul class="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+
+<li>
+<a href="/jpg-to-pdf.html" class="text-indigo-600 underline">
+JPG to PDF
+</a>
+— convert images back into PDF documents
+</li>
+
+<li>
+<a href="/compress-pdf.html" class="text-indigo-600 underline">
+Compress PDF
+</a>
+— reduce PDF file size for sharing
+</li>
+
+<li>
+<a href="/merge-pdf.html" class="text-indigo-600 underline">
+Merge PDF
+</a>
+— combine multiple PDF files into one document
+</li>
+
+<li>
+<a href="/split-pdf.html" class="text-indigo-600 underline">
+Split PDF
+</a>
+— separate large PDFs into smaller files
+</li>
+
+</ul>
+
+<h2 class="text-3xl font-black mt-14 mb-5">
+Related PDF Guides
+</h2>
+
+<ul class="list-disc pl-6 space-y-3 text-slate-700 mb-6">
+
+<li>
+<a href="/blog/how-to-convert-pdf-to-jpg.html" class="text-indigo-600 underline">
+How to Convert PDF to JPG Online
+</a>
+</li>
+
+<li>
+<a href="/blog/how-to-compress-pdf-under-1mb.html" class="text-indigo-600 underline">
+How to Compress PDF Under 1MB
+</a>
+</li>
+
+<li>
+<a href="/blog/how-to-merge-pdf-files-online.html" class="text-indigo-600 underline">
+How to Merge PDF Files Online
+</a>
+</li>
+
+</ul>
+
+<h2 class="text-3xl font-black mt-14 mb-5">
+Frequently Asked Questions
+</h2>
+
+<h3 class="text-2xl font-semibold mt-10 mb-4">
+Is converting PDF to JPG safe?
+</h3>
+
+<p class="text-slate-700 leading-8 mb-5">
+Yes.
+All PDF conversion happens locally in your browser without external uploads.
+</p>
+
+<h3 class="text-2xl font-semibold mt-10 mb-4">
+Can I convert multi-page PDFs?
+</h3>
+
+<p class="text-slate-700 leading-8 mb-5">
+Yes.
+Each page is converted into a separate JPG image automatically.
+</p>
+
+<h3 class="text-2xl font-semibold mt-10 mb-4">
+Can I convert scanned PDFs?
+</h3>
+
+<p class="text-slate-700 leading-8 mb-5">
+Yes.
+Scanned image-based PDFs can be converted page by page into JPG images.
+</p>
+
+<h3 class="text-2xl font-semibold mt-10 mb-4">
+Does PDFECTA add watermarks?
+</h3>
+
+<p class="text-slate-700 leading-8 mb-5">
+No.
+Downloaded JPG images remain clean without watermarks.
+</p>
+
+<h3 class="text-2xl font-semibold mt-10 mb-4">
+Can I use PDFECTA on iPhone?
+</h3>
+
+<p class="text-slate-700 leading-8 mb-5">
+Yes.
+PDFECTA works on iPhone Safari and modern Android browsers.
+</p>
+
+</section>
+
+<!-- CTA -->
+<section class="max-w-5xl mx-auto px-6 pb-20">
+
+<div class="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-3xl p-12 text-center">
+
+<h2 class="text-4xl font-black mb-4">
+Need More PDF Tools?
+</h2>
+
+<p class="text-slate-600 text-lg mb-8">
+Compress, merge, split, convert, and edit PDFs securely in your browser.
+</p>
+
+<a
+href="/"
+class="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-black text-white font-bold hover:opacity-90 transition">
+Browse All PDF Tools →
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200">
+
+<div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
+
+<div>
+
+<div class="flex items-center gap-3 mb-5">
+
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white flex items-center justify-center font-bold">
+P
+</div>
+
+<span class="text-2xl font-black">
+PDFECTA
+</span>
+
+</div>
+
+<p class="text-slate-500 leading-relaxed">
+Private browser-based PDF tools that run fully offline with no uploads.
+Fast, secure, and free.
+</p>
+
+</div>
+
+<div>
+
+<h3 class="font-bold mb-5">
+Company
+</h3>
+
+<div class="space-y-3 text-slate-500">
+
+<a href="/about.html" class="block hover:text-indigo-600">
+About
+</a>
+
+<a href="/contact.html" class="block hover:text-indigo-600">
+Contact
+</a>
+
+<a href="/privacy.html" class="block hover:text-indigo-600">
+Privacy Policy
+</a>
+
+<a href="/terms.html" class="block hover:text-indigo-600">
+Terms of Service
+</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h3 class="font-bold mb-5">
+Support
+</h3>
+
+<a href="mailto:support@pdfecta.com" class="text-indigo-600 hover:underline">
+support@pdfecta.com
+</a>
+
+<p class="text-slate-400 text-sm mt-8">
+© 2026 PDFECTA. All rights reserved.
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
 <script>
-async function convertPDF() {
-  const input = document.getElementById("pdfInput");
-  const status = document.getElementById("status");
 
-  // ✅ VALIDATION
-  if (!input.files.length) {
-    status.textContent = "Please select a PDF file.";
-    return;
-  }
+async function convertPDF(){
 
-  const file = input.files[0];
+const input = document.getElementById("pdfInput");
+const status = document.getElementById("status");
 
-  if (file.type !== "application/pdf") {
-    status.textContent = "Invalid file type. Please upload a PDF file.";
-    return;
-  }
+if(!input.files.length){
+status.textContent = "Please select a PDF file.";
+return;
+}
 
-  status.textContent = "Converting pages to JPG...";
+const file = input.files[0];
 
-  // ✅ PROCESSING (use SAME file variable)
-  const arrayBuffer = await file.arrayBuffer();
-  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+if(file.type !== "application/pdf"){
+status.textContent = "Only PDF files are allowed.";
+return;
+}
 
-  for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-    const page = await pdf.getPage(pageNum);
-    const viewport = page.getViewport({ scale: 2 });
+status.textContent = "Converting PDF pages to JPG images...";
 
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
+try{
 
-    await page.render({ canvasContext: context, viewport }).promise;
+const arrayBuffer = await file.arrayBuffer();
 
-    canvas.toBlob((blob) => {
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = `page-${pageNum}.jpg`;
-      a.click();
-    }, "image/jpeg", 0.95);
-  }
+const pdf = await pdfjsLib.getDocument({
+data: arrayBuffer
+}).promise;
 
-  status.textContent = "JPG images downloaded.";
+for(let pageNum = 1; pageNum <= pdf.numPages; pageNum++){
+
+const page = await pdf.getPage(pageNum);
+
+const viewport = page.getViewport({
+scale: 2
+});
+
+const canvas = document.createElement("canvas");
+
+const context = canvas.getContext("2d");
+
+canvas.width = viewport.width;
+canvas.height = viewport.height;
+
+await page.render({
+canvasContext: context,
+viewport
+}).promise;
+
+canvas.toBlob((blob)=>{
+
+const a = document.createElement("a");
+
+a.href = URL.createObjectURL(blob);
+
+a.download = `page-${pageNum}.jpg`;
+
+document.body.appendChild(a);
+
+a.click();
+
+a.remove();
+
+}, "image/jpeg", 0.95);
+
+}
+
+status.textContent = "JPG images downloaded successfully.";
+
+}catch(error){
+
+console.error(error);
+
+status.textContent = "Something went wrong during conversion.";
+
+}
+
 }
 
 </script>
-
-<!-- SEO CONTENT -->
-<section class="max-w-4xl mx-auto p-8">
-
-<h2 class="text-2xl font-bold mb-4">Convert PDF to JPG Images Online</h2>
-
-<p class="text-gray-700 mb-4">
-PDFECTA’s PDF to JPG converter lets you extract high-quality images from PDF files directly in your browser.
-No uploads, no tracking, and no file limits.
-</p>
-
-<p class="text-gray-700 mb-4">
-This tool is ideal for converting scanned documents, presentations, or reports into shareable image files.
-Each PDF page is converted into a separate JPG image instantly.
-</p>
-
-<h3 class="text-xl font-semibold mt-6 mb-2">Why Use Our PDF to JPG Converter?</h3>
-<ul class="list-disc pl-6 text-gray-700 mb-4">
-  <li>100% browser-based processing</li>
-  <li>No file uploads or server storage</li>
-  <li>High-quality JPG output</li>
-  <li>Free and unlimited usage</li>
-  <li>Works on all modern devices</li>
-</ul>
-
-<h3 class="text-xl font-semibold mt-6 mb-2">Frequently Asked Questions</h3>
-
-<p class="font-semibold">Is converting PDF to JPG safe?</p>
-<p class="text-gray-700 mb-3">
-Yes. All conversion happens locally in your browser. Your files never leave your device.
-</p>
-
-<p class="font-semibold">Can I convert multi-page PDFs?</p>
-<p class="text-gray-700 mb-3">
-Yes. Each page is converted into a separate JPG image.
-</p>
-
-<p class="text-gray-700 mb-4">
-  Want to convert images back into a document?
-  Try our <a href="/jpg-to-pdf.html" class="text-blue-600 underline">JPG to PDF tool</a>.
-</p>
-
-
-  
-</section>
-
-
-<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
-  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
-  <ul class="list-disc pl-6 space-y-2 text-gray-700">
-    <li><a href="/jpg-to-pdf.html" class="text-blue-600 underline">JPG to PDF</a></li>
-    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
-  </ul>
-</section>
-
-
-
-
-<!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200 mt-24">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-
-    <!-- BRAND -->
-    <div>
-      <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
-          P
-        </div>
-        <span class="font-extrabold text-slate-800">PDFECTA</span>
-      </div>
-      <p class="text-slate-500 leading-relaxed max-w-sm">
-        Free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking. Full control over your files.
-      </p>
-    </div>
-
-    <!-- LINKS -->
-    <div>
-      <h4 class="font-bold text-slate-800 mb-3">Company</h4>
-      <ul class="space-y-2 text-slate-500">
-        <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
-        <li><a href="/contact.html" class="hover:text-indigo-600">Contact</a></li>
-        <li><a href="/privacy.html" class="hover:text-indigo-600">Privacy Policy</a></li>
-        <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
-      </ul>
-    </div>
-
-    <!-- CONTACT -->
-    <div>
-      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
-      <a href="mailto:support@pdfecta.com"
-         class="font-semibold text-indigo-600 hover:underline">
-        support@pdfecta.com
-      </a>
-
-      <p class="text-xs text-slate-400 mt-6">
-        © 2026 PDFECTA. All rights reserved.
-      </p>
-    </div>
-
-  </div>
-</footer>
-
-
-
 
 </body>
 </html>
