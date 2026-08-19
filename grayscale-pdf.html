@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Convert PDF to Grayscale Online — Free, No Upload, 100% Private | PDFECTA</title>
+  <meta name="description" content="Convert PDF to grayscale online free. Remove color from any PDF instantly in your browser — no uploads, no registration, 100% private." />
+  <link rel="canonical" href="https://www.pdfecta.com/grayscale-pdf.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+  </style>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "PDFECTA", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Grayscale PDF", "item": "https://www.pdfecta.com/grayscale-pdf.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a PDF to grayscale for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can convert a PDF to grayscale for free using PDFECTA. Simply upload your PDF, click Convert to Grayscale, and download the black and white PDF instantly. Everything happens locally in your browser with no uploads required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to convert a PDF to grayscale online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA processes your PDF entirely in your browser. Your file is never uploaded to any server, keeping your document completely private on your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why would I convert a PDF to grayscale?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Converting a PDF to grayscale reduces file size, saves ink when printing on black and white printers, makes documents easier to read in certain contexts, and is required by some submission portals that only accept black and white documents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does converting to grayscale reduce PDF file size?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Removing color information from a PDF typically reduces the file size, especially for image-heavy documents and scanned files with color content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert only specific pages to grayscale?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PDFECTA's grayscale tool converts all pages of the PDF to grayscale in one step. If you need to work with specific pages first, use the Split PDF tool to extract the pages you need before converting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will the text in my PDF remain readable after grayscale conversion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Text remains fully readable after grayscale conversion. The conversion only removes color information — the content, layout, and structure of your document remain completely intact."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <span class="w-9 h-9 rounded-xl brand-gradient text-white flex items-center justify-center">P</span>
+      PDFECTA
+    </a>
+    <nav class="text-sm font-semibold text-slate-600 space-x-6">
+      <a href="/" class="hover:text-indigo-600">Home</a>
+      <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
+      <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Convert PDF to Grayscale — Free & Private
+  </h1>
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+    Remove color from any PDF instantly in your browser.
+    No uploads. No servers. 100% private.
+  </p>
+</section>
+
+<!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6 pb-20">
+  <div class="bg-white rounded-3xl shadow-xl border p-6">
+
+    <div id="dropZone"
+      class="border-2 border-dashed border-indigo-200 rounded-2xl p-12 text-center cursor-pointer hover:bg-indigo-50 transition">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center text-3xl">⬛</div>
+        <p class="font-bold text-lg text-slate-700">Drop your PDF here</p>
+        <p class="text-sm text-slate-400">Files never leave your device</p>
+      </div>
+      <input id="pdfInput" type="file" accept="application/pdf" class="hidden" />
+    </div>
+
+    <!-- Quality selector -->
+    <div class="mt-6 space-y-4">
+      <select id="quality"
+        class="w-full rounded-xl p-4 bg-slate-50 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500">
+        <option value="0.92">High Quality (Larger file)</option>
+        <option value="0.75" selected>Balanced (Recommended)</option>
+        <option value="0.55">Smaller File (Lower quality)</option>
+      </select>
+
+      <!-- Progress bar -->
+      <div id="progressContainer" class="hidden">
+        <div class="w-full bg-slate-100 rounded-full h-2">
+          <div id="progressBar" class="bg-slate-600 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+        <p id="progressText" class="text-center text-xs text-slate-400 mt-1">Processing page 0 of 0...</p>
+      </div>
+
+      <button onclick="convertToGrayscale()" id="convertBtn"
+        class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+        Convert to Grayscale
+      </button>
+
+      <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
+      <p id="sizeInfo" class="text-center text-xs text-slate-400"></p>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto px-6 pt-8 pb-12 text-slate-700 leading-relaxed space-y-6">
+
+  <h2 class="text-2xl font-bold text-slate-800">Convert PDF to Grayscale Online Free & Secure</h2>
+
+  <p>PDFECTA allows you to convert any PDF to grayscale instantly without uploading your document to any server. Whether you need to remove color for printing on a black and white printer, reduce file size, meet submission requirements, or simply create a cleaner document, this free tool provides a fast and completely private solution directly in your browser.</p>
+
+  <p>Unlike traditional online PDF tools that require file uploads, PDFECTA processes everything locally using modern browser technology. Your PDF file never leaves your device. No cloud storage, no third-party access, and no tracking.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Convert a PDF to Grayscale</h3>
+  <ol class="list-decimal pl-6 space-y-2">
+    <li>Upload or drag and drop your PDF file into the tool above.</li>
+    <li>Select your preferred output quality.</li>
+    <li>Click "Convert to Grayscale".</li>
+    <li>Download your black and white PDF instantly.</li>
+  </ol>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Convert a PDF to Grayscale?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>Save ink when printing:</strong> Black and white printing uses significantly less ink than color printing, saving money on every page.</li>
+    <li><strong>Reduce file size:</strong> Removing color information reduces the overall PDF file size, making it easier to share and store.</li>
+    <li><strong>Meet submission requirements:</strong> Some academic journals, legal portals, and government systems only accept black and white documents.</li>
+    <li><strong>Improve readability:</strong> Some documents are cleaner and easier to read without color distractions.</li>
+    <li><strong>Consistent printing:</strong> Ensures your document looks the same on all printers regardless of whether they support color.</li>
+    <li><strong>Archive documents:</strong> Grayscale PDFs are often preferred for long-term archiving as they are simpler and more universally compatible.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How Grayscale Conversion Works</h3>
+  <p>PDFECTA renders each page of your PDF on a canvas element in your browser, applies a grayscale filter that removes all color information while preserving luminance values, then rebuilds the PDF with the processed pages. This approach works on all PDF types including scanned documents, image-heavy files, and text-based documents.</p>
+  <p>The result is a PDF where all colors have been converted to shades of grey — from pure black to pure white — while maintaining the original layout, text, and visual structure of the document.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Does Grayscale Conversion Reduce File Size?</h3>
+  <p>Yes. Converting a PDF to grayscale typically reduces the file size because color image data requires significantly more storage than grayscale image data. For image-heavy PDFs and scanned documents you can expect a noticeable reduction in file size after conversion.</p>
+  <p>If you need further size reduction after converting to grayscale, use the <a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a> tool to optimize the file further.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA for Grayscale Conversion?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Files are processed locally — never uploaded to any server.</li>
+    <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
+    <li><strong>No Watermarks:</strong> Download clean professional PDFs.</li>
+    <li><strong>Works Offline:</strong> After loading, the tool works without an internet connection.</li>
+    <li><strong>Compatible on All Devices:</strong> Windows, macOS, Linux, Android, and iOS.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">What to Do After Converting to Grayscale</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a> — further reduce the file size of your grayscale PDF.</li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> — combine your grayscale PDF with other documents.</li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a> — divide the grayscale PDF into smaller files.</li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a> — number the pages of your converted document.</li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a> — add your digital signature before sharing.</li>
+    <li><a href="/watermark.html" class="text-indigo-600 hover:underline">Add Watermark</a> — add a watermark to your grayscale document.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
+    <div>
+      <p class="font-semibold text-slate-800">How do I convert a PDF to grayscale for free?</p>
+      <p>Upload your PDF using the tool above, click Convert to Grayscale, and download your black and white PDF instantly. Everything happens locally in your browser — no uploads, no registration.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to convert a PDF to grayscale online?</p>
+      <p>Yes. PDFECTA processes your PDF entirely in your browser. Your file is never uploaded to any server.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Why would I convert a PDF to grayscale?</p>
+      <p>Common reasons include saving ink when printing, reducing file size, meeting submission requirements that only accept black and white documents, and creating cleaner documents for archiving.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Does converting to grayscale reduce PDF file size?</p>
+      <p>Yes. Removing color information typically reduces file size, especially for image-heavy and scanned PDFs.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Will the text in my PDF remain readable after conversion?</p>
+      <p>Yes. Text remains fully readable after grayscale conversion. Only color is removed — the content and layout remain completely intact.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I convert only specific pages to grayscale?</p>
+      <p>The tool converts all pages at once. To convert specific pages, use the <a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a> tool first to extract the pages you need, then convert them to grayscale.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a></li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a></li>
+    <li><a href="/pdf-to-jpg.html" class="text-indigo-600 hover:underline">PDF to JPG</a></li>
+    <li><a href="/watermark.html" class="text-indigo-600 hover:underline">Add Watermark to PDF</a></li>
+  </ul>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
+    </div>
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Company</h4>
+      <ul class="space-y-2 text-slate-500">
+        <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
+        <li><a href="/contact.html" class="hover:text-indigo-600">Contact</a></li>
+        <li><a href="/privacy.html" class="hover:text-indigo-600">Privacy Policy</a></li>
+        <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- PDF.js for rendering + jsPDF for rebuilding -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('pdfInput');
+  const status = document.getElementById('status');
+  const sizeInfo = document.getElementById('sizeInfo');
+  const progressContainer = document.getElementById('progressContainer');
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  const convertBtn = document.getElementById('convertBtn');
+
+  dropZone.onclick = () => fileInput.click();
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
+  dropZone.ondrop = e => {
+    e.preventDefault();
+    dropZone.classList.remove('bg-indigo-50');
+    fileInput.files = e.dataTransfer.files;
+    status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+    sizeInfo.textContent = 'Original size: ' + formatSize(fileInput.files[0].size);
+  };
+  fileInput.onchange = () => {
+    if (fileInput.files.length) {
+      status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+      sizeInfo.textContent = 'Original size: ' + formatSize(fileInput.files[0].size);
+    }
+  };
+
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+  }
+
+  async function convertToGrayscale() {
+    if (!fileInput.files.length) {
+      status.textContent = '⚠️ Please select a PDF file.';
+      return;
+    }
+
+    const quality = parseFloat(document.getElementById('quality').value);
+    const originalSize = fileInput.files[0].size;
+
+    convertBtn.disabled = true;
+    convertBtn.textContent = 'Converting...';
+    progressContainer.classList.remove('hidden');
+    status.textContent = '⏳ Loading PDF...';
+    sizeInfo.textContent = 'Original size: ' + formatSize(originalSize);
+
+    try {
+      const arrayBuffer = await fileInput.files[0].arrayBuffer();
+      const pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      const totalPages = pdfDoc.numPages;
+
+      const { jsPDF } = window.jspdf;
+      let pdf = null;
+
+      for (let i = 1; i <= totalPages; i++) {
+        const pct = Math.round((i - 1) / totalPages * 100);
+        progressBar.style.width = pct + '%';
+        progressText.textContent = `Processing page ${i} of ${totalPages}...`;
+        status.textContent = `⏳ Converting page ${i} of ${totalPages}...`;
+
+        const page = await pdfDoc.getPage(i);
+        const scale = 1.5;
+        const viewport = page.getViewport({ scale });
+
+        // Create canvas
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const ctx = canvas.getContext('2d');
+
+        // Render page
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        // Apply grayscale filter using pixel manipulation
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+        for (let j = 0; j < data.length; j += 4) {
+          // Luminance formula for accurate grayscale
+          const gray = Math.round(0.299 * data[j] + 0.587 * data[j + 1] + 0.114 * data[j + 2]);
+          data[j] = gray;
+          data[j + 1] = gray;
+          data[j + 2] = gray;
+        }
+        ctx.putImageData(imageData, 0, 0);
+
+        const imgData = canvas.toDataURL('image/jpeg', quality);
+
+        const pxToMm = 25.4 / 96;
+        const pageWidthMm = viewport.width / scale * pxToMm;
+        const pageHeightMm = viewport.height / scale * pxToMm;
+
+        if (i === 1) {
+          pdf = new jsPDF({
+            orientation: pageWidthMm > pageHeightMm ? 'landscape' : 'portrait',
+            unit: 'mm',
+            format: [pageWidthMm, pageHeightMm]
+          });
+        } else {
+          pdf.addPage([pageWidthMm, pageHeightMm],
+            pageWidthMm > pageHeightMm ? 'landscape' : 'portrait');
+        }
+
+        pdf.addImage(imgData, 'JPEG', 0, 0, pageWidthMm, pageHeightMm);
+      }
+
+      progressBar.style.width = '100%';
+      progressText.textContent = 'Finalizing...';
+
+      const pdfBlob = pdf.output('blob');
+      const compressedSize = pdfBlob.size;
+      const reduction = Math.round((1 - compressedSize / originalSize) * 100);
+
+      const url = URL.createObjectURL(pdfBlob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'grayscale.pdf';
+      a.click();
+
+      progressContainer.classList.add('hidden');
+      status.innerHTML = '✅ <strong>PDF converted to grayscale!</strong>';
+      if (reduction > 0) {
+        sizeInfo.textContent = `Reduced from ${formatSize(originalSize)} to ${formatSize(compressedSize)} — ${reduction}% smaller`;
+      } else {
+        sizeInfo.textContent = `Original: ${formatSize(originalSize)} → Converted: ${formatSize(compressedSize)}`;
+      }
+
+    } catch (err) {
+      console.error(err);
+      progressContainer.classList.add('hidden');
+      status.textContent = '❌ Failed to convert PDF. Please try another file.';
+    } finally {
+      convertBtn.disabled = false;
+      convertBtn.textContent = 'Convert to Grayscale';
+    }
+  }
+</script>
+
+</body>
+</html>
