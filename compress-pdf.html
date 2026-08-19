@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Compress PDF Online – Reduce PDF File Size Free & Secure | PDFECTA</title>
-<meta name="description"
-content="Compress PDF online free. Reduce PDF file size instantly in your browser with no uploads. Secure, private, and works offline. Free PDF compressor." />
-
+  <meta name="description" content="Compress PDF online free. Reduce PDF file size instantly in your browser with no uploads. Secure, private, and works offline. Free PDF compressor." />
+  <link rel="canonical" href="https://www.pdfecta.com/compress-pdf.html" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
@@ -19,50 +17,75 @@ content="Compress PDF online free. Reduce PDF file size instantly in your browse
     .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
   </style>
 
-  <!-- Breadcrumb -->
+  <!-- Breadcrumb Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "PDFECTA", "item": "https://pdfecta.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Compress PDF", "item": "https://pdfecta.com/compress-pdf.html" }
+      { "@type": "ListItem", "position": 1, "name": "PDFECTA", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Compress PDF", "item": "https://www.pdfecta.com/compress-pdf.html" }
     ]
   }
   </script>
 
+  <!-- FAQ Schema -->
   <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-   {
-     "@type": "Question",
-     "name": "Is it safe to compress PDF files?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Yes. PDFECTA compresses files directly in your browser. Files are never uploaded or stored."
-     }
-   },
-   {
-     "@type": "Question",
-     "name": "Does compression reduce PDF quality?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Compression may reduce image quality depending on the selected level, but document readability is preserved."
-     }
-   },
-   {
-     "@type": "Question",
-     "name": "Is this PDF compressor free?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Yes. You can compress PDF files online free with no registration required."
-     }
-   }
- ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it safe to compress PDF files online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA compresses PDF files directly in your browser. Your files are never uploaded to any server and never leave your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does compression reduce PDF quality?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PDFECTA uses canvas-based rendering to re-encode PDF pages as optimized images. Higher compression levels reduce image quality slightly but text and layout remain readable. Choose Balanced for the best quality-to-size ratio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this PDF compressor free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA's PDF compressor is completely free with no registration, no subscription, and no usage limits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of PDF files does compression work best on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PDFECTA's compression works on all PDF types including scanned documents, image-heavy PDFs, and text documents. Image-heavy and scanned PDFs typically see the largest file size reductions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a file size limit for PDF compression?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no strict file size limit. Since all processing happens locally in your browser, performance depends on your device memory. Most modern devices can handle standard PDF files without issues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will the compressed PDF look different from the original?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At Balanced compression the visual difference is minimal and most users cannot tell the difference. At High compression image sharpness may be slightly reduced. Text documents with minimal images see very little visual change at any compression level."
+        }
+      }
+    ]
+  }
+  </script>
 
 </head>
 
@@ -97,11 +120,14 @@ content="Compress PDF online free. Reduce PDF file size instantly in your browse
 <!-- TOOL -->
 <section class="max-w-3xl mx-auto px-6 pb-20">
   <div class="bg-white rounded-3xl shadow-xl border p-6">
-    
+
     <div id="dropZone"
       class="border-2 border-dashed border-indigo-200 rounded-2xl p-12 text-center cursor-pointer hover:bg-indigo-50 transition">
-      <p class="font-bold text-lg mb-2">Drop your PDF here</p>
-      <p class="text-sm text-slate-500">Files never leave your device</p>
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl">🗜</div>
+        <p class="font-bold text-lg text-slate-700">Drop your PDF here</p>
+        <p class="text-sm text-slate-400">Files never leave your device</p>
+      </div>
       <input id="pdfInput" type="file" accept="application/pdf" class="hidden" />
     </div>
 
@@ -110,138 +136,116 @@ content="Compress PDF online free. Reduce PDF file size instantly in your browse
         class="w-full rounded-xl p-4 bg-slate-50 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500">
         <option value="medium">Balanced (Recommended)</option>
         <option value="low">Low Compression (Best Quality)</option>
-        <option value="high">High Compression (Smaller Size)</option>
+        <option value="high">High Compression (Smallest Size)</option>
       </select>
 
-      <button onclick="compressPDF()"
+      <!-- Progress bar -->
+      <div id="progressContainer" class="hidden">
+        <div class="w-full bg-slate-100 rounded-full h-2">
+          <div id="progressBar" class="brand-gradient h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+        <p id="progressText" class="text-center text-xs text-slate-400 mt-1">Processing page 0 of 0...</p>
+      </div>
+
+      <button onclick="compressPDF()" id="compressBtn"
         class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
         Compress PDF
       </button>
 
-      <p id="status" class="text-center text-sm font-semibold text-slate-500"></p>
+      <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
+      <p id="sizeInfo" class="text-center text-xs text-slate-400"></p>
     </div>
-
   </div>
 </section>
 
 <!-- SEO CONTENT -->
 <section class="max-w-4xl mx-auto px-6 pt-16 pb-12 text-slate-700 leading-relaxed space-y-6">
 
-<h2 class="text-2xl font-bold text-slate-800">
-Compress PDF Online Free & Secure
-</h2>
+  <h2 class="text-2xl font-bold text-slate-800">Compress PDF Online Free & Secure</h2>
 
-<p>
-PDFECTA allows you to compress PDF files online instantly without uploading your document to any server. 
-If you need to reduce PDF file size for email, sharing, printing, or storage, this free PDF compressor 
-provides a fast and private solution directly in your browser.
-</p>
+  <p>PDFECTA allows you to compress PDF files online instantly without uploading your document to any server. If you need to reduce PDF file size for email, sharing, printing, or storage, this free PDF compressor provides a fast and private solution directly in your browser.</p>
 
-<p>
-Unlike traditional online PDF compressors that require file uploads, PDFECTA processes everything locally 
-using modern browser technology. Your PDF file never leaves your device. No cloud storage, no third-party 
-access, and no tracking — making it ideal for sensitive documents such as contracts, financial files, 
-academic papers, and confidential reports.
-</p>
+  <p>Unlike traditional online PDF compressors that require file uploads, PDFECTA processes everything locally using modern browser technology. Your PDF file never leaves your device. No cloud storage, no third-party access, and no tracking — making it ideal for sensitive documents such as contracts, financial files, academic papers, and confidential reports.</p>
 
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-How to Compress a PDF File
-</h3>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Compress a PDF File</h3>
+  <ol class="list-decimal pl-6 space-y-2">
+    <li>Upload or drag and drop your PDF file into the tool above.</li>
+    <li>Select your preferred compression level.</li>
+    <li>Click "Compress PDF" and wait while pages are processed locally.</li>
+    <li>Download your reduced-size PDF instantly.</li>
+  </ol>
 
-<ol class="list-decimal pl-6 space-y-2">
-<li>Upload or drag and drop your PDF file.</li>
-<li>Select your preferred compression level.</li>
-<li>Click “Compress PDF”.</li>
-<li>Download your reduced-size PDF instantly.</li>
-</ol>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How Our Compression Works</h3>
+  <p>PDFECTA uses canvas-based rendering to compress PDF files. Each page of your PDF is rendered at high resolution and re-encoded as an optimized image. This approach achieves real file size reduction — especially effective on scanned documents, image-heavy PDFs, and files exported from design software.</p>
+  <p>The compression level you choose controls the balance between file size and visual quality. For most documents, Balanced compression is the best choice — it significantly reduces file size while keeping text sharp and images clear.</p>
 
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-Compression Levels Explained
-</h3>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Compression Levels Explained</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>Balanced (Recommended):</strong> Good quality with significant size reduction. Best for most documents including reports, contracts, and presentations.</li>
+    <li><strong>Low Compression:</strong> Maximum visual quality with moderate size reduction. Best for documents where image sharpness is critical.</li>
+    <li><strong>High Compression:</strong> Maximum size reduction with some reduction in image sharpness. Best when file size is the priority over visual quality.</li>
+  </ul>
 
-<ul class="list-disc pl-6 space-y-2">
-<li><strong>Balanced:</strong> Recommended option with good quality and smaller file size.</li>
-<li><strong>Low Compression:</strong> Best visual quality with moderate size reduction.</li>
-<li><strong>High Compression:</strong> Smaller file size with stronger compression.</li>
-</ul>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA PDF Compressor?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Files are processed locally in your browser — never uploaded to any server.</li>
+    <li><strong>Real Compression:</strong> Canvas-based rendering achieves genuine file size reduction on all PDF types.</li>
+    <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions or hidden costs.</li>
+    <li><strong>No Watermarks:</strong> Download clean, professional PDFs.</li>
+    <li><strong>Works Offline:</strong> After loading, compression works without internet.</li>
+    <li><strong>Compatible on All Devices:</strong> Windows, macOS, Linux, Android, and iOS.</li>
+  </ul>
 
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-Why Choose PDFECTA PDF Compressor?
-</h3>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">When Should You Compress a PDF?</h3>
+  <p>Compression is useful whenever you need to upload files to websites with size limits or send documents through email. Many email providers limit attachments to around 20–25 MB, which scanned PDFs can easily exceed. Compressing a PDF ensures faster uploads, smoother sharing, and better compatibility with document management systems.</p>
 
-<ul class="list-disc pl-6 space-y-2">
-<li><strong>100% Private:</strong> Files are processed locally in your browser.</li>
-<li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
-<li><strong>Free to Use:</strong> No subscriptions or hidden costs.</li>
-<li><strong>No Watermarks:</strong> Download clean, professional PDFs.</li>
-<li><strong>Works Offline:</strong> After loading, compression works without internet.</li>
-<li><strong>Compatible on All Devices:</strong> Windows, macOS, Linux, Android, and iOS.</li>
-</ul>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to compress PDF files here?</p>
+      <p>Yes. All compression happens directly in your browser. Your files are never uploaded or stored anywhere.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Does compression reduce PDF quality?</p>
+      <p>PDFECTA re-encodes PDF pages as optimized images. Higher compression levels reduce image quality slightly but text and layout remain readable. Choose Balanced for the best quality-to-size ratio.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">What types of PDFs work best with compression?</p>
+      <p>Image-heavy PDFs and scanned documents see the largest size reductions. Text-only PDFs may see more modest reductions since they contain less image data to compress.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is there a file size limit?</p>
+      <p>Performance depends on your device memory. Most modern devices can handle standard PDF files without issues. Very large PDFs may take longer to process.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is this PDF compressor free?</p>
+      <p>Yes. You can compress PDF files online free with no registration required and no usage limits.</p>
+    </div>
+  </div>
 
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-Reduce PDF File Size Without Losing Quality
-</h3>
-
-<p>
-Reducing PDF size is important when sending attachments by email, uploading to online portals, 
-or saving storage space. PDFECTA’s compression technology optimizes images and structure 
-while preserving readability and layout integrity.
-</p>
-
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-Frequently Asked Questions
-</h3>
-
-<p class="font-semibold">Is it safe to compress PDF files here?</p>
-<p>
-Yes. All compression happens directly in your browser. Your files are never uploaded or stored anywhere.
-</p>
-
-<p class="font-semibold">Will compression reduce quality?</p>
-<p>
-Compression may slightly reduce image quality depending on the selected level, 
-but text clarity and document structure remain intact.
-</p>
-
-<p class="font-semibold">Is there a file size limit?</p>
-<p>
-Performance depends on your device memory. Most modern devices can handle standard PDF files without issues.
-</p>
-
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-Related Tools
-</h3>
-
-<ul class="list-disc pl-6 space-y-2">
-<li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
-<li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a></li>
-<li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages from PDF</a></li>
-<li><a href="/pdf-to-jpg.html" class="text-indigo-600 hover:underline">PDF to JPG</a></li>
-</ul>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a></li>
+    <li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages from PDF</a></li>
+    <li><a href="/pdf-to-jpg.html" class="text-indigo-600 hover:underline">PDF to JPG</a></li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a></li>
+    <li><a href="/reorder-pdf-pages.html" class="text-indigo-600 hover:underline">Reorder PDF Pages</a></li>
+  </ul>
 
 </section>
-
-
 
 <!-- FOOTER -->
 <footer class="bg-white border-t border-slate-200 py-12">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-
-    <!-- BRAND -->
     <div>
       <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">
-          P
-        </div>
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
         <span class="font-extrabold text-slate-800">PDFECTA</span>
       </div>
-      <p class="text-slate-500 leading-relaxed max-w-sm">
-        PDFECTA provides free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking. Full control over your files.
-      </p>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
     </div>
-
-    <!-- LINKS -->
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
@@ -251,77 +255,150 @@ Related Tools
         <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
       </ul>
     </div>
-
-    <!-- CONTACT / TRUST -->
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
-      <p class="text-slate-500 mb-2">
-        Questions or feedback?
-      </p>
-      <a href="mailto:support@pdfecta.com"
-         class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">
-        support@pdfecta.com
-      </a>
-
-      <p class="text-xs text-slate-400 mt-6">
-        © 2026 PDFECTA. All rights reserved.
-      </p>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
     </div>
-
   </div>
 </footer>
 
+<!-- PDF.js for rendering + jsPDF for rebuilding -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
-  const dropZone = document.getElementById("dropZone");
-  const fileInput = document.getElementById("pdfInput");
-  const status = document.getElementById("status");
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('pdfInput');
+  const status = document.getElementById('status');
+  const sizeInfo = document.getElementById('sizeInfo');
+  const progressContainer = document.getElementById('progressContainer');
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  const compressBtn = document.getElementById('compressBtn');
 
   dropZone.onclick = () => fileInput.click();
-
-  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add("bg-indigo-50"); };
-  dropZone.ondragleave = () => dropZone.classList.remove("bg-indigo-50");
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
   dropZone.ondrop = e => {
     e.preventDefault();
-    dropZone.classList.remove("bg-indigo-50");
+    dropZone.classList.remove('bg-indigo-50');
     fileInput.files = e.dataTransfer.files;
-    status.textContent = "Selected: " + fileInput.files[0].name;
+    status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+    sizeInfo.textContent = 'Original size: ' + formatSize(fileInput.files[0].size);
+  };
+  fileInput.onchange = () => {
+    if (fileInput.files.length) {
+      status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+      sizeInfo.textContent = 'Original size: ' + formatSize(fileInput.files[0].size);
+    }
   };
 
-  fileInput.onchange = () => {
-    if (fileInput.files.length)
-      status.textContent = "Selected: " + fileInput.files[0].name;
-  };
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+  }
 
   async function compressPDF() {
     if (!fileInput.files.length) {
-      status.textContent = "⚠️ Please select a PDF file.";
+      status.textContent = '⚠️ Please select a PDF file.';
       return;
     }
 
-    const level = document.getElementById("level").value;
-    status.textContent = "Compressing locally…";
+    const level = document.getElementById('level').value;
+    const qualityMap = { low: 0.85, medium: 0.65, high: 0.4 };
+    const scaleMap = { low: 1.5, medium: 1.2, high: 1.0 };
+    const quality = qualityMap[level];
+    const scale = scaleMap[level];
+
+    const originalSize = fileInput.files[0].size;
+    compressBtn.disabled = true;
+    compressBtn.textContent = 'Compressing...';
+    progressContainer.classList.remove('hidden');
+    status.textContent = '⏳ Loading PDF...';
+    sizeInfo.textContent = 'Original size: ' + formatSize(originalSize);
 
     try {
-      const buffer = await fileInput.files[0].arrayBuffer();
-      const pdfDoc = await PDFLib.PDFDocument.load(buffer);
-      const quality = { low: 0.9, medium: 0.7, high: 0.5 }[level];
+      const arrayBuffer = await fileInput.files[0].arrayBuffer();
+      const pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      const totalPages = pdfDoc.numPages;
 
-      const bytes = await pdfDoc.save({
-        useObjectStreams: true,
-        compress: true,
-        imageQuality: quality
-      });
+      const { jsPDF } = window.jspdf;
 
-      const blob = new Blob([bytes], { type: "application/pdf" });
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "compressed.pdf";
+      let pdf = null;
+
+      for (let i = 1; i <= totalPages; i++) {
+        // Update progress
+        const pct = Math.round((i - 1) / totalPages * 100);
+        progressBar.style.width = pct + '%';
+        progressText.textContent = `Processing page ${i} of ${totalPages}...`;
+        status.textContent = `⏳ Compressing page ${i} of ${totalPages}...`;
+
+        const page = await pdfDoc.getPage(i);
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const ctx = canvas.getContext('2d');
+
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        const imgData = canvas.toDataURL('image/jpeg', quality);
+
+        // Page dimensions in mm (convert from px at 96dpi)
+        const pxToMm = 25.4 / 96;
+        const pageWidthMm = viewport.width / scale * pxToMm;
+        const pageHeightMm = viewport.height / scale * pxToMm;
+
+        if (i === 1) {
+          pdf = new jsPDF({
+            orientation: pageWidthMm > pageHeightMm ? 'landscape' : 'portrait',
+            unit: 'mm',
+            format: [pageWidthMm, pageHeightMm]
+          });
+        } else {
+          pdf.addPage([pageWidthMm, pageHeightMm],
+            pageWidthMm > pageHeightMm ? 'landscape' : 'portrait');
+        }
+
+        pdf.addImage(imgData, 'JPEG', 0, 0, pageWidthMm, pageHeightMm);
+      }
+
+      progressBar.style.width = '100%';
+      progressText.textContent = 'Finalizing...';
+
+      const pdfBlob = pdf.output('blob');
+      const compressedSize = pdfBlob.size;
+      const reduction = Math.round((1 - compressedSize / originalSize) * 100);
+
+      const url = URL.createObjectURL(pdfBlob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'compressed.pdf';
       a.click();
 
-      status.textContent = "✅ Compressed PDF downloaded.";
-    } catch {
-      status.textContent = "❌ Failed to compress PDF.";
+      progressContainer.classList.add('hidden');
+      status.innerHTML = '✅ <strong>PDF compressed successfully!</strong>';
+
+      if (reduction > 0) {
+        sizeInfo.textContent = `Reduced from ${formatSize(originalSize)} to ${formatSize(compressedSize)} — ${reduction}% smaller`;
+      } else {
+        sizeInfo.textContent = `Original: ${formatSize(originalSize)} → Compressed: ${formatSize(compressedSize)}`;
+      }
+
+    } catch (err) {
+      console.error(err);
+      progressContainer.classList.add('hidden');
+      status.textContent = '❌ Failed to compress PDF. Please try another file.';
+    } finally {
+      compressBtn.disabled = false;
+      compressBtn.textContent = 'Compress PDF';
     }
   }
 </script>
