@@ -88,6 +88,22 @@
         "@type": "Answer",
         "text": "No. Rotating PDF pages only changes the orientation of the page. It does not affect the content, resolution, fonts, or image quality of any page in the document."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do PDF pages come out sideways?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDF pages come out sideways for several reasons. The most common causes are scanning a document in the wrong orientation, exporting from software that uses landscape mode by default, receiving a file created on a different device with different orientation settings, or photos taken in portrait mode being embedded as landscape in a PDF."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I save the rotation permanently in a PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When you rotate pages using PDFECTA and download the result, the rotation is permanently saved in the PDF file. Anyone who opens the downloaded file will see the pages in the correct orientation without needing to rotate them manually."
+      }
     }
   ]
 }
@@ -101,9 +117,7 @@
 <header class="sticky top-0 z-50 bg-white border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2 font-extrabold text-xl text-slate-800">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
-        P
-      </div>
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">P</div>
       PDFECTA
     </a>
     <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
@@ -131,7 +145,7 @@
   </h1>
 
   <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-    Sideways or upside down pages in a PDF are a common frustration. They often occur after scanning a document, exporting from certain software, or receiving a file from someone else. Rotating PDF pages used to require desktop software, but today you can fix page orientation in seconds directly in your browser for free. In this guide you will learn exactly how to rotate PDF pages online without uploading your file to any server.
+    Sideways or upside down pages in a PDF are a common frustration. They often occur after scanning a document, exporting from certain software, or receiving a file from someone else. Rotating PDF pages used to require expensive desktop software, but today you can fix page orientation in seconds directly in your browser for free. In this guide you will learn exactly how to rotate PDF pages online without uploading your file to any server.
   </p>
 
   <!-- Why rotate -->
@@ -143,10 +157,6 @@
     Page orientation problems in PDFs happen in many everyday situations. Whether it is a single page or an entire document, fixing rotation is a quick but essential step before sharing or printing any professional document.
   </p>
 
-  <p class="mb-4 text-gray-700">
-    Common reasons to rotate PDF pages include:
-  </p>
-
   <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
     <li>Fixing pages that came out sideways after scanning</li>
     <li>Correcting upside down pages in a scanned document</li>
@@ -154,6 +164,33 @@
     <li>Fixing orientation on photos or images exported as PDF</li>
     <li>Correcting page orientation before printing or sharing</li>
     <li>Fixing a single page without altering the rest of the document</li>
+  </ul>
+
+  <!-- Why pages come out sideways -->
+  <h2 class="text-2xl font-semibold mt-10 mb-4 text-slate-800">
+    Why Do PDF Pages Come Out Sideways?
+  </h2>
+
+  <p class="mb-4 text-gray-700">
+    Understanding why pages end up in the wrong orientation helps you prevent it in future and fix it faster when it happens. Here are the most common causes:
+  </p>
+
+  <ul class="list-disc pl-6 mb-6 space-y-3 text-gray-700">
+    <li>
+      <strong>Scanner orientation settings</strong> — many flatbed scanners default to landscape mode. If you place a portrait document in a landscape scanner without adjusting settings, the resulting PDF pages will appear sideways.
+    </li>
+    <li>
+      <strong>Mobile phone scanning</strong> — scanning apps on smartphones sometimes misread the device orientation, especially if you rotate your phone mid-scan, resulting in pages at the wrong angle.
+    </li>
+    <li>
+      <strong>Software export settings</strong> — applications like Excel, PowerPoint, or design tools sometimes export PDFs in landscape orientation by default, even when the content appears portrait on screen.
+    </li>
+    <li>
+      <strong>Photos embedded in PDFs</strong> — photos taken in portrait mode can sometimes be embedded as landscape in a PDF depending on how the file was created, particularly with older software.
+    </li>
+    <li>
+      <strong>Mixed orientation documents</strong> — some documents deliberately mix portrait and landscape pages, such as reports with wide tables or charts. These can appear incorrectly oriented when viewed on certain PDF readers.
+    </li>
   </ul>
 
   <!-- How to rotate -->
@@ -187,19 +224,26 @@
   </p>
 
   <ul class="list-disc pl-6 mb-6 space-y-3 text-gray-700">
-    <li>
-      <strong>90° Clockwise</strong> — rotates the page a quarter turn to the right. Use this when a page appears rotated 90° to the left and needs to be fixed.
-    </li>
-    <li>
-      <strong>90° Counter-Clockwise</strong> — rotates the page a quarter turn to the left. Use this when a page appears rotated 90° to the right.
-    </li>
-    <li>
-      <strong>180°</strong> — flips the page completely upside down. Use this when a page is entirely inverted.
-    </li>
+    <li><strong>90° Clockwise</strong> — rotates the page a quarter turn to the right. Use this when a page appears rotated 90° to the left and needs to be fixed.</li>
+    <li><strong>90° Counter-Clockwise</strong> — rotates the page a quarter turn to the left. Use this when a page appears rotated 90° to the right.</li>
+    <li><strong>180°</strong> — flips the page completely upside down. Use this when a page is entirely inverted.</li>
   </ul>
 
   <p class="mb-4 text-gray-700">
     If you are unsure which direction to use, simply try 90° clockwise first. If the page still looks wrong, undo and try counter-clockwise instead.
+  </p>
+
+  <!-- Is rotation permanent -->
+  <h2 class="text-2xl font-semibold mt-10 mb-4 text-slate-800">
+    Is PDF Rotation Permanent?
+  </h2>
+
+  <p class="mb-4 text-gray-700">
+    Yes — when you rotate pages using PDFECTA and download the result, the rotation is permanently embedded in the PDF file. Anyone who opens the downloaded file will see the pages in the correct orientation automatically, without needing to rotate them manually in their PDF reader.
+  </p>
+
+  <p class="mb-4 text-gray-700">
+    This is different from the temporary rotation that some PDF readers like Adobe Acrobat or Chrome offer through their View menu. That type of rotation only affects how you see the document on your screen — it does not save the change into the file itself. PDFECTA's rotation is permanent and saved directly into the document.
   </p>
 
   <!-- Does it affect quality -->
@@ -213,6 +257,19 @@
 
   <p class="mb-4 text-gray-700">
     This is very different from operations like compression where some image quality trade-off may occur. Page rotation is entirely non-destructive.
+  </p>
+
+  <!-- How to rotate a single page -->
+  <h2 class="text-2xl font-semibold mt-10 mb-4 text-slate-800">
+    How to Rotate a Single Page in a PDF Without Affecting Others
+  </h2>
+
+  <p class="mb-4 text-gray-700">
+    One of the most common needs is rotating just one page — for example, a landscape chart or table in the middle of an otherwise portrait document — without changing the orientation of any other pages.
+  </p>
+
+  <p class="mb-4 text-gray-700">
+    PDFECTA supports selective page rotation. When you open the Rotate PDF tool, you can choose to rotate specific page numbers rather than the entire document. Simply enter the page number of the page you want to rotate, select the direction, and download. All other pages remain exactly as they were.
   </p>
 
   <!-- Privacy -->
@@ -233,29 +290,15 @@
     Other Tools You Might Need
   </h2>
 
-  <p class="mb-4 text-gray-700">
-    After rotating pages, you may need to do additional work on the document. Here are some related PDFECTA tools that pair well with PDF rotation:
-  </p>
-
   <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
-    <li>
-      <a href="/reorder-pdf-pages.html" class="text-indigo-600 underline hover:text-indigo-800">Reorder Pages</a> — rearrange pages into the correct sequence after fixing their orientation.
-    </li>
-    <li>
-      <a href="/delete-pages-from-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Delete Pages from PDF</a> — remove any unwanted pages after rotating.
-    </li>
-    <li>
-      <a href="/merge-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Merge PDF</a> — combine your rotated PDF with other documents into a single file.
-    </li>
-    <li>
-      <a href="/compress-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Compress PDF</a> — reduce file size after finalizing your page orientation.
-    </li>
-    <li>
-      <a href="/split-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Split PDF</a> — divide the document into smaller files after rotating.
-    </li>
-    <li>
-      <a href="/sign-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Sign PDF</a> — digitally sign the document once all pages are correctly oriented.
-    </li>
+    <li><a href="/reorder-pdf-pages.html" class="text-indigo-600 underline hover:text-indigo-800">Reorder Pages</a> — rearrange pages into the correct sequence after fixing their orientation.</li>
+    <li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Delete Pages from PDF</a> — remove any unwanted pages after rotating.</li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Merge PDF</a> — combine your rotated PDF with other documents into a single file.</li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Compress PDF</a> — reduce file size after finalizing your page orientation.</li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Split PDF</a> — divide the document into smaller files after rotating.</li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Sign PDF</a> — digitally sign the document once all pages are correctly oriented.</li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 underline hover:text-indigo-800">Add Page Numbers</a> — number your pages after fixing their orientation.</li>
+    <li><a href="/extract-pages-from-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Extract Pages</a> — pull out specific pages into a new PDF after rotating.</li>
   </ul>
 
   <!-- Tips -->
@@ -269,85 +312,67 @@
     <li>For scanned documents with mixed orientations, fix rotation first before reordering or deleting pages.</li>
     <li>After rotating, use the <a href="/compress-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">Compress PDF</a> tool if you need to reduce the file size before sharing or emailing.</li>
     <li>If pages are both rotated and in the wrong order, fix rotation first then use the <a href="/reorder-pdf-pages.html" class="text-indigo-600 underline hover:text-indigo-800">Reorder Pages</a> tool.</li>
+    <li>To prevent orientation issues in future, always check your scanner settings before scanning and ensure the document is placed correctly on the scanning bed.</li>
   </ul>
 
   <!-- Conclusion -->
-  <h2 class="text-2xl font-semibold mt-10 mb-4 text-slate-800">
-    Conclusion
-  </h2>
+  <h2 class="text-2xl font-semibold mt-10 mb-4 text-slate-800">Conclusion</h2>
 
   <p class="mb-4 text-gray-700">
-    Rotating PDF pages is one of the simplest but most frequently needed document fixes. Whether you need to correct a single sideways page or flip an entire scanned document, PDFECTA's Rotate PDF tool makes the process fast, free, and completely private — with zero quality loss and no file uploads.
+    Rotating PDF pages is one of the simplest but most frequently needed document fixes. Whether you need to correct a single sideways page, flip an entire scanned document, or permanently fix orientation in a file before sharing it, PDFECTA's Rotate PDF tool makes the process fast, free, and completely private — with zero quality loss and no file uploads.
   </p>
 
   <p class="mb-6 text-gray-700">
     Ready to fix your PDF orientation? Use our <a href="/rotate-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">free Rotate PDF tool</a> now — no account needed, no uploads, no limits.
   </p>
 
-  <!-- Related reading -->
+  <!-- Related reading — updated with all 10 blogs -->
   <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 mt-10">
     <h3 class="text-lg font-bold text-slate-800 mb-3">Related Guides</h3>
     <ul class="space-y-2 text-sm">
-      <li>
-        <a href="/blog/how-to-compress-pdf-without-losing-quality.html" class="text-indigo-600 underline hover:text-indigo-800">
-          How to Compress PDF Without Losing Quality
-        </a>
-      </li>
-      <li>
-        <a href="/blog/how-to-merge-pdf-files-online.html" class="text-indigo-600 underline hover:text-indigo-800">
-          How to Merge PDF Files Online (Free & Private)
-        </a>
-      </li>
-      <li>
-        <a href="/blog/how-to-split-a-pdf-file-online.html" class="text-indigo-600 underline hover:text-indigo-800">
-          How to Split a PDF File Online (Free & Private)
-        </a>
-      </li>
-      <li>
-        <a href="/blog/how-to-delete-pages-from-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">
-          How to Delete Pages from a PDF Online (Free & Private)
-        </a>
-      </li>
-      <li>
-        <a href="/blog/how-to-reorder-pdf-pages.html" class="text-indigo-600 underline hover:text-indigo-800">
-          How to Reorder Pages in a PDF Online (Free & Private)
-        </a>
-      </li>
+      <li><a href="/blog/how-to-compress-pdf-without-losing-quality.html" class="text-indigo-600 underline hover:text-indigo-800">How to Compress PDF Without Losing Quality</a></li>
+      <li><a href="/blog/how-to-merge-pdf-files-online.html" class="text-indigo-600 underline hover:text-indigo-800">How to Merge PDF Files Online (Free & Private)</a></li>
+      <li><a href="/blog/how-to-split-a-pdf-file-online.html" class="text-indigo-600 underline hover:text-indigo-800">How to Split a PDF File Online (Free & Private)</a></li>
+      <li><a href="/blog/how-to-delete-pages-from-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">How to Delete Pages from a PDF Online (Free & Private)</a></li>
+      <li><a href="/blog/how-to-reorder-pdf-pages.html" class="text-indigo-600 underline hover:text-indigo-800">How to Reorder Pages in a PDF Online (Free & Private)</a></li>
+      <li><a href="/blog/how-to-convert-pdf-to-jpg.html" class="text-indigo-600 underline hover:text-indigo-800">How to Convert PDF to JPG Online (Free & Private)</a></li>
+      <li><a href="/blog/how-to-convert-jpg-to-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">How to Convert JPG to PDF Online (Free & Private)</a></li>
+      <li><a href="/blog/how-to-delete-odd-even-pages-from-pdf.html" class="text-indigo-600 underline hover:text-indigo-800">How to Delete Odd or Even Pages from a PDF (Free & Private)</a></li>
     </ul>
   </div>
 
   <!-- FAQ visible -->
-  <h2 class="text-2xl font-semibold mt-14 mb-6 text-slate-800">
-    Frequently Asked Questions
-  </h2>
+  <h2 class="text-2xl font-semibold mt-14 mb-6 text-slate-800">Frequently Asked Questions</h2>
 
   <div class="space-y-6">
-
     <div>
       <p class="font-semibold text-slate-800 mb-1">How do I rotate a page in a PDF?</p>
       <p class="text-gray-700">You can rotate a page in a PDF by opening it in a PDF rotation tool, selecting the pages you want to rotate, choosing the rotation direction, and downloading the updated file. PDFECTA lets you do this entirely in your browser with no uploads required.</p>
     </div>
-
     <div>
       <p class="font-semibold text-slate-800 mb-1">Can I rotate PDF pages for free?</p>
       <p class="text-gray-700">Yes. PDFECTA offers a completely free tool to rotate pages in any PDF file. There is no registration, no subscription, and no usage limits. Everything runs locally in your browser.</p>
     </div>
-
     <div>
       <p class="font-semibold text-slate-800 mb-1">Can I rotate just one page in a PDF without affecting the others?</p>
       <p class="text-gray-700">Yes. PDFECTA allows you to rotate individual pages or specific page ranges without affecting the rest of the document. You can also rotate all pages at once if needed.</p>
     </div>
-
     <div>
       <p class="font-semibold text-slate-800 mb-1">Is it safe to rotate PDF pages online?</p>
       <p class="text-gray-700">It depends on the tool. Many online PDF tools upload your file to their servers before processing, which poses a privacy risk. PDFECTA never uploads your files — all processing happens directly in your browser, keeping your documents completely private.</p>
     </div>
-
     <div>
       <p class="font-semibold text-slate-800 mb-1">Does rotating a PDF reduce its quality?</p>
       <p class="text-gray-700">No. Rotating PDF pages only changes the orientation of the page. It does not affect the content, resolution, fonts, or image quality of any page in the document.</p>
     </div>
-
+    <div>
+      <p class="font-semibold text-slate-800 mb-1">Why do PDF pages come out sideways?</p>
+      <p class="text-gray-700">The most common causes are scanning in the wrong orientation, mobile scanning apps misreading device orientation, software exporting in landscape mode by default, or photos being embedded incorrectly in the PDF.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800 mb-1">Can I save the rotation permanently in a PDF?</p>
+      <p class="text-gray-700">Yes. When you rotate pages using PDFECTA and download the result, the rotation is permanently saved in the PDF file. Anyone who opens the downloaded file will see the pages in the correct orientation automatically.</p>
+    </div>
   </div>
 
 </main>
@@ -355,20 +380,13 @@
 <!-- FOOTER -->
 <footer class="bg-white border-t border-slate-200 mt-16">
   <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-
     <div>
       <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
-          P
-        </div>
+        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">P</div>
         <span class="font-extrabold text-slate-800">PDFECTA</span>
       </div>
-      <p class="text-slate-500 leading-relaxed max-w-sm">
-        Free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking. Full control over your files.
-      </p>
+      <p class="text-slate-500 leading-relaxed max-w-sm">Free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
     </div>
-
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
@@ -378,15 +396,11 @@
         <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
       </ul>
     </div>
-
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Support</h4>
-      <a href="mailto:support@pdfecta.com" class="font-semibold text-indigo-600 hover:underline">
-        support@pdfecta.com
-      </a>
+      <a href="mailto:support@pdfecta.com" class="font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
       <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
     </div>
-
   </div>
 </footer>
 
