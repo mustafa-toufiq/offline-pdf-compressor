@@ -1,17 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Reorder PDF Pages Online Free | PDFECTA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="description" content="Reorder PDF pages online for free. Change PDF page order securely in your browser with no uploads or tracking." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reorder PDF Pages Online — Rearrange Pages Free & Private | PDFECTA</title>
+  <meta name="description" content="Reorder PDF pages online free. Rearrange, reorganize, and change page order in any PDF instantly in your browser — no uploads, no registration, 100% private." />
+  <link rel="canonical" href="https://www.pdfecta.com/reorder-pdf-pages.html" />
 
-  <link rel="canonical" href="https://pdfecta.com/reorder-pdf-pages.html" />
-
-  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+  </style>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Reorder PDF Pages", "item": "https://www.pdfecta.com/reorder-pdf-pages.html" }
+    ]
+  }
+  </script>
 
   <!-- FAQ Schema -->
   <script type="application/ld+json">
@@ -21,295 +39,256 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Is it safe to reorder PDF pages?",
+        "name": "How do I rearrange pages in a PDF for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. All PDF processing happens locally in your browser. Your file is never uploaded."
+          "text": "You can rearrange pages in a PDF for free using PDFECTA. Upload your PDF, enter the new page order, and download the reordered PDF instantly. Everything happens locally in your browser with no uploads required."
         }
       },
       {
         "@type": "Question",
-        "name": "How do I change the order of PDF pages?",
+        "name": "Is it safe to reorder PDF pages online?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Upload a PDF and enter the new page order using page numbers such as 3,1,2."
+          "text": "It depends on the tool. Many online PDF tools upload your file to their servers before processing. PDFECTA never uploads your files — all reordering happens directly in your browser, keeping your documents completely private."
         }
       },
       {
         "@type": "Question",
-        "name": "Does this tool work on mobile?",
+        "name": "Does reordering pages affect PDF quality?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, but large PDFs work best on desktop browsers."
+          "text": "No. Reordering pages only changes the sequence of pages in the document. The content, images, fonts, and quality of each page remain completely untouched."
         }
       },
       {
         "@type": "Question",
-        "name": "Do I need to create an account?",
+        "name": "Can I reorder pages in a scanned PDF?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. The tool is completely free and requires no registration."
+          "text": "Yes. PDFECTA can reorder pages in any PDF file including scanned documents. Since processing happens locally in your browser, there are no restrictions on the type of PDF."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to include all pages when reordering?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You need to enter every page number exactly once in the new order. This ensures no pages are accidentally lost or duplicated during reordering."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I reverse the page order of a PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. To reverse a 5-page PDF simply enter the order as 5,4,3,2,1. PDFECTA will rearrange the pages in reverse order instantly."
         }
       }
     ]
   }
   </script>
 
-  <!-- Breadcrumb Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
-      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
-      { "@type": "ListItem", "position": 3, "name": "Reorder PDF Pages", "item": "https://pdfecta.com/reorder-pdf-pages.html" }
-    ]
-  }
-  </script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-slate-50 text-slate-900">
 
 <!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white border-b">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    
-    <!-- LOGO -->
-    <a href="/" class="flex items-center gap-2 font-extrabold text-xl text-slate-800">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
-        P
-      </div>
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <span class="w-9 h-9 rounded-xl brand-gradient text-white flex items-center justify-center">P</span>
       PDFECTA
     </a>
-
-    <!-- NAV -->
-    <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+    <nav class="text-sm font-semibold text-slate-600 space-x-6">
+      <a href="/" class="hover:text-indigo-600">Home</a>
       <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
-      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="/blog/" class="hover:text-indigo-600">Guides</a>
       <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
     </nav>
-
   </div>
 </header>
 
 <!-- HERO -->
-<section class="max-w-4xl mx-auto px-6 py-12 text-center">
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <nav class="text-sm text-slate-400 mb-8">
+    <a href="/" class="hover:text-indigo-600">Home</a>
+    <span class="mx-2">›</span>
+    <span class="text-slate-600">Reorder PDF Pages</span>
+  </nav>
+
   <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
-    Reorder PDF Pages
+    Reorder PDF Pages Online — Free & Private
   </h1>
   <p class="text-slate-600 text-lg max-w-2xl mx-auto">
-    Change the page order of your PDF instantly.
-    Works offline in your browser with complete privacy.
+    Rearrange pages in your PDF directly in your browser.
+    No uploads. No servers. No watermarks. 100% private.
   </p>
 </section>
 
-
-  
 <!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6 pb-20">
+  <div class="bg-white rounded-3xl shadow-xl border p-6">
 
-<!--   <main class="pt-24 bg-slate-50">
-
-  <!-- TOOL CARD -->
-  <div class="max-w-4xl mx-auto p-8 bg-white rounded-2xl shadow space-y-6">
-
-  <div>
-    <label class="block font-medium mb-1">Upload PDF</label>
-    <input id="pdfFile" type="file" accept="application/pdf" class="block w-full" />
-  </div>
-
-  <div id="pageInfo" class="text-sm text-gray-600 mb-4 hidden"></div>
-
-  <div class="mb-4">
-    <label class="block font-medium mb-1">
-      New page order
-    </label>
-    <input
-      id="orderInput"
-      type="text"
-      placeholder="Example: 3,1,2"
-      class="w-full border rounded p-2"
-    />
-    <p class="text-xs text-gray-500 mt-1">
-      Enter all page numbers once, separated by commas.
-    </p>
-  </div>
-
-  <button
-    id="processBtn"
-    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-  >
-    Reorder Pages
-  </button>
-
-  <div id="status" class="mt-4 text-sm"></div>
-
-<!--  </main>
-
-<!-- SEO CONTENT -->
-<section class="max-w-4xl mx-auto p-6 mt-12">
-
-  <h2 class="text-2xl font-bold mb-4">Reorder PDF Pages Online</h2>
-
-  <p class="mb-4">
-    Reordering PDF pages is often required when scanned documents are out of order,
-    reports are exported incorrectly, or pages need to be reorganized before sharing.
-    PDFECTA allows you to change the order of PDF pages instantly without uploading
-    your document to any server.
-  </p>
-
-  <p class="mb-6">
-    This reorder PDF pages tool works entirely in your browser, ensuring full privacy
-    and security. Your PDF never leaves your device, making it suitable for sensitive
-    documents such as contracts, financial statements, and internal reports.
-  </p>
-
-  <h3 class="text-xl font-semibold mb-3">Why Use Our Reorder PDF Pages Tool?</h3>
-
-  <ul class="list-disc pl-6 mb-6 space-y-2">
-    <li><strong>100% Private:</strong> Files are processed locally in your browser.</li>
-    <li><strong>Fast & Simple:</strong> Reorder pages by entering a new page sequence.</li>
-    <li><strong>No Uploads:</strong> Your document is never sent to a server.</li>
-    <li><strong>No Watermarks:</strong> Download a clean, professional PDF.</li>
-    <li><strong>Free to Use:</strong> No registration or installation required.</li>
-  </ul>
-
-  <h3 class="text-xl font-semibold mb-3">Common Use Cases</h3>
-
-  <ul class="list-disc pl-6 mb-6 space-y-2">
-    <li>Fix page order in scanned PDF documents</li>
-    <li>Rearrange chapters or sections in reports</li>
-    <li>Organize lecture notes or study material</li>
-    <li>Prepare documents before merging or sharing</li>
-  </ul>
-
-  <h3 class="text-xl font-semibold mb-3">How It Works</h3>
-
-  <p class="mb-6">
-    Upload your PDF file, check the total number of pages, and enter the new page
-    order using page numbers (for example: <em>3,1,2,4</em>). The tool rebuilds your
-    PDF with the new order and lets you download it instantly.
-  </p>
-
-</section>
-
-<!-- RELATED TOOLS -->
-<section class="max-w-4xl mx-auto p-6 mt-12 border-t">
-  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
-  <ul class="list-disc pl-6 space-y-2 text-gray-700">
-    <li><a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a></li>
-    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
-    <li><a href="/split-pdf.html" class="text-blue-600 underline">Split PDF</a></li>
-  </ul>
-</section>
-
-<!-- SCRIPT -->
-<script>
-  const fileInput = document.getElementById("pdfFile");
-  const orderInput = document.getElementById("orderInput");
-  const status = document.getElementById("status");
-  const pageInfo = document.getElementById("pageInfo");
-  const btn = document.getElementById("processBtn");
-
-  let pdfBytes = null;
-  let totalPages = 0;
-
-  fileInput.addEventListener("change", async () => {
-    status.textContent = "";
-    pageInfo.classList.add("hidden");
-
-    const file = fileInput.files[0];
-
-    if (
-      !file ||
-      file.type !== "application/pdf" ||
-      !file.name.toLowerCase().endsWith(".pdf")
-    ) {
-      status.textContent = "Please upload a PDF file only.";
-      fileInput.value = "";
-      return;
-    }
-
-    try {
-      pdfBytes = await file.arrayBuffer();
-      const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
-      totalPages = pdfDoc.getPageCount();
-
-      pageInfo.textContent = `PDF loaded: ${totalPages} pages detected.`;
-      pageInfo.classList.remove("hidden");
-    } catch {
-      status.textContent = "Failed to read PDF file.";
-    }
-  });
-
-  btn.addEventListener("click", async () => {
-    status.textContent = "";
-
-    if (!pdfBytes) {
-      status.textContent = "Please upload a PDF first.";
-      return;
-    }
-
-    const input = orderInput.value.trim();
-    if (!input) {
-      status.textContent = "Please enter the new page order.";
-      return;
-    }
-
-    const order = input.split(",").map(n => parseInt(n, 10));
-
-    if (
-      order.length !== totalPages ||
-      new Set(order).size !== totalPages ||
-      order.some(p => isNaN(p) || p < 1 || p > totalPages)
-    ) {
-      status.textContent = "Invalid page order. Include each page number once.";
-      return;
-    }
-
-    status.textContent = "Reordering pages...";
-
-    const originalPdf = await PDFLib.PDFDocument.load(pdfBytes);
-    const newPdf = await PDFLib.PDFDocument.create();
-
-    const indices = order.map(p => p - 1);
-    const copiedPages = await newPdf.copyPages(originalPdf, indices);
-    copiedPages.forEach(p => newPdf.addPage(p));
-
-    const newBytes = await newPdf.save();
-    const blob = new Blob([newBytes], { type: "application/pdf" });
-
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "reordered-pdf.pdf";
-    link.click();
-
-    status.textContent = "PDF reordered successfully.";
-  });
-</script>
-
-
-
-
-<!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200 mt-24">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-
-    <!-- BRAND -->
-    <div>
-      <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
-          P
-        </div>
-        <span class="font-extrabold text-slate-800">PDFECTA</span>
+    <div id="dropZone"
+      class="border-2 border-dashed border-indigo-200 rounded-2xl p-12 text-center cursor-pointer hover:bg-indigo-50 transition">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl">↕️</div>
+        <p class="font-bold text-lg text-slate-700">Drop your PDF here</p>
+        <p class="text-sm text-slate-400">Files never leave your device</p>
       </div>
-      <p class="text-slate-500 leading-relaxed max-w-sm">
-        Free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking. Full control over your files.
-      </p>
+      <input id="pdfInput" type="file" accept="application/pdf" class="hidden" />
     </div>
 
-    <!-- LINKS -->
+    <!-- Page info -->
+    <div id="pageInfo" class="mt-4 p-3 bg-indigo-50 rounded-xl text-sm font-semibold text-indigo-700 hidden"></div>
+
+    <div class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm font-semibold text-slate-600 mb-2">New Page Order</label>
+        <input id="orderInput" type="text" placeholder="Example: 3, 1, 2, 5, 4"
+          class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+        <p class="text-xs text-slate-400 mt-1">Enter all page numbers once, separated by commas. To reverse a 5-page PDF: 5, 4, 3, 2, 1</p>
+      </div>
+
+      <button onclick="reorderPages()" id="reorderBtn"
+        class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+        Reorder Pages
+      </button>
+
+      <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto px-6 pt-8 pb-12 text-slate-700 leading-relaxed space-y-6">
+
+  <h2 class="text-2xl font-bold text-slate-800">Reorder PDF Pages Online Free & Secure</h2>
+
+  <p>PDFECTA allows you to rearrange pages in any PDF file instantly without uploading your document to any server. Whether you need to fix a scanning mistake, reorganize a report, move a cover page, or reverse the page order of an entire document, this free tool provides a fast and completely private solution directly in your browser.</p>
+
+  <p>Unlike traditional online PDF tools that upload your files to remote servers, PDFECTA processes everything locally using modern browser technology. Your PDF file never leaves your device. No cloud storage, no third-party access, and no tracking — making it ideal for rearranging pages in sensitive documents such as contracts, financial records, and legal filings.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Reorder Pages in a PDF</h3>
+  <ol class="list-decimal pl-6 space-y-2">
+    <li>Click the upload area or drag and drop your PDF file into the tool above.</li>
+    <li>The tool will display the total number of pages in your PDF.</li>
+    <li>Enter the new page order using page numbers separated by commas. For example: 3, 1, 2, 4.</li>
+    <li>Click "Reorder Pages".</li>
+    <li>Download your rearranged PDF instantly.</li>
+  </ol>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">When Would You Need to Reorder PDF Pages?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>Scanning mistakes:</strong> Fix page order after scanning a multi-page document in the wrong sequence.</li>
+    <li><strong>Report reorganization:</strong> Move chapters or sections into the correct order before submission.</li>
+    <li><strong>Cover page positioning:</strong> Move a cover page or table of contents to the front of the document.</li>
+    <li><strong>Presentation reordering:</strong> Rearrange slides exported from a presentation as a PDF.</li>
+    <li><strong>Double-sided scan correction:</strong> Fix interleaved page order from a duplex scanner.</li>
+    <li><strong>Contract preparation:</strong> Reorganize a legal document before sending for signature.</li>
+    <li><strong>Reverse page order:</strong> Flip the entire page sequence of a document that was scanned back-to-front.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Reverse Page Order in a PDF</h3>
+  <p>To reverse the page order of your entire PDF, simply enter the page numbers in reverse. For example, if your PDF has 5 pages, enter: <strong>5, 4, 3, 2, 1</strong>. This is especially useful when a multi-page document was scanned from the last page to the first page and needs to be flipped.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Does Reordering Pages Affect PDF Quality?</h3>
+  <p>No. Reordering pages only changes the sequence in which pages appear in the document. The actual content of each page — including text, images, fonts, and formatting — remains completely untouched. There is no quality loss whatsoever when rearranging PDF pages. This is different from operations like compression where some image quality trade-off may occur.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA to Reorder PDF Pages?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Files are processed locally in your browser — never uploaded to any server.</li>
+    <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
+    <li><strong>No Watermarks:</strong> Download clean, professional PDFs.</li>
+    <li><strong>Works Offline:</strong> After loading, the tool works without internet.</li>
+    <li><strong>Compatible on All Devices:</strong> Works on Windows, macOS, Linux, Android, and iOS.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">What to Do Before and After Reordering</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages</a> — remove unwanted pages before reordering the rest.</li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a> — fix sideways pages before rearranging their order.</li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> — combine multiple documents into one, then reorder pages.</li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a> — reduce file size after finalizing page order.</li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a> — number pages after reordering for professional presentation.</li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a> — add your signature after the pages are in the correct order.</li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a> — divide the reordered document into separate files if needed.</li>
+    <li><a href="/extract-pages-from-pdf.html" class="text-indigo-600 hover:underline">Extract Pages</a> — pull out specific pages after rearranging.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Tips for Reordering PDF Pages</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li>Always keep a copy of the original PDF before making changes.</li>
+    <li>Note down the target page order before opening the tool — this saves time.</li>
+    <li>For large documents, open the PDF first and note which pages need to move where.</li>
+    <li>To reverse the entire order, just enter page numbers backwards: 10, 9, 8, 7... 1.</li>
+    <li>If you need to remove pages as well, use <a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages</a> first, then reorder.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
+    <div>
+      <p class="font-semibold text-slate-800">How do I rearrange pages in a PDF for free?</p>
+      <p>Upload your PDF, enter the new page order using page numbers separated by commas, click Reorder Pages, and download instantly. No uploads, no registration.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to reorder PDF pages online?</p>
+      <p>PDFECTA never uploads your files — all reordering happens directly in your browser, keeping your documents completely private.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Does reordering pages affect PDF quality?</p>
+      <p>No. Only the page sequence changes — all content, images, fonts, and formatting remain exactly the same.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I reorder pages in a scanned PDF?</p>
+      <p>Yes. PDFECTA can reorder pages in any PDF file including scanned documents.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Do I need to include all pages when reordering?</p>
+      <p>Yes. Enter every page number exactly once to ensure no pages are lost or duplicated.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I reverse the page order of a PDF?</p>
+      <p>Yes. Enter the page numbers in reverse order. For a 5-page PDF: 5, 4, 3, 2, 1.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Guides</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/blog/how-to-reorder-pdf-pages.html" class="text-indigo-600 hover:underline">How to Reorder Pages in a PDF Online (Free & Private)</a></li>
+    <li><a href="/blog/how-to-delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">How to Delete Pages from a PDF Online</a></li>
+    <li><a href="/blog/how-to-merge-pdf-files-online.html" class="text-indigo-600 hover:underline">How to Merge PDF Files Online</a></li>
+    <li><a href="/blog/how-to-split-a-pdf-file-online.html" class="text-indigo-600 hover:underline">How to Split a PDF File Online</a></li>
+    <li><a href="/blog/how-to-rotate-pdf-pages.html" class="text-indigo-600 hover:underline">How to Rotate PDF Pages Online</a></li>
+    <li><a href="/blog/how-to-sign-a-pdf-online.html" class="text-indigo-600 hover:underline">How to Sign a PDF Online for Free</a></li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages from PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a></li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a></li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
+    <li><a href="/extract-pages-from-pdf.html" class="text-indigo-600 hover:underline">Extract Pages from PDF</a></li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a></li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a></li>
+  </ul>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
+    </div>
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
@@ -319,23 +298,124 @@
         <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
       </ul>
     </div>
-
-    <!-- CONTACT -->
     <div>
-      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
-      <a href="mailto:support@pdfecta.com"
-         class="font-semibold text-indigo-600 hover:underline">
-        support@pdfecta.com
-      </a>
-
-      <p class="text-xs text-slate-400 mt-6">
-        © 2026 PDFECTA. All rights reserved.
-      </p>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
     </div>
-
   </div>
 </footer>
 
-  
+<script>
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('pdfInput');
+  const status = document.getElementById('status');
+  const pageInfo = document.getElementById('pageInfo');
+  const reorderBtn = document.getElementById('reorderBtn');
+  const orderInput = document.getElementById('orderInput');
+
+  let pdfBytes = null;
+  let totalPages = 0;
+
+  dropZone.onclick = () => fileInput.click();
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
+  dropZone.ondrop = e => {
+    e.preventDefault();
+    dropZone.classList.remove('bg-indigo-50');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      loadPDF();
+    }
+  };
+  fileInput.onchange = () => loadPDF();
+
+  async function loadPDF() {
+    if (!fileInput.files.length) return;
+
+    const file = fileInput.files[0];
+    if (file.type !== 'application/pdf') {
+      status.textContent = '⚠️ Only PDF files are allowed.';
+      return;
+    }
+
+    try {
+      pdfBytes = await file.arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
+      totalPages = pdfDoc.getPageCount();
+
+      pageInfo.classList.remove('hidden');
+      pageInfo.textContent = `📄 ${file.name} — ${totalPages} pages detected`;
+      status.textContent = '';
+
+      // Auto-fill with current order
+      const currentOrder = Array.from({ length: totalPages }, (_, i) => i + 1).join(', ');
+      orderInput.placeholder = `Current order: ${currentOrder}`;
+    } catch {
+      status.textContent = '❌ Failed to read PDF file.';
+    }
+  }
+
+  async function reorderPages() {
+    if (!pdfBytes) {
+      status.textContent = '⚠️ Please upload a PDF first.';
+      return;
+    }
+
+    const input = orderInput.value.trim();
+    if (!input) {
+      status.textContent = '⚠️ Please enter the new page order.';
+      return;
+    }
+
+    const order = input.split(',').map(n => parseInt(n.trim(), 10));
+
+    if (order.length !== totalPages) {
+      status.textContent = `⚠️ You entered ${order.length} pages but the PDF has ${totalPages} pages. Include each page exactly once.`;
+      return;
+    }
+
+    if (new Set(order).size !== totalPages) {
+      status.textContent = '⚠️ Each page number must appear exactly once.';
+      return;
+    }
+
+    if (order.some(p => isNaN(p) || p < 1 || p > totalPages)) {
+      status.textContent = `⚠️ Page numbers must be between 1 and ${totalPages}.`;
+      return;
+    }
+
+    reorderBtn.disabled = true;
+    reorderBtn.textContent = 'Reordering...';
+    status.textContent = '⏳ Rearranging pages locally...';
+
+    try {
+      const originalPdf = await PDFLib.PDFDocument.load(pdfBytes);
+      const newPdf = await PDFLib.PDFDocument.create();
+
+      const indices = order.map(p => p - 1);
+      const copiedPages = await newPdf.copyPages(originalPdf, indices);
+      copiedPages.forEach(p => newPdf.addPage(p));
+
+      const newBytes = await newPdf.save();
+      const blob = new Blob([newBytes], { type: 'application/pdf' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'reordered.pdf';
+      link.click();
+      URL.revokeObjectURL(link.href);
+
+      status.innerHTML = '✅ <strong>Pages reordered successfully!</strong> Your download has started.';
+    } catch (err) {
+      console.error(err);
+      status.textContent = '❌ Failed to reorder pages. Please try again.';
+    } finally {
+      reorderBtn.disabled = false;
+      reorderBtn.textContent = 'Reorder Pages';
+    }
+  }
+</script>
+
 </body>
 </html>
