@@ -346,14 +346,49 @@
 
       const { jsPDF } = window.jspdf;
       const pdf = new jsPDF('p', 'pt', 'a4');
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const margin = 40;
 
-      await pdf.html(container, {
-        x: 40,
-        y: 40,
-        autoPaging: 'text',
-        margin: [40, 40, 40, 40],
+      // Render the full content to a canvas image (avoids jsPDF .html() overlap bugs)
+      const fullCanvas = await html2canvas(container, {
+        scale: 2,
+        useCORS: true,
         windowWidth: 600
       });
+
+      const imgWidth = pageWidth - margin * 2;
+      const imgHeight = (fullCanvas.height * imgWidth) / fullCanvas.width;
+
+      // Slice the tall canvas into page-sized chunks
+      const pxPerPdfPage = (fullCanvas.width * (pageHeight - margin * 2)) / imgWidth;
+      let renderedHeight = 0;
+      let firstPage = true;
+
+      while (renderedHeight < fullCanvas.height) {
+        const sliceHeight = Math.min(pxPerPdfPage, fullCanvas.height - renderedHeight);
+
+        const pageCanvas = document.createElement('canvas');
+        pageCanvas.width = fullCanvas.width;
+        pageCanvas.height = sliceHeight;
+        const pageCtx = pageCanvas.getContext('2d');
+        pageCtx.fillStyle = '#ffffff';
+        pageCtx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
+        pageCtx.drawImage(
+          fullCanvas,
+          0, renderedHeight, fullCanvas.width, sliceHeight,
+          0, 0, pageCanvas.width, sliceHeight
+        );
+
+        const pageImgData = pageCanvas.toDataURL('image/jpeg', 0.92);
+        const pageImgHeight = (sliceHeight * imgWidth) / fullCanvas.width;
+
+        if (!firstPage) pdf.addPage();
+        firstPage = false;
+        pdf.addImage(pageImgData, 'JPEG', margin, margin, imgWidth, pageImgHeight);
+
+        renderedHeight += sliceHeight;
+      }
 
       document.body.removeChild(container);
       document.head.removeChild(style);
