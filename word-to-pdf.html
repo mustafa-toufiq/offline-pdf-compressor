@@ -2,17 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Word to PDF Converter Online Free | PDFECTA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="description" content="Convert Word to PDF online for free. Turn DOCX files into PDF securely in your browser with no uploads or tracking." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://pdfecta.com/word-to-pdf.html" />
+  <title>Word to PDF Converter Online — Free, No Upload, 100% Private | PDFECTA</title>
+  <meta name="description" content="Convert Word to PDF online free. Turn DOCX files into PDF instantly in your browser — no uploads, no registration, no watermarks. 100% private." />
+  <link rel="canonical" href="https://www.pdfecta.com/word-to-pdf.html" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mammoth/mammoth.browser.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mammoth/mammoth.browser.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+  </style>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Word to PDF", "item": "https://www.pdfecta.com/word-to-pdf.html" }
+    ]
+  }
+  </script>
 
   <!-- FAQ Schema -->
   <script type="application/ld+json">
@@ -22,18 +41,18 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Can I convert Word to PDF for free?",
+        "name": "How do I convert Word to PDF for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. PDFECTA allows you to convert Word documents to PDF directly in your browser for free."
+          "text": "You can convert Word to PDF for free using PDFECTA. Upload your DOCX file, click Convert to PDF, and download the converted file instantly. Everything happens locally in your browser with no uploads required."
         }
       },
       {
         "@type": "Question",
-        "name": "Is Word to PDF conversion private?",
+        "name": "Is it safe to convert Word to PDF online?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Your Word file is processed locally in your browser and never uploaded to any server."
+          "text": "It depends on the tool. Many online converters upload your document to their servers. PDFECTA never uploads your files — all conversion happens directly in your browser, keeping your document completely private."
         }
       },
       {
@@ -41,236 +60,210 @@
         "name": "Does this support DOCX files?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. This tool supports modern DOCX Word documents."
+          "text": "Yes. PDFECTA supports modern Word documents in DOCX format. Older .doc format files are not currently supported."
         }
       },
       {
         "@type": "Question",
-        "name": "Will formatting be preserved?",
+        "name": "Will my document formatting be preserved?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Basic formatting is preserved. Complex layouts, custom fonts, or advanced elements may vary slightly."
+          "text": "Basic formatting including text alignment, paragraphs, headings, bold, italic, and spacing is preserved. Extremely complex layouts, embedded fonts, advanced tables, or macros may render slightly differently."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a file size limit for Word to PDF conversion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no strict file size limit. Since all processing happens locally in your browser, performance depends on your device memory. Most standard Word documents convert without any issues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does PDFECTA add watermarks to converted PDFs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Converted PDFs are downloaded clean without any watermarks, branding, or modifications."
         }
       }
     ]
   }
   </script>
 
-  <!-- Breadcrumb Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Word to PDF", "item": "https://pdfecta.com/word-to-pdf.html" }
-    ]
-  }
-  </script>
 </head>
 
 <body class="bg-slate-50 text-slate-900">
 
 <!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white border-b">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
-        P
-      </div>
+      <span class="w-9 h-9 rounded-xl brand-gradient text-white flex items-center justify-center">P</span>
       PDFECTA
     </a>
-    <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+    <nav class="text-sm font-semibold text-slate-600 space-x-6">
+      <a href="/" class="hover:text-indigo-600">Home</a>
       <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
-      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="/blog/" class="hover:text-indigo-600">Guides</a>
       <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
     </nav>
   </div>
 </header>
 
+<!-- HERO -->
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <nav class="text-sm text-slate-400 mb-8">
+    <a href="/" class="hover:text-indigo-600">Home</a>
+    <span class="mx-2">›</span>
+    <span class="text-slate-600">Word to PDF</span>
+  </nav>
 
-  <main class="max-w-4xl mx-auto px-6">
-
-  <!-- HERO -->
-  <section class="max-w-4xl mx-auto px-6 pt-12 pb-6 text-center">
-  <h1 class="text-3xl md:text-4xl font-bold text-slate-800">
-    Word to PDF Converter
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Word to PDF Converter — Free & Private
   </h1>
-  <p class="mt-3 text-slate-600 max-w-2xl mx-auto">
-    Convert Word documents into PDF files instantly. 100% private, browser-based, and free. No uploads. No tracking.
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+    Convert Word documents into PDF directly in your browser.
+    No uploads. No servers. No watermarks. 100% private.
   </p>
 </section>
 
-  <!-- TOOL CARD -->
-  
-  <div class="bg-white rounded-2xl shadow p-8 space-y-6">
+<!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6 pb-20">
+  <div class="bg-white rounded-3xl shadow-xl border p-6">
 
-  <input id="docInput" type="file" accept=".docx" class="w-full border rounded p-3" />
-
-  <button id="convertBtn"
-    class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700">
-    Convert to PDF
-  </button>
-
-  <p id="status" class="text-sm text-slate-600"></p>
-    
-  </div>
-
-<!-- SEO CONTENT -->
-<section class="max-w-4xl mx-auto p-6 mt-16 text-slate-700 leading-relaxed space-y-6">
-
-  <h2 class="text-2xl font-bold">
-    Convert Word to PDF Online — Free, Secure & Private
-  </h2>
-
-  <p>
-    PDFECTA allows you to convert Word to PDF online directly in your browser without uploading your document to any server.
-    This Word to PDF converter works 100% client-side, meaning your DOCX file never leaves your device. 
-    If you are looking for a fast, secure, and free DOCX to PDF converter, this tool provides a simple solution with no registration required.
-  </p>
-
-  <p>
-    Converting Word documents into PDF format ensures consistent formatting, reliable sharing, and professional presentation.
-    PDF files maintain layout, fonts, and structure across different operating systems and devices, making them ideal for business, academic, and legal use.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    Why Convert Word to PDF?
-  </h3>
-
-  <p>
-    Microsoft Word files (.docx) can display differently depending on installed fonts and software versions.
-    When you convert Word to PDF, you lock the formatting into a fixed layout.
-    This ensures your resume, contract, invoice, research paper, or report looks exactly the same for every recipient.
-  </p>
-
-  <ul class="list-disc pl-6 space-y-2">
-    <li>Preserve document formatting</li>
-    <li>Prevent unwanted edits</li>
-    <li>Improve compatibility across devices</li>
-    <li>Create print-ready files</li>
-    <li>Share professional documents securely</li>
-  </ul>
-
-  <h3 class="text-xl font-semibold">
-    How to Convert DOCX to PDF Online
-  </h3>
-
-  <ol class="list-decimal pl-6 space-y-2">
-    <li>Upload your Word (.docx) file using the upload field above.</li>
-    <li>Click the “Convert to PDF” button.</li>
-    <li>Your document is processed locally inside your browser.</li>
-    <li>The converted PDF file downloads instantly.</li>
-  </ol>
-
-  <p>
-    The entire conversion process happens in your browser using modern web technologies.
-    No file uploads, no cloud storage, and no third-party processing.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    100% Private Word to PDF Conversion
-  </h3>
-
-  <p>
-    Many online Word to PDF converters require uploading your document to remote servers.
-    That can be risky for confidential files such as contracts, financial statements, resumes, internal reports, or academic submissions.
-  </p>
-
-  <p>
-    PDFECTA processes everything locally. Your file is never stored, tracked, or transmitted.
-    This makes it ideal for privacy-conscious users who need a secure DOCX to PDF solution.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    Free Word to PDF Converter — No Watermarks
-  </h3>
-
-  <p>
-    This Word to PDF tool is completely free to use.
-    There are no hidden charges, no subscriptions, and no watermarks added to your converted file.
-    You can convert multiple Word documents without limitations.
-  </p>
-
-  <p>
-    Whether you need to convert a resume, cover letter, invoice, assignment, legal document, or presentation draft,
-    PDFECTA provides a fast and straightforward solution.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    Does Formatting Stay the Same?
-  </h3>
-
-  <p>
-    Basic formatting such as text alignment, paragraphs, headings, and spacing is preserved.
-    However, extremely complex layouts, embedded fonts, advanced tables, or macros may not render exactly the same.
-    For standard documents, results are highly reliable.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    When Should You Use Word to PDF Conversion?
-  </h3>
-
-  <p>
-    Word to PDF conversion is useful in many scenarios:
-  </p>
-
-  <ul class="list-disc pl-6 space-y-2">
-    <li>Submitting resumes or job applications</li>
-    <li>Sending contracts for signing</li>
-    <li>Sharing academic assignments</li>
-    <li>Creating invoices for clients</li>
-    <li>Archiving important documents</li>
-  </ul>
-
-  <h3 class="text-xl font-semibold">
-    Works on All Devices
-  </h3>
-
-  <p>
-    This online Word to PDF converter works in modern browsers on Windows, macOS, Linux, Android, and iOS.
-    No software installation is required.
-    As long as your browser supports JavaScript, you can convert DOCX to PDF instantly.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    Explore More PDF Tools
-  </h3>
-
-  <ul class="list-disc pl-6 space-y-2">
-    <li><a href="/pdf-to-word.html" class="text-indigo-600 hover:underline">Convert PDF to Word</a></li>
-    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF Files</a></li>
-    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
-    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF Pages</a></li>
-  </ul>
-
-  <p>
-    PDFECTA is built for users who value speed, privacy, and simplicity.
-    Convert Word to PDF online today without uploads, without tracking, and without limits.
-  </p>
-
-</section>
-
-  </main>
-
-
-<!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200 mt-20">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-
-    <div>
-      <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
-          P
-        </div>
-        <span class="font-extrabold text-slate-800">PDFECTA</span>
+    <div id="dropZone"
+      class="border-2 border-dashed border-indigo-200 rounded-2xl p-12 text-center cursor-pointer hover:bg-indigo-50 transition">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl">📝</div>
+        <p class="font-bold text-lg text-slate-700">Drop your Word file here</p>
+        <p class="text-sm text-slate-400">Supports .docx — files never leave your device</p>
       </div>
-      <p class="text-slate-500 max-w-sm">
-        Free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking.
-      </p>
+      <input id="docInput" type="file" accept=".docx" class="hidden" />
     </div>
 
+    <div class="mt-6 space-y-4">
+      <button id="convertBtn"
+        class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+        Convert to PDF
+      </button>
+
+      <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto px-6 pt-8 pb-12 text-slate-700 leading-relaxed space-y-6">
+
+  <h2 class="text-2xl font-bold text-slate-800">Convert Word to PDF Online Free & Secure</h2>
+
+  <p>PDFECTA allows you to convert Word documents to PDF instantly without uploading your file to any server. Whether you need to submit a resume, send a contract, share an academic assignment, or archive an important document, this free converter provides a fast and completely private solution directly in your browser.</p>
+
+  <p>Unlike traditional online Word to PDF converters, PDFECTA processes everything locally using modern browser technology. Your DOCX file never leaves your device. No cloud storage, no third-party access, and no tracking — making it ideal for converting sensitive documents such as contracts, financial statements, and confidential reports.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Convert Word to PDF</h3>
+  <ol class="list-decimal pl-6 space-y-2">
+    <li>Click the upload area or drag and drop your Word (.docx) file into the tool above.</li>
+    <li>Click "Convert to PDF".</li>
+    <li>Your document is processed locally inside your browser.</li>
+    <li>The converted PDF downloads instantly — no waiting, no email required.</li>
+  </ol>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Convert Word to PDF?</h3>
+  <p>Word documents (.docx) can display differently depending on installed fonts, software versions, and operating systems. Converting to PDF locks the formatting into a fixed layout, ensuring your resume, contract, invoice, or report looks exactly the same for every recipient regardless of their device or software.</p>
+
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>Preserve formatting:</strong> Layout, fonts, and structure remain consistent across all devices.</li>
+    <li><strong>Prevent unwanted edits:</strong> PDF format discourages accidental changes to your document.</li>
+    <li><strong>Improve compatibility:</strong> PDFs open reliably on any device without requiring Word.</li>
+    <li><strong>Create print-ready files:</strong> PDFs maintain exact print formatting.</li>
+    <li><strong>Share professionally:</strong> PDF is the standard format for business and legal document sharing.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Does Formatting Stay the Same?</h3>
+  <p>Basic formatting such as text alignment, paragraphs, headings, bold, italic, and spacing is preserved during conversion. However, extremely complex layouts, embedded custom fonts, advanced table structures, or macros may not render exactly the same as in the original Word document. For standard business and academic documents, results are highly reliable.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">When Should You Use Word to PDF Conversion?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li>Submitting resumes or job applications in a universally readable format</li>
+    <li>Sending contracts for signing without risk of accidental edits</li>
+    <li>Sharing academic assignments that need to display consistently</li>
+    <li>Creating invoices for clients that maintain professional formatting</li>
+    <li>Archiving important documents in a stable, long-term format</li>
+    <li>Preparing reports for printing with guaranteed layout consistency</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA for Word to PDF Conversion?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Files are processed locally — never uploaded to any server.</li>
+    <li><strong>No Upload Required:</strong> Your Word document never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
+    <li><strong>No Watermarks:</strong> Download clean, professional PDFs.</li>
+    <li><strong>Works Offline:</strong> After loading, the converter works without internet.</li>
+    <li><strong>Compatible on All Devices:</strong> Works on Windows, macOS, Linux, Android, and iOS.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">What to Do After Converting</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> — combine your converted document with other PDF files.</li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a> — reduce file size before emailing.</li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a> — number the pages of your converted document.</li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a> — add your signature to the converted document.</li>
+    <li><a href="/watermark.html" class="text-indigo-600 hover:underline">Add Watermark</a> — mark your document as draft or confidential.</li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a> — divide the converted document into sections.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
+    <div>
+      <p class="font-semibold text-slate-800">How do I convert Word to PDF for free?</p>
+      <p>Upload your DOCX file, click Convert to PDF, and download instantly. No uploads, no registration.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to convert Word to PDF online?</p>
+      <p>PDFECTA never uploads your document — all conversion happens directly in your browser, keeping your file completely private.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Does this support DOCX files?</p>
+      <p>Yes. PDFECTA supports modern Word documents in DOCX format. Older .doc files are not currently supported.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Will my document formatting be preserved?</p>
+      <p>Basic formatting including text alignment, paragraphs, headings, and spacing is preserved. Complex layouts or advanced elements may vary slightly.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is there a file size limit?</p>
+      <p>There is no strict limit. Performance depends on your device memory. Most standard Word documents convert without issues.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Does PDFECTA add watermarks?</p>
+      <p>No. Converted PDFs are downloaded clean without any watermarks or branding.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/text-to-pdf.html" class="text-indigo-600 hover:underline">Text to PDF</a></li>
+    <li><a href="/jpg-to-pdf.html" class="text-indigo-600 hover:underline">JPG to PDF</a></li>
+    <li><a href="/png-to-pdf.html" class="text-indigo-600 hover:underline">PNG to PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a></li>
+  </ul>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
+    </div>
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
@@ -280,61 +273,135 @@
         <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
       </ul>
     </div>
-
     <div>
-      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
-      <a href="mailto:support@pdfecta.com"
-         class="font-semibold text-indigo-600 hover:underline">
-        support@pdfecta.com
-      </a>
-      <p class="text-xs text-slate-400 mt-6">
-        © 2026 PDFECTA. All rights reserved.
-      </p>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
     </div>
-
   </div>
 </footer>
 
 <script>
-  const input = document.getElementById("docInput");
-  const status = document.getElementById("status");
-  const btn = document.getElementById("convertBtn");
+  const dropZone = document.getElementById('dropZone');
+  const input = document.getElementById('docInput');
+  const status = document.getElementById('status');
+  const btn = document.getElementById('convertBtn');
 
-  btn.addEventListener("click", async () => {
+  dropZone.onclick = () => input.click();
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
+  dropZone.ondrop = e => {
+    e.preventDefault();
+    dropZone.classList.remove('bg-indigo-50');
+    if (e.dataTransfer.files.length) {
+      input.files = e.dataTransfer.files;
+      status.textContent = '📄 Selected: ' + input.files[0].name;
+    }
+  };
+  input.onchange = () => {
+    if (input.files.length) status.textContent = '📄 Selected: ' + input.files[0].name;
+  };
+
+  btn.addEventListener('click', async () => {
     const file = input.files[0];
-    if (!file || !file.name.endsWith(".docx")) {
-      status.textContent = "Please upload a valid DOCX file.";
+    if (!file || !file.name.endsWith('.docx')) {
+      status.textContent = '⚠️ Please upload a valid DOCX file.';
       return;
     }
 
     btn.disabled = true;
-    status.textContent = "Processing document locally...";
+    btn.textContent = 'Converting...';
+    status.textContent = '⏳ Processing document locally...';
 
-    const arrayBuffer = await file.arrayBuffer();
-    const result = await mammoth.convertToHtml({ arrayBuffer });
-    const html = result.value;
+    try {
+      const arrayBuffer = await file.arrayBuffer();
+      const result = await mammoth.convertToHtml({ arrayBuffer });
+      const html = result.value;
 
-    const container = document.createElement("div");
-    container.innerHTML = html;
-    container.style.width = "515px";
-    document.body.appendChild(container);
+      const container = document.createElement('div');
+      container.innerHTML = html;
+      container.style.width = '515px';
+      container.style.fontFamily = 'Arial, Helvetica, sans-serif';
+      container.style.fontSize = '12px';
+      container.style.lineHeight = '1.5';
+      container.style.color = '#000000';
 
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF("p", "pt", "a4");
+      // Fix Tailwind preflight stripping margins from headings/paragraphs
+      const style = document.createElement('style');
+      style.textContent = `
+        #docxRenderContainer h1 { font-size: 20px; font-weight: bold; margin: 16px 0 8px 0; display: block; }
+        #docxRenderContainer h2 { font-size: 17px; font-weight: bold; margin: 14px 0 7px 0; display: block; }
+        #docxRenderContainer h3 { font-size: 15px; font-weight: bold; margin: 12px 0 6px 0; display: block; }
+        #docxRenderContainer p { margin: 0 0 10px 0; display: block; }
+        #docxRenderContainer ul, #docxRenderContainer ol { margin: 0 0 10px 0; padding-left: 20px; display: block; }
+        #docxRenderContainer li { margin: 0 0 4px 0; display: list-item; }
+        #docxRenderContainer strong, #docxRenderContainer b { font-weight: bold; }
+        #docxRenderContainer table { border-collapse: collapse; margin: 0 0 10px 0; width: 100%; }
+        #docxRenderContainer td, #docxRenderContainer th { border: 1px solid #ccc; padding: 4px; }
+      `;
+      container.id = 'docxRenderContainer';
+      document.head.appendChild(style);
+      document.body.appendChild(container);
 
-    await pdf.html(container, {
-      x: 40,
-      y: 40,
-      autoPaging: "text",
-      margin: [40, 40, 40, 40],
-      windowWidth: 600
-    });
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'pt', 'a4');
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const margin = 40;
 
-    document.body.removeChild(container);
-    pdf.save("converted.pdf");
+      // Render the full content to a canvas image (avoids jsPDF .html() overlap bugs)
+      const fullCanvas = await html2canvas(container, {
+        scale: 2,
+        useCORS: true,
+        windowWidth: 600
+      });
 
-    status.textContent = "PDF downloaded successfully.";
-    btn.disabled = false;
+      const imgWidth = pageWidth - margin * 2;
+      const imgHeight = (fullCanvas.height * imgWidth) / fullCanvas.width;
+
+      // Slice the tall canvas into page-sized chunks
+      const pxPerPdfPage = (fullCanvas.width * (pageHeight - margin * 2)) / imgWidth;
+      let renderedHeight = 0;
+      let firstPage = true;
+
+      while (renderedHeight < fullCanvas.height) {
+        const sliceHeight = Math.min(pxPerPdfPage, fullCanvas.height - renderedHeight);
+
+        const pageCanvas = document.createElement('canvas');
+        pageCanvas.width = fullCanvas.width;
+        pageCanvas.height = sliceHeight;
+        const pageCtx = pageCanvas.getContext('2d');
+        pageCtx.fillStyle = '#ffffff';
+        pageCtx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
+        pageCtx.drawImage(
+          fullCanvas,
+          0, renderedHeight, fullCanvas.width, sliceHeight,
+          0, 0, pageCanvas.width, sliceHeight
+        );
+
+        const pageImgData = pageCanvas.toDataURL('image/jpeg', 0.92);
+        const pageImgHeight = (sliceHeight * imgWidth) / fullCanvas.width;
+
+        if (!firstPage) pdf.addPage();
+        firstPage = false;
+        pdf.addImage(pageImgData, 'JPEG', margin, margin, imgWidth, pageImgHeight);
+
+        renderedHeight += sliceHeight;
+      }
+
+      document.body.removeChild(container);
+      document.head.removeChild(style);
+      pdf.save(file.name.replace('.docx', '') + '.pdf');
+
+      status.innerHTML = '✅ <strong>PDF downloaded successfully!</strong>';
+    } catch (err) {
+      console.error(err);
+      status.textContent = '❌ Failed to convert document. Please try again.';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Convert to PDF';
+    }
   });
 </script>
 

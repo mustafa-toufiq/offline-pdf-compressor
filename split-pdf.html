@@ -1,253 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Split PDF Online Free & Secure – Extract Pages | PDFECTA</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Split PDF files online for free. Extract pages from a PDF securely. Files never leave your browser." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <title>Split PDF Online — Free, No Upload, 100% Private | PDFECTA</title>
+  <meta name="description" content="Split a PDF online free. Divide a PDF into separate files by page range or split every page individually — no uploads, no registration, 100% private." />
+  <link rel="canonical" href="https://www.pdfecta.com/split-pdf.html" />
 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
-    { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
-    { "@type": "ListItem", "position": 3, "name": "Split PDF", "item": "https://pdfecta.com/split-pdf.html" }
-  ]
-}
-</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+  </style>
 
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Split PDF", "item": "https://www.pdfecta.com/split-pdf.html" }
+    ]
+  }
+  </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Can I extract specific pages from a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can split a PDF and extract selected pages easily." }},
-    { "@type": "Question", "name": "Is PDF splitting private?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Files are processed entirely in your browser." }},
-    { "@type": "Question", "name": "Does this tool work offline?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once loaded, it can work without an internet connection." }},
-    { "@type": "Question", "name": "Is it free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. No registration or payment required." }}
-  ]
-}
-</script>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I split a PDF into multiple files for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can split a PDF for free using PDFECTA. Upload your PDF, choose to split every page individually or by custom page ranges, and download the split files instantly. Everything happens locally in your browser with no uploads required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to split PDF files online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the tool. Many online PDF splitters upload your file to their servers before processing. PDFECTA never uploads your files — all splitting happens directly in your browser, keeping your documents completely private."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I split a PDF by custom page ranges?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA lets you define custom page ranges such as 1-5, 6-10, 11-15 to split your PDF into exactly the sections you need, or split every page into its own file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between splitting and extracting pages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Splitting a PDF divides the entire document into multiple separate files based on page ranges. Extracting pages creates a single new PDF containing only specific selected pages, leaving the original untouched."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does splitting a PDF affect quality?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Splitting a PDF is a non-destructive operation. Pages are copied directly into the new files without any compression or quality loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a limit on how many pages I can split?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no strict limit. Since all processing happens locally in your browser, performance depends on your device memory. Most modern devices handle standard PDF files without issues."
+        }
+      }
+    ]
+  }
+  </script>
 
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-slate-50 text-slate-900">
 
 <!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white border-b">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    
-    <!-- LOGO -->
-    <a href="/" class="flex items-center gap-2 font-extrabold text-xl text-slate-800">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
-        P
-      </div>
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <span class="w-9 h-9 rounded-xl brand-gradient text-white flex items-center justify-center">P</span>
       PDFECTA
     </a>
-
-    <!-- NAV -->
-    <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+    <nav class="text-sm font-semibold text-slate-600 space-x-6">
+      <a href="/" class="hover:text-indigo-600">Home</a>
       <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
-      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="/blog/" class="hover:text-indigo-600">Guides</a>
       <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
     </nav>
-
   </div>
 </header>
 
-<main class="max-w-4xl mx-auto px-6 pt-16 pb-10">
-  
 <!-- HERO -->
-  <section class="text-center mb-10">
-    <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-3">
-      Split PDF Online — Free & Secure
-    </h1>
-    <p class="text-slate-600 max-w-2xl mx-auto">
-      Extract pages from a PDF file instantly. 100% private, browser-based, and free. No uploads. No tracking.
-    </p>
-  </section>
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <nav class="text-sm text-slate-400 mb-8">
+    <a href="/" class="hover:text-indigo-600">Home</a>
+    <span class="mx-2">›</span>
+    <span class="text-slate-600">Split PDF</span>
+  </nav>
 
-
-  <!-- TOOL CARD -->
-<div class="bg-white shadow rounded-xl p-6 space-y-4">
-
-<input type="file" id="pdfInput" accept="application/pdf"
-class="block w-full border rounded p-2" />
-
-<button onclick="splitPDF()"
-class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
-Split PDF
-</button>
-
-<p id="status" class="text-sm text-gray-600"></p>
-
-</div>
-</div>
-
-
-
-<!-- SEO CONTENT -->
-
-<section class="mt-16 pb-10 text-slate-700 leading-relaxed space-y-6">
-
-<h2 class="text-2xl font-bold text-slate-800">
-Split PDF Files Online Free & Secure
-</h2>
-
-<p>
-PDFECTA lets you split PDF files online instantly without uploading your document to any server. 
-If you need to extract pages from a PDF, divide a large PDF into smaller files, or separate specific sections, 
-this tool provides a fast and secure solution directly in your browser.
-</p>
-
-<p>
-Unlike traditional PDF splitters that require file uploads, PDFECTA processes everything locally using modern browser technology. 
-Your PDF file never leaves your device, making this one of the safest ways to split a PDF online. 
-No registration, no cloud storage, and no tracking.
-</p>
-
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-How to Split a PDF Online
-</h3>
-
-<ol class="list-decimal pl-6 space-y-2">
-<li>Select your PDF file using the file chooser above.</li>
-<li>Click the “Split PDF” button.</li>
-<li>The tool automatically extracts each page as a separate PDF file.</li>
-<li>Download the split pages instantly to your device.</li>
-</ol>
-
-<p>
-This method works for scanned documents, reports, contracts, eBooks, academic papers, and any standard PDF file format.
-</p>
-
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-When Should You Split a PDF?
-</h3>
-
-<p>
-Splitting a PDF file is useful when you only need specific pages instead of the entire document. 
-For example, you may want to separate chapters from a large report, extract invoices from a scanned file, 
-or divide a multi-page contract into individual documents for sharing.
-</p>
-
-<p>
-If you only need to remove certain pages instead of splitting everything, you can also use our 
-<a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages from PDF</a> tool. 
-After splitting, you can recombine files using our 
-<a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> tool.
-</p>
-
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-Split PDF vs Extract Pages – What’s the Difference?
-</h3>
-
-<p>
-Splitting a PDF typically means dividing a multi-page document into separate individual PDF files. 
-Extracting pages, on the other hand, allows you to create a new PDF containing only selected pages. 
-PDFECTA focuses on simple and fast PDF splitting while maintaining full control over your original file.
-</p>
-
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-Why Use PDFECTA to Split PDF Files?
-</h3>
-
-<ul class="list-disc pl-6 space-y-2">
-<li><strong>100% Private:</strong> Files are processed locally in your browser.</li>
-<li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
-<li><strong>Free to Use:</strong> No subscriptions or hidden costs.</li>
-<li><strong>Fast Processing:</strong> Instant page separation using modern web technology.</li>
-<li><strong>Works on All Devices:</strong> Compatible with Windows, macOS, Linux, Android, and iOS browsers.</li>
-</ul>
-
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-Split Large PDF Files Safely
-</h3>
-
-<p>
-If you have a large PDF file, splitting it into smaller parts can make sharing easier and improve file organization. 
-Because PDFECTA runs entirely in your browser, performance depends on your device’s memory and processing power. 
-Most modern computers and smartphones handle standard PDF documents without any issues.
-</p>
-
-<p>
-For extremely large PDF files, we recommend closing unused browser tabs to ensure smooth performance.
-</p>
-
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-Is Splitting a PDF Secure?
-</h3>
-
-<p>
-Yes. PDFECTA is designed with privacy in mind. All PDF splitting happens locally in your browser using client-side processing. 
-No file uploads, no external servers, and no third-party access. 
-This makes it ideal for sensitive documents such as legal contracts, financial reports, academic papers, and confidential business files.
-</p>
-
-<h3 class="text-xl font-semibold text-slate-800 mt-8">
-Frequently Asked Questions
-</h3>
-
-<p class="font-semibold">Can I split a PDF without uploading it?</p>
-<p>
-Yes. PDFECTA splits PDF files directly in your browser without uploading them anywhere.
-</p>
-
-<p class="font-semibold">Is this split PDF tool free?</p>
-<p>
-Yes. You can split PDF files online free with no registration or payment required.
-</p>
-
-<p class="font-semibold">Does this tool work offline?</p>
-<p>
-After the page loads, it can function offline because processing happens locally in your browser.
-</p>
-
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Split PDF Online — Free & Private
+  </h1>
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+    Divide your PDF into separate files directly in your browser.
+    No uploads. No servers. No watermarks. 100% private.
+  </p>
 </section>
 
+<!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6 pb-20">
+  <div class="bg-white rounded-3xl shadow-xl border p-6">
 
-
-<!-- RELATED TOOLS -->
-  
-<section class="pt-8">
-<hr class="border-slate-200 mb-6">
-  <h3 class="text-xl font-semibold mb-4">Related Tools</h3>
-  <ul class="list-disc pl-6 space-y-2 text-gray-700">
-    <li><a href="/delete-pages-from-pdf.html" class="text-blue-600 underline">Delete Pages from PDF</a></li>
-    <li><a href="/merge-pdf.html" class="text-blue-600 underline">Merge PDF</a></li>
-    <li><a href="/rotate-pdf.html" class="text-blue-600 underline">Rotate PDF</a></li>
-  </ul>
-</section>
-
-</main>
-
-
-<!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-
-    <!-- BRAND -->
-    <div>
-      <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
-          P
-        </div>
-        <span class="font-extrabold text-slate-800">PDFECTA</span>
+    <div id="dropZone"
+      class="border-2 border-dashed border-indigo-200 rounded-2xl p-12 text-center cursor-pointer hover:bg-indigo-50 transition">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl">✂️</div>
+        <p class="font-bold text-lg text-slate-700">Drop your PDF here</p>
+        <p class="text-sm text-slate-400">Files never leave your device</p>
       </div>
-      <p class="text-slate-500 leading-relaxed max-w-sm">
-        Free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking. Full control over your files.
-      </p>
+      <input id="pdfInput" type="file" accept="application/pdf" class="hidden" />
     </div>
 
-    <!-- LINKS -->
+    <!-- Page info -->
+    <div id="pageInfo" class="mt-4 p-3 bg-indigo-50 rounded-xl text-sm font-semibold text-indigo-700 hidden"></div>
+
+    <div class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Split Method</label>
+        <select id="splitMethod"
+          class="w-full rounded-xl p-4 bg-slate-50 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="every">Split Every Page Individually</option>
+          <option value="ranges">Split by Custom Page Ranges</option>
+        </select>
+      </div>
+
+      <div id="rangeInputWrap" class="hidden">
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Page Ranges</label>
+        <input id="rangeInput" type="text" placeholder="Example: 1-5, 6-10, 11-15"
+          class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+        <p class="text-xs text-slate-400 mt-1">Each range becomes a separate PDF file. Separate ranges with commas.</p>
+      </div>
+
+      <!-- Progress bar -->
+      <div id="progressContainer" class="hidden">
+        <div class="w-full bg-slate-100 rounded-full h-2">
+          <div id="progressBar" class="brand-gradient h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+        <p id="progressText" class="text-center text-xs text-slate-400 mt-1"></p>
+      </div>
+
+      <button onclick="splitPDF()" id="splitBtn"
+        class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+        Split PDF
+      </button>
+
+      <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto px-6 pt-8 pb-12 text-slate-700 leading-relaxed space-y-6">
+
+  <h2 class="text-2xl font-bold text-slate-800">Split PDF Files Online Free & Secure</h2>
+
+  <p>PDFECTA allows you to split a PDF file into multiple documents instantly without uploading it to any server. Whether you need to divide a large report into sections, separate every page into its own file, or extract specific page ranges, this free tool provides a fast and completely private solution directly in your browser.</p>
+
+  <p>Unlike traditional online PDF splitters that upload your files to remote servers, PDFECTA processes everything locally using modern browser technology. Your PDF file never leaves your device. No cloud storage, no third-party access, and no tracking — making it one of the safest ways to split sensitive documents such as contracts, financial reports, and legal filings.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Split a PDF Online</h3>
+  <ol class="list-decimal pl-6 space-y-2">
+    <li>Click the upload area or drag and drop your PDF file into the tool above.</li>
+    <li>Choose your split method — split every page individually, or define custom page ranges.</li>
+    <li>If using custom ranges, enter them like: 1-5, 6-10, 11-15.</li>
+    <li>Click "Split PDF".</li>
+    <li>Download each resulting PDF file instantly.</li>
+  </ol>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Split Methods Explained</h3>
+  <ul class="list-disc pl-6 space-y-3">
+    <li><strong>Split Every Page Individually</strong> — creates a separate single-page PDF for each page in your document. Useful when you need every page as its own file.</li>
+    <li><strong>Split by Custom Page Ranges</strong> — divides your document into sections based on ranges you define. For example, a 30-page document split into 1-10, 11-20, 21-30 creates three 10-page files.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">When Should You Split a PDF?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li>Separating chapters or sections from a large report</li>
+    <li>Extracting invoices or receipts from a combined scanned document</li>
+    <li>Dividing a multi-page contract into individual sections for review</li>
+    <li>Breaking large PDFs into smaller files for upload portals with size limits</li>
+    <li>Creating individual files from each page of a scanned book</li>
+    <li>Separating a presentation exported as PDF into individual slide files</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Split PDF vs Extract Pages — What's the Difference?</h3>
+  <p>Splitting a PDF divides the entire document into multiple separate files based on page ranges — the result is several new files. Extracting pages creates a single new PDF containing only the specific pages you select, leaving the original document completely untouched. If you need pages 3, 7, and 12 combined into one new file, use <a href="/extract-pages-from-pdf.html" class="text-indigo-600 hover:underline">Extract Pages</a> instead. If you want to divide the whole document into multiple sections, use Split PDF.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Does Splitting a PDF Affect Quality?</h3>
+  <p>No. Splitting a PDF is a completely non-destructive operation. Pages are copied directly from the original document into the new files without any compression, re-encoding, or quality loss. Text, images, fonts, and formatting remain exactly as they were in the original.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA to Split PDFs?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Files are processed locally in your browser — never uploaded to any server.</li>
+    <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
+    <li><strong>Flexible Splitting:</strong> Split every page or use custom page ranges.</li>
+    <li><strong>No Watermarks:</strong> Download clean, professional PDFs.</li>
+    <li><strong>Works Offline:</strong> After loading, the tool works without internet.</li>
+    <li><strong>Compatible on All Devices:</strong> Works on Windows, macOS, Linux, Android, and iOS.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">What to Do After Splitting</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> — recombine split files with other documents if needed later.</li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a> — reduce the file size of split documents before sharing.</li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a> — fix orientation on any pages in the split files.</li>
+    <li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages</a> — remove unwanted pages from a split section before sharing.</li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a> — number the pages of each split document.</li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a> — sign a specific split section before sending it.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
+    <div>
+      <p class="font-semibold text-slate-800">How do I split a PDF into multiple files for free?</p>
+      <p>Upload your PDF, choose to split every page individually or by custom ranges, click Split PDF, and download the files instantly. No uploads, no registration.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to split PDF files online?</p>
+      <p>PDFECTA never uploads your files — all splitting happens directly in your browser, keeping your documents completely private.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I split a PDF by custom page ranges?</p>
+      <p>Yes. Define ranges like 1-5, 6-10, 11-15 to split your PDF into exactly the sections you need.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">What is the difference between splitting and extracting pages?</p>
+      <p>Splitting divides the entire document into multiple files. Extracting creates one new file with only specific selected pages.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Does splitting a PDF affect quality?</p>
+      <p>No. Pages are copied directly without any compression or quality loss.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is there a limit on how many pages I can split?</p>
+      <p>There is no strict limit. Performance depends on your device memory. Most modern devices handle standard PDF files without issues.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Guides</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/blog/how-to-split-a-pdf-file-online.html" class="text-indigo-600 hover:underline">How to Split a PDF File Online (Free & Private)</a></li>
+    <li><a href="/blog/how-to-extract-pages-from-pdf.html" class="text-indigo-600 hover:underline">How to Extract Pages from a PDF Online</a></li>
+    <li><a href="/blog/how-to-delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">How to Delete Pages from a PDF Online</a></li>
+    <li><a href="/blog/how-to-merge-pdf-files-online.html" class="text-indigo-600 hover:underline">How to Merge PDF Files Online</a></li>
+    <li><a href="/blog/how-to-compress-pdf-without-losing-quality.html" class="text-indigo-600 hover:underline">How to Compress PDF Without Losing Quality</a></li>
+    <li><a href="/blog/how-to-reorder-pdf-pages.html" class="text-indigo-600 hover:underline">How to Reorder Pages in a PDF Online</a></li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/extract-pages-from-pdf.html" class="text-indigo-600 hover:underline">Extract Pages from PDF</a></li>
+    <li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages from PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a></li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
+    <li><a href="/reorder-pdf-pages.html" class="text-indigo-600 hover:underline">Reorder PDF Pages</a></li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a></li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a></li>
+  </ul>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
+    </div>
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
@@ -257,70 +310,160 @@ After the page loads, it can function offline because processing happens locally
         <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
       </ul>
     </div>
-
-    <!-- CONTACT -->
     <div>
-      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
-      <a href="mailto:support@pdfecta.com"
-         class="font-semibold text-indigo-600 hover:underline">
-        support@pdfecta.com
-      </a>
-
-      <p class="text-xs text-slate-400 mt-6">
-        © 2026 PDFECTA. All rights reserved.
-      </p>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
     </div>
-
   </div>
 </footer>
 
-
-
-  
 <script>
-async function splitPDF() {
-  const input = document.getElementById("pdfInput");
-  const status = document.getElementById("status");
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('pdfInput');
+  const status = document.getElementById('status');
+  const pageInfo = document.getElementById('pageInfo');
+  const splitMethod = document.getElementById('splitMethod');
+  const rangeInputWrap = document.getElementById('rangeInputWrap');
+  const progressContainer = document.getElementById('progressContainer');
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  const splitBtn = document.getElementById('splitBtn');
 
-  // ✅ VALIDATION
-  if (!input.files.length) {
-    status.textContent = "Please select a PDF file.";
-    return;
+  let totalPages = 0;
+
+  splitMethod.onchange = () => {
+    rangeInputWrap.classList.toggle('hidden', splitMethod.value !== 'ranges');
+  };
+
+  dropZone.onclick = () => fileInput.click();
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
+  dropZone.ondrop = e => {
+    e.preventDefault();
+    dropZone.classList.remove('bg-indigo-50');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      loadPDF();
+    }
+  };
+  fileInput.onchange = () => loadPDF();
+
+  async function loadPDF() {
+    if (!fileInput.files.length) return;
+    try {
+      const bytes = await fileInput.files[0].arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(bytes);
+      totalPages = pdfDoc.getPageCount();
+      pageInfo.classList.remove('hidden');
+      pageInfo.textContent = `📄 ${fileInput.files[0].name} — ${totalPages} pages detected`;
+      status.textContent = '';
+    } catch {
+      status.textContent = '❌ Failed to read PDF file.';
+    }
   }
 
-  const file = input.files[0];
-
-  if (file.type !== "application/pdf") {
-    status.textContent = "Invalid file type. Please upload a PDF file.";
-    return;
+  function parseRanges(input, max) {
+    const ranges = [];
+    input.split(',').forEach(part => {
+      part = part.trim();
+      if (part.includes('-')) {
+        const [start, end] = part.split('-').map(n => parseInt(n.trim(), 10));
+        if (!isNaN(start) && !isNaN(end) && start >= 1 && end <= max && start <= end) {
+          ranges.push({ start, end });
+        }
+      } else {
+        const n = parseInt(part, 10);
+        if (!isNaN(n) && n >= 1 && n <= max) {
+          ranges.push({ start: n, end: n });
+        }
+      }
+    });
+    return ranges;
   }
 
-status.textContent = "Processing PDF... Please wait.";
+  async function splitPDF() {
+    if (!fileInput.files.length) {
+      status.textContent = '⚠️ Please select a PDF file.';
+      return;
+    }
 
-  // ✅ PROCESSING
-  const bytes = await file.arrayBuffer();
-  const pdf = await PDFLib.PDFDocument.load(bytes);
-  const totalPages = pdf.getPageCount();
+    splitBtn.disabled = true;
+    splitBtn.textContent = 'Splitting...';
+    progressContainer.classList.remove('hidden');
+    status.textContent = '⏳ Loading PDF...';
 
-  for (let i = 0; i < totalPages; i++) {
-    const newPdf = await PDFLib.PDFDocument.create();
-    const [page] = await newPdf.copyPages(pdf, [i]);
-    newPdf.addPage(page);
+    try {
+      const bytes = await fileInput.files[0].arrayBuffer();
+      const pdf = await PDFLib.PDFDocument.load(bytes);
 
-    const pdfBytes = await newPdf.save();
-    const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      let jobs = [];
 
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = `page-${i + 1}.pdf`;
-    a.click();
+      if (splitMethod.value === 'every') {
+        for (let i = 0; i < totalPages; i++) {
+          jobs.push({ indices: [i], name: `page-${i + 1}.pdf` });
+        }
+      } else {
+        const rangeInput = document.getElementById('rangeInput').value.trim();
+        if (!rangeInput) {
+          status.textContent = '⚠️ Please enter page ranges.';
+          splitBtn.disabled = false;
+          splitBtn.textContent = 'Split PDF';
+          progressContainer.classList.add('hidden');
+          return;
+        }
+        const ranges = parseRanges(rangeInput, totalPages);
+        if (!ranges.length) {
+          status.textContent = '⚠️ No valid page ranges found.';
+          splitBtn.disabled = false;
+          splitBtn.textContent = 'Split PDF';
+          progressContainer.classList.add('hidden');
+          return;
+        }
+        ranges.forEach((r, idx) => {
+          const indices = [];
+          for (let i = r.start; i <= r.end; i++) indices.push(i - 1);
+          jobs.push({ indices, name: `pages-${r.start}-${r.end}.pdf` });
+        });
+      }
+
+      for (let i = 0; i < jobs.length; i++) {
+        const pct = Math.round((i / jobs.length) * 100);
+        progressBar.style.width = pct + '%';
+        progressText.textContent = `Creating file ${i + 1} of ${jobs.length}...`;
+        status.textContent = `⏳ Creating file ${i + 1} of ${jobs.length}...`;
+
+        const newPdf = await PDFLib.PDFDocument.create();
+        const copiedPages = await newPdf.copyPages(pdf, jobs[i].indices);
+        copiedPages.forEach(p => newPdf.addPage(p));
+
+        const pdfBytes = await newPdf.save();
+        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = jobs[i].name;
+        a.click();
+        URL.revokeObjectURL(a.href);
+
+        // Small delay to prevent browser blocking multiple downloads
+        await new Promise(resolve => setTimeout(resolve, 200));
+      }
+
+      progressBar.style.width = '100%';
+      progressContainer.classList.add('hidden');
+      status.innerHTML = `✅ <strong>${jobs.length} file(s) created!</strong> Check your downloads folder.`;
+
+    } catch (err) {
+      console.error(err);
+      progressContainer.classList.add('hidden');
+      status.textContent = '❌ Failed to split PDF. Please try again.';
+    } finally {
+      splitBtn.disabled = false;
+      splitBtn.textContent = 'Split PDF';
+    }
   }
-
-  status.textContent = "PDF split completed.";
-}
-
 </script>
 
-  
 </body>
 </html>

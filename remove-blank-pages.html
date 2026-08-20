@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Remove Blank Pages from PDF Online — Free, No Upload, 100% Private | PDFECTA</title>
+  <meta name="description" content="Remove blank pages from a PDF online free. Automatically detect and delete empty pages from scanned documents instantly in your browser — no uploads, 100% private." />
+  <link rel="canonical" href="https://www.pdfecta.com/remove-blank-pages.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+  </style>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Remove Blank Pages", "item": "https://www.pdfecta.com/remove-blank-pages.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I remove blank pages from a PDF for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can remove blank pages from a PDF for free using PDFECTA. Upload your PDF, and the tool automatically scans every page to detect which ones are blank, then lets you remove them with one click. Everything happens locally in your browser with no uploads required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does automatic blank page detection work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PDFECTA renders each page and analyzes the pixel content to determine if a page is effectively empty. Pages with only a tiny amount of content, such as stray marks from scanning, are also detected as blank based on a sensitivity threshold you can adjust."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to remove blank pages from a PDF online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the tool. Many online PDF tools upload your file to their servers before processing. PDFECTA never uploads your files — all detection and removal happens directly in your browser, keeping your documents completely private."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I review which pages will be removed before deleting them?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA shows you which pages were detected as blank before removing them, so you can confirm the detection is accurate before downloading the cleaned PDF."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will this tool accidentally remove pages with content?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PDFECTA uses a sensitivity setting to control how strict the blank detection is. If a page has any meaningful content, it will not be flagged as blank at default sensitivity. You can adjust the sensitivity if needed for your specific document."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between this and Delete Odd/Even Pages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Delete Odd/Even Pages removes all pages at fixed positions such as every even page, regardless of content. Remove Blank Pages automatically scans and removes only pages that are actually empty, regardless of their position in the document."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <span class="w-9 h-9 rounded-xl brand-gradient text-white flex items-center justify-center">P</span>
+      PDFECTA
+    </a>
+    <nav class="text-sm font-semibold text-slate-600 space-x-6">
+      <a href="/" class="hover:text-indigo-600">Home</a>
+      <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
+      <a href="/blog/" class="hover:text-indigo-600">Guides</a>
+      <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <nav class="text-sm text-slate-400 mb-8">
+    <a href="/" class="hover:text-indigo-600">Home</a>
+    <span class="mx-2">›</span>
+    <span class="text-slate-600">Remove Blank Pages</span>
+  </nav>
+
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Remove Blank Pages from PDF — Free & Private
+  </h1>
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+    Automatically detect and remove empty pages from any PDF directly in your browser.
+    No uploads. No servers. 100% private.
+  </p>
+</section>
+
+<!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6 pb-20">
+  <div class="bg-white rounded-3xl shadow-xl border p-6">
+
+    <div id="dropZone"
+      class="border-2 border-dashed border-indigo-200 rounded-2xl p-12 text-center cursor-pointer hover:bg-indigo-50 transition">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl">🧹</div>
+        <p class="font-bold text-lg text-slate-700">Drop your PDF here</p>
+        <p class="text-sm text-slate-400">Files never leave your device</p>
+      </div>
+      <input id="pdfInput" type="file" accept="application/pdf" class="hidden" />
+    </div>
+
+    <div class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Detection Sensitivity</label>
+        <select id="sensitivity"
+          class="w-full rounded-xl p-4 bg-slate-50 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="0.999">Strict (only pure white pages)</option>
+          <option value="0.995" selected>Balanced (Recommended)</option>
+          <option value="0.98">Loose (catches stray marks/smudges)</option>
+        </select>
+      </div>
+
+      <!-- Progress bar -->
+      <div id="progressContainer" class="hidden">
+        <div class="w-full bg-slate-100 rounded-full h-2">
+          <div id="progressBar" class="brand-gradient h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+        <p id="progressText" class="text-center text-xs text-slate-400 mt-1"></p>
+      </div>
+
+      <button onclick="scanPDF()" id="scanBtn"
+        class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+        Scan for Blank Pages
+      </button>
+
+      <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
+    </div>
+
+    <!-- Results -->
+    <div id="resultsWrap" class="mt-6 hidden">
+      <div id="resultsInfo" class="p-4 bg-indigo-50 rounded-xl text-sm font-semibold text-indigo-700 mb-4"></div>
+      <div id="pageThumbs" class="grid grid-cols-4 md:grid-cols-6 gap-2 mb-4 max-h-64 overflow-y-auto"></div>
+      <button onclick="removeBlankPages()" id="removeBtn"
+        class="w-full bg-red-500 text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+        Remove Blank Pages & Download
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto px-6 pt-8 pb-12 text-slate-700 leading-relaxed space-y-6">
+
+  <h2 class="text-2xl font-bold text-slate-800">Remove Blank Pages from PDF Online Free & Secure</h2>
+
+  <p>PDFECTA allows you to automatically detect and remove blank pages from any PDF instantly without uploading your document to any server. Whether you are cleaning up a scanned document, removing blank separator pages, or tidying a PDF before sharing, this free tool provides a fast and completely private solution directly in your browser.</p>
+
+  <p>Unlike traditional online PDF tools that require you to manually specify which pages to remove, PDFECTA scans every page and automatically identifies which ones are blank. This saves significant time on long documents where blank pages could be scattered throughout rather than following a predictable pattern.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Remove Blank Pages from a PDF</h3>
+  <ol class="list-decimal pl-6 space-y-2">
+    <li>Click the upload area or drag and drop your PDF file into the tool above.</li>
+    <li>Choose your detection sensitivity level.</li>
+    <li>Click "Scan for Blank Pages" and wait while each page is analyzed.</li>
+    <li>Review the detected blank pages in the results preview.</li>
+    <li>Click "Remove Blank Pages & Download" to get your cleaned PDF instantly.</li>
+  </ol>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How Automatic Blank Page Detection Works</h3>
+  <p>PDFECTA renders each page of your PDF onto a canvas and analyzes the pixel data to determine how much of the page contains actual content versus blank white space. Pages that are almost entirely white — accounting for minor scanning artifacts like faint smudges or dust marks — are flagged as blank. You control how strict this detection is using the sensitivity setting.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Understanding Sensitivity Levels</h3>
+  <ul class="list-disc pl-6 space-y-3">
+    <li><strong>Strict</strong> — only flags pages that are essentially pure white with zero content. Use this if you want to be very cautious about false positives.</li>
+    <li><strong>Balanced (Recommended)</strong> — the best setting for most documents. Catches genuinely blank pages while ignoring minor scanning noise.</li>
+    <li><strong>Loose</strong> — flags pages with very light stray marks or smudges as blank too. Useful for old scanned documents with visible paper texture or faint marks on otherwise empty pages.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Would You Need to Remove Blank Pages?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>Cleaning up scanned documents:</strong> Scanners often include blank pages when scanning double-sided documents or books with blank chapter dividers.</li>
+    <li><strong>Removing separator pages:</strong> Some document management systems insert blank separator pages between sections.</li>
+    <li><strong>Preparing documents for submission:</strong> Clean, professional documents without unnecessary blank pages.</li>
+    <li><strong>Reducing file size:</strong> Removing pages, even blank ones, can slightly reduce overall PDF file size.</li>
+    <li><strong>Improving page count accuracy:</strong> Ensures your document's page count reflects actual content when submitting to systems with page limits.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Remove Blank Pages vs Delete Odd/Even Pages</h3>
+  <p>These tools solve different problems. <a href="/delete-odd-even-pages.html" class="text-indigo-600 hover:underline">Delete Odd/Even Pages</a> removes pages at fixed positions — every odd or every even page — regardless of whether they contain content. This works well when you know blank pages follow a consistent pattern, such as every other page in a double-sided scan.</p>
+  <p>Remove Blank Pages instead scans the actual content of every page and removes only the ones that are genuinely empty, regardless of their position in the document. This is the better choice when blank pages appear at unpredictable locations throughout your document.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA to Remove Blank Pages?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Files are processed locally in your browser — never uploaded to any server.</li>
+    <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
+    <li><strong>Automatic Detection:</strong> No need to manually identify blank pages.</li>
+    <li><strong>Review Before Removing:</strong> See exactly which pages will be removed before confirming.</li>
+    <li><strong>Adjustable Sensitivity:</strong> Fine-tune detection for your specific document type.</li>
+    <li><strong>Works Offline:</strong> After loading, the tool works without internet.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">What to Do After Removing Blank Pages</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/reorder-pdf-pages.html" class="text-indigo-600 hover:underline">Reorder Pages</a> — rearrange the remaining pages if needed after removal.</li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a> — further reduce file size after cleaning up the document.</li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a> — number the pages of your cleaned document.</li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> — combine your cleaned document with other files.</li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a> — fix orientation on any remaining pages.</li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a> — sign the cleaned document before sharing.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
+    <div>
+      <p class="font-semibold text-slate-800">How do I remove blank pages from a PDF for free?</p>
+      <p>Upload your PDF, click Scan for Blank Pages, review the detected pages, and click Remove Blank Pages & Download. No uploads, no registration.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">How does automatic blank page detection work?</p>
+      <p>PDFECTA renders each page and analyzes pixel content to determine if it's effectively empty, using a sensitivity threshold you can adjust.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to remove blank pages online?</p>
+      <p>PDFECTA never uploads your files — all detection and removal happens directly in your browser, keeping your documents completely private.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I review which pages will be removed?</p>
+      <p>Yes. Detected blank pages are shown in a preview before you confirm removal.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Will this accidentally remove pages with content?</p>
+      <p>The sensitivity setting controls detection strictness. At default settings, pages with meaningful content are not flagged as blank.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">What is the difference between this and Delete Odd/Even Pages?</p>
+      <p>Delete Odd/Even removes pages at fixed positions regardless of content. Remove Blank Pages scans actual content and removes only genuinely empty pages, wherever they appear.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/delete-odd-even-pages.html" class="text-indigo-600 hover:underline">Delete Odd/Even Pages</a></li>
+    <li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages from PDF</a></li>
+    <li><a href="/reorder-pdf-pages.html" class="text-indigo-600 hover:underline">Reorder PDF Pages</a></li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a></li>
+  </ul>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
+    </div>
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Company</h4>
+      <ul class="space-y-2 text-slate-500">
+        <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
+        <li><a href="/contact.html" class="hover:text-indigo-600">Contact</a></li>
+        <li><a href="/privacy.html" class="hover:text-indigo-600">Privacy Policy</a></li>
+        <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('pdfInput');
+  const status = document.getElementById('status');
+  const progressContainer = document.getElementById('progressContainer');
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  const scanBtn = document.getElementById('scanBtn');
+  const resultsWrap = document.getElementById('resultsWrap');
+  const resultsInfo = document.getElementById('resultsInfo');
+  const pageThumbs = document.getElementById('pageThumbs');
+  const removeBtn = document.getElementById('removeBtn');
+
+  let blankPageIndices = [];
+  let totalPages = 0;
+
+  dropZone.onclick = () => fileInput.click();
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
+  dropZone.ondrop = e => {
+    e.preventDefault();
+    dropZone.classList.remove('bg-indigo-50');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+      resultsWrap.classList.add('hidden');
+    }
+  };
+  fileInput.onchange = () => {
+    if (fileInput.files.length) {
+      status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+      resultsWrap.classList.add('hidden');
+    }
+  };
+
+  async function scanPDF() {
+    if (!fileInput.files.length) {
+      status.textContent = '⚠️ Please select a PDF file.';
+      return;
+    }
+
+    const threshold = parseFloat(document.getElementById('sensitivity').value);
+
+    scanBtn.disabled = true;
+    scanBtn.textContent = 'Scanning...';
+    progressContainer.classList.remove('hidden');
+    resultsWrap.classList.add('hidden');
+    status.textContent = '⏳ Loading PDF...';
+
+    try {
+      const arrayBuffer = await fileInput.files[0].arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      totalPages = pdf.numPages;
+      blankPageIndices = [];
+      pageThumbs.innerHTML = '';
+
+      for (let i = 1; i <= totalPages; i++) {
+        const pct = Math.round((i - 1) / totalPages * 100);
+        progressBar.style.width = pct + '%';
+        progressText.textContent = `Analyzing page ${i} of ${totalPages}...`;
+        status.textContent = `⏳ Analyzing page ${i} of ${totalPages}...`;
+
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale: 0.5 });
+
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        // Analyze whiteness
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+        let whitePixels = 0;
+        const totalPixels = data.length / 4;
+
+        for (let p = 0; p < data.length; p += 4) {
+          const r = data[p], g = data[p + 1], b = data[p + 2];
+          if (r > 245 && g > 245 && b > 245) whitePixels++;
+        }
+
+        const whiteRatio = whitePixels / totalPixels;
+        const isBlank = whiteRatio >= threshold;
+
+        if (isBlank) blankPageIndices.push(i - 1);
+
+        // Add thumbnail
+        const thumb = document.createElement('div');
+        thumb.className = 'relative rounded-lg overflow-hidden border-2 ' + (isBlank ? 'border-red-400' : 'border-slate-200');
+        thumb.innerHTML = `
+          <img src="${canvas.toDataURL('image/jpeg', 0.5)}" class="w-full" />
+          <div class="absolute bottom-0 left-0 right-0 text-center text-[10px] font-bold py-0.5 ${isBlank ? 'bg-red-400 text-white' : 'bg-slate-100 text-slate-500'}">
+            ${isBlank ? 'Blank' : i}
+          </div>
+        `;
+        pageThumbs.appendChild(thumb);
+      }
+
+      progressBar.style.width = '100%';
+      progressContainer.classList.add('hidden');
+      resultsWrap.classList.remove('hidden');
+
+      if (blankPageIndices.length === 0) {
+        resultsInfo.textContent = '✅ No blank pages detected in this document.';
+        removeBtn.classList.add('hidden');
+      } else {
+        resultsInfo.textContent = `Found ${blankPageIndices.length} blank page(s) out of ${totalPages} total pages.`;
+        removeBtn.classList.remove('hidden');
+      }
+
+      status.textContent = '';
+
+    } catch (err) {
+      console.error(err);
+      progressContainer.classList.add('hidden');
+      status.textContent = '❌ Failed to scan PDF. Please try another file.';
+    } finally {
+      scanBtn.disabled = false;
+      scanBtn.textContent = 'Scan for Blank Pages';
+    }
+  }
+
+  async function removeBlankPages() {
+    if (!blankPageIndices.length) return;
+
+    removeBtn.disabled = true;
+    removeBtn.textContent = 'Removing...';
+    status.textContent = '⏳ Removing blank pages...';
+
+    try {
+      const arrayBuffer = await fileInput.files[0].arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+      const newPdf = await PDFLib.PDFDocument.create();
+
+      const keepIndices = [];
+      for (let i = 0; i < totalPages; i++) {
+        if (!blankPageIndices.includes(i)) keepIndices.push(i);
+      }
+
+      const copiedPages = await newPdf.copyPages(pdfDoc, keepIndices);
+      copiedPages.forEach(p => newPdf.addPage(p));
+
+      const newBytes = await newPdf.save();
+      const blob = new Blob([newBytes], { type: 'application/pdf' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'cleaned.pdf';
+      a.click();
+      URL.revokeObjectURL(a.href);
+
+      status.innerHTML = `✅ <strong>Removed ${blankPageIndices.length} blank page(s)!</strong> Your download has started.`;
+    } catch (err) {
+      console.error(err);
+      status.textContent = '❌ Failed to remove blank pages. Please try again.';
+    } finally {
+      removeBtn.disabled = false;
+      removeBtn.textContent = 'Remove Blank Pages & Download';
+    }
+  }
+</script>
+
+</body>
+</html>
