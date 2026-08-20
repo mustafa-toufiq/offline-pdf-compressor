@@ -4,12 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Add Watermark to PDF Online Free | PDFECTA</title>
-  <meta name="description"
-        content="Add text watermarks to PDF files directly in your browser. 100% client-side, private, and secure. No uploads, no tracking." />
+  <title>Add Watermark to PDF Online — Free, No Upload, 100% Private | PDFECTA</title>
+  <meta name="description" content="Add a text watermark to any PDF online free. Customize text, size, opacity, and rotation instantly in your browser — no uploads, no registration, 100% private." />
+  <link rel="canonical" href="https://www.pdfecta.com/watermark.html" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+  </style>
 
   <!-- Breadcrumb Schema -->
   <script type="application/ld+json">
@@ -17,237 +24,283 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Add Watermark to PDF", "item": "https://www.pdfecta.com/watermark.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://pdfecta.com/"
+        "@type": "Question",
+        "name": "How do I add a watermark to a PDF for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can add a watermark to a PDF for free using PDFECTA. Upload your PDF, enter your watermark text, customize the font size, opacity, and rotation, and download the watermarked PDF instantly. Everything happens locally in your browser with no uploads required."
+        }
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Add Watermark to PDF",
-        "item": "https://pdfecta.com/watermark.html"
+        "@type": "Question",
+        "name": "Is it safe to add watermarks to a PDF online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the tool. Many online PDF watermark tools upload your file to their servers before processing. PDFECTA never uploads your files — all watermarking happens directly in your browser, keeping your documents completely private."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I customize the watermark position and appearance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA lets you customize the watermark text, font size, opacity, and rotation angle so the watermark fits your document's style and purpose."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a PDF watermark permanent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The watermark is embedded into the PDF content layer and appears permanent for general viewing and sharing. However, advanced PDF editing tools may be able to remove it. For legal-grade document protection, consider using digital signatures in addition to a watermark."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the watermark appear on every page?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA applies the watermark consistently across all pages of your PDF document in a single operation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will the watermark affect the readability of my document?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, if configured correctly. Use a lower opacity setting so the watermark is visible but does not obscure the underlying text and content. PDFECTA's default settings are designed for readability."
+        }
       }
     ]
   }
   </script>
+
 </head>
 
 <body class="bg-slate-50 text-slate-900">
 
 <!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white border-b">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
-        P
-      </div>
+      <span class="w-9 h-9 rounded-xl brand-gradient text-white flex items-center justify-center">P</span>
       PDFECTA
     </a>
-    <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+    <nav class="text-sm font-semibold text-slate-600 space-x-6">
+      <a href="/" class="hover:text-indigo-600">Home</a>
       <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
-      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="/blog/" class="hover:text-indigo-600">Guides</a>
       <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
     </nav>
   </div>
 </header>
 
-<!-- MAIN -->
-<main class="max-w-4xl mx-auto px-6 py-20">
+<!-- HERO -->
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <nav class="text-sm text-slate-400 mb-8">
+    <a href="/" class="hover:text-indigo-600">Home</a>
+    <span class="mx-2">›</span>
+    <span class="text-slate-600">Add Watermark to PDF</span>
+  </nav>
 
-  <!-- HERO -->
-  <h1 class="text-4xl font-extrabold mb-4">Add Watermark to PDF</h1>
-  
-  <p class="text-slate-600 mb-10">
-    Add text watermarks to your PDF files directly in your browser.
-    Fully offline, private, and secure. No uploads. No tracking.
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Add Watermark to PDF — Free & Private
+  </h1>
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+    Add a custom text watermark to any PDF directly in your browser.
+    No uploads. No servers. 100% private.
   </p>
+</section>
 
-  <!-- TOOL CARD -->
-  <div class="bg-white rounded-2xl shadow p-8 space-y-6">
+<!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6 pb-20">
+  <div class="bg-white rounded-3xl shadow-xl border p-6">
 
-    <div>
-      <label class="block font-semibold mb-2">Upload PDF</label>
-      <input id="pdfInput" type="file" accept="application/pdf"
-             class="w-full border rounded p-2" />
+    <div id="dropZone"
+      class="border-2 border-dashed border-indigo-200 rounded-2xl p-12 text-center cursor-pointer hover:bg-indigo-50 transition">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl">💧</div>
+        <p class="font-bold text-lg text-slate-700">Drop your PDF here</p>
+        <p class="text-sm text-slate-400">Files never leave your device</p>
+      </div>
+      <input id="pdfInput" type="file" accept="application/pdf" class="hidden" />
     </div>
 
-    <div>
-      <label class="block font-semibold mb-2">Watermark Text</label>
-      <input id="watermarkText" type="text"
-             placeholder="e.g. CONFIDENTIAL"
-             class="w-full border rounded p-3" />
-    </div>
-
-    <div class="grid grid-cols-2 gap-4">
+    <div class="mt-6 space-y-4">
       <div>
-        <label class="block font-semibold mb-2">Font Size</label>
-        <input id="fontSize" type="number" value="40"
-               class="w-full border rounded p-2" />
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Watermark Text</label>
+        <input id="watermarkText" type="text" placeholder="e.g. CONFIDENTIAL"
+          class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-slate-600 mb-2">Font Size</label>
+          <select id="fontSize"
+            class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500 transition">
+            <option value="30">Small (30pt)</option>
+            <option value="40" selected>Medium (40pt)</option>
+            <option value="55">Large (55pt)</option>
+            <option value="70">Extra Large (70pt)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-600 mb-2">Opacity</label>
+          <select id="opacity"
+            class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500 transition">
+            <option value="0.1">Very Light</option>
+            <option value="0.2" selected>Light (Recommended)</option>
+            <option value="0.35">Medium</option>
+            <option value="0.5">Strong</option>
+          </select>
+        </div>
       </div>
 
       <div>
-        <label class="block font-semibold mb-2">Opacity (0–1)</label>
-        <input id="opacity" type="number" step="0.1" value="0.2"
-               class="w-full border rounded p-2" />
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Rotation Angle</label>
+        <select id="rotation"
+          class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500 transition">
+          <option value="0">No Rotation (Horizontal)</option>
+          <option value="30" selected>Diagonal (30°)</option>
+          <option value="45">Diagonal (45°)</option>
+        </select>
       </div>
+
+      <button onclick="addWatermark()" id="watermarkBtn"
+        class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+        Add Watermark & Download
+      </button>
+
+      <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
     </div>
-
-    <button onclick="addWatermark()"
-      class="inline-flex items-center justify-center bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 w-fit">
-      Add Watermark & Download
-    </button>
-
-    <p id="status" class="text-sm text-slate-600"></p>
   </div>
+</section>
 
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto px-6 pt-8 pb-12 text-slate-700 leading-relaxed space-y-6">
 
+  <h2 class="text-2xl font-bold text-slate-800">Add Watermark to PDF Online Free & Secure</h2>
 
-  <!-- SEO -->
-  
-  <section class="mt-16 text-slate-700 leading-relaxed space-y-6">
+  <p>PDFECTA allows you to add a text watermark to any PDF instantly without uploading your document to any server. Whether you need to mark a document as CONFIDENTIAL, DRAFT, SAMPLE, or add your company branding, this free tool provides a fast and completely private solution directly in your browser.</p>
 
-  <h2 class="text-2xl font-bold">
-    Add Watermark to PDF Online — Free, Secure & Private
-  </h2>
+  <p>Unlike traditional online PDF watermark tools, PDFECTA processes everything locally using modern browser technology. Your PDF file never leaves your device. No cloud storage, no third-party access, and no tracking — making it ideal for watermarking sensitive documents such as contracts, financial reports, and confidential business files.</p>
 
-  <p>
-    PDFECTA lets you add watermark to PDF files directly in your browser without uploading your documents to any server. 
-    Unlike traditional online PDF watermark tools, this tool works 100% client-side, meaning your file stays on your device at all times.
-  </p>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">What Is a PDF Watermark?</h3>
+  <p>A watermark is visible text placed over document pages to indicate status or ownership. Common examples include "CONFIDENTIAL", "DRAFT", "SAMPLE", "COPY", or company branding labels. Watermarks help signal document status and discourage unauthorized redistribution of sensitive content.</p>
 
-  <p>
-    If you need to watermark PDF documents for confidentiality, copyright protection, internal company review, legal distribution, 
-    academic drafts, or pre-release previews, PDFECTA provides a fast and privacy-focused solution.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    What Is a PDF Watermark?
-  </h3>
-
-  <p>
-    A watermark is visible text placed over a document page to indicate status or ownership. Common examples include 
-    “CONFIDENTIAL”, “DRAFT”, “SAMPLE”, “COPY”, or company branding labels. Watermarks help protect sensitive information 
-    and prevent unauthorized redistribution.
-  </p>
-
-  <p>
-    With this online watermark PDF tool, you can add consistent watermark text across all pages of your document in seconds.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    How to Add Watermark to PDF Online
-  </h3>
-
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Add a Watermark to a PDF</h3>
   <ol class="list-decimal pl-6 space-y-2">
-    <li>Upload your PDF file using the file selector above.</li>
-    <li>Enter your desired watermark text (for example: CONFIDENTIAL).</li>
-    <li>Adjust font size and opacity level.</li>
-    <li>Click “Add Watermark & Download”.</li>
-    <li>Your watermarked PDF will download instantly.</li>
+    <li>Click the upload area or drag and drop your PDF file into the tool above.</li>
+    <li>Enter your watermark text — for example, "CONFIDENTIAL" or "DRAFT".</li>
+    <li>Choose your font size, opacity, and rotation angle.</li>
+    <li>Click "Add Watermark & Download".</li>
+    <li>Your watermarked PDF downloads instantly with the watermark applied to every page.</li>
   </ol>
 
-  <p>
-    The watermark is applied visually across all pages with rotation and opacity settings, 
-    making it suitable for professional document sharing.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    Why Choose PDFECTA for Watermarking?
-  </h3>
-
-  <ul class="list-disc pl-6 space-y-2">
-    <li>100% browser-based PDF watermark tool</li>
-    <li>No file uploads or cloud processing</li>
-    <li>No registration or account required</li>
-    <li>No tracking, analytics, or user profiling</li>
-    <li>Works on Windows, macOS, Linux, Android, and iOS</li>
-    <li>Free PDF watermarking with no usage limits</li>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Customizing Your Watermark</h3>
+  <ul class="list-disc pl-6 space-y-3">
+    <li><strong>Font Size</strong> — larger sizes create a more prominent, harder-to-miss watermark. Smaller sizes are more subtle.</li>
+    <li><strong>Opacity</strong> — lower opacity keeps the watermark visible without obscuring the underlying document content. Higher opacity creates a bolder, more visible mark.</li>
+    <li><strong>Rotation</strong> — diagonal watermarks (30° or 45°) are the most common style for document status marks, while horizontal watermarks work well for header or footer branding.</li>
   </ul>
 
-  <h3 class="text-xl font-semibold">
-    When Should You Watermark a PDF?
-  </h3>
-
-  <p>
-    Watermarking a PDF is useful when you want to protect content before final distribution. 
-    Businesses often watermark PDFs during contract reviews, proposal sharing, invoice previews, 
-    and internal documentation workflows.
-  </p>
-
-  <p>
-    Students and researchers may watermark drafts before submission. 
-    Designers and content creators use watermarks to prevent unauthorized copying.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    Is This PDF Watermark Permanent?
-  </h3>
-
-  <p>
-    The watermark added by PDFECTA is visually embedded into the PDF content layer. 
-    While it appears permanent for general viewing and sharing, advanced PDF editing tools 
-    may allow removal. For legal-grade security, consider digital signature solutions.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    Secure & Private PDF Processing
-  </h3>
-
-  <p>
-    Privacy is at the core of PDFECTA. This add watermark to PDF online tool does not upload your file anywhere. 
-    All processing happens locally using modern web technologies. Your document never leaves your browser.
-  </p>
-
-  <p>
-    That makes PDFECTA ideal for handling sensitive contracts, financial records, legal documents, 
-    and private reports.
-  </p>
-
-  <h3 class="text-xl font-semibold">
-    More Offline PDF Tools
-  </h3>
-
-  <p>
-    You may also want to:
-  </p>
-
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">When Should You Watermark a PDF?</h3>
   <ul class="list-disc pl-6 space-y-2">
-    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF Online</a></li>
-    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF Files</a></li>
-    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF Online</a></li>
-    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF Pages</a></li>
+    <li><strong>Business documents:</strong> Mark proposals, invoices, or contracts as DRAFT before final approval.</li>
+    <li><strong>Confidential material:</strong> Add CONFIDENTIAL to internal reports or sensitive business documents.</li>
+    <li><strong>Academic submissions:</strong> Watermark thesis or research drafts before final submission.</li>
+    <li><strong>Content protection:</strong> Designers and content creators use watermarks to discourage unauthorized copying.</li>
+    <li><strong>Sample documents:</strong> Mark preview or sample versions of documents before full purchase or access.</li>
+    <li><strong>Legal distribution:</strong> Add case numbers or distribution restrictions to legal documents.</li>
   </ul>
 
-  <p>
-    PDFECTA is built for users who value speed, simplicity, and privacy-first PDF tools.
-  </p>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Is a PDF Watermark Permanent?</h3>
+  <p>The watermark added by PDFECTA is embedded into the PDF content layer and appears permanent for general viewing, printing, and sharing. It will be visible in any standard PDF reader. However, advanced PDF editing software may be able to remove content layers including watermarks. For documents requiring legal-grade protection against tampering, consider combining a watermark with a digital signature.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA to Watermark PDFs?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Files are processed locally — never uploaded to any server.</li>
+    <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
+    <li><strong>Fully Customizable:</strong> Adjust text, size, opacity, and rotation to fit your needs.</li>
+    <li><strong>Applies to All Pages:</strong> Watermark is added consistently across the entire document.</li>
+    <li><strong>Works Offline:</strong> After loading, the tool works without internet.</li>
+    <li><strong>Compatible on All Devices:</strong> Works on Windows, macOS, Linux, Android, and iOS.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">What to Do Before and After Watermarking</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> — combine documents before applying a consistent watermark.</li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a> — reduce file size after watermarking for easier sharing.</li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a> — add your signature alongside the watermark.</li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a> — fix page orientation before adding a watermark.</li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a> — number pages alongside your watermark for professional presentation.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
+    <div>
+      <p class="font-semibold text-slate-800">How do I add a watermark to a PDF for free?</p>
+      <p>Upload your PDF, enter your watermark text, customize size, opacity, and rotation, then click Add Watermark & Download. No uploads, no registration.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to add watermarks to a PDF online?</p>
+      <p>PDFECTA never uploads your files — all watermarking happens directly in your browser, keeping your documents completely private.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I customize the watermark position and appearance?</p>
+      <p>Yes. Customize the text, font size, opacity, and rotation angle to fit your document's style.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is a PDF watermark permanent?</p>
+      <p>The watermark is embedded into the PDF content layer and appears permanent for general use, though advanced editing tools may be able to remove it.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Does the watermark appear on every page?</p>
+      <p>Yes. PDFECTA applies the watermark consistently across all pages in a single operation.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Will the watermark affect readability?</p>
+      <p>No, if configured correctly. Use a lower opacity so the watermark is visible without obscuring the underlying content.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a></li>
+    <li><a href="/rotate-pdf.html" class="text-indigo-600 hover:underline">Rotate PDF</a></li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a></li>
+  </ul>
 
 </section>
 
-
-
-</main>
-
-
 <!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
     <div>
       <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
-          P
-        </div>
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
         <span class="font-extrabold text-slate-800">PDFECTA</span>
       </div>
-      <p class="text-slate-500 max-w-sm">
-        Free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking.
-      </p>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
     </div>
-
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
@@ -257,120 +310,102 @@
         <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
       </ul>
     </div>
-
     <div>
-      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
-      <a href="mailto:support@pdfecta.com"
-         class="font-semibold text-indigo-600 hover:underline">
-        support@pdfecta.com
-      </a>
-      <p class="text-xs text-slate-400 mt-6">
-        © 2026 PDFECTA. All rights reserved.
-      </p>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
     </div>
-
   </div>
 </footer>
 
-<!-- FAQ SCHEMA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is it safe to add watermarks using PDFECTA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. All watermarking happens locally in your browser. Files are never uploaded or stored."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I upload files other than PDF?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. This tool only supports PDF files. Non-PDF files are rejected immediately."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are PDFECTA watermarks permanent?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Watermarks are visual only and may be removed using advanced PDF editing tools."
-      }
-    }
-  ]
-}
-</script>
-
-<!-- SCRIPT -->
 <script>
-async function addWatermark() {
-  const fileInput = document.getElementById("pdfInput");
-  const status = document.getElementById("status");
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('pdfInput');
+  const status = document.getElementById('status');
+  const watermarkBtn = document.getElementById('watermarkBtn');
 
-  if (!fileInput.files.length) {
-    status.textContent = "Please upload a PDF file.";
-    return;
-  }
+  dropZone.onclick = () => fileInput.click();
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
+  dropZone.ondrop = e => {
+    e.preventDefault();
+    dropZone.classList.remove('bg-indigo-50');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+    }
+  };
+  fileInput.onchange = () => {
+    if (fileInput.files.length) status.textContent = '📄 Selected: ' + fileInput.files[0].name;
+  };
 
-  const file = fileInput.files[0];
+  async function addWatermark() {
+    if (!fileInput.files.length) {
+      status.textContent = '⚠️ Please upload a PDF file.';
+      return;
+    }
 
-  if (file.type !== "application/pdf") {
-    status.textContent = "Invalid file type. Please upload a PDF only.";
-    fileInput.value = "";
-    return;
-  }
+    const file = fileInput.files[0];
+    if (file.type !== 'application/pdf') {
+      status.textContent = '⚠️ Invalid file type. Please upload a PDF only.';
+      fileInput.value = '';
+      return;
+    }
 
-  const text = document.getElementById("watermarkText").value.trim();
-  if (!text) {
-    status.textContent = "Please enter watermark text.";
-    return;
-  }
+    const text = document.getElementById('watermarkText').value.trim();
+    if (!text) {
+      status.textContent = '⚠️ Please enter watermark text.';
+      return;
+    }
 
-  const fontSize = parseFloat(document.getElementById("fontSize").value);
-  const opacity = parseFloat(document.getElementById("opacity").value);
+    const fontSize = parseFloat(document.getElementById('fontSize').value);
+    const opacity = parseFloat(document.getElementById('opacity').value);
+    const rotation = parseFloat(document.getElementById('rotation').value);
 
-  status.textContent = "Applying watermark locally...";
+    watermarkBtn.disabled = true;
+    watermarkBtn.textContent = 'Applying Watermark...';
+    status.textContent = '⏳ Applying watermark locally...';
 
-  try {
-    const { PDFDocument, rgb, StandardFonts, degrees } = PDFLib;
-    const bytes = await file.arrayBuffer();
-    const pdfDoc = await PDFDocument.load(bytes);
-    const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+    try {
+      const { PDFDocument, rgb, StandardFonts, degrees } = PDFLib;
+      const bytes = await file.arrayBuffer();
+      const pdfDoc = await PDFDocument.load(bytes);
+      const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
 
-    pdfDoc.getPages().forEach(page => {
-      const { width, height } = page.getSize();
-      page.drawText(text, {
-        x: width / 4,
-        y: height / 2,
-        size: fontSize,
-        font,
-        color: rgb(0.6, 0.6, 0.6),
-        rotate: degrees(30),
-        opacity
+      pdfDoc.getPages().forEach(page => {
+        const { width, height } = page.getSize();
+        const textWidth = font.widthOfTextAtSize(text, fontSize);
+
+        page.drawText(text, {
+          x: (width - textWidth) / 2,
+          y: height / 2,
+          size: fontSize,
+          font,
+          color: rgb(0.5, 0.5, 0.5),
+          rotate: degrees(rotation),
+          opacity
+        });
       });
-    });
 
-    const out = await pdfDoc.save();
-    const blob = new Blob([out], { type: "application/pdf" });
-    const url = URL.createObjectURL(blob);
+      const out = await pdfDoc.save();
+      const blob = new Blob([out], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'watermarked.pdf';
+      a.click();
+      URL.revokeObjectURL(url);
 
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "watermarked.pdf";
-    a.click();
-
-    status.textContent = "Watermarked PDF downloaded successfully.";
-
-  } catch (e) {
-    console.error(e);
-    status.textContent = "Failed to apply watermark. Please try again.";
+      status.innerHTML = '✅ <strong>Watermark added successfully!</strong> Your download has started.';
+    } catch (e) {
+      console.error(e);
+      status.textContent = '❌ Failed to apply watermark. Please try again.';
+    } finally {
+      watermarkBtn.disabled = false;
+      watermarkBtn.textContent = 'Add Watermark & Download';
+    }
   }
-}
 </script>
 
 </body>
