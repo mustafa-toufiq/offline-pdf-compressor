@@ -4,296 +4,425 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Text to PDF Converter – Free Online TXT, HTML & Code to PDF | PDFECTA</title>
-
-  <meta name="description" content="Convert text files, code, HTML, markdown, or pasted content into high-quality PDF files instantly. 100% private, offline, browser-based Text to PDF converter with no uploads or tracking." />
-
-  <meta name="keywords" content="text to pdf, txt to pdf, convert text file to pdf, html to pdf, markdown to pdf, code to pdf, json to pdf, csv to pdf, free text to pdf converter, browser text to pdf, offline pdf generator, secure pdf tool, no upload pdf converter, developer pdf tool, privacy pdf tool, create pdf from text, export text to pdf, text document to pdf, programming code to pdf, convert html file to pdf online free, local pdf generator" />
-
-  <link rel="canonical" href="https://pdfecta.com/text-to-pdf.html" />
+  <title>Text to PDF Converter Online — Free, No Upload, 100% Private | PDFECTA</title>
+  <meta name="description" content="Convert text, code, markdown, or pasted content to PDF online free. Works entirely in your browser — no uploads, no registration, no watermarks. 100% private." />
+  <link rel="canonical" href="https://www.pdfecta.com/text-to-pdf.html" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <style>
-    .brand-gradient {
-      background: linear-gradient(90deg, #6366f1, #8b5cf6);
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
   </style>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Text to PDF", "item": "https://www.pdfecta.com/text-to-pdf.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert text to PDF for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can convert text to PDF for free using PDFECTA. Upload a text file or paste your content directly, click Convert, and download the PDF instantly. Everything happens locally in your browser with no uploads required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What file types can I convert to PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PDFECTA supports plain text (.txt), HTML (.html), Markdown (.md), JSON (.json), CSV (.csv), and log files (.log). You can also paste any text directly without uploading a file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to convert text to PDF online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the tool. Many online converters upload your content to their servers. PDFECTA never uploads your files or pasted text — all conversion happens directly in your browser, keeping your content completely private."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert source code to PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can paste or upload source code files and convert them to PDF for documentation, code reviews, or sharing. The tool preserves line breaks and formatting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a limit on how much text I can convert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no strict limit. Since all processing happens locally in your browser, performance depends on your device memory. Most modern devices handle large text documents without issues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the PDF preserve special characters and formatting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PDFECTA automatically handles special characters like smart quotes and dashes, converting them to compatible equivalents. Line breaks and paragraph structure are preserved in the output PDF."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body class="bg-slate-50 text-slate-900">
 
 <!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white border-b">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">P</div>
+      <span class="w-9 h-9 rounded-xl brand-gradient text-white flex items-center justify-center">P</span>
       PDFECTA
     </a>
-    <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+    <nav class="text-sm font-semibold text-slate-600 space-x-6">
+      <a href="/" class="hover:text-indigo-600">Home</a>
       <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
-      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="/blog/" class="hover:text-indigo-600">Guides</a>
       <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
     </nav>
   </div>
 </header>
 
-<!-- MAIN -->
-<main class="max-w-4xl mx-auto px-6 py-16">
+<!-- HERO -->
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <nav class="text-sm text-slate-400 mb-8">
+    <a href="/" class="hover:text-indigo-600">Home</a>
+    <span class="mx-2">›</span>
+    <span class="text-slate-600">Text to PDF</span>
+  </nav>
 
-  <h1 class="text-4xl font-extrabold mb-6">
-    <span class="text-transparent bg-clip-text brand-gradient">
-      Text to PDF Converter
-    </span>
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+    Text to PDF Converter — Free & Private
   </h1>
-
-  <p class="text-slate-600 mb-8 leading-relaxed">
-    Convert text files, source code, HTML documents, markdown files, JSON, CSV, or any plain text into a clean,
-    high-quality PDF file instantly in your browser. No uploads. No tracking. Fully private.
+  <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+    Convert text, code, markdown, or pasted content into a PDF directly in your browser.
+    No uploads. No servers. No watermarks. 100% private.
   </p>
+</section>
 
-  <div class="bg-white p-8 rounded-2xl shadow space-y-6">
+<!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6 pb-20">
+  <div class="bg-white rounded-3xl shadow-xl border p-6 space-y-6">
 
     <div>
-      <label class="block font-semibold mb-2">Upload Text File</label>
-      <input id="fileInput" type="file"
-       accept=".txt,.md,.json,.csv,.log,.html"
-       class="w-full border rounded p-2" />
+      <label class="block text-sm font-semibold text-slate-600 mb-2">Upload a Text File</label>
+      <div id="dropZone"
+        class="border-2 border-dashed border-indigo-200 rounded-2xl p-8 text-center cursor-pointer hover:bg-indigo-50 transition">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-2xl">📄</div>
+          <p class="font-bold text-slate-700">Drop a text file here</p>
+          <p class="text-xs text-slate-400">.txt .md .json .csv .log .html</p>
+        </div>
+        <input id="fileInput" type="file" accept=".txt,.md,.json,.csv,.log,.html" class="hidden" />
+      </div>
+      <p id="fileName" class="text-sm text-slate-500 mt-2 hidden"></p>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="h-px bg-slate-200 flex-1"></div>
+      <span class="text-xs font-bold text-slate-400 uppercase">Or</span>
+      <div class="h-px bg-slate-200 flex-1"></div>
     </div>
 
     <div>
-      <label class="block font-semibold mb-2">Or Paste Text</label>
-      <textarea id="textInput"
-        rows="10"
-        placeholder="Paste your text, code, or HTML here..."
-        class="w-full border rounded p-4"></textarea>
+      <label class="block text-sm font-semibold text-slate-600 mb-2">Paste Your Text</label>
+      <textarea id="textInput" rows="8" placeholder="Paste your text, code, or content here..."
+        class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-medium text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 transition"></textarea>
     </div>
 
-    <button onclick="generatePDF()"
-      class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700">
-      Convert & Download PDF
+    <button onclick="generatePDF()" id="convertBtn"
+      class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+      Convert to PDF
     </button>
 
-    <p id="status" class="text-sm text-slate-500"></p>
-
+    <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
   </div>
+</section>
 
-  <!-- SEO CONTENT -->
-  <section class="mt-16 space-y-6 text-slate-700 leading-relaxed">
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto px-6 pt-8 pb-12 text-slate-700 leading-relaxed space-y-6">
 
-    <h2 class="text-2xl font-bold">Why Use PDFECTA Text to PDF Tool?</h2>
+  <h2 class="text-2xl font-bold text-slate-800">Convert Text to PDF Online Free & Secure</h2>
 
-    <p>
-      PDFECTA provides a fast, secure, and completely browser-based way to convert text content into PDF files.
-      Whether you're working with plain text, source code, HTML markup, markdown documentation, or structured
-      data files, this tool transforms your content into a downloadable PDF instantly.
-    </p>
+  <p>PDFECTA allows you to convert text, source code, markdown, HTML, and other text-based content into a professional PDF file instantly without uploading anything to a server. Whether you're documenting source code, exporting notes, converting structured data, or creating a printable report from raw text, this free converter provides a fast and completely private solution directly in your browser.</p>
 
-    <p>
-      Unlike traditional online converters, PDFECTA processes everything locally on your device.
-      Your files are never uploaded, scanned, or stored. This makes it ideal for developers,
-      students, writers, legal professionals, businesses, and anyone handling sensitive content.
-    </p>
+  <p>Unlike traditional online converters, PDFECTA processes everything locally using modern browser technology. Your text, files, and pasted content never leave your device. No cloud storage, no third-party access, and no tracking — making it ideal for developers, writers, students, and professionals handling sensitive or proprietary content.</p>
 
-    <h3 class="text-xl font-semibold">Supported Input Formats</h3>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Convert Text to PDF</h3>
+  <ol class="list-decimal pl-6 space-y-2">
+    <li>Upload a text file using the tool above, or paste your text directly into the text box.</li>
+    <li>Click "Convert to PDF".</li>
+    <li>Your text is rendered into a clean, paginated PDF document.</li>
+    <li>Download the PDF instantly — no waiting, no email required.</li>
+  </ol>
 
-    <ul class="list-disc pl-6 space-y-1">
-      <li>Plain text (.txt)</li>
-      <li>HTML files (.html)</li>
-      <li>Markdown (.md)</li>
-      <li>JSON (.json)</li>
-      <li>CSV data (.csv)</li>
-      <li>Log files (.log)</li>
-      <li>Manual pasted text or code</li>
-    </ul>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Supported File Formats</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>Plain text (.txt)</strong> — notes, drafts, or any plain text document</li>
+    <li><strong>Markdown (.md)</strong> — documentation, README files, or blog drafts</li>
+    <li><strong>HTML (.html)</strong> — web page source or HTML snippets</li>
+    <li><strong>JSON (.json)</strong> — structured data or configuration files</li>
+    <li><strong>CSV (.csv)</strong> — spreadsheet or tabular data exports</li>
+    <li><strong>Log files (.log)</strong> — application or system logs</li>
+    <li><strong>Pasted text</strong> — any content copied directly into the text box, including source code</li>
+  </ul>
 
-    <h3 class="text-xl font-semibold">Common Use Cases</h3>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Common Use Cases</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li>Create a PDF from source code for documentation or code review submissions</li>
+    <li>Export markdown notes or README files into a shareable PDF format</li>
+    <li>Convert log files into PDF reports for archiving or sharing with a team</li>
+    <li>Generate printable PDFs from structured JSON or CSV data</li>
+    <li>Create PDF drafts of written content before final formatting</li>
+    <li>Archive plain text records in a universally readable PDF format</li>
+  </ul>
 
-    <ul class="list-disc pl-6 space-y-1">
-      <li>Create PDF from source code for documentation</li>
-      <li>Export HTML content into printable PDF format</li>
-      <li>Convert markdown notes into PDF files</li>
-      <li>Generate PDF from structured data</li>
-      <li>Create printable reports from raw text</li>
-    </ul>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How PDFECTA Handles Special Characters</h3>
+  <p>Text conversion can sometimes run into issues with special characters like smart quotes, em dashes, or unusual symbols. PDFECTA automatically detects and converts common special characters — such as curly quotes and long dashes — into PDF-compatible equivalents, ensuring your document renders cleanly without broken characters or missing symbols.</p>
 
-    <h3 class="text-xl font-semibold">Privacy & Security</h3>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA Text to PDF Converter?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Text and files are processed locally — never uploaded to any server.</li>
+    <li><strong>No Upload Required:</strong> Your content never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
+    <li><strong>Flexible Input:</strong> Upload a file or paste text directly — whichever is faster for you.</li>
+    <li><strong>Automatic Pagination:</strong> Long content automatically flows across multiple pages.</li>
+    <li><strong>Works Offline:</strong> After loading, the converter works without internet.</li>
+    <li><strong>Compatible on All Devices:</strong> Works on Windows, macOS, Linux, Android, and iOS.</li>
+  </ul>
 
-    <p>
-      All processing happens entirely in your browser using client-side JavaScript.
-      Files never leave your device. No tracking scripts. No analytics. No third-party uploads.
-      This ensures maximum privacy and complete control over your documents.
-    </p>
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">What to Do After Converting</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> — combine your text PDF with other documents.</li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a> — number the pages of your converted document.</li>
+    <li><a href="/watermark.html" class="text-indigo-600 hover:underline">Add Watermark</a> — mark your document as draft or confidential.</li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a> — reduce file size for long text documents.</li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a> — add your signature to the converted document.</li>
+  </ul>
 
-  </section>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200 mt-24">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
     <div>
-      <p class="text-slate-500">
-        Free, privacy-first PDF tools that run entirely in your browser.
-      </p>
+      <p class="font-semibold text-slate-800">How do I convert text to PDF for free?</p>
+      <p>Upload a text file or paste your content, click Convert to PDF, and download instantly. No uploads, no registration.</p>
     </div>
     <div>
+      <p class="font-semibold text-slate-800">What file types can I convert to PDF?</p>
+      <p>PDFECTA supports .txt, .html, .md, .json, .csv, and .log files, plus any pasted text.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to convert text to PDF online?</p>
+      <p>PDFECTA never uploads your files or text — all conversion happens directly in your browser, keeping your content completely private.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I convert source code to PDF?</p>
+      <p>Yes. Paste or upload source code and convert it to PDF for documentation or sharing. Line breaks and formatting are preserved.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is there a limit on how much text I can convert?</p>
+      <p>There is no strict limit. Performance depends on your device memory. Most modern devices handle large documents without issues.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Does the PDF preserve special characters and formatting?</p>
+      <p>Yes. Special characters like smart quotes and dashes are automatically converted to compatible equivalents, and line breaks are preserved.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/word-to-pdf.html" class="text-indigo-600 hover:underline">Word to PDF</a></li>
+    <li><a href="/jpg-to-pdf.html" class="text-indigo-600 hover:underline">JPG to PDF</a></li>
+    <li><a href="/png-to-pdf.html" class="text-indigo-600 hover:underline">PNG to PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a></li>
+  </ul>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
+    </div>
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/privacy.html">Privacy Policy</a></li>
-        <li><a href="/terms.html">Terms of Service</a></li>
+        <li><a href="/about.html" class="hover:text-indigo-600">About</a></li>
+        <li><a href="/contact.html" class="hover:text-indigo-600">Contact</a></li>
+        <li><a href="/privacy.html" class="hover:text-indigo-600">Privacy Policy</a></li>
+        <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
       </ul>
     </div>
     <div>
-      <a href="mailto:support@pdfecta.com"
-         class="text-indigo-600 font-semibold">
-        support@pdfecta.com
-      </a>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
 <script>
-async function generatePDF() {
-  const { jsPDF } = window.jspdf;
-  const fileInput = document.getElementById("fileInput");
-  const textInput = document.getElementById("textInput");
-  const status = document.getElementById("status");
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+  const fileName = document.getElementById('fileName');
+  const textInput = document.getElementById('textInput');
+  const status = document.getElementById('status');
+  const convertBtn = document.getElementById('convertBtn');
 
-  status.textContent = "";
+  dropZone.onclick = () => fileInput.click();
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
+  dropZone.ondrop = e => {
+    e.preventDefault();
+    dropZone.classList.remove('bg-indigo-50');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      showFileName();
+    }
+  };
+  fileInput.onchange = () => showFileName();
 
-  // ---------- FILE VALIDATION ----------
-  if (fileInput.files.length) {
-    const file = fileInput.files[0];
-    const allowedExt = ["txt","md","json","csv","log","html"];
-    const ext = file.name.split(".").pop().toLowerCase();
+  function showFileName() {
+    if (fileInput.files.length) {
+      fileName.textContent = '📄 ' + fileInput.files[0].name;
+      fileName.classList.remove('hidden');
+    }
+  }
 
-    if (!allowedExt.includes(ext)) {
-      status.textContent =
-        "Unsupported file type. Please upload a text-based file only.";
-      fileInput.value = "";
-      return;
+  async function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    status.textContent = '';
+
+    if (fileInput.files.length) {
+      const file = fileInput.files[0];
+      const allowedExt = ['txt', 'md', 'json', 'csv', 'log', 'html'];
+      const ext = file.name.split('.').pop().toLowerCase();
+
+      if (!allowedExt.includes(ext)) {
+        status.textContent = '⚠️ Unsupported file type. Please upload a text-based file only.';
+        fileInput.value = '';
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        let text = cleanText(e.target.result);
+        createPDF(text, file.name.split('.')[0] + '.pdf');
+      };
+      reader.readAsText(file, 'UTF-8');
+
+    } else if (textInput.value.trim()) {
+      const cleanedText = cleanText(textInput.value);
+      createPDF(cleanedText, 'text-to-pdf.pdf');
+    } else {
+      status.textContent = '⚠️ Please upload a text file or paste text.';
     }
 
-    const reader = new FileReader();
-    
-    // Use readAsText instead of readAsArrayBuffer for better text handling
-    reader.onload = function (e) {
-      let text = e.target.result;
-      
-      // Clean up the text to remove problematic characters
-      text = cleanText(text);
-      createPDF(text);
-    };
-
-    // Read as text with UTF-8 encoding (simpler and more reliable)
-    reader.readAsText(file, 'UTF-8');
-
-  } else if (textInput.value.trim()) {
-    const cleanedText = cleanText(textInput.value);
-    createPDF(cleanedText);
-
-  } else {
-    status.textContent = "Please upload a text file or paste text.";
-  }
-
-  // ---------- TEXT CLEANING FUNCTION ----------
-  function cleanText(text) {
-    // Remove BOM if present
-    text = text.replace(/^\uFEFF/, '');
-    
-    // Replace problematic characters that jsPDF can't handle well
-    text = text.replace(/[^\x00-\x7F]/g, function(char) {
-      // Handle common special characters
-      const charCode = char.charCodeAt(0);
-      if (charCode === 8217) return "'"; // Right single quotation mark
-      if (charCode === 8216) return "'"; // Left single quotation mark
-      if (charCode === 8220) return '"'; // Left double quotation mark
-      if (charCode === 8221) return '"'; // Right double quotation mark
-      if (charCode === 8211) return '-'; // En dash
-      if (charCode === 8212) return '--'; // Em dash
-      if (charCode === 8230) return '...'; // Ellipsis
-      
-      // For other non-ASCII characters, try to keep them or replace with space
-      return char.match(/[\w\s\p{L}\p{N}\p{P}\p{S}]/u) ? char : ' ';
-    });
-    
-    // Normalize line endings
-    text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-    
-    return text;
-  }
-
-  // ---------- PDF GENERATION ----------
-  function createPDF(content) {
-    try {
-      const doc = new jsPDF({
-        unit: "mm",
-        format: "a4"
+    function cleanText(text) {
+      text = text.replace(/^\uFEFF/, '');
+      text = text.replace(/[^\x00-\x7F]/g, function (char) {
+        const charCode = char.charCodeAt(0);
+        if (charCode === 8217) return "'";
+        if (charCode === 8216) return "'";
+        if (charCode === 8220) return '"';
+        if (charCode === 8221) return '"';
+        if (charCode === 8211) return '-';
+        if (charCode === 8212) return '--';
+        if (charCode === 8230) return '...';
+        return char.match(/[\w\s\p{L}\p{N}\p{P}\p{S}]/u) ? char : ' ';
       });
+      text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+      return text;
+    }
 
-      const pageHeight = doc.internal.pageSize.height;
-      const pageWidth = doc.internal.pageSize.width;
+    function createPDF(content, filename) {
+      try {
+        convertBtn.disabled = true;
+        convertBtn.textContent = 'Converting...';
+        status.textContent = '⏳ Generating PDF...';
 
-      const marginX = 15;
-      let cursorY = 20;
+        const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+        const pageHeight = doc.internal.pageSize.height;
+        const pageWidth = doc.internal.pageSize.width;
+        const marginX = 15;
+        let cursorY = 20;
 
-      // Use a font that better supports various characters
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(10);
 
-      const lineHeight = 5;
-      const maxWidth = pageWidth - marginX * 2;
-      
-      // Split content into lines first
-      const contentLines = content.split('\n');
-      
-      contentLines.forEach(line => {
-        // Handle empty lines
-        if (line.trim() === '') {
-          if (cursorY + lineHeight > pageHeight - 15) {
-            doc.addPage();
-            cursorY = 20;
+        const lineHeight = 5;
+        const maxWidth = pageWidth - marginX * 2;
+        const contentLines = content.split('\n');
+
+        contentLines.forEach(line => {
+          if (line.trim() === '') {
+            if (cursorY + lineHeight > pageHeight - 15) {
+              doc.addPage();
+              cursorY = 20;
+            }
+            cursorY += lineHeight;
+            return;
           }
-          cursorY += lineHeight;
-          return;
-        }
-        
-        // Split long lines to fit page width
-        const wrappedLines = doc.splitTextToSize(line, maxWidth);
-        
-        wrappedLines.forEach(wrappedLine => {
-          if (cursorY + lineHeight > pageHeight - 15) {
-            doc.addPage();
-            cursorY = 20;
-          }
-          
-          try {
-            doc.text(wrappedLine, marginX, cursorY);
-          } catch (e) {
-            // If there's still an error with a specific line, log it and skip
-            console.warn('Skipped problematic line:', wrappedLine);
-          }
-          
-          cursorY += lineHeight;
+
+          const wrappedLines = doc.splitTextToSize(line, maxWidth);
+          wrappedLines.forEach(wrappedLine => {
+            if (cursorY + lineHeight > pageHeight - 15) {
+              doc.addPage();
+              cursorY = 20;
+            }
+            try {
+              doc.text(wrappedLine, marginX, cursorY);
+            } catch (e) {
+              console.warn('Skipped problematic line:', wrappedLine);
+            }
+            cursorY += lineHeight;
+          });
         });
-      });
 
-      // Generate filename based on original file or default
-      const filename = fileInput.files.length 
-        ? `${fileInput.files[0].name.split('.')[0]}.pdf`
-        : "text-to-pdf.pdf";
-        
-      doc.save(filename);
-      status.innerHTML = `<span style="color: green;">✓ PDF generated successfully!</span>`;
-      
-    } catch (error) {
-      console.error('PDF generation error:', error);
-      status.innerHTML = `<span style="color: red;">✗ Error generating PDF. Please try again.</span>`;
+        doc.save(filename);
+        status.innerHTML = '✅ <strong>PDF generated successfully!</strong>';
+      } catch (error) {
+        console.error('PDF generation error:', error);
+        status.innerHTML = '❌ <strong>Error generating PDF.</strong> Please try again.';
+      } finally {
+        convertBtn.disabled = false;
+        convertBtn.textContent = 'Convert to PDF';
+      }
     }
   }
-}
 </script>
 
 </body>
