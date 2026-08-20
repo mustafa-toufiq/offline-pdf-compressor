@@ -1,220 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Rotate PDF Online – Free & Secure PDF Page Rotator | PDFECTA</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Rotate PDF pages online free. Turn PDF 90, 180 or 270 degrees securely in your browser. No uploads. Private PDF page rotator." />
-<link rel="canonical" href="https://pdfecta.com/rotate-pdf.html" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <title>Rotate PDF Pages Online — Free, No Upload, 100% Private | PDFECTA</title>
+  <meta name="description" content="Rotate PDF pages online free. Turn pages 90, 180 or 270 degrees instantly in your browser — no uploads, no registration, no watermarks. 100% private." />
+  <link rel="canonical" href="https://www.pdfecta.com/rotate-pdf.html" />
 
-<!-- Breadcrumb -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
-   { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdfecta.com/" },
-   { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://pdfecta.com/" },
-   { "@type": "ListItem", "position": 3, "name": "Rotate PDF", "item": "https://pdfecta.com/rotate-pdf.html" }
- ]
-}
-</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-   {
-     "@type": "Question",
-     "name": "How do I rotate PDF pages?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Upload your PDF, choose the rotation angle, and download the rotated file instantly."
-     }
-   },
-   {
-     "@type": "Question",
-     "name": "Is rotating PDF pages secure?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Yes. All processing happens locally in your browser. Files are never uploaded."
-     }
-   },
-   {
-     "@type": "Question",
-     "name": "Does rotating a PDF reduce quality?",
-     "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "No. Page rotation does not affect text or image quality."
-     }
-   }
- ]
-}
-</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    .brand-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+  </style>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://www.pdfecta.com/" },
+      { "@type": "ListItem", "position": 3, "name": "Rotate PDF", "item": "https://www.pdfecta.com/rotate-pdf.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I rotate a page in a PDF for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can rotate a page in a PDF for free using PDFECTA. Upload your PDF, choose the rotation angle and which pages to rotate, and download the rotated PDF instantly. Everything happens locally in your browser with no uploads required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to rotate PDF pages online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the tool. Many online PDF tools upload your file to their servers before processing. PDFECTA never uploads your files — all rotation happens directly in your browser, keeping your documents completely private."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does rotating a PDF reduce its quality?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Rotating PDF pages only changes the orientation metadata. The content, images, fonts, and quality of each page remain completely untouched."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I rotate just one page in a PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PDFECTA allows you to rotate all pages at once or specify individual page numbers to rotate. Other pages remain unchanged."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the rotation saved permanently in the PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. When you rotate pages and download the file, the rotation is permanently saved. Anyone who opens the file will see the pages in the corrected orientation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do PDF pages come out sideways?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most common causes are scanning in the wrong orientation, mobile scanning apps misreading device orientation, software exporting in landscape mode by default, or photos being embedded incorrectly in the PDF."
+        }
+      }
+    ]
+  }
+  </script>
 
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-slate-50 text-slate-900">
 
 <!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white border-b">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2 font-extrabold text-xl text-slate-800">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">P</div>
+    <a href="/" class="flex items-center gap-2 font-extrabold text-xl">
+      <span class="w-9 h-9 rounded-xl brand-gradient text-white flex items-center justify-center">P</span>
       PDFECTA
     </a>
-    <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+    <nav class="text-sm font-semibold text-slate-600 space-x-6">
+      <a href="/" class="hover:text-indigo-600">Home</a>
       <a href="/#suite" class="hover:text-indigo-600">All Tools</a>
-      <a href="/#why" class="hover:text-indigo-600">Why Private?</a>
+      <a href="/blog/" class="hover:text-indigo-600">Guides</a>
       <a href="/#faq" class="hover:text-indigo-600">FAQ</a>
     </nav>
   </div>
 </header>
 
-<main class="max-w-4xl mx-auto px-6 pt-16 pb-12">
-
 <!-- HERO -->
-<section class="text-center mb-10">
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <nav class="text-sm text-slate-400 mb-8">
+    <a href="/" class="hover:text-indigo-600">Home</a>
+    <span class="mx-2">›</span>
+    <span class="text-slate-600">Rotate PDF</span>
+  </nav>
+
   <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
-    Rotate PDF Online — Free & Secure
+    Rotate PDF Pages Online — Free & Private
   </h1>
   <p class="text-slate-600 text-lg max-w-2xl mx-auto">
-    Rotate PDF pages by 90°, 180°, or 270° instantly. 100% private. No uploads. No tracking.
+    Fix sideways or upside down PDF pages directly in your browser.
+    No uploads. No servers. No watermarks. 100% private.
   </p>
 </section>
 
-<!-- TOOL CARD -->
-<div class="bg-white shadow rounded-2xl p-8 space-y-4">
+<!-- TOOL -->
+<section class="max-w-3xl mx-auto px-6 pb-20">
+  <div class="bg-white rounded-3xl shadow-xl border p-6">
 
-<input type="file" id="pdfInput" accept="application/pdf"
-class="block w-full border rounded p-3" />
-
-<select id="rotation" class="block w-full border rounded p-3">
-  <option value="90">Rotate 90°</option>
-  <option value="180">Rotate 180°</option>
-  <option value="270">Rotate 270°</option>
-</select>
-
-<button onclick="rotatePDF()"
-class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
-Rotate PDF
-</button>
-
-<p id="status" class="text-sm text-gray-600"></p>
-
-</div>
-
-<!-- SEO CONTENT -->
-<section class="mt-16 space-y-6 text-slate-700 leading-relaxed">
-
-<h2 class="text-2xl font-bold text-slate-800">
-Rotate PDF Pages Online Free and Secure
-</h2>
-
-<p>
-PDFECTA allows you to rotate PDF pages online instantly without uploading your file.
-Whether your document was scanned sideways or saved in the wrong orientation,
-this free PDF page rotator helps you fix page direction in seconds.
-</p>
-
-<p>
-Unlike many online PDF editors, everything runs locally in your browser.
-Your files never leave your device, making this tool ideal for confidential documents,
-contracts, academic papers, invoices, and business reports.
-</p>
-
-<h3 class="text-xl font-semibold mt-8">
-How to Rotate a PDF
-</h3>
-
-<ol class="list-decimal pl-6 space-y-2">
-<li>Upload your PDF file.</li>
-<li>Select 90°, 180°, or 270° rotation.</li>
-<li>Click “Rotate PDF”.</li>
-<li>Download your corrected file instantly.</li>
-</ol>
-
-<h3 class="text-xl font-semibold mt-8">
-Why Use PDFECTA Rotate PDF Tool?
-</h3>
-
-<ul class="list-disc pl-6 space-y-2">
-<li><strong>100% Private:</strong> No file uploads or server processing.</li>
-<li><strong>No Quality Loss:</strong> Rotation does not reduce PDF quality.</li>
-<li><strong>Fast Processing:</strong> Instant rotation using browser technology.</li>
-<li><strong>Works Offline:</strong> After loading, it works without internet.</li>
-<li><strong>Free & Unlimited:</strong> No registration required.</li>
-</ul>
-
-<h3 class="text-xl font-semibold mt-8">
-Common Use Cases
-</h3>
-
-<p>
-Rotate scanned documents, fix sideways pages, correct orientation before printing,
-or prepare PDFs for professional sharing. If you need additional edits,
-you can also <a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">delete pages</a>,
-<a href="/merge-pdf.html" class="text-indigo-600 hover:underline">merge PDFs</a>,
-or <a href="/split-pdf.html" class="text-indigo-600 hover:underline">split PDF files</a>.
-</p>
-
-<h3 class="text-xl font-semibold mt-8">
-Frequently Asked Questions
-</h3>
-
-<p class="font-semibold">Is rotating PDFs safe?</p>
-<p>Yes. All processing happens locally in your browser. Your files are never uploaded.</p>
-
-<p class="font-semibold">Does rotating affect PDF quality?</p>
-<p>No. Rotating a PDF only changes page orientation and does not compress or alter content.</p>
-
-<p class="font-semibold">Can I rotate large PDFs?</p>
-<p>Yes. Performance depends on your device memory, but most modern devices handle standard PDFs easily.</p>
-
-
- <!-- RELATED TOOLS -->
-   <h3 class="text-xl font-semibold">
-    More Offline PDF Tools
-  </h3>
-
-  <p>
-    You may also want to:
-  </p>
-  <ul class="list-disc pl-6 space-y-2">
-    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF Online</a></li>
-    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF Files</a></li>
-    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF Online</a></li>
-    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF Pages</a></li>
-  </ul>
-
-  <p>
-    PDFECTA is built for users who value speed, simplicity, and privacy-first PDF tools.
-  </p>
-
- 
-</section>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="bg-white border-t border-slate-200 mt-24">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-    <div>
-      <div class="flex items-center gap-2 mb-3">
-        <div class="w-7 h-7 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">P</div>
-        <span class="font-extrabold text-slate-800">PDFECTA</span>
+    <div id="dropZone"
+      class="border-2 border-dashed border-indigo-200 rounded-2xl p-12 text-center cursor-pointer hover:bg-indigo-50 transition">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl">🔄</div>
+        <p class="font-bold text-lg text-slate-700">Drop your PDF here</p>
+        <p class="text-sm text-slate-400">Files never leave your device</p>
       </div>
-      <p class="text-slate-500 leading-relaxed max-w-sm">
-        Free, privacy-first PDF tools that run entirely in your browser.
-        No uploads. No tracking. Full control over your files.
-      </p>
+      <input id="pdfInput" type="file" accept="application/pdf" class="hidden" />
     </div>
 
+    <!-- Page info -->
+    <div id="pageInfo" class="mt-4 p-3 bg-indigo-50 rounded-xl text-sm font-semibold text-indigo-700 hidden"></div>
+
+    <div class="mt-6 space-y-4">
+      <!-- Rotation angle -->
+      <div>
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Rotation Angle</label>
+        <select id="rotation"
+          class="w-full rounded-xl p-4 bg-slate-50 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="90">90° Clockwise</option>
+          <option value="180">180° (Upside Down)</option>
+          <option value="270">90° Counter-Clockwise</option>
+        </select>
+      </div>
+
+      <!-- Page selection -->
+      <div>
+        <label class="block text-sm font-semibold text-slate-600 mb-2">Pages to Rotate</label>
+        <select id="pageSelect"
+          class="w-full rounded-xl p-4 bg-slate-50 font-semibold text-slate-600 outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="all">All Pages</option>
+          <option value="custom">Specific Pages</option>
+        </select>
+      </div>
+
+      <!-- Custom page input -->
+      <div id="customPages" class="hidden">
+        <input id="pageNumbers" type="text" placeholder="Example: 1, 3, 5-8"
+          class="w-full rounded-xl p-4 bg-slate-50 border border-slate-200 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+        <p class="text-xs text-slate-400 mt-1">Enter page numbers separated by commas, or ranges like 5-8</p>
+      </div>
+
+      <button onclick="rotatePDF()" id="rotateBtn"
+        class="w-full brand-gradient text-white py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition">
+        Rotate PDF
+      </button>
+
+      <p id="status" class="text-center text-sm font-semibold text-slate-500 min-h-5"></p>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-4xl mx-auto px-6 pt-8 pb-12 text-slate-700 leading-relaxed space-y-6">
+
+  <h2 class="text-2xl font-bold text-slate-800">Rotate PDF Pages Online Free & Secure</h2>
+
+  <p>PDFECTA allows you to rotate PDF pages instantly without uploading your document to any server. Whether you need to fix a single sideways page, flip an upside down scan, or correct the orientation of an entire document, this free PDF rotation tool provides a fast and completely private solution directly in your browser.</p>
+
+  <p>Unlike traditional online PDF tools that upload your files to remote servers, PDFECTA processes everything locally using modern browser technology. Your PDF file never leaves your device. No cloud storage, no third-party access, and no tracking — making it ideal for rotating sensitive documents such as contracts, financial records, and legal paperwork.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">How to Rotate PDF Pages</h3>
+  <ol class="list-decimal pl-6 space-y-2">
+    <li>Click the upload area or drag and drop your PDF file into the tool above.</li>
+    <li>Select the rotation angle — 90° clockwise, 90° counter-clockwise, or 180°.</li>
+    <li>Choose to rotate all pages or specify individual page numbers.</li>
+    <li>Click "Rotate PDF".</li>
+    <li>Download your corrected PDF instantly.</li>
+  </ol>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">When Would You Need to Rotate PDF Pages?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>Scanner orientation mistakes:</strong> Pages scanned sideways or upside down on a flatbed scanner.</li>
+    <li><strong>Mobile scanning errors:</strong> Scanning apps misreading device orientation during capture.</li>
+    <li><strong>Software export issues:</strong> Applications like Excel or PowerPoint exporting PDFs in landscape mode by default.</li>
+    <li><strong>Mixed orientation documents:</strong> Reports with landscape charts mixed into portrait pages.</li>
+    <li><strong>Photo PDFs:</strong> Photos taken in portrait mode embedded as landscape in a PDF.</li>
+    <li><strong>Before printing:</strong> Correcting page orientation to ensure proper printing alignment.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Rotation Options Explained</h3>
+  <ul class="list-disc pl-6 space-y-3">
+    <li><strong>90° Clockwise</strong> — rotates the page a quarter turn to the right. Use when a page appears rotated to the left.</li>
+    <li><strong>180°</strong> — flips the page completely upside down. Use when a page is entirely inverted.</li>
+    <li><strong>90° Counter-Clockwise</strong> — rotates the page a quarter turn to the left. Use when a page appears rotated to the right.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Rotate Specific Pages or All Pages</h3>
+  <p>PDFECTA gives you full control over which pages to rotate. You can rotate the entire document at once or select specific page numbers. This is especially useful when only one or two pages in a document are sideways while the rest are correctly oriented — you fix just those pages without affecting anything else.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Is PDF Rotation Permanent?</h3>
+  <p>Yes. When you rotate pages using PDFECTA and download the result, the rotation is permanently saved in the PDF file. Anyone who opens the downloaded file will see the pages in the correct orientation automatically — they will not need to manually rotate pages in their PDF reader.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Does Rotating a PDF Affect Quality?</h3>
+  <p>No. Rotating PDF pages is a purely structural change — it only adjusts the orientation metadata of each page. The actual content including text, images, fonts, and layout remains completely untouched with no quality loss.</p>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Why Choose PDFECTA to Rotate PDFs?</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><strong>100% Private:</strong> Files are processed locally — never uploaded to any server.</li>
+    <li><strong>No Upload Required:</strong> Your PDF never leaves your device.</li>
+    <li><strong>Free to Use:</strong> No subscriptions, no hidden costs, no registration.</li>
+    <li><strong>No Watermarks:</strong> Download clean, professional PDFs.</li>
+    <li><strong>Selective Rotation:</strong> Rotate all pages or specific page numbers.</li>
+    <li><strong>Works Offline:</strong> After loading, the tool works without internet.</li>
+    <li><strong>Compatible on All Devices:</strong> Works on Windows, macOS, Linux, Android, and iOS.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">What to Do After Rotating</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/reorder-pdf-pages.html" class="text-indigo-600 hover:underline">Reorder Pages</a> — rearrange pages into the correct sequence after fixing orientation.</li>
+    <li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages</a> — remove unwanted pages after rotating.</li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a> — combine your rotated PDF with other documents.</li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a> — reduce file size after finalizing orientation.</li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a> — number pages after rotation.</li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a> — add your signature once pages are correctly oriented.</li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a> — divide the document into smaller files after rotating.</li>
+    <li><a href="/extract-pages-from-pdf.html" class="text-indigo-600 hover:underline">Extract Pages</a> — pull out specific pages after correcting orientation.</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Frequently Asked Questions</h3>
+  <div class="space-y-5">
+    <div>
+      <p class="font-semibold text-slate-800">How do I rotate a page in a PDF for free?</p>
+      <p>Upload your PDF, choose the rotation angle and which pages to rotate, click Rotate PDF, and download instantly. No uploads, no registration.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is it safe to rotate PDF pages online?</p>
+      <p>PDFECTA never uploads your files — all rotation happens directly in your browser, keeping your documents completely private.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Does rotating a PDF reduce its quality?</p>
+      <p>No. Rotation only changes page orientation — content, images, fonts, and quality remain untouched.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Can I rotate just one page in a PDF?</p>
+      <p>Yes. Select "Specific Pages" and enter the page number to rotate only that page while keeping others unchanged.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Is the rotation saved permanently?</p>
+      <p>Yes. The rotation is permanently saved in the downloaded PDF file. Anyone opening it will see the corrected orientation.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-800">Why do PDF pages come out sideways?</p>
+      <p>Common causes include scanning in wrong orientation, mobile apps misreading device orientation, software exporting in landscape mode, or photos embedded incorrectly.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Guides</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/blog/how-to-rotate-pdf-pages.html" class="text-indigo-600 hover:underline">How to Rotate PDF Pages Online (Free & Private)</a></li>
+    <li><a href="/blog/how-to-reorder-pdf-pages.html" class="text-indigo-600 hover:underline">How to Reorder Pages in a PDF Online</a></li>
+    <li><a href="/blog/how-to-delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">How to Delete Pages from a PDF Online</a></li>
+    <li><a href="/blog/how-to-merge-pdf-files-online.html" class="text-indigo-600 hover:underline">How to Merge PDF Files Online</a></li>
+    <li><a href="/blog/how-to-compress-pdf-without-losing-quality.html" class="text-indigo-600 hover:underline">How to Compress PDF Without Losing Quality</a></li>
+    <li><a href="/blog/how-to-sign-a-pdf-online.html" class="text-indigo-600 hover:underline">How to Sign a PDF Online for Free</a></li>
+  </ul>
+
+  <h3 class="text-xl font-semibold text-slate-800 mt-8">Related Tools</h3>
+  <ul class="list-disc pl-6 space-y-2">
+    <li><a href="/reorder-pdf-pages.html" class="text-indigo-600 hover:underline">Reorder PDF Pages</a></li>
+    <li><a href="/delete-pages-from-pdf.html" class="text-indigo-600 hover:underline">Delete Pages from PDF</a></li>
+    <li><a href="/merge-pdf.html" class="text-indigo-600 hover:underline">Merge PDF</a></li>
+    <li><a href="/split-pdf.html" class="text-indigo-600 hover:underline">Split PDF</a></li>
+    <li><a href="/compress-pdf.html" class="text-indigo-600 hover:underline">Compress PDF</a></li>
+    <li><a href="/extract-pages-from-pdf.html" class="text-indigo-600 hover:underline">Extract Pages from PDF</a></li>
+    <li><a href="/add-page-numbers.html" class="text-indigo-600 hover:underline">Add Page Numbers</a></li>
+    <li><a href="/sign-pdf.html" class="text-indigo-600 hover:underline">Sign PDF</a></li>
+  </ul>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 brand-gradient rounded flex items-center justify-center text-white font-bold text-xs">P</div>
+        <span class="font-extrabold text-slate-800">PDFECTA</span>
+      </div>
+      <p class="text-slate-500 leading-relaxed max-w-sm">PDFECTA provides free, privacy-first PDF tools that run entirely in your browser. No uploads. No tracking. Full control over your files.</p>
+    </div>
     <div>
       <h4 class="font-bold text-slate-800 mb-3">Company</h4>
       <ul class="space-y-2 text-slate-500">
@@ -224,52 +320,129 @@ Frequently Asked Questions
         <li><a href="/terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
       </ul>
     </div>
-
     <div>
-      <h4 class="font-bold text-slate-800 mb-3">Support</h4>
-      <a href="mailto:support@pdfecta.com" class="font-semibold text-indigo-600 hover:underline">
-        support@pdfecta.com
-      </a>
-      <p class="text-xs text-slate-400 mt-6">
-        © 2026 PDFECTA. All rights reserved.
-      </p>
+      <h4 class="font-bold text-slate-800 mb-3">Contact</h4>
+      <p class="text-slate-500 mb-2">Questions or feedback?</p>
+      <a href="mailto:support@pdfecta.com" class="inline-block mt-2 font-semibold text-indigo-600 hover:underline">support@pdfecta.com</a>
+      <p class="text-xs text-slate-400 mt-6">© 2026 PDFECTA. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
 <script>
-async function rotatePDF() {
-  const input = document.getElementById("pdfInput");
-  const rotation = parseInt(document.getElementById("rotation").value, 10);
-  const status = document.getElementById("status");
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('pdfInput');
+  const status = document.getElementById('status');
+  const pageInfo = document.getElementById('pageInfo');
+  const rotateBtn = document.getElementById('rotateBtn');
+  const pageSelect = document.getElementById('pageSelect');
+  const customPages = document.getElementById('customPages');
 
-  if (!input.files.length) {
-    status.textContent = "Please select a PDF file.";
-    return;
+  let totalPages = 0;
+
+  // Toggle custom page input
+  pageSelect.onchange = () => {
+    customPages.classList.toggle('hidden', pageSelect.value !== 'custom');
+  };
+
+  dropZone.onclick = () => fileInput.click();
+  dropZone.ondragover = e => { e.preventDefault(); dropZone.classList.add('bg-indigo-50'); };
+  dropZone.ondragleave = () => dropZone.classList.remove('bg-indigo-50');
+  dropZone.ondrop = e => {
+    e.preventDefault();
+    dropZone.classList.remove('bg-indigo-50');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      loadPDF();
+    }
+  };
+  fileInput.onchange = () => loadPDF();
+
+  async function loadPDF() {
+    if (!fileInput.files.length) return;
+    try {
+      const bytes = await fileInput.files[0].arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(bytes);
+      totalPages = pdfDoc.getPageCount();
+      pageInfo.classList.remove('hidden');
+      pageInfo.textContent = `📄 ${fileInput.files[0].name} — ${totalPages} pages detected`;
+      status.textContent = '';
+    } catch {
+      status.textContent = '❌ Failed to read PDF file.';
+    }
   }
 
-  const file = input.files[0];
-  status.textContent = "Rotating PDF pages...";
-
-  try {
-    const bytes = await file.arrayBuffer();
-    const pdfDoc = await PDFLib.PDFDocument.load(bytes);
-    pdfDoc.getPages().forEach(page => {
-      page.setRotation(PDFLib.degrees(page.getRotation().angle + rotation));
+  function parsePageNumbers(input, max) {
+    const pages = new Set();
+    input.split(',').forEach(part => {
+      part = part.trim();
+      if (part.includes('-')) {
+        const [start, end] = part.split('-').map(n => parseInt(n.trim(), 10));
+        for (let i = start; i <= end && i <= max; i++) {
+          if (i >= 1) pages.add(i - 1);
+        }
+      } else {
+        const n = parseInt(part, 10);
+        if (n >= 1 && n <= max) pages.add(n - 1);
+      }
     });
-
-    const rotatedBytes = await pdfDoc.save();
-    const blob = new Blob([rotatedBytes], { type: "application/pdf" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "rotated.pdf";
-    a.click();
-
-    status.textContent = "PDF rotated successfully.";
-  } catch {
-    status.textContent = "Failed to rotate PDF.";
+    return pages;
   }
-}
+
+  async function rotatePDF() {
+    if (!fileInput.files.length) {
+      status.textContent = '⚠️ Please select a PDF file.';
+      return;
+    }
+
+    const rotation = parseInt(document.getElementById('rotation').value, 10);
+
+    rotateBtn.disabled = true;
+    rotateBtn.textContent = 'Rotating...';
+    status.textContent = '⏳ Rotating pages locally...';
+
+    try {
+      const bytes = await fileInput.files[0].arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(bytes);
+      const pages = pdfDoc.getPages();
+
+      if (pageSelect.value === 'all') {
+        pages.forEach(page => {
+          page.setRotation(PDFLib.degrees(page.getRotation().angle + rotation));
+        });
+      } else {
+        const pageInput = document.getElementById('pageNumbers').value.trim();
+        if (!pageInput) {
+          status.textContent = '⚠️ Please enter page numbers to rotate.';
+          rotateBtn.disabled = false;
+          rotateBtn.textContent = 'Rotate PDF';
+          return;
+        }
+        const selectedPages = parsePageNumbers(pageInput, totalPages);
+        pages.forEach((page, index) => {
+          if (selectedPages.has(index)) {
+            page.setRotation(PDFLib.degrees(page.getRotation().angle + rotation));
+          }
+        });
+      }
+
+      const rotatedBytes = await pdfDoc.save();
+      const blob = new Blob([rotatedBytes], { type: 'application/pdf' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'rotated.pdf';
+      a.click();
+      URL.revokeObjectURL(a.href);
+
+      status.innerHTML = '✅ <strong>PDF rotated successfully!</strong> Your download has started.';
+    } catch (err) {
+      console.error(err);
+      status.textContent = '❌ Failed to rotate PDF. Please try again.';
+    } finally {
+      rotateBtn.disabled = false;
+      rotateBtn.textContent = 'Rotate PDF';
+    }
+  }
 </script>
 
 </body>
