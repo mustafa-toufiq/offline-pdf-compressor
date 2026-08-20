@@ -322,6 +322,26 @@
       const container = document.createElement('div');
       container.innerHTML = html;
       container.style.width = '515px';
+      container.style.fontFamily = 'Arial, Helvetica, sans-serif';
+      container.style.fontSize = '12px';
+      container.style.lineHeight = '1.5';
+      container.style.color = '#000000';
+
+      // Fix Tailwind preflight stripping margins from headings/paragraphs
+      const style = document.createElement('style');
+      style.textContent = `
+        #docxRenderContainer h1 { font-size: 20px; font-weight: bold; margin: 16px 0 8px 0; display: block; }
+        #docxRenderContainer h2 { font-size: 17px; font-weight: bold; margin: 14px 0 7px 0; display: block; }
+        #docxRenderContainer h3 { font-size: 15px; font-weight: bold; margin: 12px 0 6px 0; display: block; }
+        #docxRenderContainer p { margin: 0 0 10px 0; display: block; }
+        #docxRenderContainer ul, #docxRenderContainer ol { margin: 0 0 10px 0; padding-left: 20px; display: block; }
+        #docxRenderContainer li { margin: 0 0 4px 0; display: list-item; }
+        #docxRenderContainer strong, #docxRenderContainer b { font-weight: bold; }
+        #docxRenderContainer table { border-collapse: collapse; margin: 0 0 10px 0; width: 100%; }
+        #docxRenderContainer td, #docxRenderContainer th { border: 1px solid #ccc; padding: 4px; }
+      `;
+      container.id = 'docxRenderContainer';
+      document.head.appendChild(style);
       document.body.appendChild(container);
 
       const { jsPDF } = window.jspdf;
@@ -336,6 +356,7 @@
       });
 
       document.body.removeChild(container);
+      document.head.removeChild(style);
       pdf.save(file.name.replace('.docx', '') + '.pdf');
 
       status.innerHTML = '✅ <strong>PDF downloaded successfully!</strong>';
