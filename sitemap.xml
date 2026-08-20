@@ -191,7 +191,7 @@
 </url>
 
 
-
+  
   <url>
   <loc>https://www.pdfecta.com/grayscale-pdf.html</loc>
   <lastmod>2026-08-20</lastmod>
@@ -273,7 +273,6 @@
 </url>
 
 
-
       <url>
   <loc>https://www.pdfecta.com/blog/how-to-convert-pdf-to-jpg.html</loc>
   <lastmod>2026-03-19</lastmod>
@@ -298,9 +297,6 @@
 </url>
 
 
-
-
-
       <url>
   <loc>https://www.pdfecta.com/blog/how-to-extract-pages-from-pdf.html</loc>
   <lastmod>2026-04-21</lastmod>
@@ -309,14 +305,44 @@
 </url>
 
 
-  
       <url>
   <loc>https://www.pdfecta.com/blog/how-to-sign-a-pdf-online.html</loc>
   <lastmod>2026-04-21</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
+
+
+  <url>
+  <loc>https://www.pdfecta.com/blog/how-to-clean-up-a-scanned-pdf.html</loc>
+  <lastmod>2026-08-20</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
   
+<url>
+  <loc>https://www.pdfecta.com/blog/why-your-pdf-tool-might-be-leaking-data.html</loc>
+  <lastmod>2026-08-20</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+  
+<url>
+  <loc>https://www.pdfecta.com/blog/preparing-a-pdf-for-job-applications.html</loc>
+  <lastmod>2026-08-20</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+  
+<url>
+  <loc>https://www.pdfecta.com/blog/watermark-pdf-without-ruining-readability.html</loc>
+  <lastmod>2026-08-20</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
 
 
 
