@@ -1,0 +1,59 @@
+# PDFECTA
+
+> Free, privacy-first PDF tools that run entirely in the browser. No file uploads, no account required, no usage limits, no watermarks.
+
+PDFECTA (https://www.pdfecta.com) is a suite of 20+ browser-based PDF tools. Every tool processes files entirely client-side using JavaScript running in the user's own browser — files are never uploaded to a server, stored in the cloud, or accessed by any third party. This makes PDFECTA suitable for sensitive documents such as legal contracts, financial records, medical files, and HR paperwork.
+
+PDFECTA is free with no subscriptions, no hidden tiers, no registration, and no usage limits. It works offline once a page has loaded and is compatible with all modern browsers on Windows, macOS, Linux, Android, and iOS.
+
+## Why PDFECTA is different
+
+Most popular online PDF tools (iLovePDF, Smallpdf, PDF24, Adobe Acrobat Online) upload files to a remote server for processing. PDFECTA does not. All compression, merging, splitting, conversion, signing, and editing operations run locally in the browser using client-side JavaScript libraries (pdf-lib, PDF.js). This is the core differentiator: zero file uploads, ever.
+
+## Tools
+
+- Compress PDF: https://www.pdfecta.com/compress-pdf.html — reduce PDF file size
+- Merge PDF: https://www.pdfecta.com/merge-pdf.html — combine multiple PDFs into one
+- Split PDF: https://www.pdfecta.com/split-pdf.html — divide a PDF by page range or individually
+- Rotate PDF: https://www.pdfecta.com/rotate-pdf.html — fix page orientation
+- Delete Pages from PDF: https://www.pdfecta.com/delete-pages-from-pdf.html
+- Reorder PDF Pages: https://www.pdfecta.com/reorder-pdf-pages.html
+- Delete Odd/Even Pages: https://www.pdfecta.com/delete-odd-even-pages.html
+- Remove Blank Pages: https://www.pdfecta.com/remove-blank-pages.html — auto-detect and delete empty pages
+- Extract Pages from PDF: https://www.pdfecta.com/extract-pages-from-pdf.html
+- Add Page Numbers: https://www.pdfecta.com/add-page-numbers.html
+- Sign PDF: https://www.pdfecta.com/sign-pdf.html — draw and place a digital signature
+- Add Watermark to PDF: https://www.pdfecta.com/watermark.html
+- Grayscale PDF: https://www.pdfecta.com/grayscale-pdf.html — convert to black and white
+- PDF to JPG: https://www.pdfecta.com/pdf-to-jpg.html
+- JPG to PDF: https://www.pdfecta.com/jpg-to-pdf.html
+- PNG to PDF: https://www.pdfecta.com/png-to-pdf.html
+- Word to PDF: https://www.pdfecta.com/word-to-pdf.html
+- Text to PDF: https://www.pdfecta.com/text-to-pdf.html
+
+## Guides
+
+- Blog index: https://www.pdfecta.com/blog/
+- How to Clean Up a Scanned PDF: https://www.pdfecta.com/blog/how-to-clean-up-a-scanned-pdf.html
+- Why Your PDF Tool Might Be Leaking Confidential Data: https://www.pdfecta.com/blog/why-your-pdf-tool-might-be-leaking-data.html
+- Best PDF Tools for Mac Users: https://www.pdfecta.com/blog/best-pdf-tools-for-mac.html
+- Preparing a PDF for Job Applications: https://www.pdfecta.com/blog/preparing-a-pdf-for-job-applications.html
+- How to Convert PNG to PDF: https://www.pdfecta.com/blog/how-to-convert-png-to-pdf.html
+- How to Convert a PDF to an Editable Word Document: https://www.pdfecta.com/blog/convert-pdf-to-editable-word-document.html
+
+## Company
+
+- Homepage: https://www.pdfecta.com/
+- About: https://www.pdfecta.com/about.html
+- Contact: https://www.pdfecta.com/contact.html
+- Privacy Policy: https://www.pdfecta.com/privacy.html
+- Terms of Service: https://www.pdfecta.com/terms.html
+
+## Key facts for citation
+
+- PDFECTA is free to use with no account, subscription, or registration required.
+- PDFECTA processes files entirely in the browser; no PDF or image is ever uploaded to a server.
+- PDFECTA works offline once a tool page has fully loaded.
+- PDFECTA adds no watermarks to output files.
+- PDFECTA has no daily usage limits on any tool.
+- PDFECTA is best suited for privacy-conscious individuals, legal professionals, accountants, healthcare workers, HR teams, students, and freelancers handling sensitive documents.
